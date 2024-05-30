@@ -10,7 +10,7 @@
     "backend": "openai_compatible"
   },
   {
-    "model_name": "Llama-3-70B-Instruct",
+    "model_name": "Llama-3-70B-Instruct-Anyscale",
     "model_id": "meta-llama/Meta-Llama-3-70B-Instruct",
     "backend": "openai_compatible"
   },
@@ -20,7 +20,12 @@
     "backend": "openai_compatible"
   },
   {
-    "model_name": "Llama-3-8B-Instruct",
+    "model_name": "Llama-3-8B-Together.ai",
+    "model_id": "meta-llama/Llama-3-8b-chat-hf",
+    "backend": "openai_compatible"
+  },
+  {
+    "model_name": "Llama-3-8B-Instruct-Anyscale",
     "model_id": "meta-llama/Meta-Llama-3-8B-Instruct",
     "backend": "openai_compatible"
   },
@@ -43,6 +48,20 @@
     "model_name": "fsc-codellama-34b-instruct",
     "model_id": "codellama-34b-instruct",
     "backend": "openai_compatible"
+  },
+  {
+    "model_name": "gpt-4-1106-vision-preview",
+    "model_id": "gpt-4-1106-vision-preview",
+    "backend": "openai",
+    "supports_images": true,
+    "support_multiple_images": true
+  },
+  {
+    "model_name": "gpt-4o-2024-05-13",
+    "model_id": "gpt-4o-2024-05-13",
+    "backend": "openai",
+    "supports_images": true,
+    "support_multiple_images": true
   },
   {
     "model_name": "gpt-4-turbo-2024-04-09",
@@ -152,17 +171,54 @@
   {
     "model_name": "claude-3-opus-20240229",
     "model_id": "claude-3-opus-20240229",
-    "backend": "anthropic"
+    "backend": "anthropic",
+    "supports_images": true,
+    "support_multiple_images": true
   },
   {
     "model_name": "claude-3-sonnet-20240229",
     "model_id": "claude-3-sonnet-20240229",
-    "backend": "anthropic"
+    "backend": "anthropic",
+    "supports_images": true,
+    "support_multiple_images": true
   },
   {
     "model_name": "claude-3-haiku-20240307",
     "model_id": "claude-3-haiku-20240307",
-    "backend": "anthropic"
+    "backend": "anthropic",
+    "supports_images": true,
+    "support_multiple_images": true
+  },
+  {
+    "model_name": "gemini-1.0-pro-001",
+    "model_id": "gemini-1.0-pro-001",
+    "backend": "google"
+  },
+ {
+    "model_name": "gemini-1.0-pro-002",
+    "model_id": "gemini-1.0-pro-002",
+    "backend": "google"
+  },
+  {
+    "model_name": "gemini-1.0-pro-vision-001",
+    "model_id": "gemini-1.0-pro-vision-latest",
+    "backend": "google",
+    "supports_images": true,
+    "support_multiple_images": true
+  },
+  {
+    "model_name": "gemini-1.5-flash-001",
+    "model_id": "gemini-1.5-flash-001",
+    "backend": "google",
+    "supports_images": true,
+    "support_multiple_images": true
+  },
+  {
+    "model_name": "gemini-1.5-pro-001",
+    "model_id": "gemini-1.5-pro-001",
+    "backend": "google",
+    "supports_images": true,
+    "support_multiple_images": true
   },
   {
     "model_name": "luminous-supreme-control",
@@ -437,6 +493,27 @@
     "eos_to_cull": "<|im_end|>"
   },
   {
+    "model_name": "Swallow-70b-instruct-v0.1",
+    "backend": "huggingface_local",
+    "huggingface_id": "tokyotech-llm/Swallow-70b-instruct-v0.1",
+    "premade_chat_template": true,
+    "eos_to_cull": "</s>"
+  },
+  {
+    "model_name": "Phi-3-mini-128k-instruct",
+    "backend": "huggingface_local",
+    "huggingface_id": "microsoft/Phi-3-mini-128k-instruct",
+    "premade_chat_template": true,
+    "eos_to_cull": "<|endoftext|>"
+  },
+  {
+    "model_name": "Starling-LM-7B-beta",
+    "backend": "huggingface_local",
+    "huggingface_id": "Nexusflow/Starling-LM-7B-beta",
+    "premade_chat_template": true,
+    "eos_to_cull": "<|end_of_turn|>"
+  },
+  {
     "model_name": "llama-2-7b-chat-hf",
     "backend": "huggingface_local",
     "requires_api_key": true,
@@ -465,6 +542,38 @@
     "backend": "huggingface_local",
     "requires_api_key": true,
     "huggingface_id": "google/gemma-7b-it",
+    "premade_chat_template": true,
+    "eos_to_cull": "<eos>"
+  },
+  {
+    "model_name": "gemma-1.1-2b-it",
+    "backend": "huggingface_local",
+    "requires_api_key": true,
+    "huggingface_id": "google/gemma-1.1-2b-it",
+    "premade_chat_template": true,
+    "eos_to_cull": "<eos>"
+  },
+  {
+    "model_name": "gemma-1.1-7b-it",
+    "backend": "huggingface_local",
+    "requires_api_key": true,
+    "huggingface_id": "google/gemma-1.1-7b-it",
+    "premade_chat_template": true,
+    "eos_to_cull": "<eos>"
+  },
+  {
+    "model_name": "codegemma-7b-it",
+    "backend": "huggingface_local",
+    "requires_api_key": true,
+    "huggingface_id": "google/codegemma-7b-it",
+    "premade_chat_template": true,
+    "eos_to_cull": "<eos>"
+  },
+  {
+    "model_name": "recurrentgemma-2b-it",
+    "backend": "huggingface_local",
+    "requires_api_key": true,
+    "huggingface_id": "google/recurrentgemma-2b-it",
     "premade_chat_template": true,
     "eos_to_cull": "<eos>"
   },
@@ -540,5 +649,48 @@
     "bos_string": "<s>",
     "eos_string": "<|end_of_turn|>",
     "eos_to_cull": "<|end_of_turn|>"
+  },
+  {
+    "model_name": "Meta-Llama-3-70B-Instruct-GGUF-q4",
+    "backend": "llamacpp",
+    "huggingface_id": "MaziyarPanahi/Meta-Llama-3-70B-Instruct-GGUF",
+    "filename": "*Q4_K_M.gguf",
+    "premade_chat_template": true,
+    "bos_string": "<|begin_of_text|>",
+    "eos_string": "<|eot_id|>",
+    "eos_to_cull": "<|eot_id|>"
+  },
+  {
+    "model_name": "Meta-Llama-3-70B-Instruct-GGUF-q8",
+    "backend": "llamacpp",
+    "huggingface_id": "MaziyarPanahi/Meta-Llama-3-70B-Instruct-GGUF",
+    "filename": "*Q8_0-00001-of-00002.gguf",
+    "additional_files": ["*Q8_0-00002-of-00002.gguf"],
+    "premade_chat_template": true,
+    "bos_string": "<|begin_of_text|>",
+    "eos_string": "<|eot_id|>",
+    "eos_to_cull": "<|eot_id|>"
+  },
+  {
+    "model_name": "c4ai-command-r-plus-GGUF-q4",
+    "backend": "llamacpp",
+    "huggingface_id": "pmysl/c4ai-command-r-plus-GGUF",
+    "filename": "*Q4_K_M-00001-of-00002.gguf",
+    "additional_files": ["*Q4_K_M-00002-of-00002.gguf"],
+    "premade_chat_template": true,
+    "bos_string": "<BOS_TOKEN>",
+    "eos_string": "<|END_OF_TURN_TOKEN|>",
+    "eos_to_cull": "<|END_OF_TURN_TOKEN|>"
+  },
+  {
+    "model_name": "c4ai-command-r-plus-GGUF-q8",
+    "backend": "llamacpp",
+    "huggingface_id": "pmysl/c4ai-command-r-plus-GGUF",
+    "filename": "*Q8_0-00001-of-00003.gguf",
+    "additional_files": ["*Q8_0-00002-of-00003.gguf", "*Q8_0-00003-of-00003.gguf"],
+    "premade_chat_template": true,
+    "bos_string": "<BOS_TOKEN>",
+    "eos_string": "<|END_OF_TURN_TOKEN|>",
+    "eos_to_cull": "<|END_OF_TURN_TOKEN|>"
   }
 ]
