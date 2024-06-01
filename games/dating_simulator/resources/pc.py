@@ -127,8 +127,35 @@ REASON:
 """
     return location_prompt
 
-def further_actions():
-    pass
+def further_actions(npc_response, list_of_4_actions):
+    """
+    Function which prompts all following SUB- and MAIN-ACTIONS.
+
+    Input:
+    npc_response (str)              : Response of the NPC (the date) towards the last 
+                                        chosen action. Can be a MAIN- or a SUB-ACTION.
+    list_of_4_actions (list)    	: List which includes 4 ACTION options.
+
+    Output:
+    sub_actions_prompt (str)        : Prompt for the PC to choose a next (MAIN-/SUB-)
+                                        ACTION.
+    """
+
+    sub_actions_prompt = f"""
+NPC'S RESPONSE: {npc_response}
+
+Choose one of the following SUB ACTIONS and reason why you have chosen it:
+1) {list_of_4_actions[0]}
+2) {list_of_4_actions[1]}
+3) {list_of_4_actions[2]}
+4) {list_of_4_actions[3]}
+
+Use the following template to answer:
+NUMBER:
+REASON:
+""" 
+    return sub_actions_prompt
+
 
 
 # path_to_npc_sheets = "./npc_sheets.json"
