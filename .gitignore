@@ -193,3 +193,5 @@ cython_debug/
 #.idea/
 /venv_hf/
 /venv_llamacpp/
+
+/games/dating_simulator/togethertest.py

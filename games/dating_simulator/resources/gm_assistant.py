@@ -1,7 +1,7 @@
 import json
 from games.dating_simulator.resources.pc import prompt_char_sheets
 
-TODO: # maybe it is better to write a class since some values needs to be updated and reflects on other values.
+# maybe it is better to write a class since some values needs to be updated and reflects on other values.
 
 with open("games/dating_simulator/in/ex_NPC_sheet.json", "r", encoding="UTF8") as file:
     npc_sheets = json.load(file)
@@ -19,7 +19,7 @@ def get_pc_decisions():
     In order to get the following PC decisions
     """
     with open("PC_decisions.json", "r", encoding="UTF8") as file:
-    pc_decisions = json.load(file)
+        pc_decisions = json.load(file)
     return pc_decisions
 
 def get_npc_assessment():
@@ -27,7 +27,7 @@ def get_npc_assessment():
     In order to get the following NPC response and dialogue for each action
     """
     with open("NPC_decisions.json", "r", encoding="UTF8") as file:
-    npc_decision = json.load(file)
+        npc_decision = json.load(file)
 
     npc_response = npc_decision["Level"]["Main Action"]["Sub Action"]["NPC"]["Reaction"]
     npc_dialogue = npc_decision["Level"]["Main Action"]["Sub Action"]["NPC"]["Dialogue"]
@@ -74,7 +74,7 @@ def initiate_assistant(character_sheet, current_main_action):
     first_sub_actions = "output of the LLM"
     return first_sub_actions
 
-def prompt_subactions():
+def generate_subactions():
     sub_action_template = """
     Provide 4 new suitable SUB ACTIONS with one possible dialogue sentence to the chosen MAIN ACTION and the NPC’s reaction to it. 
     NOTE: This is their ["Level"] date. The game is at MAIN ACTION ["Level"]["Main Action"]["Number"][i] and now we are at SUB ACTION ["Level"]["Main Action"]["Number"][i].["Main Action"]["Number"][i]["Sub Action"]["Number"][j]. Here are the actions chosen by PC so far:
