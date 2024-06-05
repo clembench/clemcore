@@ -4,19 +4,17 @@ import clemgame
 from clemgame.clemgame import GameInstanceGenerator
 from utils import get_random_npcs, get_random_locations
 import random
-from pc_prompts import *
-
 
 GAME_NAME = 'dating_simulator'
+# we will create 10 instances for each experiment; vary this as you wish
+N_INSTANCES = 10
 # if the generation involves randomness, remember to set a random seed
 SEED = 42
 
-class GameInstanceGenerator(GameResourceLocator):
-
-    # include the self.load_template() and self.load_file() for initial prompt and stuff 
+class DatingSimGameInstanceGenerator(GameInstanceGenerator):
     
     def __init__(self, name: str):
-        super().__init__(rizzSims)
+        super().__init__(GAME_NAME)
         self.instances = dict(experiments=list())
     
     def on_generate(self, npc_sheets, location_sheets):
@@ -32,8 +30,19 @@ class GameInstanceGenerator(GameResourceLocator):
         locations = get_random_locations(location_sheets)
 
         # initial prompts 
-        prompt_pc = self.load_template('resources/initial_prompts/initial_prompt_pc.template')
-        prompt_npc = self.load_template('resources/initial_prompts/initial_prompt_npc.template')
+        prompt_pc = self.load_template('resources/initial_prompts/pc.template')
+        prompt_npc = self.load_template('resources/initial_prompts/npc.template')
+        prompt_assistant = self.load_template('resources/initial_prompts/assistant.template')
+
+        # TODO: needs to be put where it belongs
+        levels = {1: "first", 2: "second", 3: "third"} # i.e: NOTE: This is their $level date. Here are the actions chosen by PC so far:
+        prompt_npc = prompt_npc.substitute(character_sheet=character_sheet)
+        prompt_assistant = prompt_assistant.substitute(character_sheet=character_sheet, level=current_level,
+                                                       main_action_1=main_action_1, last_npc_response=last_npc_response,
+                                                       last_npc_reaction=last_npc_reaction)
+
+
+
 
         # define penalty rules
         penalty_rules = {
@@ -42,28 +51,31 @@ class GameInstanceGenerator(GameResourceLocator):
         }
 
         # create an experiment for each playthrough
-        experiment = self.add_experiment(f'Playthrough_{experiment_id}')
+        experiments = {}
+        for experiment_name in experiments.keys():
+            experiment = self.add_experiment(f'Playthrough_{experiment_name}')
+            experiment["prompt_pc"] = prompt_pc #...
+            
+            for index, row in experiments[experiment_name][0].iterrows:
+            # build first instance
+                instance = self.add_game_instance(experiment, experiment_id)   
+            # get random levels
 
-        # build first instance
+            # create a game instance within the experiment
+                initial_location = locations[0]
 
-        # get random levels
+                # populate the game instance with its parameters
+                instance['n_levels'] = n_levels
+                instance['max_mainactions'] = max_mainactions
+                instance['max_subactions'] = max_subactions
 
-        # create a game instance within the experiment
-        instance = self.add_game_instance(experiment, experiment_id)
+                instance['penalty_rules'] = penalty_rules
 
-        initial_location = locations[0]
-
-        # populate the game instance with its parameters
-        instance['n_levels'] = n_levels
-        instance['max_mainactions'] = max_mainactions
-        instance['max_subactions'] = max_subactions
-
-        instance['penalty_rules'] = penalty_rules
-
-        instance['initial_location'] = initial_location
-        
-        instance['initial_prompt_pc'] = prompt_pc
-        instance['initial_prompt_npc'] = prompt_npc
+                instance['initial_location'] = initial_location
+                
+                instance['initial_prompt_pc'] = prompt_pc
+                instance['initial_prompt_npc'] = prompt_npc
+                instance['initial_prompt_assistant'] = prompt_assistant
 
 
 
@@ -71,4 +83,4 @@ class GameInstanceGenerator(GameResourceLocator):
 if __name__ == '__main__':
     random.seed(SEED)
     # always call this, which will actually generate and save the JSON file
-    DatingSimulatorGameInstanceGenerator().generate()
+    DatingSimGameInstanceGenerator().generate()
