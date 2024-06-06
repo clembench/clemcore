@@ -72,7 +72,9 @@ class DatingSimGameInstanceGenerator(GameInstanceGenerator):
         for instance in range(N_INSTANCES):  # what do we need to put here? number of levels?
             game_instance = self.add_game_instance(experiment, instance)
             game_instance["location"] = locations[0]
-
+            game_instance["npcs"] = npcs
+            # in case we add more locations, for now it's just one
+            #game_instance["location"] = random.choice(locations)
             # for index, row in experiments[experiment_name][0].iterrows:
             # # build first instance
             #     instance = self.add_game_instance(experiment, experiment_id)   
