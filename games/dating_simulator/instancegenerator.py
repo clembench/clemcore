@@ -13,23 +13,22 @@ SEED = 42
 
 logger = clemgame.get_logger(__name__)
 
+
 class DatingSimGameInstanceGenerator(GameInstanceGenerator):
-    
+
     def __init__(self, name: str):
         super().__init__(GAME_NAME)
         # self.instances = dict(experiments=list())
-    
-    def on_generate(self,):
 
+    def on_generate(self, ):
         # get resources
-        npcs = get_random_npcs("./resources/ex_NPC_sheet.json")[:3]
-        locations = get_random_locations("./ex_location_sheet.json")
+        npcs = get_random_npcs("./games/dating_simulator/resources/ex_NPC_sheet.json")[:3]
+        locations = get_random_locations("./games/dating_simulator/resources/ex_location.json")
 
         # initial prompts 
         prompt_pc = self.load_template('resources/initial_prompts/pc.template')
         # prompt_npc = self.load_template('resources/initial_prompts/npc.template')
         # prompt_assistant = self.load_template('resources/initial_prompts/assistant.template')
-
 
         """
         for mode in ["easy", "normal", "hard"]:
@@ -37,11 +36,10 @@ class DatingSimGameInstanceGenerator(GameInstanceGenerator):
         """
 
         # some fixed details:
-        
-        n_levels = 3 # number of levels
+
+        n_levels = 3  # number of levels
         max_mainactions = 4
         max_subactions = 4
-
 
         # # TODO: needs to be put where it belongs
         # levels = {1: "first", 2: "second", 3: "third"} # i.e: NOTE: This is their $level date. Here are the actions chosen by PC so far:
@@ -56,10 +54,9 @@ class DatingSimGameInstanceGenerator(GameInstanceGenerator):
             'penalty_for_unpleasant_actions': -5
         }
 
-
         # create an experiment for each playthrough
         # experiments = {}
-        
+
         experiment = self.add_experiment(f'Playthrough_{"mode"}')
 
         experiment['initial_prompt_pc'] = prompt_pc
@@ -72,12 +69,9 @@ class DatingSimGameInstanceGenerator(GameInstanceGenerator):
 
         experiment['penalty_rules'] = penalty_rules
 
-        for instance in range(N_INSTANCES): # what do we need to put here? number of levels?
+        for instance in range(N_INSTANCES):  # what do we need to put here? number of levels?
             game_instance = self.add_game_instance(experiment, instance)
             game_instance["location"] = locations[0]
-
-
-
 
             # for index, row in experiments[experiment_name][0].iterrows:
             # # build first instance
@@ -95,15 +89,13 @@ class DatingSimGameInstanceGenerator(GameInstanceGenerator):
             #     instance['penalty_rules'] = penalty_rules
 
             #     instance['initial_location'] = initial_location
-                
+
             #     instance['initial_prompt_pc'] = prompt_pc
             #     instance['initial_prompt_npc'] = prompt_npc
             #     instance['initial_prompt_assistant'] = prompt_assistant
 
 
-
-
 if __name__ == '__main__':
     random.seed(SEED)
     # always call this, which will actually generate and save the JSON file
-    DatingSimGameInstanceGenerator().generate()
+    DatingSimGameInstanceGenerator(GAME_NAME).generate()

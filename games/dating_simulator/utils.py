@@ -9,7 +9,7 @@ def clean_answers_to_prompt():
     pass
 
 def get_random_npcs(npc_sheets):
-  """
+    """
   Function which fetches the npc sheets
   and returns them shuffled.
   """
@@ -19,10 +19,10 @@ def get_random_npcs(npc_sheets):
     return npcs
 
 def get_random_locations(location_sheet):
-  """
-  Function which fetches the location sheets
-  and returns them shuffled.
-  """
+    """
+    Function which fetches the location sheets
+    and returns them shuffled.
+      """
     with open(location_sheet, "r", encoding="UTF8") as file:
         location_sheets = json.load(file)
 
@@ -38,5 +38,5 @@ def get_random_locations(location_sheet):
 
 
 
-get_random_npcs("./npc_sheets.json")
-get_random_locations_actions("./location_sheets.json")
+#get_random_npcs("./npc_sheets.json")
+#get_random_locations_actions("./location_sheets.json")
