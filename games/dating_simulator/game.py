@@ -9,7 +9,7 @@ class PC(Player):
     def __init__(self, model_name: str, player: str): # model_name = nam of the LLM to use; player=pc/npc or assistent
         super().__init__(model_name)
       self.player = player
-
+      #self.api_key = insert api key here
       # a list to keep the dialogue history
       self.history: List = []
 
@@ -21,7 +21,7 @@ class NPC(Player):
     def __init__(self, model_name: str, player: str): # model_name = nam of the LLM to use; player=pc/npc or assistent
         super().__init__(model_name)
       self.player = player
-
+    # self.api_key = insert api key here
       # a list to keep the dialogue history
       self.history: List = []
 
@@ -33,7 +33,7 @@ class Assistant(Player):
     def __init__(self, model_name: str, player: str): # model_name = nam of the LLM to use; player=pc/npc or assistent
         super().__init__(model_name)
       self.player = player
-
+    # self.api_key = insert api key here
       # a list to keep the dialogue history
       self.history: List = []
 

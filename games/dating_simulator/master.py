@@ -31,9 +31,9 @@ class DatingSimulatorGameMaster(GameMaster):
 
         #Im not sure where all this stuff should be honestly
         # instantiate player, NPC, and assistant
-        self.player = PC(self.model_player, 'player')
-        self.npc = NPC(self.model_npc, 'npc')
-        self.assistant = Assistant(self.model_assistant, 'assistant')
+        self.player = PC(self.model_player, 'player', self.api_key)
+        self.npc = NPC(self.model_npc, 'npc',self.api_key)
+        self.assistant = Assistant(self.model_assistant, 'assistant',self.api_key)
 
         # initialise game variables
         self.current_turn: int = 0
