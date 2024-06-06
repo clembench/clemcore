@@ -11,13 +11,30 @@ N_INSTANCES = 10
 # if the generation involves randomness, remember to set a random seed
 SEED = 42
 
+logger = clemgame.get_logger(__name__)
+
 class DatingSimGameInstanceGenerator(GameInstanceGenerator):
     
     def __init__(self, name: str):
         super().__init__(GAME_NAME)
-        self.instances = dict(experiments=list())
+        # self.instances = dict(experiments=list())
     
-    def on_generate(self, npc_sheets, location_sheets):
+    def on_generate(self,):
+
+        # get resources
+        npcs = get_random_npcs("./resources/ex_NPC_sheet.json")[:3]
+        locations = get_random_locations("./ex_location_sheet.json")
+
+        # initial prompts 
+        prompt_pc = self.load_template('resources/initial_prompts/pc.template')
+        # prompt_npc = self.load_template('resources/initial_prompts/npc.template')
+        # prompt_assistant = self.load_template('resources/initial_prompts/assistant.template')
+
+
+        """
+        for mode in ["easy", "normal", "hard"]:
+            
+        """
 
         # some fixed details:
         
@@ -25,24 +42,13 @@ class DatingSimGameInstanceGenerator(GameInstanceGenerator):
         max_mainactions = 4
         max_subactions = 4
 
-        # get resources
-        npcs = get_random_npcs(npc_sheets)
-        locations = get_random_locations(location_sheets)
 
-        # initial prompts 
-        prompt_pc = self.load_template('resources/initial_prompts/pc.template')
-        prompt_npc = self.load_template('resources/initial_prompts/npc.template')
-        prompt_assistant = self.load_template('resources/initial_prompts/assistant.template')
-
-        # TODO: needs to be put where it belongs
-        levels = {1: "first", 2: "second", 3: "third"} # i.e: NOTE: This is their $level date. Here are the actions chosen by PC so far:
-        prompt_npc = prompt_npc.substitute(character_sheet=character_sheet)
-        prompt_assistant = prompt_assistant.substitute(character_sheet=character_sheet, level=current_level,
-                                                       main_action_1=main_action_1, last_npc_response=last_npc_response,
-                                                       last_npc_reaction=last_npc_reaction)
-
-
-
+        # # TODO: needs to be put where it belongs
+        # levels = {1: "first", 2: "second", 3: "third"} # i.e: NOTE: This is their $level date. Here are the actions chosen by PC so far:
+        # prompt_npc = prompt_npc.substitute(character_sheet=character_sheet)
+        # prompt_assistant = prompt_assistant.substitute(character_sheet=character_sheet, level=current_level,
+        #                                                main_action_1=main_action_1, last_npc_response=last_npc_response,
+        #                                                last_npc_reaction=last_npc_reaction)
 
         # define penalty rules
         penalty_rules = {
@@ -50,32 +56,49 @@ class DatingSimGameInstanceGenerator(GameInstanceGenerator):
             'penalty_for_unpleasant_actions': -5
         }
 
+
         # create an experiment for each playthrough
-        experiments = {}
-        for experiment_name in experiments.keys():
-            experiment = self.add_experiment(f'Playthrough_{experiment_name}')
-            experiment["prompt_pc"] = prompt_pc #...
-            
-            for index, row in experiments[experiment_name][0].iterrows:
-            # build first instance
-                instance = self.add_game_instance(experiment, experiment_id)   
-            # get random levels
+        # experiments = {}
+        
+        experiment = self.add_experiment(f'Playthrough_{"mode"}')
 
-            # create a game instance within the experiment
-                initial_location = locations[0]
+        experiment['initial_prompt_pc'] = prompt_pc
+        # experiment['initial_prompt_npc'] = prompt_npc
+        # experiment['initial_prompt_assistant'] = prompt_assistant
 
-                # populate the game instance with its parameters
-                instance['n_levels'] = n_levels
-                instance['max_mainactions'] = max_mainactions
-                instance['max_subactions'] = max_subactions
+        experiment['n_levels'] = n_levels
+        experiment['max_mainactions'] = max_mainactions
+        experiment['max_subactions'] = max_subactions
 
-                instance['penalty_rules'] = penalty_rules
+        experiment['penalty_rules'] = penalty_rules
 
-                instance['initial_location'] = initial_location
+        for instance in range(N_INSTANCES): # what do we need to put here? number of levels?
+            game_instance = self.add_game_instance(experiment, instance)
+            game_instance["location"] = locations[0]
+
+
+
+
+            # for index, row in experiments[experiment_name][0].iterrows:
+            # # build first instance
+            #     instance = self.add_game_instance(experiment, experiment_id)   
+            # # get random levels
+
+            # # create a game instance within the experiment
+            #     initial_location = locations[0]
+
+            #     # populate the game instance with its parameters
+            #     instance['n_levels'] = n_levels
+            #     instance['max_mainactions'] = max_mainactions
+            #     instance['max_subactions'] = max_subactions
+
+            #     instance['penalty_rules'] = penalty_rules
+
+            #     instance['initial_location'] = initial_location
                 
-                instance['initial_prompt_pc'] = prompt_pc
-                instance['initial_prompt_npc'] = prompt_npc
-                instance['initial_prompt_assistant'] = prompt_assistant
+            #     instance['initial_prompt_pc'] = prompt_pc
+            #     instance['initial_prompt_npc'] = prompt_npc
+            #     instance['initial_prompt_assistant'] = prompt_assistant
 
 
 
