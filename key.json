@@ -1,0 +1,8 @@
+{
+  "generic_openai_compatible": {
+    "api_key": path_to_file,
+    "base_url": "https://api.endpoints.anyscale.com/v1"
+  }
+}
+
+# python scripts/cli.py run -g taboo -m Llama-3-70B-Instruct ---use this in the terminal with the api key and it should work
