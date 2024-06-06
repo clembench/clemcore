@@ -1,0 +1,6 @@
+{
+  "generic_openai_compatible": {
+    "api_key": path_to_api_key,
+    "base_url": "https://api.endpoints.anyscale.com/v1"
+  }
+}
