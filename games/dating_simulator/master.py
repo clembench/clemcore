@@ -9,6 +9,7 @@ from games.dating_simulator.game import PC, NPC, Assistant
 
 from games.dating_simulator.instancegenerator import GAME_NAME, GameInstanceGenerator
 
+# Dont use any parsing stuff in here, everything should be language-agnostic so u put all the regexes in game instance
 
 class DatingSimulatorGameMaster(GameMaster):
     """Implement mechanisms for playing Dating Simulator."""
