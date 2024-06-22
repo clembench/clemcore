@@ -270,7 +270,7 @@ class WordleGameMaster(GameMaster):
         return guess_after_criticism
 
     def play(self) -> None:
-        game = self.game
+        game = self.gamec
         guess = ""
         explanation = ""
         guess_feedback = None
