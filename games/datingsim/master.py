@@ -1,5 +1,6 @@
 import copy
 from typing import Dict, List
+from string import Template
 import numpy as np
 
 from backends import Model
@@ -8,37 +9,39 @@ from clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC
     METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE
 from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer, Player
 
-
-from games.datingsim.resources.initial_prompts.initial_pc import give_rules
 from games.datingsim.resources.prompts.pc_prompts import *
 from games.datingsim.resources.prompts.npc_prompts import *
 from games.datingsim.resources.prompts.assistant_prompts import *
+from games.datingsim.player import *
 
 GAME_NAME = "datingsim"
 logger = get_logger(__name__)
-
-#to be moved to instance generator
-patterns = {
-    "sex_age": "SEX:\\s*(\\w+)\\s*AGE:\\s*(\\d\\d)",
-    "f_number": "NUMBER:\\s*(.+?)",
-    "num_r": "NUMBER: (\\d)",
-    "num_reason": "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)",
-    "num_rea_res": "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)\\s*RESPONSE:\\s*(.+)",
-    "response": "'RESPONSE:\\s*(.+)"
-  }
 
 
 class DatingSimGameMaster(GameMaster):
     def __init__(self, game_name: str, experiment: Dict, player_models: List[Model]):
         super().__init__(game_name, experiment, player_models)
-        self.config = experiment
         self.initial_prompt_pc = experiment['initial_prompt_pc']
+        self.prompt_npc = experiment['initial_prompt_npc']
+        self.prompt_assistant = experiment['initial_prompt_assistant']
+
+        # regex patterns
+        self.pattern_sex_age = experiment["pattern_sex_age"] 
+        self.pattern_f_number = experiment["pattern_f_number"]
+        self.pattern_num_r = experiment["pattern_num_r"]
+        self.pattern_num_reason =experiment["pattern_num_reason"]
+        self.pattern_num_rea_res = experiment["pattern_num_rea_res"]
+        self.pattern_response = experiment["pattern_response"]
+
         self.max_mainactions = experiment['max_mainactions']
         self.max_subactions = experiment['max_subactions']
         self.n_levels = experiment['n_levels']
         self.name = experiment['name']
         self.penalty_rules = experiment['penalty_rules']
         self.current_turn = 0
+
+        self.aborted: bool = False # Boolean to stop game if parsing is incorrect. maybe we do not need it idk.
+        self.score = {} # affinity points
 
         # this may cause problems because of clembench max 2 player problem
         # but there is a chance we can force clembench to ignore scoring for npc and ass then it should work imo
@@ -76,24 +79,31 @@ class DatingSimGameMaster(GameMaster):
         player.history = []
         return answer
 
-    def _custom_response(self, messages, turn_idx):
-        # mock response for now
-        return f'Game Master: This should never happen.'
-
     def setup(self, **game_instance) -> None:
-        logger.info("setup")
-        # self.game_instance = game_instance
-        # self.ap = dict()
-        # put everything for the game instance
+        """
+        The function sets up the game with the given game instance configuration.
+        """
+        logger.info("Setup")
+
+        # import game instances
+        self.game_instance = game_instance
+        self.game_id = self.game_instance["game_id"]
+        self.location = game_instance["location"]
+        self.npc_candidates = game_instance["npcs"]
 
         # create player/s here
-        ##self.add_player(self.dupa)
+        self.pc = PC(self.model_a, "Player")
+        self.npc = NPC(self.model_b, "Date")
+        self.assistant = Assistant(self.model_c, "Assistant")
+        self.add_player(self.pc)
+        self.add_player(self.npc)
+        self.add_player(self.assistanta)
 
     def play(self):
         # this is our main pain
         # all the message patterns should be made in instance_generator
         # location and 3 NPC options should probably be provided in instance gen as well but it depends on choice
-        for i in range(self.num_levels):
+        for i in range(self.n_levels):
             self.current_turn += 1
             self.log_next_turn()
             self.add_message(self.dupa, "HI")
@@ -112,26 +122,26 @@ class DatingSimGameMaster(GameMaster):
 
             # randomize level for first level
             if i == 0:
-                location = locations[i]
+                location = self.location
 
                 # prompt
-                pc_initial_prompt = give_rules()
+                pc_initial_prompt = self.initial_prompt_pc
                 prompting(pc_initial_prompt, game_transcript, pc_transcript)
 
-                pattern = patterns['sex_age']
+                pattern = self.pattern_sex_age
                 response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
 
                 # end the game
                 if game_status == "abort":
                     break
 
-                choose_npc_prompt = choose_date(npc_sheets)
+                choose_npc_prompt = choose_date(self.npc_candidates)
 
                 prompting(choose_npc_prompt, game_transcript, pc_transcript)
 
                 # check if generated response is in the correct format
                 # Define the expected template pattern
-                pattern = patterns['f_number']
+                pattern = self.pattern_f_number
                 response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
                 if game_status == "abort":
                     break
@@ -139,7 +149,7 @@ class DatingSimGameMaster(GameMaster):
                 # clean the response
 
                 # regex to match the number and reason
-                number_pattern = patterns['num_r']
+                number_pattern = self.pattern_num_r
 
                 # get matches
                 number_match = re.search(number_pattern, response)
@@ -180,7 +190,7 @@ class DatingSimGameMaster(GameMaster):
                     # give prompt to pc
                     prompting(prompt, game_transcript, pc_transcript)
 
-                    pattern = patterns['num_reason']
+                    pattern = self.pattern_num_reason
                     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
                     if game_status == "abort":
                         break
@@ -195,7 +205,7 @@ class DatingSimGameMaster(GameMaster):
                     prompt = choose_further_mainaction(npc_transcript, location, j)
                     prompting(prompt, game_transcript, pc_transcript)
 
-                    pattern = patterns['num_reason']
+                    pattern = self.pattern_num_reason
                     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
                     if game_status == "abort":
                         break
@@ -210,7 +220,7 @@ class DatingSimGameMaster(GameMaster):
 
                 # prompt to npc
                 prompting(prompt, game_transcript, npc_transcript)
-                pattern = patterns['num_rea_res']
+                pattern = self.pattern_num_rea_res
                 response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
                 if game_status == "abort":
                     break
@@ -261,7 +271,7 @@ class DatingSimGameMaster(GameMaster):
                     # give generated options to pc
                     prompt = choose_further_subactions(sub_actions, npc_transcript)
                     prompting(prompt, game_transcript, pc_transcript)
-                    pattern = patterns['num_reason']
+                    pattern = self.pattern_num_reason
                     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
                     if game_status == "abort":
                         break
@@ -276,7 +286,7 @@ class DatingSimGameMaster(GameMaster):
                     prompt = get_npc_response(chosen_sub_action)
                     # prompt to npc
                     prompting(prompt, game_transcript, npc_transcript)
-                    pattern = patterns['num_rea_res']
+                    pattern = self.pattern_num_rea_res
                     response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
                     if game_status == "abort":
                         break
@@ -304,7 +314,7 @@ class DatingSimGameMaster(GameMaster):
                 # let PC chose the next location
                 prompt = choose_next_location(self.locations, i)
                 prompting(prompt, game_transcript, pc_transcript)
-                pattern = patterns['num_reason']
+                pattern = self.pattern_num_reason
                 response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
                 if game_status == "abort":
                     break
@@ -315,7 +325,7 @@ class DatingSimGameMaster(GameMaster):
                 location = locations[game_transcript[-1]["cleaned response"]["NUMBER"]]
                 prompt = next_date(location)
                 prompting(prompt, game_transcript, npc_transcript)
-                pattern = patterns['num_rea_res']
+                pattern = self.pattern_num_rea_res
                 response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
                 if game_status == "abort":
                     break
@@ -338,7 +348,7 @@ class DatingSimGameMaster(GameMaster):
                     # if so, prompt NPC to give positive response
                     pos_prompt = grant_next_date()
                     prompting(pos_prompt, game_transcript, npc_transcript)
-                    pattern = patterns['response']
+                    pattern = self.pattern_response
                     response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
                     if game_status == "abort":
                         break
@@ -347,7 +357,7 @@ class DatingSimGameMaster(GameMaster):
                 else:
                     neg_prompt = decline_next_date()
                     prompting(neg_prompt, game_transcript, npc_transcript)
-                    pattern = patterns['response']
+                    pattern = self.pattern_response
                     response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
                     if game_status == "abort":
                         break
@@ -355,7 +365,7 @@ class DatingSimGameMaster(GameMaster):
                 # clean the response
                 response = game_transcript[-1]["content"]
                 # regex to match the number and reason
-                response_pattern = r"RESPONSE: (.+)"
+                response_pattern = self.pattern_response
                 # get matches
                 response_match = re.search(response_pattern, response)
                 # Extract matched groups if they exist
@@ -395,7 +405,7 @@ class DatingSimGameMaster(GameMaster):
                 # generate answer of NPC
                 prompt = become_couple(answer)
                 prompting(prompt, game_transcript, npc_transcript)
-                pattern = patterns['response']
+                pattern = self.pattern_response
                 response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
                 if game_status == "abort":
                     break
@@ -403,7 +413,7 @@ class DatingSimGameMaster(GameMaster):
                 # clean the response
                 response = game_transcript[-1]["content"]
                 # regex to match the number and reason
-                response_pattern = patterns['response']
+                pattern = self.pattern_response
                 # get matches
                 response_match = re.search(response_pattern, response)
                 # Extract matched groups if they exist
@@ -744,7 +754,7 @@ class DatingSimGameScorer(GameScorer):
         # max_unpleasant_actions_in_a_row = experiment[max_unpleasant_actions_in_a_row]
         # penalty_for_unpleasant_actions = experiment[penalty_for_unpleasant_actions]
         accumulated_points = 0
-        level_threshold, max_points = scoring_sytem(max_num_actions, max_num_subactions)
+        level_threshold, max_points = scoring_sytem(self.max_num_actions, self.max_num_subactions)
 
         invalid_response = False
         pc_successful = False

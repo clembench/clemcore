@@ -1,6 +1,4 @@
-def give_rules():
-    rules_prompt = """
-    You are now playing a game.
+You are now playing a game.
 GOAL: Throughout the game, romance a character (NPC) and get as many affinity points as possible. 
 RULES: 
 1) Affinity points are gained by interactions with the NPC based on the choice of action and dialogue you choose. 
@@ -12,5 +10,3 @@ START: If you are ready to play the game, choose which gender and age you want t
 Use the following template to answer and nothing more or less. 
 SEX: 
 AGE:
-"""
-    return rules_prompt

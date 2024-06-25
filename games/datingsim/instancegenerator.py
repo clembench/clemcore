@@ -36,9 +36,9 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         locations = get_random_locations("./games/dating_simulator/resources/ex_location.json")
 
         # initial prompts 
-        prompt_pc = self.load_template('resources/initial_prompts/pc.template')
-        # prompt_npc = self.load_template('resources/initial_prompts/npc.template')
-        # prompt_assistant = self.load_template('resources/initial_prompts/assistant.template')
+        prompt_pc = self.load_template('./resources/initial_prompts/initial_pc_prompt.template')
+        prompt_npc = self.load_template('./resources/initial_prompts/initial_npc_prompt.template')
+        prompt_assistant = self.load_template('./resources/initial_prompts/initial_assistant_prompt.template')
 
         """
         for mode in ["easy", "normal", "hard"]:
@@ -51,8 +51,10 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         max_mainactions = 2
         max_subactions = 2
 
-        # # TODO: needs to be put where it belongs
+        # # TODO: work on these levels
         # levels = {1: "first", 2: "second", 3: "third"} # i.e: NOTE: This is their $level date. Here are the actions chosen by PC so far:
+        
+        # TODO: put these in the game-flow as the variables need to be replaced according to the PC and NPC decisions
         # prompt_npc = prompt_npc.substitute(character_sheet=character_sheet)
         # prompt_assistant = prompt_assistant.substitute(character_sheet=character_sheet, level=current_level,
         #                                                main_action_1=main_action_1, last_npc_response=last_npc_response,
@@ -66,12 +68,14 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
         # create an experiment for each playthrough
         # experiments = {}
-
-        experiment = self.add_experiment(f'Playthrough_{"mode"}')
+        mode = "easy"
+        experiment = self.add_experiment(f'Playthrough_{mode}')
 
         experiment['initial_prompt_pc'] = prompt_pc
-        #experiment['initial_prompt_npc'] = prompt_npc
-        #experiment['initial_prompt_assistant'] = prompt_assistant
+        experiment['initial_prompt_npc'] = prompt_npc
+        experiment['initial_prompt_assistant'] = prompt_assistant
+
+        # TODO: add regex patterns here I guess?
 
         experiment['n_levels'] = n_levels
         experiment['max_mainactions'] = max_mainactions
@@ -79,33 +83,21 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
         experiment['penalty_rules'] = penalty_rules
 
+        # regex patterns
+        # TODO: maybe we can go over these patterns later
+        experiment["pattern_sex_age"] = "SEX:\\s*(\\w+)\\s*AGE:\\s*(\\d\\d)"
+        experiment["pattern_f_number"] = "NUMBER:\\s*(.+?)"
+        experiment["pattern_num_r"] = "NUMBER: (\\d)"
+        experiment["pattern_num_reason"] = "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)"
+        experiment["pattern_num_rea_res"] = "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)\\s*RESPONSE:\\s*(.+)"
+        experiment["pattern_response"] = "'RESPONSE:\\s*(.+)"
+
         for instance in range(N_INSTANCES):  # what do we need to put here? number of levels?
             game_instance = self.add_game_instance(experiment, instance)
             game_instance["location"] = locations[0]
             game_instance["npcs"] = npcs
             # in case we add more locations, for now it's just one
             #game_instance["location"] = random.choice(locations)
-            # for index, row in experiments[experiment_name][0].iterrows:
-            # # build first instance
-            #     instance = self.add_game_instance(experiment, experiment_id)   
-            # # get random levels
-
-            # # create a game instance within the experiment
-            #     initial_location = locations[0]
-
-            #     # populate the game instance with its parameters
-            #     instance['n_levels'] = n_levels
-            #     instance['max_mainactions'] = max_mainactions
-            #     instance['max_subactions'] = max_subactions
-
-            #     instance['penalty_rules'] = penalty_rules
-
-            #     instance['initial_location'] = initial_location
-
-            #     instance['initial_prompt_pc'] = prompt_pc
-            #     instance['initial_prompt_npc'] = prompt_npc
-            #     instance['initial_prompt_assistant'] = prompt_assistant
-
 
 if __name__ == '__main__':
     random.seed(SEED)
