@@ -29,12 +29,8 @@ from games.datingsim.resources.prompts.pc_prompts import *
 from games.datingsim.resources.prompts.npc_prompts import *
 from games.datingsim.resources.prompts.assistant_prompts import *
 
-
 GAME_NAME = "datingsim"
 logger = get_logger(__name__)
-key_path = "games/datingsim/key.txt"
-##########################################################
-##########################################################
 
 
 class DatingSimGameMaster(GameMaster):
@@ -43,66 +39,70 @@ class DatingSimGameMaster(GameMaster):
         self.config = experiment
         self.initial_prompt_pc = experiment['initial_prompt_pc']
         self.max_mainactions = experiment['max_mainactions']
-       #continue this
-        # "max_mainactions": 4,
-        # "max_subactions": 4,
-        # "n_levels": 3,
-        # "name": "Playthrough_mode",
-        # "penalty_rules": {
-        #     "max_unpleasant_actions_in_a_row": 3,
-        #     "penalty_for_unpleasant_actions": -5
-        # }
+        self.max_subactions = experiment['max_subactions']
+        self.n_levels = experiment['n_levels']
+        self.name = experiment['name']
+        self.penalty_rules = experiment['penalty_rules']
         self.current_turn = 0
         self.model_pc = player_models[0]
         self.model_npc = player_models[1]
-        #self.model_ass = player_models[2]
+        # this may cause problems because of clembench max 2 player problem
+        self.model_ass = player_models[2]
         self.player_model_names = [
             player_model.get_name() for player_model in player_models
         ]
 
-    def add_player(self, player: Player):
+    def add_player(self, player: Player) -> None:
         idx = len(self.player_model_names)
-        #player pc and npc here
-        player.descriptor = f"PC"
+        # player pc and npc here
+        if idx == 0:
+            player.descriptor = f"PC"
+        elif idx == 1:
+            player.descriptor = f"NPC"
+        else:
+            player.descriptor = f"Assistant"
         self.player_model_names[str(player)] = player.descriptor
 
-    def add_message(self, player: Player, utterance: str, role="user")-> None:
-    # write function
+    def add_message(self, player: Player, utterance: str, role="user") -> None:
+        # write function, this needs to be merged with what is in GameMaster of dating_simulator/master.py
         player.history.append({'role': role, 'content': utterance})
         action = {'type': 'send message', 'content': utterance}
         self.log_event(from_='GM', to=str(self.player_model_names[str(player)]), action=action)
 
     def get_answer(self, player: Player) -> str:
-
+        # this needs to be merged with what is in GameMaster of dating_simulator/master.py
         prompt, raw_answer, answer = player(player.history, self.current_turn)
         action = {'type': 'get message', 'content': answer}
-        self.log_event(from_=str(self.player_model_names[str(player)]), to="GM", action=action, call=(copy.deepcopy(prompt), raw_answer))
+        self.log_event(from_=str(self.player_model_names[str(player)]), to="GM", action=action,
+                       call=(copy.deepcopy(prompt), raw_answer))
         player.history = []
         return answer
 
-
     def _custom_response(self, messages, turn_idx):
-        # mock response
+        # mock response for now
         return f'PC: This should never happen.'
 
     def setup(self, **game_instance) -> None:
         logger.info("setup")
         # self.game_instance = game_instance
         # self.ap = dict()
-        #put everything for the game instance
+        # put everything for the game instance
 
-        #create player here
-        #self.add_player(self.dupa)
-
+        # create player/s here
+        # self.add_player(self.dupa)
 
     def play(self):
+        # this is our main pain
+        # all the message patterns should be made in instance_generator
+        # location and 3 NPC options should probably be provided in instance gen as well but it depends on choice
         for i in range(self.num_levels):
             self.current_turn += 1
             self.log_next_turn()
             self.add_message(self.dupa, "HI")
             answer = self.get_answer(self.dupa)
             print(answer)
-            #self.add_message(self.playermodel, next_prompt)
+            # the thing below is different but that's what Niko has (the commented line)
+            # self.add_message(self.playermodel, next_prompt)
             affinity_points = 0
             instance_index = f"{i + 1}.0.0"
 
@@ -427,6 +427,8 @@ class DatingSimGameMaster(GameMaster):
                 prompting(prompt, game_transcript, pc_transcript)
 
 
+#this we need to change a lot since this is pretty much done by clembench automatically,
+#I will remove it once i make sure it's safe
 def prompting(prompt, general_transcript, specific_transcript, ):
     # 1. prepare prompt with
     # previous prompts, responses and new prompt
@@ -723,90 +725,14 @@ def scoring_sytem(max_num_actions, max_num_subactions, level):
     return threshold, max_points
 
 
-def ensure_folder_exists(folder_path):
-    if not os.path.exists(folder_path):
-        os.makedirs(folder_path)
-
-
-def count_files_in_folder(folder_path):
-    if not os.path.exists(folder_path):
-        return 0
-    return len([name for name in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, name))])
-
-
-def dump_dict_to_json(folder_path, dictionary):
-    # Ensure the folder exists
-    ensure_folder_exists(folder_path)
-
-    # Count the number of files in the folder
-    file_count = count_files_in_folder(folder_path)
-
-    # Create the file name based on the count
-    file_name = f"{file_count + 1}.json"
-
-    # Create the full file path
-    file_path = os.path.join(folder_path, file_name)
-
-    # Dump the dictionary to a JSON file
-    with open(file_path, 'w') as json_file:
-        json.dump(dictionary, json_file, indent=4)
-
-
 ##########################################################
 ##########################################################
 
-# with open(key_path, "r", encoding="UTF-8") as file:
-#     api_key = file.read()
-
-# # load data
-# npc_sheets_path = "./games/datingsim/resources/ex_NPC_sheet.json"
-# location_sheets_path = "./games/datingsim/resources/ex_location.json"
-#
-# # load character and location sheets
-# npc_sheets = load_data(npc_sheets_path, randomized=True)
-# locations = load_data(location_sheets_path, randomized=True)
-#
-# num_levels = 2
-# max_num_actions = 2
-# max_num_subactions = 2
-
-# generate transcript for each player
-pc_transcript = list()
-npc_transcript = list()
-assistant_transcript = list()
-game_transcript = list()
-
-# string to keep track of chosen actions
-all_chosen_actions = ""
-
-# list to keep track of replies of NPC
-npc_reaction_values = list()
-
-# count points of PC
-ap = dict()
-
-
-"""
-Here we dump all the gen
-"""
-
-folder_path = './examples'
-game_log = {
-    'pc_transcript': pc_transcript,
-    'npc_transcript': npc_transcript,
-    'assistant_transcript': assistant_transcript,
-    'game_transcript': game_transcript,
-    'all_chosen_actions': all_chosen_actions,
-    'npc_reaction_values': npc_reaction_values,
-    'affinity_points': ap
-}
-
-dump_dict_to_json(folder_path, game_log)
 
 class DatingSimGameScorer(GameScorer):
     def __init__(self, experiment: Dict, game_instance: Dict):
-         super().__init__(GAME_NAME, experiment, game_instance)
-    
+        super().__init__(GAME_NAME, experiment, game_instance)
+
     def compute_scores(self, episode_interactions: Dict) -> None:
         """Episode level scores"""
         # implement the penalty for unpleasant actions in the scoring system here
@@ -815,19 +741,19 @@ class DatingSimGameScorer(GameScorer):
         # find a way to reach instances file here. why can't I reach experiment variables here?
         turn_scores = []
         current_unpleasant_actions_in_a_row = 0
-        #max_unpleasant_actions_in_a_row = experiment[max_unpleasant_actions_in_a_row]
-        #penalty_for_unpleasant_actions = experiment[penalty_for_unpleasant_actions]
+        # max_unpleasant_actions_in_a_row = experiment[max_unpleasant_actions_in_a_row]
+        # penalty_for_unpleasant_actions = experiment[penalty_for_unpleasant_actions]
         accumulated_points = 0
         level_threshold, max_points = scoring_sytem(max_num_actions, max_num_subactions)
 
-        invalid_response = False 
+        invalid_response = False
         pc_successful = False
         # maybe add num_sub/main_actions ?
 
         for turn_idx, turn in enumerate(episode_interactions["turns"]):
-             turn_score = {"last_choice": None, "current_point": 0, "request_count": 1}
-             
-             for event in turn:
+            turn_score = {"last_choice": None, "current_point": 0, "request_count": 1}
+
+            for event in turn:
                 action = event["action"]
                 if action["type"] == "invalid format":
                     invalid_response = True
@@ -838,21 +764,21 @@ class DatingSimGameScorer(GameScorer):
                 if action["type"] == "affirmative response":
                     pc_successful = True
                     accumulated_points += accumulated_points + turn_score["current_point"]
-        
-             if invalid_response:
+
+            if invalid_response:
                 turn_score["violated_request_count"] = 1
                 turn_score["parsed_request_count"] = 0
-             else:
+            else:
                 turn_score["violated_request_count"] = 0
                 turn_score["parsed_request_count"] = 1
-            
-             self.log_turn_score(turn_idx, 'Accuracy', 1 if pc_successful else 0)
-             self.log_turn_score(turn_idx, 'Affinity Points', turn_score["current_point"])
-             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"])
-             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
-             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
-             turn_scores.append(turn_score)
-        
+
+            self.log_turn_score(turn_idx, 'Accuracy', 1 if pc_successful else 0)
+            self.log_turn_score(turn_idx, 'Affinity Points', turn_score["current_point"])
+            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"])
+            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
+            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
+            turn_scores.append(turn_score)
+
         violated_request_count = sum([turn["violated_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count)
 
@@ -867,10 +793,10 @@ class DatingSimGameScorer(GameScorer):
         total_affinity_points = sum([turn["affinity_points"] for turn in turn_scores])
         self.log_episode_score('Accumulated Affinity Points', total_affinity_points)
 
-        pc_successful = False # need to reset it for calculating episode success
+        pc_successful = False  # need to reset it for calculating episode success
         if total_affinity_points > level_threshold:
-            pc_successful =  True
-             
+            pc_successful = True
+
         # Common metrics
         if invalid_response:  # whether a violation of the game rules happened (response not parsable)
             self.log_episode_score(METRIC_ABORTED, 1)
@@ -883,13 +809,15 @@ class DatingSimGameScorer(GameScorer):
             if pc_successful:
                 self.log_episode_score(METRIC_SUCCESS, 1)
                 self.log_episode_score(METRIC_LOSE, 0)
-                self.log_episode_score(BENCH_SCORE, 100 / total_affinity_points / max_points * 100 )
+                self.log_episode_score(BENCH_SCORE, 100 / total_affinity_points / max_points * 100)
             else:
                 self.log_episode_score(METRIC_SUCCESS, 0)
                 self.log_episode_score(METRIC_LOSE, 1)
-                self.log_episode_score(BENCH_SCORE, 0) # 0 or the same formula as above?
-    
+                self.log_episode_score(BENCH_SCORE, 0)  # 0 or the same formula as above?
 
+
+# This is literally all done, we just need to adjust the "players" if single_player or not,
+# which it is, but it's a bigger discussion, leave it for now
 class DatingSimGameBenchmark(GameBenchmark):
 
     def __init__(self):
@@ -904,21 +832,21 @@ class DatingSimGameBenchmark(GameBenchmark):
         return "A game where LLM has to seduce the chosen NPC"
 
     def create_game_master(
-        self, experiment: Dict, player_models: List[Model]
+            self, experiment: Dict, player_models: List[Model]
     ) -> GameMaster:
         return DatingSimGameMaster(experiment, player_models)
 
     def create_game_scorer(self, experiment: Dict, game_instance: Dict) -> GameScorer:
         return DatingSimGameScorer(experiment, game_instance)
 
-#make it optional coz it is good only for programatic answers
-def main():
-    experiments = file_utils.load_json("in/instances.json", "datingsim")
-    instance = experiments["experiments"][0]["game_instances"][0]
-    master = DatingSimGameMaster(instance, ["Llama-3-70B-Together.ai", "Llama-3-70B-Together.ai"])
-    master.setup(**instance)
-    master.play()
-
-
-if __name__ == "__main__":
-    main()
+# make it optional coz it is good only for programmatic answers
+# def main():
+#     experiments = file_utils.load_json("in/instances.json", "datingsim")
+#     instance = experiments["experiments"][0]["game_instances"][0]
+#     master = DatingSimGameMaster(instance, ["Llama-3-70B-Together.ai", "Llama-3-70B-Together.ai"])
+#     master.setup(**instance)
+#     master.play()
+#
+#
+# if __name__ == "__main__":
+#     main()

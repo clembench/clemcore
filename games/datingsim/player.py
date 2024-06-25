@@ -15,6 +15,10 @@ class PC(Player):
         # all the important stuff goes here
         return None
 
+    # programmatic response
+    def _custom_response(self, messages, turn_idx) -> str:
+        return "nothing for now"
+
 
 class NPC(Player):
     def __init__(self, model_name: str, player: str):
@@ -27,6 +31,10 @@ class NPC(Player):
         # all the important stuff goes here
         return None
 
+    # programmatic response
+    def _custom_response(self, messages, turn_idx) -> str:
+        return "nothing for now"
+
 
 class Assistant(Player):
     def __init__(self, model_name: str, player: str):
@@ -38,3 +46,7 @@ class Assistant(Player):
     def __call__(self, messages: List[Dict], turn_idx) -> Tuple[Any, Any, str]:
         # all the important stuff goes here
         return None
+
+    # programmatic response
+    def _custom_response(self, messages, turn_idx) -> str:
+        return "nothing for now"
