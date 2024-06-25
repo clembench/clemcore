@@ -4,6 +4,7 @@ from typing import List, Tuple, Dict, Any
 from clemgame.clemgame import Player
 
 
+# model_name should actually be model but I know this may cause problems (applies to all player classes)
 class PC(Player):
     def __init__(self, model_name: str, player: str):
         super().__init__(model_name)
