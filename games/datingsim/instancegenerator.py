@@ -1,11 +1,18 @@
+"""
+Generate instances for the dating simulator game.
+
+Creates files in ./instances
+"""
+import random
 import os
 import json
+
 import clemgame
 from clemgame.clemgame import GameInstanceGenerator
-from utils import get_random_npcs, get_random_locations
-import random
 
-GAME_NAME = 'dating_simulator'
+from utils import get_random_npcs, get_random_locations
+
+GAME_NAME = 'datingsim'
 # we will create 10 instances for each experiment; vary this as you wish
 N_INSTANCES = 10
 # if the generation involves randomness, remember to set a random seed
@@ -19,8 +26,11 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
     def __init__(self, name: str):
         super().__init__(GAME_NAME)
         # self.instances = dict(experiments=list())
+    
+    def load_instances(self):
+        return self.load_json("in/instances")
 
-    def on_generate(self, ):
+    def on_generate(self):
         # get resources
         npcs = get_random_npcs("./games/dating_simulator/resources/ex_NPC_sheet.json")[:3]
         locations = get_random_locations("./games/dating_simulator/resources/ex_location.json")
@@ -37,9 +47,9 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
         # some fixed details:
 
-        n_levels = 3  # number of levels
-        max_mainactions = 4
-        max_subactions = 4
+        n_levels = 2  # number of levels
+        max_mainactions = 2
+        max_subactions = 2
 
         # # TODO: needs to be put where it belongs
         # levels = {1: "first", 2: "second", 3: "third"} # i.e: NOTE: This is their $level date. Here are the actions chosen by PC so far:
@@ -60,8 +70,8 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         experiment = self.add_experiment(f'Playthrough_{"mode"}')
 
         experiment['initial_prompt_pc'] = prompt_pc
-        # experiment['initial_prompt_npc'] = prompt_npc
-        # experiment['initial_prompt_assistant'] = prompt_assistant
+        #experiment['initial_prompt_npc'] = prompt_npc
+        #experiment['initial_prompt_assistant'] = prompt_assistant
 
         experiment['n_levels'] = n_levels
         experiment['max_mainactions'] = max_mainactions
