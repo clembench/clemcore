@@ -195,3 +195,4 @@ cython_debug/
 /venv_llamacpp/
 
 /games/dating_simulator/togethertest.py
+key.json
