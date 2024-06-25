@@ -19,14 +19,15 @@ from backends import Model
 from clemgame import get_logger
 from clemgame import metrics
 from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer, Player
-from utils import load_data
-from resources.initial_prompts.initial_pc import give_rules
-from resources.prompts.pc_prompts import *
-from resources.prompts.npc_prompts import *
-from resources.prompts.assistant_prompts import *
+from games.dating_simulator.utils import load_data
+from games.dating_simulator.resources.initial_prompts.initial_pc import give_rules
+from games.dating_simulator.resources.prompts.pc_prompts import *
+from games.dating_simulator.resources.prompts.npc_prompts import *
+from games.dating_simulator.resources.prompts.assistant_prompts import *
 
 
 GAME_NAME = "Dating Simulator"
+key_path = "games/dating_simulator/key.txt"
 logger = get_logger(__name__)
 ##########################################################
 ##########################################################
@@ -42,6 +43,7 @@ class DatingSimGameMaster(GameMaster):
     def _custom_response(self, messages, turn_idx):
         # mock response
         return f'PC: This should never happen.'
+
 
 
 def prompting(prompt, general_transcript, specific_transcript, ):
@@ -190,7 +192,7 @@ NUMBER:
 def check_if_continue_game(npc_reaction_values):
     """
     Function which checks the number of negative
-    responses of the NPC in a row. 
+    responses of the NPC in a row.
     """
     if len(npc_reaction_values) >= 2:
 
@@ -372,12 +374,12 @@ def dump_dict_to_json(folder_path, dictionary):
 ##########################################################
 ##########################################################
 
-with open("./key.txt", "r", encoding="UTF-8") as file:
+with open(key_path, "r", encoding="UTF-8") as file:
     api_key = file.read()
 
 # load data
-npc_sheets_path = "./resources/ex_NPC_sheet.json"
-location_sheets_path = "./resources/ex_location.json"
+npc_sheets_path = "games/dating_simulator/resources/ex_NPC_sheet.json"
+location_sheets_path = "games/dating_simulator/resources/ex_location.json"
 
 # load character and location sheets
 npc_sheets = load_data(npc_sheets_path, randomized=True)
@@ -431,7 +433,7 @@ for i in range(num_levels):
 
         prompting(choose_npc_prompt, game_transcript, pc_transcript)
 
-        # check if generated response is in the correct format 
+        # check if generated response is in the correct format
         # Define the expected template pattern
         pattern = r'NUMBER:\s*(.+?)'
         response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
@@ -474,9 +476,9 @@ for i in range(num_levels):
         instance_index = f"{i + 1}.{j + 1}.0"
 
         if j == 0:
-            # if it is the first main-action of the instance, 
-            # first give a location description and 
-            # immediatly after that the action options 
+            # if it is the first main-action of the instance,
+            # first give a location description and
+            # immediatly after that the action options
             prompt, actions = start_level(location, j)
 
             # give prompt to pc
@@ -538,10 +540,10 @@ for i in range(num_levels):
 
             instance_index = f"{i + 1}.{j + 1}.{k + 1}"
 
-            # generate prompt for assistant 
+            # generate prompt for assistant
 
             if k == 0:
-                # initial prompt to assistent 
+                # initial prompt to assistent
                 prompt = assistant_initial_prompt(i, all_chosen_actions, instance_index, npc_transcript, chosen_npc,
                                                   location)
 
@@ -565,10 +567,10 @@ for i in range(num_levels):
             if game_status == "abort":
                 break
 
-            # get number and reason 
+            # get number and reason
             get_number_and_reason(game_transcript, pc_transcript)
 
-            # get npc response 
+            # get npc response
             chosen_sub_action = sub_actions[int(pc_transcript[-1]["cleaned response"]["NUMBER"]) - 1]
             all_chosen_actions += instance_index + "\t" + chosen_main_action + "\n"
 
@@ -587,7 +589,7 @@ for i in range(num_levels):
             if affinity_points < 0:
                 affinity_points = 0
 
-            # check if game continues 
+            # check if game continues
             num_neg_values = check_if_continue_game(npc_reaction_values)
             if num_neg_values >= 2:
                 break
@@ -599,7 +601,7 @@ for i in range(num_levels):
         except:
             pass
         # if all main and sub actions are through
-        # or game is disturbed by penalty, 
+        # or game is disturbed by penalty,
         # let PC chose the next location
         prompt = choose_next_location(locations, i)
         prompting(prompt, game_transcript, pc_transcript)
@@ -634,7 +636,7 @@ for i in range(num_levels):
 
         neg_prompt = False  # quick solution
         if affinity_points >= threshold:
-            # if so, prompt NPC to give positive response 
+            # if so, prompt NPC to give positive response
             pos_prompt = grant_next_date()
             prompting(pos_prompt, game_transcript, npc_transcript)
             pattern = r'RESPONSE:\s*(.+)'
@@ -642,7 +644,7 @@ for i in range(num_levels):
             if game_status == "abort":
                 break
 
-            # if not, prompt NPC to give negative response 
+            # if not, prompt NPC to give negative response
         else:
             neg_prompt = decline_next_date()
             prompting(neg_prompt, game_transcript, npc_transcript)
@@ -669,7 +671,7 @@ for i in range(num_levels):
         game_transcript[-1].update(cleaned_response)
         npc_transcript[-1].update(cleaned_response)
 
-        # if date ends the date, end the whole game 
+        # if date ends the date, end the whole game
         if neg_prompt:
             # tell NPC to abort mission
             prompt = aborted_game_bc_of_npc(location, game_transcript, ap)
