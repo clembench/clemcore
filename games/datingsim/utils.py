@@ -43,6 +43,18 @@ def get_random_locations(location_sheet):
 
     return location_sheets
 
+def prompt_char_sheets(character_sheet):
+    prompt = f"""
+    GENDER: {character_sheet["GENDER"]}
+    AGE: {character_sheet["AGE"]}
+    APPEARANCE: {character_sheet["APPEARANCE"]}
+    LIKES: {character_sheet["LIKES"]}
+    DISLIKES: {character_sheet["DISLIKES"]}
+    HOBBIES: {character_sheet["HOBBIES"]}
+    SUMMARY: {character_sheet["SUMMARY"]}
+    """
+    return prompt
+
 
 
 #get_random_npcs("./npc_sheets.json")

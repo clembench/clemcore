@@ -7,21 +7,8 @@ To-Do:
 > work on function "further_actions()"
 """
 
-def prompt_char_sheets(character_sheet):
-    prompt = f"""
-    GENDER: {character_sheet["GENDER"]}
-    AGE: {character_sheet["AGE"]}
-    APPEARANCE: {character_sheet["APPEARANCE"]}
-    LIKES: {character_sheet["LIKES"]}
-    DISLIKES: {character_sheet["DISLIKES"]}
-    HOBBIES: {character_sheet["HOBBIES"]}
-    SUMMARY: {character_sheet["SUMMARY"]}
-    """
-    return prompt
-
- # character sheets file path
-
 def choose_date(path_to_npc_sheets):
+    # TODO: this needs to be implemented in game_flow. I added the thing in choose_date.template
     #####################
     # prompt npc sheets #
     #####################
@@ -39,15 +26,7 @@ def choose_date(path_to_npc_sheets):
     npc2 = prompt_char_sheets(npc_sheets[indices[1]])
     npc3 = prompt_char_sheets(npc_sheets[indices[2]])
 
-    choose_npc_prompt = f"""
-CHOOSE YOUR DATE: From the following list choose the NPC you want to date. Respond with the number of the chosen character with: NUMBER: 
-1) {npc1}
-2) {npc2}
-3) {npc3}
-
-Use the following template to answer and nothing more or less.
-NUMBER:
-"""
+    choose_npc_prompt = 
     
     return choose_npc_prompt
 
