@@ -104,42 +104,73 @@ class DatingSimGameMaster(GameMaster):
         # all the message patterns should be made in instance_generator
         # location and 3 NPC options should probably be provided in instance gen as well, but it depends on choice
         # we should make game_status True/False (according to Nick) which makes sense
-        # Initial interaction sequence (steps 1 to 6)w
+        # Initial interaction sequence (steps 1 to 6)
+
+        # TO ALL STEPS ADD MESSAGE PARTSING WHICH SHOULD BE A METHOD INSIDE GAME MASTER FOR NOW
 
         #added beginning of the game according to dating_simulator/master.py
         # part of it is already updated to show how to change from the earlier code to add_mess and get_answ
-        # further addition enforcing template on those actions is required
+        # further addition enforcing template and parsin mess on those actions is required
         self.log_next_turn()
 
         # Step 1: GM asks PC
         # What is your age, gender?
+        # further addition enforcing template and parsin mess on those actions is required
         self.add_message(self.pc, utterance=self.load_template('resources/questions/gm_to_pc.template'))
 
         # Step 2: PC replies to GM
         # Im 666 year old mekanik
+        # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
 
         # Step 3: GM asks PC again
         # Who do you wanna date?
-        self.load_template('resources/questions/gm_to_pc2.template')
+        # further addition enforcing template and parsin mess on those actions is required
         self.add_message(self.pc, utterance=self.load_template('resources/questions/gm_to_pc2.template'))
 
         # Step 4: PC replies to GM
         # I wanna date number 3
+        # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
 
         # Step 5: GM writes to NPC
         # You are now this person, reply ready if u got it
-        self.log_event(from_='GM', to='NPC', action={'type': 'send message', 'content': player_message})
-        self.npc.history.append({'role': 'user', 'content': player_message})
+        # further addition enforcing template and parsin mess on those actions is required
+        string = "here add template for you are now this person act accordingly"
+        self.add_message(self.pc, utterance=self.load_template(string))
 
         # Step 6: NPC responds to GM
         # ready
-        npc_message = self.npc._custom_response(self.npc.history, 1)
-        self.log_event(from_='NPC', to='GM', action={'type': 'send message', 'content': npc_message})
-        self.npc.history.append({'role': 'user', 'content': npc_message})
+        # further addition enforcing template and parsin mess on those actions is required
+        self.get_answer(self.npc)
 
-        for i in range(self.n_levels):
+        #for 1,2,3 (range doesn't include last number so we add 1)
+        for i in range(1, self.n_levels+1):
+            self.log_next_turn()
+
+            # Step 7: GM asks PC
+            # What main action u wanna?
+            gm_to_pc_message = self.load_template('resources/questions/gm_to_pc3.template')
+            self.add_message(self.pc, gm_to_pc_message)
+
+            # Step 8: PC replies to GM
+            # I wanna do yoga
+            self.get_answer(self.npc)
+
+
+            # Step 9: GM writes to NPC
+            # your partner wanna do yoga, judge them
+            message = "you partner wanna do action X, judge them"
+            gm_to_npc_message = self.load_template(message)
+            self.add_message(self.pc, gm_to_npc_message)
+
+            # Step 10: NPC replies to GM
+            # i judge them like this
+            self.get_answer(self.npc)
+
+            # GM makes a decision
+            # Ok do i continue main action, change main action or end game?
+            dupa = self.make_decision()  # Decide "continue", "try again", or "dumped"
             self.current_turn += 1
             self.log_next_turn()
             #this is first mess to PC
@@ -160,54 +191,55 @@ class DatingSimGameMaster(GameMaster):
             except:
                 pass
 
-            # randomize level for first level
-            if i == 0:
-                location = self.location
-
-                # prompt
-                pc_initial_prompt = self.initial_prompt_pc
-                prompting(pc_initial_prompt, game_transcript, pc_transcript)
-
-                pattern = self.pattern_sex_age
-                response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
-
-                # end the game
-                if game_status == "abort":
-                    break
-
-                choose_npc_prompt = choose_date(self.npc_candidates)
-
-                prompting(choose_npc_prompt, game_transcript, pc_transcript)
-
-                # check if generated response is in the correct format
-                # Define the expected template pattern
-                pattern = self.pattern_f_number
-                response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
-                if game_status == "abort":
-                    break
-
-                # clean the response
-
-                # regex to match the number and reason
-                number_pattern = self.pattern_num_r
-
-                # get matches
-                number_match = re.search(number_pattern, response)
-
-                # Extract matched groups if they exist
-                if number_match:
-                    number = number_match.group(1)
-                else:
-                    number = None
-
-                cleaned_response = {"cleaned response": {
-                    "NUMBER": int(number)}
-                }
-
-                game_transcript[-1].update(cleaned_response)
-                pc_transcript[-1].update(cleaned_response)
-
-                chosen_npc = npc_sheets[int(number) - 1]
+            # this what is done above is for all levels and the code below should be adapted to the code above
+            # # randomize level for first level
+            # if i == 0:
+            #     location = self.location
+            #
+            #     # prompt
+            #     pc_initial_prompt = self.initial_prompt_pc
+            #     prompting(pc_initial_prompt, game_transcript, pc_transcript)
+            #
+            #     pattern = self.pattern_sex_age
+            #     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
+            #
+            #     # end the game
+            #     if game_status == "abort":
+            #         break
+            #
+            #     choose_npc_prompt = choose_date(self.npc_candidates)
+            #
+            #     prompting(choose_npc_prompt, game_transcript, pc_transcript)
+            #
+            #     # check if generated response is in the correct format
+            #     # Define the expected template pattern
+            #     pattern = self.pattern_f_number
+            #     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
+            #     if game_status == "abort":
+            #         break
+            #
+            #     # clean the response
+            #
+            #     # regex to match the number and reason
+            #     number_pattern = self.pattern_num_r
+            #
+            #     # get matches
+            #     number_match = re.search(number_pattern, response)
+            #
+            #     # Extract matched groups if they exist
+            #     if number_match:
+            #         number = number_match.group(1)
+            #     else:
+            #         number = None
+            #
+            #     cleaned_response = {"cleaned response": {
+            #         "NUMBER": int(number)}
+            #     }
+            #
+            #     game_transcript[-1].update(cleaned_response)
+            #     pc_transcript[-1].update(cleaned_response)
+            #
+            #     chosen_npc = npc_sheets[int(number) - 1]
 
             # I believe all before this should be in setup
 
@@ -215,7 +247,7 @@ class DatingSimGameMaster(GameMaster):
             # here starts what is applicable to every level
             #################################################
 
-            #here we make a while loop for game_status = True
+            # here we make a while loop for game_status = True
             # we should have a function check if game ends imo
             for j in range(self.max_mainactions):
                 try:
