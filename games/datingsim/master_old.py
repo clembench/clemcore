@@ -1,5 +1,4 @@
 import copy
-import re
 from typing import Dict, List
 from string import Template
 import numpy as np
@@ -109,42 +108,20 @@ class DatingSimGameMaster(GameMaster):
 
         # TO ALL STEPS ADD MESSAGE PARTSING WHICH SHOULD BE A METHOD INSIDE GAME MASTER FOR NOW
 
-
-
-        # ADD LOCATION HERE!!!!!!!!!!!!
-        location = self.location
-
-
-
         #added beginning of the game according to dating_simulator/master.py
         # part of it is already updated to show how to change from the earlier code to add_mess and get_answ
         # further addition enforcing template and parsin mess on those actions is required
         self.log_next_turn()
-
-        self.current_turn += 1
-        self.log_next_turn()
-
-        affinity_points = 0
-        instance_index = f"{i + 1}.0.0"
 
         # Step 1: GM asks PC
         # What is your age, gender?
         # further addition enforcing template and parsin mess on those actions is required
         self.add_message(self.pc, utterance=self.load_template('resources/questions/gm_to_pc.template'))
 
-        #ENFORCE TEMPLATE + BELOW
-        #     # end the game
-        #     if game_status == "abort":
-        #         break
-        #
-
         # Step 2: PC replies to GM
         # Im 666 year old mekanik
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
-
-
-        #     choose_npc_prompt = choose_date(self.npc_candidates)
 
         # Step 3: GM asks PC again
         # Who do you wanna date?
@@ -156,37 +133,6 @@ class DatingSimGameMaster(GameMaster):
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
 
-        #                   IMGE CODE!!!!!!!!!!!!!!!!!!!
-        #     # check if generated response is in the correct format
-        #     # Define the expected template pattern
-        #     pattern = self.pattern_f_number
-        #     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
-        #     if game_status == "abort":
-        #         break
-        #
-        #     # clean the response
-        #
-        #     # regex to match the number and reason
-        #     number_pattern = self.pattern_num_r
-        #
-        #     # get matches
-        #     number_match = re.search(number_pattern, response)
-        #
-        #     # Extract matched groups if they exist
-        #     if number_match:
-        #         number = number_match.group(1)
-        #     else:
-        #         number = None
-        #
-        #     cleaned_response = {"cleaned response": {
-        #         "NUMBER": int(number)}
-        #     }
-        #
-        #     game_transcript[-1].update(cleaned_response)
-        #     pc_transcript[-1].update(cleaned_response)
-        #
-        #     chosen_npc = npc_sheets[int(number) - 1]
-
         # Step 5: GM writes to NPC
         # You are now this person, reply ready if u got it
         # further addition enforcing template and parsin mess on those actions is required
@@ -197,31 +143,16 @@ class DatingSimGameMaster(GameMaster):
         # ready
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.npc)
-        # the start (all code before) is only for one game-play
 
-
-
-        # THIS IS FOR NO-LVL GAME FOR NOW!!!!!
+        if lvl = first_level:
+            location randomly chosen
+        else:
+            location chosen by PC
 
         #for 1,2,3 (range doesn't include last number so we add 1)
         # range = main_actions
-        for level in range(1, self.n_levels+1):
-            try:
-                if game_status == "abort":
-                    break
-            except:
-                pass
+        for main_action in range(1, self.max_mainactions+1):
             self.log_next_turn()
-
-
-            if lvl = first_level:
-                location randomly chosen
-                different prompt here!
-            else:
-                location chosen by PC
-                also some adjusted reaction here
-                "oh u passed the first lvl bla bla"
-                maybe some NPC reaction too
 
             # Step 7: GM asks PC
             # What main action u wanna?
@@ -231,6 +162,7 @@ class DatingSimGameMaster(GameMaster):
             # Step 8: PC replies to GM
             # I wanna do yoga
             self.get_answer(self.npc)
+
 
             # Step 9: GM writes to NPC
             # your partner wanna do yoga, judge them
@@ -245,7 +177,17 @@ class DatingSimGameMaster(GameMaster):
             # GM makes a decision
             # Ok do i continue main action, change main action or end game?
             dupa = self.make_decision()  # Decide "continue", "try again", or "dumped"
-
+            self.current_turn += 1
+            self.log_next_turn()
+            #this is first mess to PC
+            self.add_message(self.dupa, "HI")
+            #here we get a choice for NPC
+            answer = self.get_answer(self.dupa)
+            print(answer)
+            # the thing below is different but that's what Niko has (the commented line)
+            # self.add_message(self.playermodel, next_prompt)
+            affinity_points = 0
+            instance_index = f"{i + 1}.0.0"
 
             #this should be a while loop over all of this code but maybe not for first lvl generation which
             # should be in setup
@@ -255,19 +197,78 @@ class DatingSimGameMaster(GameMaster):
             except:
                 pass
 
+            # this what is done above is for all levels and the code below should be adapted to the code above
+            # # randomize level for first level
+            # if i == 0:
+            #     location = self.location
+            #
+            #     # prompt
+            #     pc_initial_prompt = self.initial_prompt_pc
+            #     prompting(pc_initial_prompt, game_transcript, pc_transcript)
+            #
+            #     pattern = self.pattern_sex_age
+            #     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
+            #
+            #     # end the game
+            #     if game_status == "abort":
+            #         break
+            #
+            #     choose_npc_prompt = choose_date(self.npc_candidates)
+            #
+            #     prompting(choose_npc_prompt, game_transcript, pc_transcript)
+            #
+            #     # check if generated response is in the correct format
+            #     # Define the expected template pattern
+            #     pattern = self.pattern_f_number
+            #     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
+            #     if game_status == "abort":
+            #         break
+            #
+            #     # clean the response
+            #
+            #     # regex to match the number and reason
+            #     number_pattern = self.pattern_num_r
+            #
+            #     # get matches
+            #     number_match = re.search(number_pattern, response)
+            #
+            #     # Extract matched groups if they exist
+            #     if number_match:
+            #         number = number_match.group(1)
+            #     else:
+            #         number = None
+            #
+            #     cleaned_response = {"cleaned response": {
+            #         "NUMBER": int(number)}
+            #     }
+            #
+            #     game_transcript[-1].update(cleaned_response)
+            #     pc_transcript[-1].update(cleaned_response)
+            #
+            #     chosen_npc = npc_sheets[int(number) - 1]
+
+            # I believe all before this should be in setup
+
+            #################################################
+            # here starts what is applicable to every level
+            #################################################
 
             # here we make a while loop for game_status = True
             # we should have a function check if game ends imo
-            for main_action in range(self.max_mainactions):
+            for action in range(self.max_subactions):
+                try:
+                    if game_status == "abort":
+                        break
+                except:
+                    pass
+                instance_index = f"{i + 1}.{j + 1}.0"
 
-                instance_index = f"{main_action + 1}.{subaction + 1}.0"
-
-                if main_action == 0:
-
+                if j == 0:
+                    #this should be subaction loop and ignore the loops below
                     # if it is the first main-action of the instance,
                     # first give a location description and
                     # immediatly after that the action options
-                    prompt, actions = start_level(location, main_action)
+                    prompt, actions = start_level(location, j)
 
                     # give prompt to pc
                     prompting(prompt, game_transcript, pc_transcript)
@@ -285,7 +286,7 @@ class DatingSimGameMaster(GameMaster):
 
                 else:
                     # so this is for every main action that is NOT first main action for lvl
-                    prompt = choose_further_mainaction(npc_transcript, location, main_action)
+                    prompt = choose_further_mainaction(npc_transcript, location, j)
                     prompting(prompt, game_transcript, pc_transcript)
 
                     pattern = self.pattern_num_reason
@@ -325,18 +326,18 @@ class DatingSimGameMaster(GameMaster):
                 # generate sub-actions
                 # not only, it also prompts it (assistant creation) to PC, NPC and gets their reactions
                 # we should have a function check if game ends imo
-                for subaction in range(self.max_subactions):
+                for k in range(self.max_subactions):
                     try:
                         if game_status == "abort":
                             break
                     except:
                         pass
 
-                    instance_index = f"{level + 1}.{main_action + 1}.{subaction + 1}"
+                    instance_index = f"{i + 1}.{j + 1}.{k + 1}"
 
                     # generate prompt for assistant
 
-                    if subaction == 0:
+                    if k == 0:
                         # initial prompt to assistent
                         prompt = assistant_initial_prompt(i, all_chosen_actions, instance_index, npc_transcript,
                                                           chosen_npc,
@@ -395,19 +396,16 @@ class DatingSimGameMaster(GameMaster):
 
             #again this should be in game_status true or not, or
             # we should have a function check if game ends imo
-            if level < self.num_levels:
+            if i < self.num_levels:
                 try:
                     if game_status == "abort":
                         break
                 except:
                     pass
-
                 # if all main and sub actions are through
-                # or game is disturbed by penalty ????????
+                # or game is disturbed by penalty,
                 # let PC chose the next location
-
-                # this is already above
-                prompt = choose_next_location(self.locations, level)
+                prompt = choose_next_location(self.locations, i)
                 prompting(prompt, game_transcript, pc_transcript)
                 pattern = self.pattern_num_reason
                 response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
@@ -432,7 +430,7 @@ class DatingSimGameMaster(GameMaster):
                 if affinity_points < 0:
                     affinity_points = 0
 
-                ap.update({f"lv{level}": affinity_points})
+                ap.update({f"lv{i}": affinity_points})
 
                 # check if PC has chance for a next date
                 number_of_accessed_actions = len(npc_reaction_values)
@@ -520,7 +518,8 @@ class DatingSimGameMaster(GameMaster):
                     "RESPONSE": res}
                 }
 
-                #add logging here for sure
+                game_transcript[-1].update(cleaned_response)
+                npc_transcript[-1].update(cleaned_response)
 
                 # prompt to PC that they have asked NPC to become an
                 # official pair and give it the response of the NPC to
@@ -529,6 +528,36 @@ class DatingSimGameMaster(GameMaster):
 
                 prompting(prompt, game_transcript, pc_transcript)
 
+
+#this we need to change a lot since this is pretty much done by clembench automatically,
+#I will remove it once i make sure it's safe
+#
+# def prompting(prompt, general_transcript, specific_transcript, ):
+#     # 1. prepare prompt with
+#     # previous prompts, responses and new prompt
+#     new_prompt = {"role": "user", "content": prompt}
+#
+#     specific_transcript.append(new_prompt)
+#
+#     # 2. prompt to LLM
+#     client = Together(api_key=api_key)
+#     response_raw = client.chat.completions.create(
+#         model="meta-llama/Llama-3-8b-chat-hf",
+#         messages=specific_transcript,
+#     )
+#
+#     response = response_raw.choices[0].message.content
+#
+#     # generate new entry in transcript with response
+#     response_entry = {"role": "assistant",
+#                       "content": response,
+#                       }
+#
+#     general_transcript.append(new_prompt)
+#     general_transcript.append(response_entry)
+#     specific_transcript.append(response_entry)
+#
+#     # return general_transcript, specific_transcript
 
 
 def enforce_template(pattern, game_transcript, specific_transcript):

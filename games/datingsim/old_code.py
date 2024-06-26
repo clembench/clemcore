@@ -95,3 +95,36 @@
 #
 # if __name__ == "__main__":
 #     main()
+
+
+
+#this we need to change a lot since this is pretty much done by clembench automatically,
+#I will remove it once i make sure it's safe
+#
+# def prompting(prompt, general_transcript, specific_transcript, ):
+#     # 1. prepare prompt with
+#     # previous prompts, responses and new prompt
+#     new_prompt = {"role": "user", "content": prompt}
+#
+#     specific_transcript.append(new_prompt)
+#
+#     # 2. prompt to LLM
+#     client = Together(api_key=api_key)
+#     response_raw = client.chat.completions.create(
+#         model="meta-llama/Llama-3-8b-chat-hf",
+#         messages=specific_transcript,
+#     )
+#
+#     response = response_raw.choices[0].message.content
+#
+#     # generate new entry in transcript with response
+#     response_entry = {"role": "assistant",
+#                       "content": response,
+#                       }
+#
+#     general_transcript.append(new_prompt)
+#     general_transcript.append(response_entry)
+#     specific_transcript.append(response_entry)
+#
+#     # return general_transcript, specific_transcript
+
