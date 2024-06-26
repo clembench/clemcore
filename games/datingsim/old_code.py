@@ -84,3 +84,14 @@
 #         json.dump(dictionary, json_file, indent=4)
 
 
+# make it optional coz it is good only for programmatic answers
+# def main():
+#     experiments = file_utils.load_json("in/instances.json", "datingsim")
+#     instance = experiments["experiments"][0]["game_instances"][0]
+#     master = DatingSimGameMaster(instance, ["Llama-3-70B-Together.ai", "Llama-3-70B-Together.ai"])
+#     master.setup(**instance)
+#     master.play()
+#
+#
+# if __name__ == "__main__":
+#     main()

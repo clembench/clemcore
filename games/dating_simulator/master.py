@@ -94,7 +94,7 @@ class DatingSimulatorGameMaster(GameMaster):
         self.player.history.append({'role': 'system', 'content': gm_to_pc_message})
 
         # Step 2: PC replies to GM
-        # Im 666 year old potato
+        # Im 666 year old mekanik
         player_message = self.player._custom_response(self.player.history, 1)
         self.log_event(from_='PC', to='GM', action={'type': 'send message', 'content': player_message})
         self.player.history.append({'role': 'assistant', 'content': player_message})
