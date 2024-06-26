@@ -1,0 +1,11 @@
+NPC'S RESPONSE: $npc_response
+
+Choose one of the following SUB ACTIONS and reason why you have chosen it:
+1) $action1
+2) $action2
+3) $action3
+4) $action4
+
+Use the following template to answer:
+NUMBER:
+REASON:

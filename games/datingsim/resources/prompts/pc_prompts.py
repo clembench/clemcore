@@ -26,33 +26,23 @@ def choose_date(path_to_npc_sheets):
     npc2 = prompt_char_sheets(npc_sheets[indices[1]])
     npc3 = prompt_char_sheets(npc_sheets[indices[2]])
 
-    choose_npc_prompt = 
+    #choose_npc_prompt = 
     
     return choose_npc_prompt
 
 
 def start_level(location, main_action_number):
     #####################
-    # prompt location ##
+    # prompt location ## TODO: needs to be implemented in game-flow. also check: start_level.template
     #####################
 
     actions = location["MAIN-ACTIONS"][main_action_number*4:main_action_number*4+4]
-    location_prompt = f"""START: You are in {location["LOCATION"]}
-{location["DESCRIPTION"]} 
-
-ACTION: Choose one of the following actions and reason why you have chosen it:
-1) {actions[0]}
-2) {actions[1]}
-3) {actions[2]}
-4) {actions[3]}
-
-Use the following template to answer:
-NUMBER:
-REASON:
-"""
+    location_prompt = start_level.template
+    
     return location_prompt, actions
 
 def choose_further_mainaction(npc_transcript, location, main_action_number):
+    # TODO needs to be in game-flow. further check choose_further_mainaction.template
     """
     Function which prompts all following SUB- and MAIN-ACTIONS.
 
@@ -70,22 +60,11 @@ def choose_further_mainaction(npc_transcript, location, main_action_number):
     
     actions = location["MAIN-ACTIONS"][main_action_number*4:main_action_number*4+4]
 
-    sub_actions_prompt = f"""
-NPC'S RESPONSE: {npc_response}
-
-Choose one of the following SUB ACTIONS and reason why you have chosen it:
-1) {actions[0]}
-2) {actions[1]}
-3) {actions[2]}
-4) {actions[3]}
-
-Use the following template to answer:
-NUMBER:
-REASON:
-""" 
+    sub_actions_prompt = choose_further_mainaction.template
     return sub_actions_prompt
 
 def choose_further_subactions(sub_actions, npc_transcript):
+    # TODO needs to be in game-flow. further check choose_further_subaction.template
     """
     Function which prompts all following SUB- and MAIN-ACTIONS.
 
@@ -100,32 +79,17 @@ def choose_further_subactions(sub_actions, npc_transcript):
     """
 
     npc_response = npc_transcript[-1]["cleaned response"]["ANSWER"]
-    sub_actions_prompt = f"""
-NPC'S RESPONSE: {npc_response}
-
-Choose one of the following SUB ACTIONS and reason why you have chosen it:
-{sub_actions}
-
-Use the following template to answer:
-NUMBER:
-REASON:
-""" 
+    sub_actions_prompt = ""
     return sub_actions_prompt
 
 def choose_next_location(locations, level):
+    # TODO implement in gameflow. further check choose_next_location.template
     location_options = locations[(level+1)**2:(level+1)**2+3]
-    prompt = f"""Choose one of the following LOCATIONS for your next date.
-1) {location_options[0]}
-2) {location_options[1]}
-3) {location_options[2]}
-
-Use the following template to answer:
-NUMBER:
-REASON:
-"""
+    prompt = f""
     return prompt
 
 def end_game(game_transcript, answer, ap):
+    # TODO gotta dissect this into a if else statement in master.py and .template
     # message from DM to PC that the game has ended 
 
     npc_response = game_transcript[-1]["content"]["cleaned response"]["RESPONSE"]
@@ -139,23 +103,6 @@ def end_game(game_transcript, answer, ap):
     Your date answers with
         {npc_response}
 {end}
-
-THE END 
-And with this you have finished the game. Here are your statistics:
-{ap}
-
-Thank you for playing rizzSim!
-
-Do not answer to this message.
-"""
-    return prompt
-
-def aborted_game_bc_of_npc(location, game_transcript, ap):
-    prompt = f"""
-You asked your date for a next date at the {location}.
-Unfortunatly, your date is not interested to meet you again and says {game_transcript[-1]["cleaned response"]["RESPONSE"]}
-
-Better luck next time, hopless romantic birdy.
 
 THE END 
 And with this you have finished the game. Here are your statistics:
