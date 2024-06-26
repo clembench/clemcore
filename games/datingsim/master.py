@@ -156,37 +156,6 @@ class DatingSimGameMaster(GameMaster):
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
 
-        #                   IMGE CODE!!!!!!!!!!!!!!!!!!!
-        #     # check if generated response is in the correct format
-        #     # Define the expected template pattern
-        #     pattern = self.pattern_f_number
-        #     response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
-        #     if game_status == "abort":
-        #         break
-        #
-        #     # clean the response
-        #
-        #     # regex to match the number and reason
-        #     number_pattern = self.pattern_num_r
-        #
-        #     # get matches
-        #     number_match = re.search(number_pattern, response)
-        #
-        #     # Extract matched groups if they exist
-        #     if number_match:
-        #         number = number_match.group(1)
-        #     else:
-        #         number = None
-        #
-        #     cleaned_response = {"cleaned response": {
-        #         "NUMBER": int(number)}
-        #     }
-        #
-        #     game_transcript[-1].update(cleaned_response)
-        #     pc_transcript[-1].update(cleaned_response)
-        #
-        #     chosen_npc = npc_sheets[int(number) - 1]
-
         # Step 5: GM writes to NPC
         # You are now this person, reply ready if u got it
         # further addition enforcing template and parsin mess on those actions is required
@@ -199,9 +168,6 @@ class DatingSimGameMaster(GameMaster):
         self.get_answer(self.npc)
         # the start (all code before) is only for one game-play
 
-
-
-        # THIS IS FOR NO-LVL GAME FOR NOW!!!!!
 
         #for 1,2,3 (range doesn't include last number so we add 1)
         # range = main_actions
@@ -238,7 +204,8 @@ class DatingSimGameMaster(GameMaster):
 
                     # Step 7: GM asks PC
                     # Description of location + What main action u wanna?
-                    gm_to_pc_message = self.load_template('resources/questions/gm_to_pc3.template')
+                    some_template = ''
+                    gm_to_pc_message = self.load_template(some_template)
                     self.add_message(self.pc, gm_to_pc_message)
 
                     # this should be a while loop over all of this code but maybe not for first lvl generation which
