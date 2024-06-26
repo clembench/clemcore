@@ -125,14 +125,14 @@ class DatingSimGameMaster(GameMaster):
         self.log_next_turn()
 
         affinity_points = 0
+        # "i" should be level number, idk i think i misplaced it since i changed the loops ;-;
         instance_index = f"{i + 1}.0.0"
 
         # Step 1: GM asks PC
         # What is your age, gender?
         # further addition enforcing template and parsin mess on those actions is required
-        self.add_message(self.pc, utterance=self.load_template('resources/questions/gm_to_pc.template'))
+        self.add_message(self.pc, utterance=self.load_template('resources/initial_prompts/initial_pc_prompt.template'))
 
-        #ENFORCE TEMPLATE + BELOW
         #     # end the game
         #     if game_status == "abort":
         #         break
@@ -143,13 +143,12 @@ class DatingSimGameMaster(GameMaster):
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
 
-
         #     choose_npc_prompt = choose_date(self.npc_candidates)
 
         # Step 3: GM asks PC again
         # Who do you wanna date?
         # further addition enforcing template and parsin mess on those actions is required
-        self.add_message(self.pc, utterance=self.load_template('resources/questions/gm_to_pc2.template'))
+        self.add_message(self.pc, utterance=self.load_template('resources/prompts/choose_date.template'))
 
         # Step 4: PC replies to GM
         # I wanna date number 3
@@ -159,6 +158,8 @@ class DatingSimGameMaster(GameMaster):
         # Step 5: GM writes to NPC
         # You are now this person, reply ready if u got it
         # further addition enforcing template and parsin mess on those actions is required
+
+        # this template is more tricky
         string = "here add template for you are now this person act accordingly"
         self.add_message(self.pc, utterance=self.load_template(string))
 
@@ -181,6 +182,7 @@ class DatingSimGameMaster(GameMaster):
 
 
             if lvl = first_level:
+
                 location randomly chosen
                 different prompt here!
             else:
@@ -194,7 +196,6 @@ class DatingSimGameMaster(GameMaster):
             # we should have a function check if game ends imo
             for main_action in range(self.max_mainactions):
 
-
                 if this is first main_action:
 
                     # if it is the first main-action of the instance,
@@ -204,8 +205,7 @@ class DatingSimGameMaster(GameMaster):
 
                     # Step 7: GM asks PC
                     # Description of location + What main action u wanna?
-                    some_template = ''
-                    gm_to_pc_message = self.load_template(some_template)
+                    gm_to_pc_message = self.load_template('resources/prompts/start_level.template')
                     self.add_message(self.pc, gm_to_pc_message)
 
                     # this should be a while loop over all of this code but maybe not for first lvl generation which
@@ -225,31 +225,7 @@ class DatingSimGameMaster(GameMaster):
                     gm_to_pc_message = self.load_template('resources/questions/gm_to_pc3.template')
                     self.add_message(self.pc, gm_to_pc_message)
 
-                    # Step 8: PC replies to GM
-                    # I wanna do yoga
-                    self.get_answer(self.npc)
 
-                    # Step 9: GM writes to NPC
-                    # your partner wanna do yoga, judge them
-                    message = "you partner wanna do action X, judge them"
-                    gm_to_npc_message = self.load_template(message)
-                    self.add_message(self.pc, gm_to_npc_message)
-
-                    # Step 10: NPC replies to GM
-                    # i judge them like this
-                    self.get_answer(self.npc)
-
-                    # GM makes a decision
-                    # Ok do i continue main action, change main action or end game?
-                    dupa = self.make_decision()  # Decide "continue", "try again", or "dumped"
-
-                    # this should be a while loop over all of this code but maybe not for first lvl generation which
-                    # should be in setup
-                    try:
-                        if game_status == "abort":
-                            break
-                    except:
-                        pass
 
                 # all from here is repeatable for any main action and any lvl
                 all_chosen_actions += instance_index + "\t" + chosen_main_action + "\n"
@@ -260,8 +236,7 @@ class DatingSimGameMaster(GameMaster):
 
                 # Step 9: GM writes to NPC
                 # your partner wanna do yoga, judge them
-                message = "you partner wanna do action X, judge them"
-                gm_to_npc_message = self.load_template(message)
+                gm_to_npc_message = self.load_template('resources/prompts/get_npc_response.template')
                 self.add_message(self.pc, gm_to_npc_message)
 
                 # Step 10: NPC replies to GM
@@ -274,6 +249,15 @@ class DatingSimGameMaster(GameMaster):
                 affinity_points += npc_reaction_value
                 if affinity_points < 0:
                     affinity_points = 0
+
+                # this should be a while loop over all of this code but maybe not for first lvl generation which
+                # should be in setup
+                try:
+                    if game_status == "abort":
+                        break
+                except:
+                    pass
+
 
                 # we should have a function check if game ends imo
                 num_neg_values = check_if_continue_game(npc_reaction_values)
@@ -296,9 +280,7 @@ class DatingSimGameMaster(GameMaster):
                     # Step 11: GM writes to ASSISTANT
                     # Gimme subactions for this main action yoga
                     gm_to_assistant_message = self.load_template('resources/questions/gm_to_assistant.template')
-                    self.log_event(from_='GM', to='Assistant',
-                                   action={'type': 'send message', 'content': gm_to_assistant_message})
-                    self.assistant.history.append({'role': 'system', 'content': gm_to_assistant_message})
+                    self.add_message(self.assistant, gm_to_assistant_message)
 
                     if subaction == 0:
                         # initial prompt to assistent
@@ -312,10 +294,7 @@ class DatingSimGameMaster(GameMaster):
                                                               location)
                     # Step 12: ASSISTANT replies to GM
                     # Ok here u have 4 subactions
-                    assistant_message = self.assistant._custom_response(self.assistant.history, small_iteration)
-                    self.log_event(from_='Assistant', to='GM',
-                                       action={'type': 'send message', 'content': assistant_message})
-                    self.assistant.history.append({'role': 'system', 'content': assistant_message})
+                    self.get_answer(self.assistant)
 
                     if game_status == "abort":
                         break
@@ -324,23 +303,21 @@ class DatingSimGameMaster(GameMaster):
                     # give generated options to pc
                     # Step 13: GM asks PC
                     # What subaction u wanna do?
-                    self.log_event(from_='GM', to='PC',
-                                       action={'type': 'send message', 'content': assistant_message})
-                    self.player.history.append({'role': 'system', 'content': assistant_message})
+                    gm_to_pc_message = self.load_template('resources/prompts/choose_further_subaction.template')
+                    self.add_message(self.pc, gm_to_pc_message)
+
                     # again we should have a function check if game ends imo
                     if game_status == "abort":
                         break
 
                     # Step 14: PC replies to GM
                     # I wanna make a backflip
-                    player_message = self.player._custom_response(self.player.history, small_iteration)
-                    self.log_event(from_='PC', to='GM', action={'type': 'send message', 'content': player_message})
-                    self.player.history.append({'role': 'assistant', 'content': player_message})
+                    self.get_answer(self.pc)
 
                     # Step 15: GM writes to NPC
                     # Your date made a backflip, judge them
-                    self.log_event(from_='GM', to='NPC', action={'type': 'send message', 'content': player_message})
-                    self.npc.history.append({'role': 'user', 'content': player_message})
+                    gm_to_npc_message = self.load_template('resources/prompts/get_npc_response.template')
+                    self.add_message(self.pc, gm_to_npc_message)
 
                     # same as above we should have a function check if game ends imo
                     if game_status == "abort":
@@ -348,9 +325,7 @@ class DatingSimGameMaster(GameMaster):
 
                     # Step 16: NPC responds to GM
                     # This is my judgment
-                    npc_message = self.npc._custom_response(self.npc.history, small_iteration)
-                    self.log_event(from_='NPC', to='GM', action={'type': 'send message', 'content': npc_message})
-                    self.npc.history.append({'role': 'user', 'content': npc_message})
+                    self.get_answer(self.npc)
 
                     affinity_points += npc_reaction_value
                     if affinity_points < 0:
