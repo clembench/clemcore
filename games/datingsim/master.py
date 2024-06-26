@@ -144,8 +144,14 @@ class DatingSimGameMaster(GameMaster):
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.npc)
 
+        if lvl = first_level:
+            location randomly chosen
+        else:
+            location chosen by PC
+
         #for 1,2,3 (range doesn't include last number so we add 1)
-        for i in range(1, self.n_levels+1):
+        # range = main_actions
+        for main_action in range(1, self.max_mainactions+1):
             self.log_next_turn()
 
             # Step 7: GM asks PC
@@ -249,7 +255,7 @@ class DatingSimGameMaster(GameMaster):
 
             # here we make a while loop for game_status = True
             # we should have a function check if game ends imo
-            for j in range(self.max_mainactions):
+            for action in range(self.max_subactions):
                 try:
                     if game_status == "abort":
                         break
@@ -258,6 +264,7 @@ class DatingSimGameMaster(GameMaster):
                 instance_index = f"{i + 1}.{j + 1}.0"
 
                 if j == 0:
+                    #this should be subaction loop and ignore the loops below
                     # if it is the first main-action of the instance,
                     # first give a location description and
                     # immediatly after that the action options
