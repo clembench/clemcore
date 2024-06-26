@@ -436,7 +436,7 @@ class DatingSimGameMaster(GameMaster):
 
                 # check if PC has chance for a next date
                 number_of_accessed_actions = len(npc_reaction_values)
-                threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, i)
+                threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, level)
 
                 neg_prompt = False  # quick solution
                 if affinity_points >= threshold:
@@ -489,7 +489,7 @@ class DatingSimGameMaster(GameMaster):
 
                 # get threshold
                 number_of_accessed_actions = len(npc_reaction_values)
-                threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, i)
+                threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, level)
 
                 if affinity_points >= threshold:
                     answer = "YES"
