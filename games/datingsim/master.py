@@ -109,11 +109,7 @@ class DatingSimGameMaster(GameMaster):
         # we should make game_status True/False (according to Nick) which makes sense
         # Initial interaction sequence (steps 1 to 6)
 
-        # TO ALL STEPS ADD MESSAGE PARTSING WHICH SHOULD BE A METHOD INSIDE GAME MASTER FOR NOW
-
-
-
-
+        # TO ALL STEPS ADD MESSAGE PARSING WHICH SHOULD BE A METHOD INSIDE GAME MASTER (?) FOR NOW
 
         #added beginning of the game according to dating_simulator/master.py
         # part of it is already updated to show how to change from the earlier code to add_mess and get_answ
@@ -123,7 +119,6 @@ class DatingSimGameMaster(GameMaster):
         self.current_turn += 1
         self.log_next_turn()
 
-        #affinity_points = 0
         # "i" should be level number, idk i think i misplaced it since i changed the loops ;-;
         #instance_index = f"{i + 1}.0.0"
 
@@ -142,7 +137,6 @@ class DatingSimGameMaster(GameMaster):
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
 
-        #     choose_npc_prompt = choose_date(self.npc_candidates)
 
         # Step 3: GM asks PC again
         # Who do you wanna date?
@@ -159,8 +153,8 @@ class DatingSimGameMaster(GameMaster):
         # further addition enforcing template and parsin mess on those actions is required
 
         # this template is more tricky
-        string = "here add template for you are now this person act accordingly"
-        self.add_message(self.pc, utterance=self.load_template(string))
+        gm_to_npc_message = self.load_template('resources/initial_prompts/very_initial_npc_prompt.template')
+        self.add_message(self.pc, gm_to_npc_message)
 
         # Step 6: NPC responds to GM
         # ready
@@ -181,6 +175,7 @@ class DatingSimGameMaster(GameMaster):
 
 
             if level == 1:
+                # here we set the initial location
                 location = self.location
 
             else:
@@ -396,54 +391,29 @@ class DatingSimGameMaster(GameMaster):
                 current_ap = len(self.score)
                 threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, level)
 
-                neg_prompt = "no, go away"  # quick solution
-                pos_prompt = "ye let's go again"
+
                 if current_ap >= threshold:
-                    # if so, prompt NPC to give positive response
-                    pos_prompt = grant_next_date()
-                    prompting(pos_prompt, game_transcript, npc_transcript)
-                    pattern = self.pattern_response
-                    response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
+                    # Step NEXT DATE YES: GM to NPC
+                    # You wanna go on next date, react please!
+                    gm_to_npc_message = self.load_template('resources/prompts/next_date.template')
+                    self.add_message(self.npc, gm_to_npc_message)
                     if game_status == "abort":
                         break
 
-                    # if not, prompt NPC to give negative response
                 else:
-                    neg_prompt = decline_next_date()
-                    prompting(neg_prompt, game_transcript, npc_transcript)
-                    pattern = self.pattern_response
-                    response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
-                    if game_status == "abort":
-                        break
+                    # Step NEXT DATE NO: GM to NPC
+                    # You dont wanna go on next date, react please!
+                    gm_to_npc_message = self.load_template('resources/prompts/decline_next_date.template')
+                    self.add_message(self.npc, gm_to_npc_message)
 
-                # All the code below confuses me because I dont know how to approach the ending
+                    # Step NEXT DATE NO: NPC to GM
+                    # I'm dumping u bro
+                    self.get_answer(self.npc)
 
-
-                # this code is only for cleaning the responses NO or YES above which we dont need anymore
-                # # clean the response
-                # response = game_transcript[-1]["content"]
-                # # regex to match the number and reason
-                # response_pattern = self.pattern_response
-                # # get matches
-                # response_match = re.search(response_pattern, response)
-                # # Extract matched groups if they exist
-                # if response_match:
-                #     res = response_match.group(1)
-                # else:
-                #     res = None
-                # cleaned_response = {"cleaned response": {
-                #     "RESPONSE": res}
-                # }
-
-                # game_transcript[-1].update(cleaned_response)
-                # npc_transcript[-1].update(cleaned_response)
-
-                # if date ends the date, end the whole game
-                if neg_prompt:
-                    # tell NPC to abort mission
-                    prompt = aborted_game_bc_of_npc(location, game_transcript, ap)
-                    prompting(prompt, game_transcript, pc_transcript)
-
+                    # Step END GAME: NPC to GM
+                    # Your date dump you, game over
+                    gm_to_pc_message = self.load_template('resources/prompts/aborted_game_bc_of_npc.template')
+                    self.add_message(self.npc, gm_to_pc_message)
                     break
 
             else:
@@ -490,10 +460,6 @@ class DatingSimGameMaster(GameMaster):
 
                 if game_status == "abort":
                     break
-
-
-
-def translate_answer_to_points():
 
 
 def enforce_template(pattern, game_transcript, specific_transcript):
