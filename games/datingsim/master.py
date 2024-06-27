@@ -71,13 +71,15 @@ class DatingSimGameMaster(GameMaster):
         action = {'type': 'send message', 'content': utterance}
         self.log_event(from_='GM', to=str(self.player_model_names[str(player)]), action=action)
 
-    def get_answer(self, player: Player) -> str:
+    def get_answer(self, player: Player, restart_history=True) -> str:
         # this needs to be merged with what is in GameMaster of dating_simulator/master.py
         prompt, raw_answer, answer = player(player.history, self.current_turn)
         action = {'type': 'get message', 'content': answer}
         self.log_event(from_=str(self.player_model_names[str(player)]), to="GM", action=action,
                        call=(copy.deepcopy(prompt), raw_answer))
-        player.history = []
+        #figure out how to add to history after parsing
+        if restart_history == True:
+            player.history = []
         return answer
 
     def setup(self, **game_instance) -> None:
@@ -111,9 +113,6 @@ class DatingSimGameMaster(GameMaster):
 
 
 
-        # ADD LOCATION HERE!!!!!!!!!!!!
-        location = self.location
-
 
 
         #added beginning of the game according to dating_simulator/master.py
@@ -124,9 +123,9 @@ class DatingSimGameMaster(GameMaster):
         self.current_turn += 1
         self.log_next_turn()
 
-        affinity_points = 0
+        #affinity_points = 0
         # "i" should be level number, idk i think i misplaced it since i changed the loops ;-;
-        instance_index = f"{i + 1}.0.0"
+        #instance_index = f"{i + 1}.0.0"
 
         # Step 1: GM asks PC
         # What is your age, gender?
@@ -181,28 +180,36 @@ class DatingSimGameMaster(GameMaster):
             self.log_next_turn()
 
 
-            if lvl = first_level:
+            if level == 1:
+                location = self.location
 
-                location randomly chosen
-                different prompt here!
             else:
-                location chosen by PC
-                also some adjusted reaction here
-                "oh u passed the first lvl bla bla"
-                maybe some NPC reaction too
+                "oh u passed the previous (1st, 2nd) lvl bla bla"
+                # Step in between: GM asks PC
+                # What location do u want?
+                gm_to_pc_message = self.load_template('resources/prompts/choose_next_location.template')
+                self.add_message(self.pc, gm_to_pc_message)
+
+                # Step in between answer: PC to GM
+                # I wanna go to park
+                self.get_answer(self.pc)
+
+                # Step X: GM asks NPC
+                # Your date chose this location, judge it
+                gm_to_npc_message = self.load_template('resources/prompts/get_npc_location_reaction.template')
+                self.add_message(self.pc, gm_to_npc_message)
+
+                #Step X1: NPC to GM
+                # I like park
+                self.get_answer(self.npc)
+                self.score[self.current_turn] = get_npc_reaction()
 
 
             # here we make a while loop for game_status = True
             # we should have a function check if game ends imo
             for main_action in range(self.max_mainactions):
 
-                if this is first main_action:
-
-                    # if it is the first main-action of the instance,
-                    # first give a location description and
-                    # immediatly after that the action options
-
-
+                if main_action == 0:
                     # Step 7: GM asks PC
                     # Description of location + What main action u wanna?
                     gm_to_pc_message = self.load_template('resources/prompts/start_level.template')
@@ -228,7 +235,6 @@ class DatingSimGameMaster(GameMaster):
 
 
                 # all from here is repeatable for any main action and any lvl
-                all_chosen_actions += instance_index + "\t" + chosen_main_action + "\n"
 
                 # Step 8: PC replies to GM
                 # I wanna do yoga
@@ -246,12 +252,14 @@ class DatingSimGameMaster(GameMaster):
                 # GM makes a decision
                 # Ok do i continue main action, change main action or end game?
                 # check if game continues:
-                affinity_points += npc_reaction_value
-                if affinity_points < 0:
-                    affinity_points = 0
+
+                self.score[self.current_turn] = get_npc_reaction()
+                #total_sum = sum(self.score.values())
+                #if total_sum < 0:
+                    #total_sum and stuff
+                    # theoretically we should not make score go to zero wtf
 
                 # this should be a while loop over all of this code but maybe not for first lvl generation which
-                # should be in setup
                 try:
                     if game_status == "abort":
                         break
@@ -260,13 +268,15 @@ class DatingSimGameMaster(GameMaster):
 
 
                 # we should have a function check if game ends imo
-                num_neg_values = check_if_continue_game(npc_reaction_values)
+                #this should work on self.score and last two turns
+                num_neg_values = check_if_continue_game(self.score)
                 if num_neg_values >= 2:
                     break
+
                 # generate sub-actions
                 # not only, it also prompts it (assistant creation) to PC, NPC and gets their reactions
                 # we should have a function check if game ends imo
-                for subaction in range(self.max_subactions):
+                for subaction in range(0, self.max_subactions):
                     try:
                         if game_status == "abort":
                             break
@@ -275,30 +285,34 @@ class DatingSimGameMaster(GameMaster):
 
                     instance_index = f"{level + 1}.{main_action + 1}.{subaction + 1}"
 
-                    # generate prompt for assistant - for me it's the same in both cases below:
-
-                    # Step 11: GM writes to ASSISTANT
-                    # Gimme subactions for this main action yoga
-                    gm_to_assistant_message = self.load_template('resources/questions/gm_to_assistant.template')
-                    self.add_message(self.assistant, gm_to_assistant_message)
-
                     if subaction == 0:
-                        # initial prompt to assistent
-                        prompt = assistant_initial_prompt(level, all_chosen_actions, instance_index, npc_transcript,
-                                                          chosen_npc,
-                                                          location)
+                        # initial prompt to assistant
+                        # Step 11a: GM writes to ASSISTANT
+                        # Gimme subactions for this main action yoga
+                        gm_to_assistant_message = self.load_template('resources/initial_prompts/initial_assistant_prompt.template')
+                        self.add_message(self.assistant, gm_to_assistant_message)
+
+                        # prompt = assistant_initial_prompt(level, all_chosen_actions, instance_index, npc_transcript,
+                        #                                   chosen_npc,
+                        #                                   location)
 
                     else:
-                        prompt = assistant_further_subactions(level, all_chosen_actions, instance_index, npc_transcript,
-                                                              chosen_npc,
-                                                              location)
+                        # Step 11b: GM writes to ASSISTANT
+                        # Gimme more subactions for this main action yoga
+                        gm_to_assistant_message = self.load_template('resources/prompts/assistant_further_subactions.template')
+                        self.add_message(self.assistant, gm_to_assistant_message)
+
+                        #
+                        # prompt = assistant_further_subactions(level, all_chosen_actions, instance_index, npc_transcript,
+                        #                                       chosen_npc,
+                        #                                       location)
+
                     # Step 12: ASSISTANT replies to GM
                     # Ok here u have 4 subactions
                     self.get_answer(self.assistant)
 
                     if game_status == "abort":
                         break
-
 
                     # give generated options to pc
                     # Step 13: GM asks PC
@@ -326,21 +340,23 @@ class DatingSimGameMaster(GameMaster):
                     # Step 16: NPC responds to GM
                     # This is my judgment
                     self.get_answer(self.npc)
+                    self.score[self.current_turn] = get_npc_reaction()
 
-                    affinity_points += npc_reaction_value
-                    if affinity_points < 0:
-                        affinity_points = 0
+                    # total_sum = sum(self.score.values())
+                    # if total_sum < 0:
+                    # total_sum and stuff
+                    # theoretically we should not make score go to zero wtf
 
-                    # check if game continues
-                    num_neg_values = check_if_continue_game(npc_reaction_values)
-                    #same as above we should have a function check if game ends imo
+                    # this should work on self.score
+                    # fix it to put everything in check_if_cont_game
+                    num_neg_values = check_if_continue_game(self.score)
                     if num_neg_values >= 2:
                         break
 
             #again this should be in game_status true or not, or
             # we should have a function check if game ends imo
 
-            # this should be fixed above coz lvl is already checked????
+            # not last lvl
             if level < self.n_levels:
                 try:
                     if game_status == "abort":
@@ -350,14 +366,12 @@ class DatingSimGameMaster(GameMaster):
 
                 # if all main and sub actions are through
                 # or game is disturbed by penalty ????????
-                # let PC chose the next location
-
-                #there was some code here to ask about next location? idk why
                 if game_status == "abort":
                     break
 
-                #we dont use it for now and it's in the wrong indentation place too
-                # # let npc decide if they like the suggested location
+                # #we dont use it for now and it's in the wrong indentation place too
+                # # # let npc decide if they like the suggested location
+                # # this is happening way above
                 # location = locations[game_transcript[-1]["cleaned response"]["NUMBER"]]
                 # prompt = next_date(location)
                 # prompting(prompt, game_transcript, npc_transcript)
@@ -365,22 +379,26 @@ class DatingSimGameMaster(GameMaster):
                 # response, game_status = enforce_template(pattern, game_transcript, npc_transcript)
                 # if game_status == "abort":
                 #     break
-                #
+
                 # npc_reaction_value = get_npc_reaction(game_transcript, npc_transcript)
                 # npc_reaction_values.append(npc_reaction_value)
-                #
-                # affinity_points += npc_reaction_value
-                # if affinity_points < 0:
-                #     affinity_points = 0
-                #
+
+                # self.score[self.current_turn] = get_npc_reaction()
+                #total_sum = sum(self.score.values())
+                #if total_sum < 0:
+                    #total_sum and stuff
+                    # theoretically we should not make score go to zero wtf
+
+                #update the score dict for level
                 # ap.update({f"lv{level}": affinity_points})
 
                 # check if PC has chance for a next date
-                number_of_accessed_actions = len(npc_reaction_values)
+                current_ap = len(self.score)
                 threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, level)
 
-                neg_prompt = False  # quick solution
-                if affinity_points >= threshold:
+                neg_prompt = "no, go away"  # quick solution
+                pos_prompt = "ye let's go again"
+                if current_ap >= threshold:
                     # if so, prompt NPC to give positive response
                     pos_prompt = grant_next_date()
                     prompting(pos_prompt, game_transcript, npc_transcript)
@@ -433,47 +451,49 @@ class DatingSimGameMaster(GameMaster):
                 # want to become an official pair
 
                 # get threshold
-                number_of_accessed_actions = len(npc_reaction_values)
+                number_of_accessed_actions = len(self.score)
                 threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, level)
+                sum_from_whole_game = sum(self.score.values())
 
-                if affinity_points >= threshold:
-                    answer = "YES"
+                if sum_from_whole_game >= threshold:
+
+                    # Step END YES: GM to NPC
+                    # You're happy with dates, what do you say?
+                    gm_to_npc_message = self.load_template('resources/prompts/become_couple_yes.template')
+                    self.add_message(self.pc, gm_to_npc_message)
+
+                    # Step END YES: NPC to GM
+                    # Yes, I wanna date them! I'm super happy
+                    self.get_answer(self.npc)
+
+                    # Step END YES: GM to PC
+                    # You finished the game and have a cute date, thanks for playin!
+                    gm_to_pc_message = self.load_template('resources/prompts/game_end_win.template')
+                    self.add_message(self.pc, gm_to_pc_message)
+
                 else:
-                    answer = "NO"
 
-                # prompt to NPC with the pre-defined question of going out
-                # generate answer of NPC
-                prompt = become_couple(answer)
-                prompting(prompt, game_transcript, npc_transcript)
-                pattern = self.pattern_response
-                response, game_status = enforce_template(pattern, game_transcript, pc_transcript)
+                    # Step END NO: GM to NPC
+                    # You're unhappy with date! Dump them! What do you say?
+                    gm_to_npc_message = self.load_template('resources/prompts/become_couple_no.template')
+                    self.add_message(self.pc, gm_to_npc_message)
+
+                    # Step END NO: NPC to GM
+                    # No, I wanna dump them, they are the worst!
+                    self.get_answer(self.npc)
+
+                    # Step END NO: GM to PC
+                    # You finished the game but messed up bruv, thanks for playin tho
+                    gm_to_pc_message = self.load_template('resources/prompts/game_end_lose.template')
+                    self.add_message(self.pc, gm_to_pc_message)
+
+
                 if game_status == "abort":
                     break
 
-                # clean the response
-                response = game_transcript[-1]["content"]
-                # regex to match the number and reason
-                pattern = self.pattern_response
-                # get matches
-                response_match = re.search(response_pattern, response)
-                # Extract matched groups if they exist
-                if response_match:
-                    res = response_match.group(1)
-                else:
-                    res = None
-                cleaned_response = {"cleaned response": {
-                    "RESPONSE": res}
-                }
 
-                #add logging here for sure
 
-                # prompt to PC that they have asked NPC to become an
-                # official pair and give it the response of the NPC to
-                # the asked question
-                prompt = end_game(game_transcript, answer, ap)
-
-                prompting(prompt, game_transcript, pc_transcript)
-
+def translate_answer_to_points():
 
 
 def enforce_template(pattern, game_transcript, specific_transcript):
@@ -733,7 +753,7 @@ def get_assistant_sub_actions(game_transcript, specific_transcript):
 def scoring_sytem(max_num_actions, max_num_subactions, level):
     max_poss = max_num_actions * max_num_subactions
     max_points = 5 * max_poss  # bc 17 possibilities to get points
-
+    threshold = 0
     if level == 0:
         threshold = 0.25 * max_points
     elif level == 1:

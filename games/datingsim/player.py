@@ -12,10 +12,6 @@ class PC(Player):
         self.history: List = []
         # make it a dict maybe? and include turns
 
-    def __call__(self, messages: List[Dict], turn_idx) -> Tuple[Any, Any, str]:
-        # all the important stuff goes here
-        return None
-
     # programmatic response
     def _custom_response(self, messages, turn_idx) -> str:
         return "nothing for now"
@@ -27,10 +23,6 @@ class NPC(Player):
         self.player: str = player
         self.history: List = []
         # make it a dict maybe? and include turns
-
-    def __call__(self, messages: List[Dict], turn_idx) -> Tuple[Any, Any, str]:
-        # all the important stuff goes here
-        return None
 
     # programmatic response
     def _custom_response(self, messages, turn_idx) -> str:
@@ -44,9 +36,7 @@ class Assistant(Player):
         self.history: List = []
         # make it a dict maybe? and include turns
 
-    def __call__(self, messages: List[Dict], turn_idx) -> Tuple[Any, Any, str]:
-        # all the important stuff goes here
-        return None
+
 
     # programmatic response
     def _custom_response(self, messages, turn_idx) -> str:
