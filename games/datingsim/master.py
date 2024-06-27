@@ -8,11 +8,7 @@ from backends import Model
 from clemgame import get_logger
 from clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC_REQUEST_COUNT, \
     METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE
-from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer, Player
-
-from games.datingsim.resources.prompts.pc_prompts import *
-from games.datingsim.resources.prompts.npc_prompts import *
-from games.datingsim.resources.prompts.assistant_prompts import *
+from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer
 from games.datingsim.player import *
 
 GAME_NAME = "datingsim"
@@ -30,7 +26,7 @@ class DatingSimGameMaster(GameMaster):
         self.pattern_sex_age = experiment["pattern_sex_age"]
         self.pattern_f_number = experiment["pattern_f_number"]
         self.pattern_num_r = experiment["pattern_num_r"]
-        self.pattern_num_reason =experiment["pattern_num_reason"]
+        self.pattern_num_reason = experiment["pattern_num_reason"]
         self.pattern_num_rea_res = experiment["pattern_num_rea_res"]
         self.pattern_response = experiment["pattern_response"]
 
@@ -41,8 +37,8 @@ class DatingSimGameMaster(GameMaster):
         self.penalty_rules = experiment['penalty_rules']
         self.current_turn = 0
 
-        self.aborted: bool = False # Boolean to stop game if parsing is incorrect. maybe we do not need it idk.
-        self.score = {} # affinity points
+        self.aborted: bool = False  # Boolean to stop game if parsing is incorrect. maybe we do not need it idk.
+        self.score = {}  # affinity points
 
         # this may cause problems because of clembench max 2 player problem
         # but there is a chance we can force clembench to ignore scoring for npc and ass then it should work imo
@@ -77,7 +73,7 @@ class DatingSimGameMaster(GameMaster):
         action = {'type': 'get message', 'content': answer}
         self.log_event(from_=str(self.player_model_names[str(player)]), to="GM", action=action,
                        call=(copy.deepcopy(prompt), raw_answer))
-        #figure out how to add to history after parsing
+        # figure out how to add to history after parsing
         if restart_history == True:
             player.history = []
         return answer
@@ -111,7 +107,7 @@ class DatingSimGameMaster(GameMaster):
 
         # TO ALL STEPS ADD MESSAGE PARSING WHICH SHOULD BE A METHOD INSIDE GAME MASTER (?) FOR NOW
 
-        #added beginning of the game according to dating_simulator/master.py
+        # added beginning of the game according to dating_simulator/master.py
         # part of it is already updated to show how to change from the earlier code to add_mess and get_answ
         # further addition enforcing template and parsin mess on those actions is required
         self.log_next_turn()
@@ -120,7 +116,7 @@ class DatingSimGameMaster(GameMaster):
         self.log_next_turn()
 
         # "i" should be level number, idk i think i misplaced it since i changed the loops ;-;
-        #instance_index = f"{i + 1}.0.0"
+        # instance_index = f"{i + 1}.0.0"
 
         # Step 1: GM asks PC
         # What is your age, gender?
@@ -136,7 +132,6 @@ class DatingSimGameMaster(GameMaster):
         # Im 666 year old mekanik
         # further addition enforcing template and parsin mess on those actions is required
         self.get_answer(self.pc)
-
 
         # Step 3: GM asks PC again
         # Who do you wanna date?
@@ -162,17 +157,15 @@ class DatingSimGameMaster(GameMaster):
         self.get_answer(self.npc)
         # the start (all code before) is only for one game-play
 
-
-        #for 1,2,3 (range doesn't include last number so we add 1)
+        # for 1,2,3 (range doesn't include last number so we add 1)
         # range = main_actions
-        for level in range(1, self.n_levels+1):
+        for level in range(1, self.n_levels + 1):
             try:
                 if game_status == "abort":
                     break
             except:
                 pass
             self.log_next_turn()
-
 
             if level == 1:
                 # here we set the initial location
@@ -194,11 +187,10 @@ class DatingSimGameMaster(GameMaster):
                 gm_to_npc_message = self.load_template('resources/prompts/get_npc_location_reaction.template')
                 self.add_message(self.pc, gm_to_npc_message)
 
-                #Step X1: NPC to GM
+                # Step X1: NPC to GM
                 # I like park
                 self.get_answer(self.npc)
                 self.score[self.current_turn] = get_npc_reaction()
-
 
             # here we make a while loop for game_status = True
             # we should have a function check if game ends imo
@@ -219,15 +211,13 @@ class DatingSimGameMaster(GameMaster):
                         pass
 
                 # I think i messed this instance_index up, sorry for that
-                #instance_index = f"{main_action + 1}.{subaction + 1}.0"
+                # instance_index = f"{main_action + 1}.{subaction + 1}.0"
 
                 else:
                     # Step 7: GM asks PC
                     #  What main action u wanna?
                     gm_to_pc_message = self.load_template('resources/questions/gm_to_pc3.template')
                     self.add_message(self.pc, gm_to_pc_message)
-
-
 
                 # all from here is repeatable for any main action and any lvl
 
@@ -249,10 +239,10 @@ class DatingSimGameMaster(GameMaster):
                 # check if game continues:
 
                 self.score[self.current_turn] = get_npc_reaction()
-                #total_sum = sum(self.score.values())
-                #if total_sum < 0:
-                    #total_sum and stuff
-                    # theoretically we should not make score go to zero wtf
+                # total_sum = sum(self.score.values())
+                # if total_sum < 0:
+                # total_sum and stuff
+                # theoretically we should not make score go to zero wtf
 
                 # this should be a while loop over all of this code but maybe not for first lvl generation which
                 try:
@@ -261,9 +251,8 @@ class DatingSimGameMaster(GameMaster):
                 except:
                     pass
 
-
                 # we should have a function check if game ends imo
-                #this should work on self.score and last two turns
+                # this should work on self.score and last two turns
                 num_neg_values = check_if_continue_game(self.score)
                 if num_neg_values >= 2:
                     break
@@ -284,7 +273,8 @@ class DatingSimGameMaster(GameMaster):
                         # initial prompt to assistant
                         # Step 11a: GM writes to ASSISTANT
                         # Gimme subactions for this main action yoga
-                        gm_to_assistant_message = self.load_template('resources/initial_prompts/initial_assistant_prompt.template')
+                        gm_to_assistant_message = self.load_template(
+                            'resources/initial_prompts/initial_assistant_prompt.template')
                         self.add_message(self.assistant, gm_to_assistant_message)
 
                         # prompt = assistant_initial_prompt(level, all_chosen_actions, instance_index, npc_transcript,
@@ -294,7 +284,8 @@ class DatingSimGameMaster(GameMaster):
                     else:
                         # Step 11b: GM writes to ASSISTANT
                         # Gimme more subactions for this main action yoga
-                        gm_to_assistant_message = self.load_template('resources/prompts/assistant_further_subactions.template')
+                        gm_to_assistant_message = self.load_template(
+                            'resources/prompts/assistant_further_subactions.template')
                         self.add_message(self.assistant, gm_to_assistant_message)
 
                         #
@@ -348,7 +339,7 @@ class DatingSimGameMaster(GameMaster):
                     if num_neg_values >= 2:
                         break
 
-            #again this should be in game_status true or not, or
+            # again this should be in game_status true or not, or
             # we should have a function check if game ends imo
 
             # not last lvl
@@ -379,18 +370,17 @@ class DatingSimGameMaster(GameMaster):
                 # npc_reaction_values.append(npc_reaction_value)
 
                 # self.score[self.current_turn] = get_npc_reaction()
-                #total_sum = sum(self.score.values())
-                #if total_sum < 0:
-                    #total_sum and stuff
-                    # theoretically we should not make score go to zero wtf
+                # total_sum = sum(self.score.values())
+                # if total_sum < 0:
+                # total_sum and stuff
+                # theoretically we should not make score go to zero wtf
 
-                #update the score dict for level
+                # update the score dict for level
                 # ap.update({f"lv{level}": affinity_points})
 
                 # check if PC has chance for a next date
                 current_ap = len(self.score)
                 threshold, _ = scoring_sytem(self.max_mainactions, self.max_subactions, level)
-
 
                 if current_ap >= threshold:
                     # Step NEXT DATE YES: GM to NPC
@@ -456,7 +446,6 @@ class DatingSimGameMaster(GameMaster):
                     # You finished the game but messed up bruv, thanks for playin tho
                     gm_to_pc_message = self.load_template('resources/prompts/game_end_lose.template')
                     self.add_message(self.pc, gm_to_pc_message)
-
 
                 if game_status == "abort":
                     break
@@ -843,5 +832,3 @@ class DatingSimGameBenchmark(GameBenchmark):
 
     def create_game_scorer(self, experiment: Dict, game_instance: Dict) -> GameScorer:
         return DatingSimGameScorer(experiment, game_instance)
-
-
