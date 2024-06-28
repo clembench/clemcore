@@ -1,8 +1,0 @@
-{
-  "generic_openai_compatible": {
-    "api_key": "your_keyhere",
-    "base_url": "https://api.togheter.xyz/v1"
-  }
-}
-
-
