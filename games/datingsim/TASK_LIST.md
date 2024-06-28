@@ -5,7 +5,7 @@ What is left to do:
 ALL:
 - review code logic
 - review templates
-- doscuss game abort function/s
+- discuss game abort function/s
 
 JERYCHO:
 - add logging and next_turn everywhere 
@@ -13,8 +13,9 @@ JERYCHO:
 
 ALTAR:
 - adding/extracting variables like $location etc from prompts and for prompts
-- remove assistant as a Player, and possibly move the assistant stuff to instance generator somehow
-- 
+- remove assistant as a Player (done)
+- move the assistant stuff to instance generator somehow (done)
+
 IMGE:
 
 

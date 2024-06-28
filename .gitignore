@@ -195,3 +195,5 @@ cython_debug/
 /venv_llamacpp/
 
 key.txt
+games/datingsim/key.txt
+

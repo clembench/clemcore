@@ -27,17 +27,3 @@ class NPC(Player):
     # programmatic response
     def _custom_response(self, messages, turn_idx) -> str:
         return "nothing for now"
-
-
-class Assistant(Player):
-    def __init__(self, model_name: str, player: str):
-        super().__init__(model_name)
-        self.player: str = player
-        self.history: List = []
-        # make it a dict maybe? and include turns
-
-
-
-    # programmatic response
-    def _custom_response(self, messages, turn_idx) -> str:
-        return "nothing for now"

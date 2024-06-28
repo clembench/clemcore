@@ -6,20 +6,22 @@ Creates files in ./instances
 import random
 import os
 import json
+from string import Template
+import tqdm
 
 import clemgame
 from clemgame.clemgame import GameInstanceGenerator
 
-from utils import get_random_npcs, get_random_locations
+from utils import *
 
 GAME_NAME = 'datingsim'
 # we will create 10 instances for each experiment; vary this as you wish
 N_INSTANCES = 10
 # if the generation involves randomness, remember to set a random seed
 SEED = 42
+ASSISTANT_MODEL = "meta-llama/Llama-3-70b-chat-hf"
 
 logger = clemgame.get_logger(__name__)
-
 
 class DatingSimInstanceGenerator(GameInstanceGenerator):
 
@@ -39,14 +41,13 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         prompt_pc = self.load_template('./resources/initial_prompts/initial_pc_prompt.template')
         prompt_npc = self.load_template('./resources/initial_prompts/initial_npc_prompt.template')
         prompt_assistant = self.load_template('./resources/initial_prompts/initial_assistant_prompt.template')
-
+        
         """
         for mode in ["easy", "normal", "hard"]:
             
         """
 
         # some fixed details:
-
         n_levels = 2  # number of levels
         max_mainactions = 2
         max_subactions = 2
@@ -91,11 +92,37 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         experiment["pattern_num_reason"] = "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)"
         experiment["pattern_num_rea_res"] = "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)\\s*RESPONSE:\\s*(.+)"
         experiment["pattern_response"] = "'RESPONSE:\\s*(.+)"
+        
+        experiment["location"] = locations[0]
+        experiment["npcs"] = npcs
+
+        main_actions = experiment["location"]["MAIN-ACTIONS"]
+
+        main_actions_data = []
+
+        for main_action in tqdm.tqdm(main_actions, desc="Generating subactions"):
+            main_action_data = {
+                "main_action": main_action,
+                "npc_subactions": {}
+                }
+
+            for npc in experiment["npcs"]:
+                npc_name = npc["NAME"]
+                character_sheet = prompt_char_sheets(npc)
+                prompt_assistant_modified = prompt_assistant.replace('$character_sheet', character_sheet)\
+                                                    .replace('$main_action', main_action)
+                subactions = get_correct_subactions(ASSISTANT_MODEL, prompt_assistant_modified)
+                main_action_data["npc_subactions"][npc_name] = subactions
+            
+            main_actions_data.append(main_action_data)
+        
+        experiment["location"]["MAIN-ACTIONS"] = main_actions_data
 
         for instance in range(N_INSTANCES):  # what do we need to put here? number of levels?
             game_instance = self.add_game_instance(experiment, instance)
-            game_instance["location"] = locations[0]
-            game_instance["npcs"] = npcs
+
+            # !! realized we do not have anything game_instance specific as npcs and locations are the same for every instance
+
             # in case we add more locations, for now it's just one
             #game_instance["location"] = random.choice(locations)
 
