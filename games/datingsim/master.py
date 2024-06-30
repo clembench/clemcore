@@ -37,7 +37,10 @@ class DatingSimGameMaster(GameMaster):
         self.penalty_rules = experiment['penalty_rules']
         self.current_turn = 0
 
-        self.aborted: bool = False  # Boolean to stop game if parsing is incorrect. maybe we do not need it idk.
+        # boolean to see game status
+        self.game_status = True 
+        # check for invalid responses 
+        self.invalid_response = False
         self.score = {}  # affinity points
 
         # this may cause problems because of clembench max 2 player problem
@@ -98,6 +101,60 @@ class DatingSimGameMaster(GameMaster):
         self.add_player(self.npc)
         self.add_player(self.assistant)
 
+        def does_game_continue(self): # XXmod
+        """
+        Proceed until player
+        - finishes game successfully or
+        - doesn't meet the threshold to continue or
+        - has too many negative actions in a row.
+        """
+        if self.invalid_response:
+            self.log_to_self("invalid format", "abort game") # message from GM to GM
+            return False
+        elif self.count_bad_choices > 2:
+            self.log_to_self("too many bad choices", "failed game")
+            return False
+        elif self.became_pair == True:
+            self.log_to_self("became a pair", "end game")
+            return False
+        else:
+            return True
+        
+    def validate_response(self, player: Player, utterance: str, pattern: str, repetition: False) -> bool: # XXmod
+        """
+        Function to check if the given answer is in the valid
+        format. 
+        If yes, the game continues.
+        If no, the game is aborted.
+        If repetitions are allowed, the role can re-try n times.
+        If it fails again, the game will be aborted.
+        """
+        match = re.search(pattern, utterance)
+
+        if repetition == False:
+            if match:
+                self.game_status = True
+            else:
+                self.game_status = False
+
+        else:
+            tries_to_genrate_correct_output = 0
+            while True:
+                if match:
+                    self.game_status = True
+                    break
+                elif tries_to_genrate_correct_output > 2:
+                    self.game_status = False
+                    break
+                elif not match:
+                    # Handle cases where the output doesn't match the template
+                    tries_to_genrate_correct_output += 1
+                    # need to include reprompt here, not sure if this is the
+                    # correct method though
+                    DialogueGameMaster.prompt(player=player, is_reprompt=True)
+                    break
+                    
+        
     def play(self):
         # this is our main pain
         # all the message patterns should be made in instance_generator
@@ -122,11 +179,11 @@ class DatingSimGameMaster(GameMaster):
         # What is your age, gender?
         # further addition enforcing template and parsin mess on those actions is required
         self.add_message(self.pc, utterance=self.load_template('resources/initial_prompts/initial_pc_prompt.template'))
-
-        #     # end the game
-        #     if game_status == "abort":
-        #         break
-        #
+        # prompt GM -> PC
+        # validate answer with
+        # validate_response
+        # check if game continues with 
+        # does_game_continue
 
         # Step 2: PC replies to GM
         # Im 666 year old mekanik
