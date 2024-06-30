@@ -76,8 +76,6 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         experiment['initial_prompt_npc'] = prompt_npc
         experiment['initial_prompt_assistant'] = prompt_assistant
 
-        # TODO: add regex patterns here I guess?
-
         experiment['n_levels'] = n_levels
         experiment['max_mainactions'] = max_mainactions
         experiment['max_subactions'] = max_subactions
@@ -86,12 +84,12 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
         # regex patterns
         # TODO: maybe we can go over these patterns later
-        experiment["pattern_sex_age"] = "SEX:\\s*(\\w+)\\s*AGE:\\s*(\\d\\d)"
-        experiment["pattern_f_number"] = "NUMBER:\\s*(.+?)"
-        experiment["pattern_num_r"] = "NUMBER: (\\d)"
-        experiment["pattern_num_reason"] = "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)"
-        experiment["pattern_num_rea_res"] = "NUMBER:\\s*(.+?)\\s*REASON:\\s*(.+)\\s*RESPONSE:\\s*(.+)"
-        experiment["pattern_response"] = "'RESPONSE:\\s*(.+)"
+        experiment["pattern_sex_age"] = r"^SEX:\s*(\w+)\s*AGE:\s*(\d\d)$"
+        experiment["pattern_f_number"] = r"^NUMBER:\s*(.+?)$"
+        experiment["pattern_num_r"] = r"^NUMBER: (\d)$"
+        experiment["pattern_num_reason"] = r"NUMBER:\s*(.+?)\s*REASON:\s*(.+)$"
+        experiment["pattern_num_rea_res"] = r"NUMBER:\s*(.+?)\s*REASON:\s*(.+)\s*RESPONSE:\s*(.+)$"
+        experiment["pattern_response"] = r"RESPONSE:\s*(.+)$"
         
         experiment["location"] = locations[0]
         experiment["npcs"] = npcs
