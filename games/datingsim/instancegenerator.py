@@ -7,7 +7,7 @@ import random
 import os
 import json
 from string import Template
-import tqdm
+# import tqdm
 
 import clemgame
 from clemgame.clemgame import GameInstanceGenerator
@@ -34,95 +34,83 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
     def on_generate(self):
         # get resources
-        npcs = get_random_npcs("./games/dating_simulator/resources/ex_NPC_sheet.json")[:3]
-        locations = get_random_locations("./games/dating_simulator/resources/ex_location.json")
+        # load character sheets which will be our experiments
+        # aka need to change the resources where we 
+        # predefine the character sheet mash ups
+        # example: one where both players are male,
+        # one where both players are female, etc.
+        # TO DO: prepare the datasets 
+        char_sheets = get_random_npcs("C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/test.json")
+        # pre define location to keep it open for an experimeent 
+        locations = None
+        # predefine actions in case that we include them
+        actions = None
 
-        # initial prompts 
-        prompt_pc = self.load_template('./resources/initial_prompts/initial_pc_prompt.template')
-        prompt_npc = self.load_template('./resources/initial_prompts/initial_npc_prompt.template')
-        prompt_assistant = self.load_template('./resources/initial_prompts/initial_assistant_prompt.template')
-        
+        # initial prompts for player A and player B
+        # TO-DO: Change prompts
+        initial_prompt_a = "test1" #self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_pc_prompt.template')
+        initial_prompt_b = "test2" # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_npc_prompt.template')
+    
         """
+        maybe we can still leave this in and generate more experiments with
+        the amount of character information they get 
+
         for mode in ["easy", "normal", "hard"]:
-            
         """
 
-        # some fixed details:
-        n_levels = 2  # number of levels
-        max_mainactions = 2
-        max_subactions = 2
+        # build th file, one experiment at a time
+        for index, experiment in enumerate(char_sheets):
+            # create experiment, name is (WILL BE) in the char sheet
+            experiment = self.add_experiment(f"Playthrough_{experiment['exp_name']}")
 
-        # # TODO: work on these levels
-        # levels = {1: "first", 2: "second", 3: "third"} # i.e: NOTE: This is their $level date. Here are the actions chosen by PC so far:
-        
-        # TODO: put these in the game-flow as the variables need to be replaced according to the PC and NPC decisions
-        # prompt_npc = prompt_npc.substitute(character_sheet=character_sheet)
-        # prompt_assistant = prompt_assistant.substitute(character_sheet=character_sheet, level=current_level,
-        #                                                main_action_1=main_action_1, last_npc_response=last_npc_response,
-        #                                                last_npc_reaction=last_npc_reaction)
+            # build n instances for each experiment 
+            for game_id in range(N_INSTANCES):
+                # set parameters
+                # give players the characters - for now random
+                charsheet_a = random.choice(char_sheets[index]["chars"])
+                charsheet_b = random.choice(char_sheets[index]["chars"])
 
-        # define penalty rules
-        penalty_rules = {
-            'max_unpleasant_actions_in_a_row': 3,
-            'penalty_for_unpleasant_actions': -5
-        }
+                if locations is not None:
+                    location = random.choice(locations)
+                else:
+                    location = None
 
-        # create an experiment for each playthrough
-        # experiments = {}
-        mode = "easy"
-        experiment = self.add_experiment(f'Playthrough_{mode}')
+                if actions is not None:
+                    set_of_actions = random.choice(actions)
+                else:
+                    set_of_actions = None
 
-        experiment['initial_prompt_pc'] = prompt_pc
-        experiment['initial_prompt_npc'] = prompt_npc
-        experiment['initial_prompt_assistant'] = prompt_assistant
+                # number of how often each player can say sth
+                n_turns = 25
 
-        experiment['n_levels'] = n_levels
-        experiment['max_mainactions'] = max_mainactions
-        experiment['max_subactions'] = max_subactions
+                instance = self.add_game_instance(experiment, game_id)
 
-        experiment['penalty_rules'] = penalty_rules
+                # populate game with parameters
+                instance["char_a"] = charsheet_a
+                instance["char_b"] = charsheet_b
+                instance["location"] = location
+                instance["set_of_actions"] = set_of_actions
+                instance["n_turns"] = n_turns
+                instance["initial_prompt_player_a"] = initial_prompt_a
+                instance["initial_prompt_player_b"] = initial_prompt_b
+
+
+
+        # experiment['penalty_rules'] = penalty_rules
 
         # regex patterns
         # TODO: maybe we can go over these patterns later
-        experiment["pattern_sex_age"] = r"^SEX:\s*(\w+)\s*AGE:\s*(\d\d)$"
-        experiment["pattern_f_number"] = r"^NUMBER:\s*(.+?)$"
-        experiment["pattern_num_r"] = r"^NUMBER: (\d)$"
-        experiment["pattern_num_reason"] = r"NUMBER:\s*(.+?)\s*REASON:\s*(.+)$"
-        experiment["pattern_num_rea_res"] = r"NUMBER:\s*(.+?)\s*REASON:\s*(.+)\s*RESPONSE:\s*(.+)$"
-        experiment["pattern_response"] = r"RESPONSE:\s*(.+)$"
+        # experiment["pattern_sex_age"] = r"^SEX:\s*(\w+)\s*AGE:\s*(\d\d)$"
+        # experiment["pattern_f_number"] = r"^NUMBER:\s*(.+?)$"
+        # experiment["pattern_num_r"] = r"^NUMBER: (\d)$"
+        # experiment["pattern_num_reason"] = r"NUMBER:\s*(.+?)\s*REASON:\s*(.+)$"
+        # experiment["pattern_num_rea_res"] = r"NUMBER:\s*(.+?)\s*REASON:\s*(.+)\s*RESPONSE:\s*(.+)$"
+        # experiment["pattern_response"] = r"RESPONSE:\s*(.+)$"
+
+        # THIS is the new pattern basically
+        # experiment["pattern_response_players"] = r"REASON:\s*(.+?)\s*SENTIMENT:\s*(.+)\s*RESPONSE:\s*(.+)$"
         
-        experiment["location"] = locations[0]
-        experiment["npcs"] = npcs
 
-        main_actions = experiment["location"]["MAIN-ACTIONS"]
-
-        main_actions_data = []
-
-        for main_action in tqdm.tqdm(main_actions, desc="Generating subactions"):
-            main_action_data = {
-                "main_action": main_action,
-                "npc_subactions": {}
-                }
-
-            for npc in experiment["npcs"]:
-                npc_name = npc["NAME"]
-                character_sheet = prompt_char_sheets(npc)
-                prompt_assistant_modified = prompt_assistant.replace('$character_sheet', character_sheet)\
-                                                    .replace('$main_action', main_action)
-                subactions = get_correct_subactions(ASSISTANT_MODEL, prompt_assistant_modified)
-                main_action_data["npc_subactions"][npc_name] = subactions
-            
-            main_actions_data.append(main_action_data)
-        
-        experiment["location"]["MAIN-ACTIONS"] = main_actions_data
-
-        for instance in range(N_INSTANCES):  # what do we need to put here? number of levels?
-            game_instance = self.add_game_instance(experiment, instance)
-
-            # !! realized we do not have anything game_instance specific as npcs and locations are the same for every instance
-
-            # in case we add more locations, for now it's just one
-            #game_instance["location"] = random.choice(locations)
 
 if __name__ == '__main__':
     random.seed(SEED)
