@@ -1,0 +1,202 @@
+[
+    {
+        "exp_name": "all characters",
+        "chars" : [
+            {
+            "NAME": "Kai Nakamura",
+            "GENDER": "Male",
+            "AGE": 28,
+            "APPEARANCE": "Chiseled jawline, kind eyes, messy black hair, athletic build.",
+            "OCCUPATION": "Bakery Owner",
+            "LIKES": "Baking, early mornings, seeing people happy with his pastries.",
+            "DISLIKES": "Burnt bread, negativity, rushing.",
+            "HOBBIES": "Rock climbing, sketching, volunteering at a local animal shelter.",
+            "SUMMARY": "A kind-hearted baker with a passion for creating delicious treats. Despite his busy schedule, Kai always finds time to pursue his hobbies and give back to the community."    
+        },
+
+        {
+            "NAME": "Maya Flores",
+            "GENDER": "Female",
+            "AGE": 25,
+            "APPEARANCE": "Sparkling brown eyes, infectious laugh, flowing dark hair with colorful streaks, stylish and comfortable clothes.",
+            "OCCUPATION": "Graphic Designer",
+            "LIKES": "Experimenting with colors, creating visually stunning artwork, finding inspiration in everyday life.",
+            "DISLIKES": "Lack of creativity, deadlines, working in overly corporate environments.",
+            "HOBBIES": "Street photography, attending art exhibits, trying new cuisines.",
+            "SUMMARY": "A free-spirited and artistic graphic designer who sees beauty in the world around her. Maya's vibrant energy and infectious enthusiasm will make you see the world with fresh eyes."    
+        },
+
+        {
+            "NAME": "Robin Aster",
+            "GENDER": "Non-binary",
+            "AGE": 27,
+            "APPEARANCE": "Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).",
+            "OCCUPATION": "Florist",
+            "LIKES": "Experimenting with floral arrangements, creating beauty with nature's bounty, seeing the joy flowers bring to people.",
+            "DISLIKES": "Monotony, negativity, anything artificial.",
+            "HOBBIES": "Hiking, learning about different plant life, volunteering at a community garden.",
+            "SUMMARY": " A creative and free-spirited florist with a passion for transforming flowers into stunning works of art. Robin's infectious enthusiasm and love for nature will brighten your day."    
+        },
+
+        {
+            "NAME": "Leo Rodriguez",
+            "GENDER": "Male",
+            "AGE": 35,
+            "APPEARANCE": "Tanned skin, warm brown eyes, charming smile, wears stylish glasses.",
+            "OCCUPATION": "Travel Photographer",
+            "LIKES": "Exploring new places, capturing breathtaking moments, meeting interesting people.",
+            "DISLIKES": "Routine, bad weather, being stuck indoors for too long.",
+            "HOBBIES": "Learning new languages, playing the guitar, collecting souvenirs from his travels.",
+            "SUMMARY": "A free-spirited photographer who thrives on adventure. Leo's captivating stories and infectious enthusiasm will make you want to pack your bags and join him on his next journey."    
+        },
+
+        {
+            "NAME": "Dr. Olivia Khan",
+            "GENDER": "Female",
+            "AGE": 42,
+            "APPEARANCE": "Confident smile, sharp blue eyes, stylishly short black hair, professional attire with a touch of personality.",
+            "OCCUPATION": "Cardiovascular Surgeon",
+            "LIKES": "Helping people, pushing the boundaries of medicine, a good intellectual challenge.",
+            "DISLIKES": "Arrogance, inefficiency, seeing people give up.",
+            "HOBBIES": "Rock climbing (to manage stress), playing the cello, volunteering at a medical clinic for the underprivileged.",
+            "SUMMARY": "A brilliant and determined surgeon with a strong work ethic and a compassionate heart. Dr. Khan's dedication and strength will inspire you to reach your own full potential."    
+        },
+
+        {
+            "NAME": "Riley Jones",
+            "GENDER": "Non-binary",
+            "AGE": 38,
+            "APPEARANCE": "Buzz cut, warm hazel eyes, androgynous build with toned muscles, wears comfortable yet stylish clothing.",
+            "OCCUPATION": "Blacksmith",
+            "LIKES": "The rhythm of forging metal, creating functional art, working with their hands.",
+            "DISLIKES": "Idleness, pretentiousness, following the rules just for the sake of it.",
+            "HOBBIES": "Sculpting metal into art pieces, weightlifting, historical reenactment.",
+            "SUMMARY": " A strong and independent blacksmith with a passion for transforming raw materials into beauty. Riley's dedication and down-to-earth personality will inspire you to embrace your own inner strength."    
+        },
+
+        {
+            "NAME": "Ethan Moore",
+            "GENDER": "Male",
+            "AGE": 42,
+            "APPEARANCE": "Salt and pepper hair, warm smile, crinkled eyes when he laughs, wears well-fitting suits.",
+            "OCCUPATION": "University Professor (Literature)",
+            "LIKES": "Engaging discussions, classic literature, a good cup of tea.",
+            "DISLIKES": "Superficiality, technology dependence, loud noises.",
+            "HOBBIES": "Reading, attending plays and concerts, spending time in nature.",
+            "SUMMARY": "A sophisticated and well-spoken professor with a passion for the written word. Ethan's insightful mind and gentle demeanor will make you see the beauty hidden within literature."    
+        },
+
+        {
+            "NAME": "Sakura Nakamura",
+            "GENDER": "Female",
+            "AGE": 32,
+            "APPEARANCE": "Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.",
+            "OCCUPATION": "Tea Ceremony Master",
+            "LIKES": "Maintaining traditions, fostering inner peace, creating a beautiful and harmonious atmosphere.",
+            "DISLIKES": "Disharmony, disrespect, rushing through life.",
+            "HOBBIES": "Calligraphy, flower arranging (Ikebana), practicing mindfulness meditation.",
+            "SUMMARY": "A serene and graceful tea ceremony master who finds beauty in simplicity. Sakura's gentle guidance will help you find your own inner peace and appreciate the present moment."    
+        },
+
+        {
+            "NAME": "Samira Hassan",
+            "GENDER": "Non-binary",
+            "AGE": 45,
+            "APPEARANCE": "Short, neatly trimmed silver hair, warm and inviting smile, wears comfortable clothing with a focus on cultural elements (e.g., scarves, jewelry).",
+            "OCCUPATION": "Astronomer",
+            "LIKES": "Exploring the vastness of space, learning about the universe's mysteries, sharing their knowledge with others.",
+            "DISLIKES": "Ignorance, closed-mindedness, the idea that anything is impossible",
+            "HOBBIES": "Stargazing, attending astronomy lectures, writing about their research in a captivating way.",
+            "SUMMARY": "A brilliant and curious astronomer with a passion for unraveling the secrets of the cosmos. Samira's infectious wonder and thirst for knowledge will inspire you to dream big."    
+        },
+
+        {
+            "NAME": "Hiro Suzuki",
+            "GENDER": "Male",
+            "AGE": 21,
+            "APPEARANCE": "Bright blue hair (dyed), energetic eyes, playful grin, wears trendy clothes.",
+            "OCCUPATION": "Up-and-Coming Esports Player (Streamer)",
+            "LIKES": "Gaming, sharing his passion with his viewers, pushing his limits.",
+            "DISLIKES": "Losing, negativity, feeling stagnant.",
+            "HOBBIES": "Exercising, attending gaming conventions, trying out new games.",
+            "SUMMARY": "A vibrant and enthusiastic esports player with a loyal fanbase. Hiro's infectious positivity and competitive spirit will draw you into the exciting world of gaming."    
+        },
+
+        {
+            "NAME": "Chloe Kim",
+            "GENDER": "Female",
+            "AGE": 21,
+            "APPEARANCE": "Confident smirk, bright green eyes, athletic build, wears comfortable clothes with a sporty flair.",
+            "OCCUPATION": "Lead Mechanic at a Motorcycle Repair Shop",
+            "LIKES": "Fixing things with her own hands, the roar of a motorcycle engine, a good challenge.",
+            "DISLIKES": "Idleness, people who give up easily, following the crowd.",
+            "HOBBIES": "Motocross racing (competitively), tinkering with old machines, participating in hackathons.",
+            "SUMMARY": " A fearless and independent mechanic who thrives on a good challenge. Chloe's confident attitude and adventurous spirit will make you want to break free from the ordinary."    
+        },
+
+        {
+            "NAME": "Jamie Park",
+            "GENDER": "Non-binary",
+            "AGE": 21,
+            "APPEARANCE": "Vibrant dyed hair (changes color often), bright and expressive eyes, wears bold and trendy clothing that reflects their artistic personality.",
+            "OCCUPATION": "Tattoo Artist",
+            "LIKES": "Creating meaningful and personalized tattoos, expressing their artistic vision, connecting with people through their work.",
+            "DISLIKES": "Conformity, negativity, limitations on creativity.",
+            "HOBBIES": "Painting, attending art festivals, experimenting with different artistic mediums.",
+            "SUMMARY": "A passionate and artistic tattoo artist who uses their craft to tell stories and express individuality. Jamie's vibrant personality and artistic vision will inspire you to embrace your own unique voice."    
+        }
+        ]
+    },
+    {
+        "exp_name": "same-sex non-binary",
+        "chars":[
+        {
+            "NAME": "Robin Aster",
+            "GENDER": "Non-binary",
+            "AGE": 27,
+            "APPEARANCE": "Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).",
+            "OCCUPATION": "Florist",
+            "LIKES": "Experimenting with floral arrangements, creating beauty with nature's bounty, seeing the joy flowers bring to people.",
+            "DISLIKES": "Monotony, negativity, anything artificial.",
+            "HOBBIES": "Hiking, learning about different plant life, volunteering at a community garden.",
+            "SUMMARY": " A creative and free-spirited florist with a passion for transforming flowers into stunning works of art. Robin's infectious enthusiasm and love for nature will brighten your day."    
+        },
+
+        {
+            "NAME": "Riley Jones",
+            "GENDER": "Non-binary",
+            "AGE": 38,
+            "APPEARANCE": "Buzz cut, warm hazel eyes, androgynous build with toned muscles, wears comfortable yet stylish clothing.",
+            "OCCUPATION": "Blacksmith",
+            "LIKES": "The rhythm of forging metal, creating functional art, working with their hands.",
+            "DISLIKES": "Idleness, pretentiousness, following the rules just for the sake of it.",
+            "HOBBIES": "Sculpting metal into art pieces, weightlifting, historical reenactment.",
+            "SUMMARY": " A strong and independent blacksmith with a passion for transforming raw materials into beauty. Riley's dedication and down-to-earth personality will inspire you to embrace your own inner strength."    
+        },
+
+        {
+            "NAME": "Samira Hassan",
+            "GENDER": "Non-binary",
+            "AGE": 45,
+            "APPEARANCE": "Short, neatly trimmed silver hair, warm and inviting smile, wears comfortable clothing with a focus on cultural elements (e.g., scarves, jewelry).",
+            "OCCUPATION": "Astronomer",
+            "LIKES": "Exploring the vastness of space, learning about the universe's mysteries, sharing their knowledge with others.",
+            "DISLIKES": "Ignorance, closed-mindedness, the idea that anything is impossible",
+            "HOBBIES": "Stargazing, attending astronomy lectures, writing about their research in a captivating way.",
+            "SUMMARY": "A brilliant and curious astronomer with a passion for unraveling the secrets of the cosmos. Samira's infectious wonder and thirst for knowledge will inspire you to dream big."    
+        },
+
+        {
+            "NAME": "Jamie Park",
+            "GENDER": "Non-binary",
+            "AGE": 21,
+            "APPEARANCE": "Vibrant dyed hair (changes color often), bright and expressive eyes, wears bold and trendy clothing that reflects their artistic personality.",
+            "OCCUPATION": "Tattoo Artist",
+            "LIKES": "Creating meaningful and personalized tattoos, expressing their artistic vision, connecting with people through their work.",
+            "DISLIKES": "Conformity, negativity, limitations on creativity.",
+            "HOBBIES": "Painting, attending art festivals, experimenting with different artistic mediums.",
+            "SUMMARY": "A passionate and artistic tattoo artist who uses their craft to tell stories and express individuality. Jamie's vibrant personality and artistic vision will inspire you to embrace your own unique voice."    
+        }
+    ]
+}
+]
