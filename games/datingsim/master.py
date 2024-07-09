@@ -8,7 +8,7 @@ from backends import Model
 from clemgame import get_logger
 from clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC_REQUEST_COUNT, \
     METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE
-from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer
+from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer, DialogueGameMaster
 from games.datingsim.player import *
 
 GAME_NAME = "datingsim"
@@ -20,14 +20,7 @@ class DatingSimGameMaster(GameMaster):
         super().__init__(game_name, experiment, player_models)
         self.initial_prompt_pc = experiment['initial_prompt_pc']
 
-        # regex patterns
-        self.pattern_sex_age = experiment["pattern_sex_age"]
-        self.pattern_f_number = experiment["pattern_f_number"]
-        self.pattern_num_r = experiment["pattern_num_r"]
-        self.pattern_num_reason = experiment["pattern_num_reason"]
-        self.pattern_num_rea_res = experiment["pattern_num_rea_res"]
-        self.pattern_response = experiment["pattern_response"]
-
+        # regex patterns here
 
         self.name = experiment['name']
         self.penalty_rules = experiment['penalty_rules']
@@ -36,10 +29,10 @@ class DatingSimGameMaster(GameMaster):
         self.location = experiment['location']
 
         # boolean to see game status
-        self.game_status = True 
+        self.game_status = True
         # check for invalid responses 
         self.invalid_response = False
-        self.score = {}  # affinity points
+        # self.score = {}  # this was affinity points
 
         self.model_a = player_models[0]
         self.model_b = player_models[1]
@@ -50,13 +43,11 @@ class DatingSimGameMaster(GameMaster):
 
     def add_player(self, player: Player) -> None:
         idx = len(self.player_model_names)
-        # player pc and npc here
+        # player writer and responder
         if idx == 0:
-            player.descriptor = f"PC"
+            player.descriptor = f"Writer"
         elif idx == 1:
-            player.descriptor = f"NPC"
-        else:
-            player.descriptor = f"Assistant"
+            player.descriptor = f"Responder"
         self.player_model_names[str(player)] = player.descriptor
 
     def add_message(self, player: Player, utterance: str, role="user") -> None:
@@ -72,6 +63,7 @@ class DatingSimGameMaster(GameMaster):
         self.log_event(from_=str(self.player_model_names[str(player)]), to="GM", action=action,
                        call=(copy.deepcopy(prompt), raw_answer))
         # figure out how to add to history after parsing
+        # this is a suggestion from Nic, not sure how to solve it yet
         if restart_history == True:
             player.history = []
         return answer
@@ -87,32 +79,14 @@ class DatingSimGameMaster(GameMaster):
         self.game_id = self.game_instance["game_id"]
 
         # create player/s here
-        self.player_a = PC(self.model_a, "Writer")
-        self.player_b = NPC(self.model_b, "Responder")
+        self.player_a = Dater(self.model_a, "Writer")
+        self.player_b = Dater(self.model_b, "Responder")
 
         self.add_player(self.player_a)
         self.add_player(self.player_b)
 
-        def does_game_continue(self): # XXmod
-        """
-        Proceed until player
-        - finishes game successfully or
-        - doesn't meet the threshold to continue or
-        - has too many negative actions in a row.
-        """
-        if self.invalid_response:
-            self.log_to_self("invalid format", "abort game") # message from GM to GM
-            return False
-        elif self.count_bad_choices > 2:
-            self.log_to_self("too many bad choices", "failed game")
-            return False
-        elif self.became_pair == True:
-            self.log_to_self("became a pair", "end game")
-            return False
-        else:
-            return True
-        
-    def validate_response(self, player: Player, utterance: str, pattern: str, repetition: False) -> bool: # XXmod
+    # This needs to be revised again
+    def validate_response(self, player: Player, utterance: str, pattern: str, repetition: False) -> bool:
         """
         Function to check if the given answer is in the valid
         format. 
@@ -123,7 +97,7 @@ class DatingSimGameMaster(GameMaster):
         """
         match = re.search(pattern, utterance)
 
-        if repetition == False:
+        if not repetition:
             if match:
                 self.game_status = True
             else:
@@ -146,7 +120,7 @@ class DatingSimGameMaster(GameMaster):
                     DialogueGameMaster.prompt(player=player, is_reprompt=True)
                     break
 
-
+    # TO DO: include checking every response of LLMs if they are following the pattern
     def play(self):
 
         self.log_next_turn()
@@ -205,41 +179,40 @@ class DatingSimGameMaster(GameMaster):
             self.current_turn += 1
 
 
-def enforce_template(pattern, game_transcript, specific_transcript):
-    """
-    Function which checks the given answer of the LLMS.
-    If they follow the given template, all gucci.
-    If not, generate new prompt where we enforce the
-    usage of the template
-    """
-
-    tries_to_genrate_correct_output = 0
-
-    while True:
-
-        response = game_transcript[-1]["content"]
-
-        # Search for the pattern in the output
-        match = re.search(pattern, response, re.DOTALL)
-
-        if match:
-            game_status = "ongoing"
-            break
-        elif tries_to_genrate_correct_output > 2:
-            game_status = "abort"
-            print(game_status)
-            break
-        elif not match:
-            # Handle cases where the output doesn't match the template
-            prompt = f"""ERROR: Your given ANSWER doess not follow the given TEMPLATE. Try again. Use the following TEMPLATE: {pattern}
-
-DO NOT APOLOGIZE OR WHATEVER. JUST USE THE PATTERN"""
-            tries_to_genrate_correct_output += 1
-            prompting(prompt, game_transcript, specific_transcript)
-
-    return response, game_status
-
-
+# This needs to be adjusted or removed completely (replaced)
+# def enforce_template(pattern, game_transcript, specific_transcript):
+#     """
+#     Function which checks the given answer of the LLMS.
+#     If they follow the given template, all gucci.
+#     If not, generate new prompt where we enforce the
+#     usage of the template
+#     """
+#
+#     tries_to_genrate_correct_output = 0
+#
+#     while True:
+#
+#         response = game_transcript[-1]["content"]
+#
+#         # Search for the pattern in the output
+#         match = re.search(pattern, response, re.DOTALL)
+#
+#         if match:
+#             game_status = "ongoing"
+#             break
+#         elif tries_to_genrate_correct_output > 2:
+#             game_status = "abort"
+#             print(game_status)
+#             break
+#         elif not match:
+#             # Handle cases where the output doesn't match the template
+#             prompt = f"""ERROR: Your given ANSWER doess not follow the given TEMPLATE. Try again. Use the following TEMPLATE: {pattern}
+#
+# DO NOT APOLOGIZE OR WHATEVER. JUST USE THE PATTERN"""
+#             tries_to_genrate_correct_output += 1
+#             prompting(prompt, game_transcript, specific_transcript)
+#
+#     return response, game_status
 
 
 def prompt_char_sheets(character_sheet):
@@ -254,59 +227,24 @@ def prompt_char_sheets(character_sheet):
     return prompt
 
 
-
-
-
-def check_if_continue_game(npc_reaction_values):
-    """
-    Function which checks the number of negative
-    responses of the NPC in a row.
-    """
-    if len(npc_reaction_values) >= 2:
-
-        # count negative values:
-        num_neg_values = 0
-        for value in npc_reaction_values[-1:-3]:
-            if value < 0:
-                num_neg_values += 1
-        return num_neg_values
-
-    else:
-        num_neg_values = 0
-        return num_neg_values
-
-
-def get_number_and_reason(game_transcript, specific_transcript):
-    # clean the response
-    response = game_transcript[-1]["content"]
-
-    # regex to match the number and reason
-    number_pattern = r"NUMBER: (\d)"
-    reason_pattern = r"REASON: (.+)"
-
-    # get matches
-    number_match = re.search(number_pattern, response)
-    reason_match = re.search(reason_pattern, response)
-
-    # Extract matched groups if they exist
-    if number_match:
-        number = number_match.group(1)
-    else:
-        number = None
-
-    if reason_match:
-        reason = reason_match.group(1)
-    else:
-        reason = None
-
-    cleaned_response = {"cleaned response": {
-        "NUMBER": int(number),
-        "REASON": reason}
-    }
-
-    game_transcript[-1].update(cleaned_response)
-    specific_transcript[-1].update(cleaned_response)
-
+# this needs to be completely changed according to our new rules when the game ends
+# def check_if_continue_game(npc_reaction_values):
+#     """
+#     Function which checks the number of negative
+#     responses of the NPC in a row.
+#     """
+#     if len(npc_reaction_values) >= 2:
+#
+#         # count negative values:
+#         num_neg_values = 0
+#         for value in npc_reaction_values[-1:-3]:
+#             if value < 0:
+#                 num_neg_values += 1
+#         return num_neg_values
+#
+#     else:
+#         num_neg_values = 0
+#         return num_neg_values
 
 
 ##########################################################
@@ -328,7 +266,7 @@ class DatingSimGameScorer(GameScorer):
         # max_unpleasant_actions_in_a_row = experiment[max_unpleasant_actions_in_a_row]
         # penalty_for_unpleasant_actions = experiment[penalty_for_unpleasant_actions]
         accumulated_points = 0
-        #level_threshold, max_points = scoring_sytem(self.max_num_actions, self.max_num_subactions)
+        # level_threshold, max_points = scoring_sytem(self.max_num_actions, self.max_num_subactions)
 
         invalid_response = False
         pc_successful = False
@@ -428,12 +366,12 @@ class DatingSimGameBenchmark(GameBenchmark):
 
 def main():
     """Play the first episode in the instances."""
-    #instances = file_utils.load_json("in/instances.json", "privateshared")
-    #experiment = instances["experiments"][0]
-    #instance = experiment["game_instances"][0]
-    #master = DatingSimGameMaster(experiment, ["model_names"])
-    #master.setup(**instance)
-    #master.play()
+    # instances = file_utils.load_json("in/instances.json", "privateshared")
+    # experiment = instances["experiments"][0]
+    # instance = experiment["game_instances"][0]
+    # master = DatingSimGameMaster(experiment, ["model_names"])
+    # master.setup(**instance)
+    # master.play()
 
 
 if __name__ == '__main__':

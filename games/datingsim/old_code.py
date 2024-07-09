@@ -22,6 +22,8 @@
 # max_num_subactions = 2
 
 
+
+
 # """
 # Here we dump all the gen
 # """
@@ -609,3 +611,44 @@
 #         "pc": response
 #     }
 #     transcript.append(current_context)
+
+# def get_number_and_reason(game_transcript, specific_transcript):
+#     # clean the response
+#     response = game_transcript[-1]["content"]
+#
+#     # regex to match the number and reason
+#     number_pattern = r"NUMBER: (\d)"
+#     reason_pattern = r"REASON: (.+)"
+#
+#     # get matches
+#     number_match = re.search(number_pattern, response)
+#     reason_match = re.search(reason_pattern, response)
+#
+#     # Extract matched groups if they exist
+#     if number_match:
+#         number = number_match.group(1)
+#     else:
+#         number = None
+#
+#     if reason_match:
+#         reason = reason_match.group(1)
+#     else:
+#         reason = None
+#
+#     cleaned_response = {"cleaned response": {
+#         "NUMBER": int(number),
+#         "REASON": reason}
+#     }
+#
+#     game_transcript[-1].update(cleaned_response)
+#     specific_transcript[-1].update(cleaned_response)
+
+
+
+# Patterns:
+# self.pattern_sex_age = experiment["pattern_sex_age"]
+# self.pattern_f_number = experiment["pattern_f_number"]
+# self.pattern_num_r = experiment["pattern_num_r"]
+# self.pattern_num_reason = experiment["pattern_num_reason"]
+# self.pattern_num_rea_res = experiment["pattern_num_rea_res"]
+# self.pattern_response = experiment["pattern_response"]
