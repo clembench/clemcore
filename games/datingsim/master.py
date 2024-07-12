@@ -19,14 +19,12 @@ class DatingSimGameMaster(GameMaster):
     def __init__(self, game_name: str, experiment: Dict, player_models: List[Model]):
         super().__init__(game_name, experiment, player_models)
 
-
         # regex patterns here
 
         self.name = experiment['name']
-        #self.penalty_rules = experiment['penalty_rules']
+        # self.penalty_rules = experiment['penalty_rules']
         self.current_turn = 0
         self.n_turns = experiment['n_turns']
-
 
         # boolean to see game status
         self.game_status = True
@@ -51,7 +49,6 @@ class DatingSimGameMaster(GameMaster):
             player.descriptor = f"Responder"
             self.player_model_names[idx] = player.descriptor
 
-
     def add_message(self, player: Player, utterance: str, role="user") -> None:
         # write function, this needs to be merged with what is in GameMaster of dating_simulator/master.py
         player.history.append({'role': role, 'content': utterance})
@@ -66,9 +63,26 @@ class DatingSimGameMaster(GameMaster):
                        call=(copy.deepcopy(prompt), raw_answer))
         # figure out how to add to history after parsing
         # this is a suggestion from Nic, not sure how to solve it yet
-        if restart_history == True:
-            player.history = []
+        # if restart_history == True:
+        #     player.history = []
         return answer
+
+    # def get_answer(self, player: Player, restart_history=False) -> str:
+    #     # this needs to be merged with what is in GameMaster of dating_simulator/master.py
+    #     print(f"Debug: player.history before generating response: {player.history}")
+    #     if not player.history:
+    #         print("Error: player history is empty!")
+    #         return ""
+    #
+    #     prompt, raw_answer, answer = player(player.history, self.current_turn)
+    #     action = {'type': 'get message', 'content': answer}
+    #     self.log_event(from_=str(player), to="GM", action=action,
+    #                    call=(copy.deepcopy(prompt), raw_answer))
+    #     # figure out how to add to history after parsing
+    #     # this is a suggestion from Nic, not sure how to solve it yet
+    #     # if restart_history:
+    #     #     player.history = []
+    #     return answer
 
     def setup(self, **game_instance) -> None:
         """
@@ -89,47 +103,52 @@ class DatingSimGameMaster(GameMaster):
         self.initial_prompt_player_a = self.game_instance["initial_prompt_player_a"]
         self.initial_prompt_player_b = self.game_instance["initial_prompt_player_b"]
         self.location = self.game_instance['location']
+        self.log_players({
+            "GM": "Game master for datingsim",
+            "Player_1": self.player_models[0].get_name(),
+            "Player_2": self.player_models[1].get_name()}
+        )
 
     # This needs to be revised again
-    def validate_response(self, player: Player, utterance: str, pattern: str, repetition: False) -> bool:
-        """
-        Function to check if the given answer is in the valid
-        format. 
-        If yes, the game continues.
-        If no, the game is aborted.
-        If repetitions are allowed, the role can re-try n times.
-        If it fails again, the game will be aborted.
-        """
-        match = re.search(pattern, utterance)
-
-        if not repetition:
-            if match:
-                self.game_status = True
-            else:
-                self.game_status = False
-
-        else:
-            tries_to_genrate_correct_output = 0
-            while True:
-                if match:
-                    self.game_status = True
-                    break
-                elif tries_to_genrate_correct_output > 2:
-                    self.game_status = False
-                    break
-                elif not match:
-                    # Handle cases where the output doesn't match the template
-                    tries_to_genrate_correct_output += 1
-                    # need to include reprompt here, not sure if this is the
-                    # correct method though
-                    DialogueGameMaster.prompt(player=player, is_reprompt=True)
-                    break
+    # def validate_response(self, player: Player, utterance: str, pattern: str, repetition: False) -> bool:
+    #     """
+    #     Function to check if the given answer is in the valid
+    #     format.
+    #     If yes, the game continues.
+    #     If no, the game is aborted.
+    #     If repetitions are allowed, the role can re-try n times.
+    #     If it fails again, the game will be aborted.
+    #     """
+    #     match = re.search(pattern, utterance)
+    #
+    #     if not repetition:
+    #         if match:
+    #             self.game_status = True
+    #         else:
+    #             self.game_status = False
+    #
+    #     else:
+    #         tries_to_genrate_correct_output = 0
+    #         while True:
+    #             if match:
+    #                 self.game_status = True
+    #                 break
+    #             elif tries_to_genrate_correct_output > 2:
+    #                 self.game_status = False
+    #                 break
+    #             elif not match:
+    #                 # Handle cases where the output doesn't match the template
+    #                 tries_to_genrate_correct_output += 1
+    #                 # need to include reprompt here, not sure if this is the
+    #                 # correct method though
+    #                 DialogueGameMaster.prompt(player=player, is_reprompt=True)
+    #                 break
 
     # TO DO: include checking every response of LLMs if they are following the pattern
     def play(self):
 
         self.log_next_turn()
-        self.current_turn += 1
+
 
         # Step 1a
         # GM to P1
@@ -155,12 +174,12 @@ class DatingSimGameMaster(GameMaster):
 
         # P2 to GM
         # Answers begin message to P1
-        self.get_answer(self.player_a)
+        self.get_answer(self.player_b)
 
         self.log_next_turn()
         self.current_turn += 1
 
-        while self.current_turn - 3 < self.n_turns:
+        while self.current_turn - 2 < self.n_turns:
             # Step 2,4,6...n-1
             # GM to P1
             # Gives message from P2 to P1
@@ -184,6 +203,8 @@ class DatingSimGameMaster(GameMaster):
             self.current_turn += 1
 
     print("end")
+
+
 # This needs to be adjusted or removed completely (replaced)
 # def enforce_template(pattern, game_transcript, specific_transcript):
 #     """
