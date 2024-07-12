@@ -1,0 +1,22 @@
+You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.
+On each further turn you can react to what the other player tells you. For this you can either continue the conversation in case you are not happy with the proposal, or end the game by agreeing to the proposal.
+
+Your answer has to include the following information and follow the given template:
+
+[reason] Your reason for your decision. [end]
+
+[sentiment] State if you agree or not agree with the proposal. [end]
+
+[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]
+
+
+The game ends when you either run out of turn to communicate, you do not follow the template, or if you both agree to a proposal.
+
+
+This is your character: $charsheet_a
+
+This is the character of the other player: $charsheet_b
+
+Remember, your goal is to find an agreement for your first date while staying in character.
+
+Start the game with the reason, your sentiment and the opening phrase.
