@@ -50,8 +50,8 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
         # initial prompts for player A and player B
         # TO-DO: Change prompts
-        initial_prompt_a = "test1"  # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_pc_prompt.template')
-        initial_prompt_b = "test2"  # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_npc_prompt.template')
+        initial_prompt_a = self.load_template('resources/initial_prompts/initialprompt_playerA.template') # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_pc_prompt.template')
+        initial_prompt_b = self.load_template('resources/initial_prompts/initialprompt_playerB.template')  # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_npc_prompt.template')
 
         """
         maybe we can still leave this in and generate more experiments with

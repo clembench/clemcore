@@ -18,15 +18,15 @@ logger = get_logger(__name__)
 class DatingSimGameMaster(GameMaster):
     def __init__(self, game_name: str, experiment: Dict, player_models: List[Model]):
         super().__init__(game_name, experiment, player_models)
-        self.initial_prompt_pc = experiment['initial_prompt_pc']
+
 
         # regex patterns here
 
         self.name = experiment['name']
-        self.penalty_rules = experiment['penalty_rules']
+        #self.penalty_rules = experiment['penalty_rules']
         self.current_turn = 0
         self.n_turns = experiment['n_turns']
-        self.location = experiment['location']
+
 
         # boolean to see game status
         self.game_status = True
@@ -46,21 +46,23 @@ class DatingSimGameMaster(GameMaster):
         # player writer and responder
         if idx == 0:
             player.descriptor = f"Writer"
+            self.player_model_names[idx] = player.descriptor
         elif idx == 1:
             player.descriptor = f"Responder"
-        self.player_model_names[str(player)] = player.descriptor
+            self.player_model_names[idx] = player.descriptor
+
 
     def add_message(self, player: Player, utterance: str, role="user") -> None:
         # write function, this needs to be merged with what is in GameMaster of dating_simulator/master.py
         player.history.append({'role': role, 'content': utterance})
         action = {'type': 'send message', 'content': utterance}
-        self.log_event(from_='GM', to=str(self.player_model_names[str(player)]), action=action)
+        self.log_event(from_='GM', to=str(player), action=action)
 
     def get_answer(self, player: Player, restart_history=True) -> str:
         # this needs to be merged with what is in GameMaster of dating_simulator/master.py
         prompt, raw_answer, answer = player(player.history, self.current_turn)
         action = {'type': 'get message', 'content': answer}
-        self.log_event(from_=str(self.player_model_names[str(player)]), to="GM", action=action,
+        self.log_event(from_=str(player), to="GM", action=action,
                        call=(copy.deepcopy(prompt), raw_answer))
         # figure out how to add to history after parsing
         # this is a suggestion from Nic, not sure how to solve it yet
@@ -84,6 +86,9 @@ class DatingSimGameMaster(GameMaster):
 
         self.add_player(self.player_a)
         self.add_player(self.player_b)
+        self.initial_prompt_player_a = self.game_instance["initial_prompt_player_a"]
+        self.initial_prompt_player_b = self.game_instance["initial_prompt_player_b"]
+        self.location = self.game_instance['location']
 
     # This needs to be revised again
     def validate_response(self, player: Player, utterance: str, pattern: str, repetition: False) -> bool:
@@ -131,7 +136,7 @@ class DatingSimGameMaster(GameMaster):
         # Provides character sheet
         # initial prompt is (same for both): game description, goal, game rules, char-sheet
         # write first ("you are this person (char sheet A) and you write to another person (char sheet B)")
-        self.add_message(self.player_a, utterance=self.load_template('resources/initial_prompts/....'))
+        self.add_message(self.player_a, utterance=self.initial_prompt_player_a)
 
         # P1 to GM
         # Writes a beginning message to P2
@@ -146,7 +151,7 @@ class DatingSimGameMaster(GameMaster):
         # initial prompt is (same for both): game description, goal, game rules, char-sheet
         # get written to ("you are this person (char sheet B) and another person (char sheet A) writes to you this *mess*")
         # + reply to P1
-        self.add_message(self.player_b, utterance=self.load_template('resources/initial_prompts/....'))
+        self.add_message(self.player_b, utterance=self.initial_prompt_player_b)
 
         # P2 to GM
         # Answers begin message to P1
@@ -178,7 +183,7 @@ class DatingSimGameMaster(GameMaster):
             self.log_next_turn()
             self.current_turn += 1
 
-
+    print("end")
 # This needs to be adjusted or removed completely (replaced)
 # def enforce_template(pattern, game_transcript, specific_transcript):
 #     """
