@@ -652,3 +652,15 @@
 # self.pattern_num_reason = experiment["pattern_num_reason"]
 # self.pattern_num_rea_res = experiment["pattern_num_rea_res"]
 # self.pattern_response = experiment["pattern_response"]
+
+
+# def prompt_char_sheets(character_sheet):
+#     prompt = f"""GENDER: {character_sheet["GENDER"]}
+#     AGE: {character_sheet["AGE"]}
+#     APPEARANCE: {character_sheet["APPEARANCE"]}
+#     LIKES: {character_sheet["LIKES"]}
+#     DISLIKES: {character_sheet["DISLIKES"]}
+#     HOBBIES: {character_sheet["HOBBIES"]}
+#     SUMMARY: {character_sheet["SUMMARY"]}
+#     """
+#     return prompt

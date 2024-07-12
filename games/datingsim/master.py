@@ -215,18 +215,6 @@ class DatingSimGameMaster(GameMaster):
 #     return response, game_status
 
 
-def prompt_char_sheets(character_sheet):
-    prompt = f"""GENDER: {character_sheet["GENDER"]}
-    AGE: {character_sheet["AGE"]}
-    APPEARANCE: {character_sheet["APPEARANCE"]}
-    LIKES: {character_sheet["LIKES"]}
-    DISLIKES: {character_sheet["DISLIKES"]}
-    HOBBIES: {character_sheet["HOBBIES"]}
-    SUMMARY: {character_sheet["SUMMARY"]}
-    """
-    return prompt
-
-
 # this needs to be completely changed according to our new rules when the game ends
 # def check_if_continue_game(npc_reaction_values):
 #     """
@@ -362,17 +350,3 @@ class DatingSimGameBenchmark(GameBenchmark):
 
     def create_game_scorer(self, experiment: Dict, game_instance: Dict) -> GameScorer:
         return DatingSimGameScorer(experiment, game_instance)
-
-
-def main():
-    """Play the first episode in the instances."""
-    # instances = file_utils.load_json("in/instances.json", "privateshared")
-    # experiment = instances["experiments"][0]
-    # instance = experiment["game_instances"][0]
-    # master = DatingSimGameMaster(experiment, ["model_names"])
-    # master.setup(**instance)
-    # master.play()
-
-
-if __name__ == '__main__':
-    main()
