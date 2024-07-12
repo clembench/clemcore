@@ -23,12 +23,13 @@ ASSISTANT_MODEL = "meta-llama/Llama-3-70b-chat-hf"
 
 logger = clemgame.get_logger(__name__)
 
+
 class DatingSimInstanceGenerator(GameInstanceGenerator):
 
     def __init__(self, name: str):
         super().__init__(GAME_NAME)
         # self.instances = dict(experiments=list())
-    
+
     def load_instances(self):
         return self.load_json("in/instances")
 
@@ -40,17 +41,18 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         # example: one where both players are male,
         # one where both players are female, etc.
         # TO DO: prepare the datasets 
-        char_sheets = get_random_npcs("C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/test.json")
+        char_sheets = get_random_npcs("games/datingsim/resources/testfile.json")
         # pre define location to keep it open for an experimeent 
         locations = None
         # predefine actions in case that we include them
-        actions = None
+        actions = None  # number of how often each player can say sth
+        n_turns = 25
 
         # initial prompts for player A and player B
         # TO-DO: Change prompts
-        initial_prompt_a = "test1" #self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_pc_prompt.template')
-        initial_prompt_b = "test2" # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_npc_prompt.template')
-    
+        initial_prompt_a = "test1"  # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_pc_prompt.template')
+        initial_prompt_b = "test2"  # self.load_template('C:/Users/imgey/Desktop/MASTER_POTSDAM/SoSe24/PM2/project/rizzSim/rizzSim/games/datingsim/resources/resources/initial_prompts/initial_npc_prompt.template')
+
         """
         maybe we can still leave this in and generate more experiments with
         the amount of character information they get 
@@ -62,7 +64,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         for index, experiment in enumerate(char_sheets):
             # create experiment, name is (WILL BE) in the char sheet
             experiment = self.add_experiment(f"Playthrough_{experiment['exp_name']}")
-
+            experiment["n_turns"] = n_turns
             # build n instances for each experiment 
             for game_id in range(N_INSTANCES):
                 # set parameters
@@ -80,9 +82,6 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
                 else:
                     set_of_actions = None
 
-                # number of how often each player can say sth
-                n_turns = 25
-
                 instance = self.add_game_instance(experiment, game_id)
 
                 # populate game with parameters
@@ -90,11 +89,9 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
                 instance["char_b"] = charsheet_b
                 instance["location"] = location
                 instance["set_of_actions"] = set_of_actions
-                instance["n_turns"] = n_turns
+
                 instance["initial_prompt_player_a"] = initial_prompt_a
                 instance["initial_prompt_player_b"] = initial_prompt_b
-
-
 
         # experiment['penalty_rules'] = penalty_rules
 
@@ -109,7 +106,6 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
         # THIS is the new pattern basically
         # experiment["pattern_response_players"] = r"REASON:\s*(.+?)\s*SENTIMENT:\s*(.+)\s*RESPONSE:\s*(.+)$"
-        
 
 
 if __name__ == '__main__':

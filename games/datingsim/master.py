@@ -25,7 +25,7 @@ class DatingSimGameMaster(GameMaster):
         self.name = experiment['name']
         self.penalty_rules = experiment['penalty_rules']
         self.current_turn = 0
-        self.n_of_turns = experiment['n_of_turns']
+        self.n_turns = experiment['n_turns']
         self.location = experiment['location']
 
         # boolean to see game status
@@ -155,7 +155,7 @@ class DatingSimGameMaster(GameMaster):
         self.log_next_turn()
         self.current_turn += 1
 
-        while self.current_turn - 3 < self.n_of_turns:
+        while self.current_turn - 3 < self.n_turns:
             # Step 2,4,6...n-1
             # GM to P1
             # Gives message from P2 to P1
@@ -255,7 +255,8 @@ class DatingSimGameScorer(GameScorer):
         # penalty_for_unpleasant_actions = experiment[penalty_for_unpleasant_actions]
         accumulated_points = 0
         # level_threshold, max_points = scoring_sytem(self.max_num_actions, self.max_num_subactions)
-
+        level_threshold = 1
+        max_points = 5
         invalid_response = False
         pc_successful = False
         # maybe add num_sub/main_actions ?
@@ -346,7 +347,7 @@ class DatingSimGameBenchmark(GameBenchmark):
     def create_game_master(
             self, experiment: Dict, player_models: List[Model]
     ) -> GameMaster:
-        return DatingSimGameMaster(experiment, player_models)
+        return DatingSimGameMaster(game_name="datingsim", experiment=experiment, player_models=player_models)
 
     def create_game_scorer(self, experiment: Dict, game_instance: Dict) -> GameScorer:
         return DatingSimGameScorer(experiment, game_instance)
