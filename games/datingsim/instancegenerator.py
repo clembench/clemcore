@@ -90,8 +90,8 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
                 instance["location"] = location
                 instance["set_of_actions"] = set_of_actions
 
-                instance["initial_prompt_player_a"] = initial_prompt_a.replace("$charsheet_a", charsheet_a)
-                instance["initial_prompt_player_b"] = initial_prompt_b.replace("$charsheet_b", charsheet_b)
+                instance["initial_prompt_player_a"] = initial_prompt_a.replace("$charsheet_a", str(instance["char_a"])).replace("charsheet_b", str(instance["char_b"]))
+                instance["initial_prompt_player_b"] = initial_prompt_b.replace("$charsheet_a", str(instance["char_a"])).replace("charsheet_b", str(instance["char_b"]))
 
         # experiment['penalty_rules'] = penalty_rules
 
