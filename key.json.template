@@ -16,7 +16,7 @@
     "api_key": ""
   },
   "generic_openai_compatible": {
-    "api_key": "",
-    "base_url": "http://127.0.0.1:8000/v1"
+      "api_key": "API_KEY",
+      "base_url": "https://api.together.xyz/v1"
   }
 }

@@ -15,56 +15,94 @@ GAME_NAME = "datingsim"
 logger = get_logger(__name__)
 
 
+
 class DatingSimGameMaster(GameMaster):
     def __init__(self, game_name: str, experiment: Dict, player_models: List[Model]):
         super().__init__(game_name, experiment, player_models)
 
         # regex patterns here
 
+        self.experiment = experiment
         self.name = experiment['name']
         # self.penalty_rules = experiment['penalty_rules']
-        self.current_turn = 0
-        self.n_turns = experiment['n_turns']
-
-        # boolean to see game status
-        self.game_status = True
-        # check for invalid responses 
-        self.invalid_response = False
-        # self.score = {}  # this was affinity points
-
         self.model_a = player_models[0]
         self.model_b = player_models[1]
 
-        self.player_model_names = [
-            player_model.get_name() for player_model in player_models
-        ]
+        self.max_prompt_retries = experiment["max_retries"]
+
+        # initialise attributes that will be used for the evaluation scores
+        self.aborted: bool = False
+        self.lose: bool = False
+        self.complete_turns: int = 0
+
+        # define game status
+        self.proceed = True
+
+        # boolean to see game status
+        # self.game_status = True
+        # check for invalid responses 
+        # self.invalid_response = False
+        # self.score = {}  # this was affinity points
+
+        self.player_model_names = list()
+        for player_model in player_models:
+            name = player_model.get_name()
+            self.player_model_names.append(name)
+        self.player_model_names = [ # what does this do
+            player_model.get_name() for player_model in player_models]
+
+        self.writer_history = []
+        self.responder_history = []
 
     def add_player(self, player: Player) -> None:
         idx = len(self.player_model_names)
+        # print(self.player_model_names)
+        # print(idx)
         # player writer and responder
         if idx == 0:
             player.descriptor = f"Writer"
             self.player_model_names[idx] = player.descriptor
+            # self.writer_history = list()
         elif idx == 1:
             player.descriptor = f"Responder"
             self.player_model_names[idx] = player.descriptor
+            # self.responder_history = list()
+        else:
+            logger.warning("Invalid player index: %d", idx)
+        logger.info(f"Added player {player.descriptor} with index {idx}")
 
     def add_message(self, player: Player, utterance: str, role="user") -> None:
         # write function, this needs to be merged with what is in GameMaster of dating_simulator/master.py
-        player.history.append({'role': role, 'content': utterance})
-        action = {'type': 'send message', 'content': utterance}
-        self.log_event(from_='GM', to=str(player), action=action)
+        if player == self.player_a:
+            self.writer_history.append({'role': role, 'content': utterance})
+            action = {'type': 'send message', 'content': utterance}
+            self.log_event(from_='GM', to="Player_1", action=action)
+        else:
+            self.responder_history.append({'role': role, 'content': utterance})
+            action = {'type': 'send message', 'content': utterance}
+            self.log_event(from_='GM', to="Player_2", action=action)
 
-    def get_answer(self, player: Player, restart_history=True) -> str:
-        # this needs to be merged with what is in GameMaster of dating_simulator/master.py
-        prompt, raw_answer, answer = player(player.history, self.current_turn)
-        action = {'type': 'get message', 'content': answer}
-        self.log_event(from_=str(player), to="GM", action=action,
-                       call=(copy.deepcopy(prompt), raw_answer))
+    def get_answer(self, player: Player) -> str:
+        if player == self.player_a:
+            prompt, raw_answer, answer = player(self.writer_history, self.current_turn)
+            action = {"type": "get message", 'content': answer}
+            self.log_event(from_="Player_1", to="GM", action=action,
+                        call=(copy.deepcopy(prompt), raw_answer))
+            
+            self.writer_history.append({'role': "assistant", 'content': answer})
+        else:
+            prompt, raw_answer, answer = player(self.responder_history, self.current_turn)
+            action = {'type': 'get message', 'content': answer}
+            self.log_event(from_="Player_2", to="GM", action=action,
+                        call=(copy.deepcopy(prompt), raw_answer))
+            self.responder_history.append({'role': "assistant", 'content': answer})
+
+
         # figure out how to add to history after parsing
         # this is a suggestion from Nic, not sure how to solve it yet
         # if restart_history == True:
         #     player.history = []
+        print(answer)
         return answer
 
     # def get_answer(self, player: Player, restart_history=False) -> str:
@@ -94,12 +132,24 @@ class DatingSimGameMaster(GameMaster):
         self.game_instance = game_instance
         self.game_id = self.game_instance["game_id"]
 
+        self.current_turn = 0
+        self.n_turns = self.experiment['n_turns']
+        self.num_prompt_retries = 0
+
+        self.last_message = None
+
+        # initialise metrics
+        self.request_counts = [0] * (self.n_turns + 1)
+        self.parsed_request_counts = [0] * (self.n_turns + 1)
+        self.violated_request_counts = [0] * (self.n_turns + 1)
+        
         # create player/s here
         self.player_a = Dater(self.model_a, "Writer")
         self.player_b = Dater(self.model_b, "Responder")
 
-        self.add_player(self.player_a)
-        self.add_player(self.player_b)
+        # self.add_player(self.player_a)
+        # self.add_player(self.player_b)
+        
         self.initial_prompt_player_a = self.game_instance["initial_prompt_player_a"]
         self.initial_prompt_player_b = self.game_instance["initial_prompt_player_b"]
         self.location = self.game_instance['location']
@@ -109,101 +159,163 @@ class DatingSimGameMaster(GameMaster):
             "Player_2": self.player_models[1].get_name()}
         )
 
-    # This needs to be revised again
-    # def validate_response(self, player: Player, utterance: str, pattern: str, repetition: False) -> bool:
-    #     """
-    #     Function to check if the given answer is in the valid
-    #     format.
-    #     If yes, the game continues.
-    #     If no, the game is aborted.
-    #     If repetitions are allowed, the role can re-try n times.
-    #     If it fails again, the game will be aborted.
-    #     """
-    #     match = re.search(pattern, utterance)
-    #
-    #     if not repetition:
-    #         if match:
-    #             self.game_status = True
-    #         else:
-    #             self.game_status = False
-    #
-    #     else:
-    #         tries_to_genrate_correct_output = 0
-    #         while True:
-    #             if match:
-    #                 self.game_status = True
-    #                 break
-    #             elif tries_to_genrate_correct_output > 2:
-    #                 self.game_status = False
-    #                 break
-    #             elif not match:
-    #                 # Handle cases where the output doesn't match the template
-    #                 tries_to_genrate_correct_output += 1
-    #                 # need to include reprompt here, not sure if this is the
-    #                 # correct method though
-    #                 DialogueGameMaster.prompt(player=player, is_reprompt=True)
-    #                 break
+        self.log_key("n_turns", self.n_turns)
+
+        self.further_prompt = self.game_instance["further_prompts"]
+        self.further_prompt_a = self.further_prompt.replace("$character_name", self.game_instance["char_b"]["NAME"])
+        self.further_prompt_b = self.further_prompt.replace("$character_name", self.game_instance["char_a"]["NAME"])
 
     # TO DO: include checking every response of LLMs if they are following the pattern
     def play(self):
 
-        self.log_next_turn()
+        while self.proceed:
 
-
-        # Step 1a
-        # GM to P1
-        # Provides character sheet
-        # initial prompt is (same for both): game description, goal, game rules, char-sheet
-        # write first ("you are this person (char sheet A) and you write to another person (char sheet B)")
-        self.add_message(self.player_a, utterance=self.initial_prompt_player_a)
-
-        # P1 to GM
-        # Writes a beginning message to P2
-        self.get_answer(self.player_a)
-
-        self.log_next_turn()
-        self.current_turn += 1
-
-        # Step 1b
-        # GM to P2
-        # Provides character sheet
-        # initial prompt is (same for both): game description, goal, game rules, char-sheet
-        # get written to ("you are this person (char sheet B) and another person (char sheet A) writes to you this *mess*")
-        # + reply to P1
-        self.add_message(self.player_b, utterance=self.initial_prompt_player_b)
-
-        # P2 to GM
-        # Answers begin message to P1
-        self.get_answer(self.player_b)
-
-        self.log_next_turn()
-        self.current_turn += 1
-
-        while self.current_turn - 2 < self.n_turns:
-            # Step 2,4,6...n-1
-            # GM to P1
-            # Gives message from P2 to P1
-            self.add_message(self.player_a, utterance=self.player_b.history[-1])
-
-            # P1 to GM
-            # Answers to P2's message
-            self.get_answer(self.player_a)
             self.log_next_turn()
+            # self.turn()
+
+            print(f"current turn:{self.current_turn}")
+
+            # this would be the initial prompt
+            if self.current_turn == 0:
+
+                # Step 1a
+                # GM to P1
+                # Provides character sheet
+                # initial prompt is (same for both): game description, goal, game rules, char-sheet
+                # write first ("you are this person (char sheet A) and you write to another person (char sheet B)")
+                self.add_message(self.player_a, utterance=self.initial_prompt_player_a)
+
+                # P1 to GM
+                # Writes a beginning message to P2
+                answer_a = self.get_answer(self.player_a)
+                # print(f"First A answer:{answer_a}")
+
+                # check if player a gives correct response
+                is_valid_turn = self.check_validity(answer_a)
+                self.proceed = is_valid_turn
+                if is_valid_turn == False:
+                    break
+
+                self.last_message = self.update_answer(answer_a)
+                # self.log_next_turn()
+                # self.current_turn += 1
+
+                # Step 1b
+                # GM to P2
+                # Provides character sheet
+                # initial prompt is (same for both): game description, goal, game rules, char-sheet
+                # get written to ("you are this person (char sheet B) and another person (char sheet A) writes to you this *mess*")
+                # + reply to P1
+
+                b_initial_prompt = self.initial_prompt_player_b.replace("$message_player_A", self.last_message)
+                # self.add_message(self.player_b, utterance=self.initial_prompt_player_b)
+                self.add_message(self.player_b, utterance=b_initial_prompt)
+                
+                # P2 to GM
+                # Answers begin message to P1
+                answer_b = self.get_answer(self.player_b)
+
+                # check if player a gives correct response
+                is_valid_turn = self.check_validity(answer_b)
+                self.proceed = is_valid_turn
+                if is_valid_turn == False:
+                    break
+
+                self.last_message = self.update_answer(answer_b)
+
+            
+            else:
+                self.add_message(self.player_a, utterance=self.further_prompt_a.replace("$response", self.last_message))
+
+                # P1 to GM
+                # Writes a beginning message to P2
+                answer_a = self.get_answer(self.player_a)
+                # check if player a gives correct response
+                is_valid_turn = self.check_validity(answer_a)
+                self.proceed = is_valid_turn
+                if is_valid_turn == False:
+                    break
+                self.last_message = self.update_answer(answer_a)
+
+                # self.log_next_turn()
+                # self.current_turn += 1
+
+                # Step 1b
+                # GM to P2
+                # Provides character sheet
+                # initial prompt is (same for both): game description, goal, game rules, char-sheet
+                # get written to ("you are this person (char sheet B) and another person (char sheet A) writes to you this *mess*")
+                # + reply to P1
+                self.add_message(self.player_b, utterance=self.further_prompt.replace("$response", self.last_message))
+
+                # P2 to GM
+                # Answers begin message to P1
+                answer_b = self.get_answer(self.player_b)
+
+                # check if player b gives correct response
+                is_valid_turn = self.check_validity(answer_b)
+                self.proceed = is_valid_turn
+                self.last_message = self.update_answer(answer_b)
+
             self.current_turn += 1
+            self.complete_turns += 1
 
-            # Step 3,5,7...n
-            # GM to P2
-            # Gives message from P1 to P2
-            self.add_message(self.player_b, utterance=self.player_a.history[-1])
+            if self.current_turn > self.n_turns:
+                action = {'type': 'metadata', 'content': 'Game unsuccessful. Out of turns'}
+                self.log_event(from_='GM', to='GM', action=action)
+                self.proceed = False
 
-            # P2 to GM
-            # Answers to P1's message
-            self.get_answer(self.player_b)
-            self.log_next_turn()
-            self.current_turn += 1
 
-    print("end")
+    def check_validity(self, answer):
+        """
+        Check if given answer by yplayer is valid or
+        if it must be re-entered.
+        """
+        # check, if answer begins and ends with 
+        # pattern_for_answer = r"\[reason\].+\[end\]\n\[sentiment\].+\[end\]\n\[response\].+\[end\]"
+        # pattern_for_answer = r".+\[reason\].+"
+        # import re
+        # if re.fullmatch(pattern_for_answer, answer, re.DOTALL):
+        #     pass
 
+        # else: # abort game 
+        #     self.aborted = True
+            
+        #     # log the abortion event
+        #     action = {'type': 'invalid format', 'content': 'Aborted'}
+        #     self.log_event(from_='GM', to='GM', action=action)
+        #     logger.info(f"Invalid format.")
+
+        #     # increase the counter of requests that violate form rules
+        #     self.violated_request_counts[self.current_turn] += 1
+        #     return False
+        
+        # increase the counter of requests that conform to form rules
+        self.parsed_request_counts[self.current_turn] += 1
+        # log the event that the string was valid (no strange characters)
+        action = {'type': 'metadata', 'content': 'valid string'}
+        self.log_event(from_='GM', to='GM', action=action)
+
+        # log the fact that the answer was correct
+        action = {'type': 'parse',
+                  'content': f'{answer} conforms to rules'}
+
+        self.log_event(from_='GM', to='GM', action=action)
+        return True
+
+    def update_answer(self, answer):
+        """
+        Update the last response said
+        """
+        # filter out the response 
+        response_pattern = r"\[response\](.+)"
+        response_match = re.search(response_pattern, answer, re.DOTALL)
+        last_message = response_match.group(1)
+        # print(f"Last message: {last_message}")
+        return last_message
+
+
+    
 
 # This needs to be adjusted or removed completely (replaced)
 # def enforce_template(pattern, game_transcript, specific_transcript):

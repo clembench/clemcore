@@ -1,0 +1,32 @@
+Character sheet generation:
+
+#################
+GPT 4o
+#################
+Ethan Cooper
+Marcus Bennett
+Aiden Reyes
+Noah Sullivan
+
+Sophia Martinez
+Emily Chen
+Olivia Thompson
+Mia Patel
+
+#################
+Gemini
+#################
+Kai Nakamura
+Leo Rodriguez
+Ethan Moore
+Hiro Suzuki
+
+Maya Flores
+Dr. Olivia Khan
+Sakura Nakamura
+Chloe Kim
+
+Robin Aster
+Riley Jones
+Samira Hassan
+Jamie Park
