@@ -268,74 +268,89 @@ class DatingSimGameMaster(GameMaster):
 class DatingSimGameScorer(GameScorer):
     def __init__(self, experiment: Dict, game_instance: Dict):
         super().__init__(GAME_NAME, experiment, game_instance)
+        # might need to add response patterns of players
 
     def compute_scores(self, episode_interactions: Dict) -> None:
+        """
+        TODO: 3 main metrics: 
+            ++ we need to evaluate both players
+            efficiency: number of turns taken to agree / max pre-defined number of turns
+            agreement rate
+            error handling: error counter?
+            (?) clemscore = efficiency * agreement rate - error handling
+            (bonus) average dialogue length:
+            (bonus) vocabulary size:
+        
+        """
         """Episode level scores"""
-        # implement the penalty for unpleasant actions in the scoring system here
-        # not sure if we need to count current_unpleasant_actions_in_a_row here maybe GM is better so it can already abort the game?
-        # pc_successful is True if it reaches certain level_threshold but
-        # find a way to reach instances file here. why can't I reach experiment variables here?
-        turn_scores = []
-        current_unpleasant_actions_in_a_row = 0
-        # max_unpleasant_actions_in_a_row = experiment[max_unpleasant_actions_in_a_row]
-        # penalty_for_unpleasant_actions = experiment[penalty_for_unpleasant_actions]
-        accumulated_points = 0
-        # level_threshold, max_points = scoring_sytem(self.max_num_actions, self.max_num_subactions)
-        level_threshold = 1
-        max_points = 5
-        invalid_response = False
-        pc_successful = False
-        # maybe add num_sub/main_actions ?
+        max_n_turns = episode_interactions["max_n_turns"] # we need to add it to instance gen?
+        turns = episode_interactions["turns"]
 
-        for turn_idx, turn in enumerate(episode_interactions["turns"]):
-            turn_score = {"last_choice": None, "current_point": 0, "request_count": 1}
+        #aborted = False # maybe not needed
+        invalid_response = False
+        total_agreements = 0 # TODO: ask Imge and Jerycho whether we can have more than one agreement per episode? does the game end when we have an agreement?
+        turn_scores = []
+
+        # TODO look at the implementation of generated expression length from referencegame
+        # TODO differentiate between Player 1 and Player 2 when the game is aborted
+
+        for turn_idx, turn in enumerate(turns):
+
+            turn_score = {
+                "agreement": 0,
+                "request_count": 0,
+                "violated_request_count": 0,
+                "parsed_request_count": 0,
+                "reprompts_count": 0,
+                "error_turn_sum": 0,
+            }
 
             for event in turn:
                 action = event["action"]
+
                 if action["type"] == "invalid format":
                     invalid_response = True
-                if action["type"] == "current_point":
+
+                if action["type"] == "agreement": # agreement rate
                     turn_score["current_point"] = action["content"]
-                if action["type"] == "non-affirmative response":
-                    current_unpleasant_actions_in_a_row += current_unpleasant_actions_in_a_row + action["content"]
-                if action["type"] == "affirmative response":
-                    pc_successful = True
-                    accumulated_points += accumulated_points + turn_score["current_point"]
+                    turn_score["agreement"] = 1
 
-            if invalid_response:
-                turn_score["violated_request_count"] = 1
-                turn_score["parsed_request_count"] = 0
-            else:
-                turn_score["violated_request_count"] = 0
-                turn_score["parsed_request_count"] = 1
+                if action["type"] == "reprompt": # error handling
+                    turn_score["turn_reprompts"] += 1
+                    # should we add invalid_response here? im a bit confused
 
-            self.log_turn_score(turn_idx, 'Accuracy', 1 if pc_successful else 0)
-            self.log_turn_score(turn_idx, 'Affinity Points', turn_score["current_point"])
-            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"])
-            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
-            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
-            turn_scores.append(turn_score)
+                if invalid_response:
+                    turn_score["violated_request_count"] = 1
+                    turn_score["parsed_request_count"] = 0
+                else:
+                    turn_score["violated_request_count"] = 0
+                    turn_score["parsed_request_count"] = 1
 
+                self.log_turn_score(turn_idx, 'Turn Agreement', turn_score["agreement"])
+                self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['turn_reprompts'])
+                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"])
+                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
+                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
+                turn_scores.append(turn_score)
+        
         violated_request_count = sum([turn["violated_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count)
 
         parsed_request_count = sum([turn["parsed_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_PARSED, parsed_request_count)
 
-        request_count = sum([turn["request_count"] for turn in turn_scores])
+        request_count = violated_request_count + parsed_request_count
         self.log_episode_score(METRIC_REQUEST_COUNT, request_count)
 
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
 
-        total_affinity_points = sum([turn["affinity_points"] for turn in turn_scores])
-        self.log_episode_score('Accumulated Affinity Points', total_affinity_points)
-
-        pc_successful = False  # need to reset it for calculating episode success
-        if total_affinity_points > level_threshold:
-            pc_successful = True
+        # TODO: how to report these game-specific metrics in logs?
+        episode_efficiency = len(turns) / max_n_turns 
+        total_agreements = sum([turn["agreement"] for turn in turn_scores]) 
+        error_handling = sum([turn["turn_reprompts"] for turn in turn_scores])
 
         # Common metrics
-        if invalid_response:  # whether a violation of the game rules happened (response not parsable)
+        if invalid_response:  # response not parsable
             self.log_episode_score(METRIC_ABORTED, 1)
             self.log_episode_score(METRIC_SUCCESS, 0)
             self.log_episode_score(METRIC_LOSE, 0)
@@ -343,14 +358,14 @@ class DatingSimGameScorer(GameScorer):
             self.log_episode_score(BENCH_SCORE, np.nan)  # metric not applicable
         else:
             self.log_episode_score(METRIC_ABORTED, 0)
-            if pc_successful:
+            if total_agreements > 0:
                 self.log_episode_score(METRIC_SUCCESS, 1)
                 self.log_episode_score(METRIC_LOSE, 0)
-                self.log_episode_score(BENCH_SCORE, 100 / total_affinity_points / max_points * 100)
+                self.log_episode_score(BENCH_SCORE, 100 / ((episode_efficiency * total_agreements)) - error_handling)
             else:
                 self.log_episode_score(METRIC_SUCCESS, 0)
                 self.log_episode_score(METRIC_LOSE, 1)
-                self.log_episode_score(BENCH_SCORE, 0)  # 0 or the same formula as above?
+                self.log_episode_score(BENCH_SCORE, 0)
 
 
 ##########################################################
