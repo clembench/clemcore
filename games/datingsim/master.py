@@ -3,6 +3,7 @@ import re
 from typing import Dict, List
 from string import Template
 import numpy as np
+import re
 
 from backends import Model
 from clemgame import get_logger
@@ -272,36 +273,35 @@ class DatingSimGameMaster(GameMaster):
         if it must be re-entered.
         """
         # check, if answer begins and ends with 
-        # pattern_for_answer = r"\[reason\].+\[end\]\n\[sentiment\].+\[end\]\n\[response\].+\[end\]"
-        # pattern_for_answer = r".+\[reason\].+"
-        # import re
-        # if re.fullmatch(pattern_for_answer, answer, re.DOTALL):
-        #     pass
-
-        # else: # abort game 
-        #     self.aborted = True
-            
-        #     # log the abortion event
-        #     action = {'type': 'invalid format', 'content': 'Aborted'}
-        #     self.log_event(from_='GM', to='GM', action=action)
-        #     logger.info(f"Invalid format.")
-
-        #     # increase the counter of requests that violate form rules
-        #     self.violated_request_counts[self.current_turn] += 1
-        #     return False
+        pattern_for_answer = r"\[reason\].+\[end\]\n\[sentiment\].+\[end\]\n\[response\].+\[end\]"
         
-        # increase the counter of requests that conform to form rules
-        self.parsed_request_counts[self.current_turn] += 1
-        # log the event that the string was valid (no strange characters)
-        action = {'type': 'metadata', 'content': 'valid string'}
-        self.log_event(from_='GM', to='GM', action=action)
+        if not re.fullmatch(pattern_for_answer, answer, re.DOTALL): # abort game
 
-        # log the fact that the answer was correct
-        action = {'type': 'parse',
-                  'content': f'{answer} conforms to rules'}
+            self.aborted = True
+            
+            # log the abortion event
+            action = {'type': 'invalid format', 'content': 'Aborted'}
+            self.log_event(from_='GM', to='GM', action=action)
+            logger.info(f"Invalid format.")
 
-        self.log_event(from_='GM', to='GM', action=action)
-        return True
+            # increase the counter of requests that violate form rules
+            self.violated_request_counts[self.current_turn] += 1
+            return False
+        
+        else:
+        
+            # increase the counter of requests that conform to form rules
+            self.parsed_request_counts[self.current_turn] += 1
+            # log the event that the string was valid (no strange characters)
+            action = {'type': 'metadata', 'content': 'valid string'}
+            self.log_event(from_='GM', to='GM', action=action)
+
+            # log the fact that the answer was correct
+            action = {'type': 'parse',
+                    'content': f'{answer} conforms to rules'}
+
+            self.log_event(from_='GM', to='GM', action=action)
+            return True
 
     def update_answer(self, answer):
         """
