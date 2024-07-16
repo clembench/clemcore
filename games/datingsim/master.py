@@ -35,6 +35,7 @@ class DatingSimGameMaster(GameMaster):
         self.aborted: bool = False
         self.lose: bool = False
         self.complete_turns: int = 0
+        self.won:bool = False
 
         # define game status
         self.proceed = True
@@ -138,12 +139,16 @@ class DatingSimGameMaster(GameMaster):
         self.num_prompt_retries = 0
         self.num_completed_turns = 0
 
-        self.last_message = None
+        self.last_response = None
+        self.last_sentiment = None
 
         # initialise metrics
         self.request_counts = [0] * (self.n_turns + 1)
         self.parsed_request_counts = [0] * (self.n_turns + 1)
         self.violated_request_counts = [0] * (self.n_turns + 1)
+
+        # metric to save the number of turns players needed to find an agreement
+        self.turns_to_win_game = 0
         
         # create player/s here
         self.player_a = Dater(self.model_a, "Writer")
@@ -196,7 +201,8 @@ class DatingSimGameMaster(GameMaster):
                 if is_valid_turn == False:
                     break
 
-                self.last_message = self.update_answer(answer_a)
+                self.last_response = self.update_response(answer_a)
+    
             
             # SECOND TURN - initial prompt for player2 
             elif self.current_turn == 1:
@@ -209,7 +215,7 @@ class DatingSimGameMaster(GameMaster):
                 # get written to ("you are this person (char sheet B) and another person (char sheet A) writes to you this *mess*")
                 # + reply to P1
 
-                b_initial_prompt = self.initial_prompt_player_b.replace("$message_player_A", self.last_message)
+                b_initial_prompt = self.initial_prompt_player_b.replace("$message_player_A", self.last_response)
                 # self.add_message(self.player_b, utterance=self.initial_prompt_player_b)
                 self.add_message(self.player_b, utterance=b_initial_prompt)
                 
@@ -223,9 +229,17 @@ class DatingSimGameMaster(GameMaster):
                 if is_valid_turn == False:
                     break
 
-                self.last_message = self.update_answer(answer_b)
+                self.last_response = self.update_response(answer_b)
 
-            
+                # check if they found agreement|mismatched agreement
+                self.proceed = self.check_for_agreement(self.last_sentiment, answer_b)
+                if self.proceed == False:
+                    break
+
+                # if game continues: update recent sentiment and continue
+                self.last_sentiment = self.update_sentiment(answer_b)
+
+
             else:
                 # prepare prompt 
                 # based on turn number we can determine which player is supposed to be adressed
@@ -238,7 +252,7 @@ class DatingSimGameMaster(GameMaster):
                 else:
                     self.player = self.player_b
                 
-                self.add_message(self.player, utterance=self.further_prompt_a.replace("$response", self.last_message))
+                self.add_message(self.player, utterance=self.further_prompt_a.replace("$response", self.last_response))
 
                 # P1 to GM
                 # Writes a beginning message to P2
@@ -248,14 +262,23 @@ class DatingSimGameMaster(GameMaster):
                 self.proceed = is_valid_turn
                 if is_valid_turn == False:
                     break
-                self.last_message = self.update_answer(answer)
 
+                # update last response and sentiment
+                self.last_response = self.update_response(answer)
+
+                # check if they found agreement|mismatched agreement
+                self.proceed = self.check_for_agreement(self.last_sentiment, answer)
+                if self.proceed == False:
+                    break
+                
+                # if game continues: update recent sentiment and continue
+                self.last_sentiment = self.update_sentiment(answer)
 
             self.current_turn += 1
             self.complete_turns += 1
 
             if self.current_turn > self.n_turns:
-                action = {'type': 'metadata', 'content': 'Game unsuccessful. Out of turns'}
+                action = {'type': 'metadata', 'content': 'game unsuccessful out of turns'}
                 self.log_event(from_='GM', to='GM', action=action)
                 self.proceed = False
 
@@ -266,8 +289,9 @@ class DatingSimGameMaster(GameMaster):
         if it must be re-entered.
         """
         # check, if answer begins and ends with 
-        pattern_for_answer = r"\[reason\].+\[end\]\n\[sentiment\].+\[end\]\n\[response\].+\[end\]"
+        pattern_for_answer = r"\[reason\]\s.+\s\[end\]\s+\[sentiment\] (Continue Conversation|Found Agrement) \[end\]\s+\[response\]\s.+\s\[end\]"
         
+        # check if the template is used correctly
         if not re.fullmatch(pattern_for_answer, answer, re.DOTALL): # abort game
 
             self.aborted = True
@@ -275,12 +299,13 @@ class DatingSimGameMaster(GameMaster):
             # log the abortion event
             action = {'type': 'invalid format', 'content': 'Aborted'}
             self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"Invalid format.")
+            logger.info(f"invalid format")
 
             # increase the counter of requests that violate form rules
             self.violated_request_counts[self.current_turn] += 1
             return False
-        
+
+
         else:
         
             # increase the counter of requests that conform to form rules
@@ -296,7 +321,7 @@ class DatingSimGameMaster(GameMaster):
             self.log_event(from_='GM', to='GM', action=action)
             return True
 
-    def update_answer(self, answer):
+    def update_response(self, answer):
         """
         Update the last response said
         """
@@ -306,9 +331,59 @@ class DatingSimGameMaster(GameMaster):
         last_message = response_match.group(1)
         # print(f"Last message: {last_message}")
         return last_message
-
-
     
+    def update_sentiment(self, answer):
+        """
+        Function which fetches the sentiment of the answer
+        """
+        sentiment_pattern = r"\[sentiment\] (Continue Conversation|Found Agreement) \[end\]"
+        sentiment_match = re.search(sentiment_pattern, answer, re.DOTALL)
+        last_sentiment = sentiment_match.group(1)
+        return last_sentiment
+
+
+    def check_for_agreement(self, last_sentiment, answer):
+        """
+        Function which checks if the players found an agreement. 
+        Takes last message and new message.
+        If last message == Found Agreement, new message must also be "Found Agreement"
+        Otherwise the players lost the came by not proper communicating :)
+        """    
+        # get new sentiment from answer
+        new_sentiment = self.update_sentiment(answer)
+
+        if last_sentiment == "Found Agreement" and new_sentiment != "Found Agreement":
+
+            self.aborted = True
+
+            # log the event that the sentimeents don't match
+            action = {'type': 'info', 'content': 'game unsuccessful, mismatched sentiment'}
+            self.log_event(from_='GM', to='GM', action=action)
+            logger.info(f"lost game")
+
+            return False
+        
+        if last_sentiment == "Found Agreement" and new_sentiment =="Found Agreement":
+            self.won = True
+            action = {'type': 'info', 'content': 'game successful'}
+            self.log_event(from_='GM', to='GM', action=action)
+            logger.info(f"won game")
+
+            # update metric of how many turns they needed to win the game 
+            self.turns_to_win_game[self.current_turn] += 1
+
+            logger.info(f"Players needed {self.turns_to_win_game} turns to win the game.")
+
+            # return false bc when they won we want to end the game
+            return False
+
+        
+        # otherwise continue
+        else:
+            return True
+
+
+        
 
 # This needs to be adjusted or removed completely (replaced)
 # def enforce_template(pattern, game_transcript, specific_transcript):
