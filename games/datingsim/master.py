@@ -136,6 +136,7 @@ class DatingSimGameMaster(GameMaster):
         self.current_turn = 0
         self.n_turns = self.experiment['n_turns']
         self.num_prompt_retries = 0
+        self.num_completed_turns = 0
 
         self.last_message = None
 
@@ -147,9 +148,6 @@ class DatingSimGameMaster(GameMaster):
         # create player/s here
         self.player_a = Dater(self.model_a, "Writer")
         self.player_b = Dater(self.model_b, "Responder")
-
-        # self.add_player(self.player_a)
-        # self.add_player(self.player_b)
         
         self.initial_prompt_player_a = self.game_instance["initial_prompt_player_a"]
         self.initial_prompt_player_b = self.game_instance["initial_prompt_player_b"]
@@ -177,6 +175,7 @@ class DatingSimGameMaster(GameMaster):
             print(f"current turn:{self.current_turn}")
 
             # this would be the initial prompt
+            # and the FIRST TURN
             if self.current_turn == 0:
 
                 # Step 1a
@@ -198,10 +197,12 @@ class DatingSimGameMaster(GameMaster):
                     break
 
                 self.last_message = self.update_answer(answer_a)
-                # self.log_next_turn()
-                # self.current_turn += 1
+            
+            # SECOND TURN - initial prompt for player2 
+            elif self.current_turn == 1:
 
-                # Step 1b
+
+                # Step 1b - second TURN
                 # GM to P2
                 # Provides character sheet
                 # initial prompt is (same for both): game description, goal, game rules, char-sheet
@@ -226,37 +227,29 @@ class DatingSimGameMaster(GameMaster):
 
             
             else:
-                self.add_message(self.player_a, utterance=self.further_prompt_a.replace("$response", self.last_message))
+                # prepare prompt 
+                # based on turn number we can determine which player is supposed to be adressed
+                # even numbers: player1 (writer) -> number%2 == False
+                # odd numbers: player2 (responder) -> number%2 == True
+                #
+
+                if self.current_turn%2 == False:
+                    self.player = self.player_a
+                else:
+                    self.player = self.player_b
+                
+                self.add_message(self.player, utterance=self.further_prompt_a.replace("$response", self.last_message))
 
                 # P1 to GM
                 # Writes a beginning message to P2
-                answer_a = self.get_answer(self.player_a)
+                answer = self.get_answer(self.player)
                 # check if player a gives correct response
-                is_valid_turn = self.check_validity(answer_a)
+                is_valid_turn = self.check_validity(answer)
                 self.proceed = is_valid_turn
                 if is_valid_turn == False:
                     break
-                self.last_message = self.update_answer(answer_a)
+                self.last_message = self.update_answer(answer)
 
-                # self.log_next_turn()
-                # self.current_turn += 1
-
-                # Step 1b
-                # GM to P2
-                # Provides character sheet
-                # initial prompt is (same for both): game description, goal, game rules, char-sheet
-                # get written to ("you are this person (char sheet B) and another person (char sheet A) writes to you this *mess*")
-                # + reply to P1
-                self.add_message(self.player_b, utterance=self.further_prompt.replace("$response", self.last_message))
-
-                # P2 to GM
-                # Answers begin message to P1
-                answer_b = self.get_answer(self.player_b)
-
-                # check if player b gives correct response
-                is_valid_turn = self.check_validity(answer_b)
-                self.proceed = is_valid_turn
-                self.last_message = self.update_answer(answer_b)
 
             self.current_turn += 1
             self.complete_turns += 1
