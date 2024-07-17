@@ -13515,3 +13515,341 @@ Traceback (most recent call last):
 ImportError: Using `low_cpu_mem_usage=True` or a `device_map` requires Accelerate: `pip install accelerate`
 2024-07-15 11:01:01,476 - backends.huggingface_local_api - INFO - Loading huggingface model config and tokenizer: Qwen1.5-7B-Chat
 2024-07-15 11:01:02,652 - backends.huggingface_local_api - INFO - Start loading huggingface model weights: Qwen1.5-7B-Chat
+2024-07-17 12:13:50,368 - clemgame.benchmark - INFO - Running benchmark for 'datingsim' (models=[Llama-3-70B-Together.ai, Llama-3-70B-Together.ai])
+2024-07-17 12:13:50,368 - benchmark.run - INFO - Run experiment 1 of 2: Playthrough_same-sex non-binary
+2024-07-17 12:13:50,368 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Partners: Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0 Episode: 0
+2024-07-17 12:13:50,369 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/experiment_Playthrough_same-sex non-binary.json
+2024-07-17 12:13:50,382 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 0 Game: 0
+2024-07-17 12:13:50,383 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_0/instance.json
+2024-07-17 12:13:50,383 - games.datingsim.master - INFO - Setup
+2024-07-17 12:13:50,383 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:50,383 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:50,383 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:13:50,383 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:13:50,383 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:13:52,504 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:13:52,510 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:13:52,510 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:13:52.510443
+2024-07-17 12:13:52,511 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:13:52,511 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:13:52,511 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:13:52,511 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:13:52,512 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_0/interactions.json
+2024-07-17 12:13:52,512 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_0/requests.json
+2024-07-17 12:13:52,513 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 1 Game: 1
+2024-07-17 12:13:52,514 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_1/instance.json
+2024-07-17 12:13:52,514 - games.datingsim.master - INFO - Setup
+2024-07-17 12:13:52,514 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:52,514 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:52,514 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:13:52,514 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:13:52,515 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:13:56,609 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:13:56,611 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:13:56,611 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:13:56.611149
+2024-07-17 12:13:56,611 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:13:56,611 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:13:56,611 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:13:56,611 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:13:56,611 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_1/interactions.json
+2024-07-17 12:13:56,612 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_1/requests.json
+2024-07-17 12:13:56,612 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 2 Game: 2
+2024-07-17 12:13:56,612 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_2/instance.json
+2024-07-17 12:13:56,612 - games.datingsim.master - INFO - Setup
+2024-07-17 12:13:56,612 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:56,612 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:56,612 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:13:56,612 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:13:56,613 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:13:58,344 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:13:58,347 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:13:58,348 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:13:58.347926
+2024-07-17 12:13:58,348 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:13:58,348 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:13:58,348 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:13:58,348 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:13:58,349 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_2/interactions.json
+2024-07-17 12:13:58,350 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_2/requests.json
+2024-07-17 12:13:58,351 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/experiment_Playthrough_same-sex non-binary.json
+2024-07-17 12:13:58,351 - benchmark.run - INFO - Run experiment 2 of 2: Playthrough_all characters
+2024-07-17 12:13:58,351 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Partners: Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0 Episode: 0
+2024-07-17 12:13:58,352 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/experiment_Playthrough_all characters.json
+2024-07-17 12:13:58,352 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 0 Game: 0
+2024-07-17 12:13:58,354 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_0/instance.json
+2024-07-17 12:13:58,354 - games.datingsim.master - INFO - Setup
+2024-07-17 12:13:58,354 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:58,354 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:13:58,354 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:13:58,354 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:13:58,354 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:14:00,197 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:14:00,200 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:14:00,200 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:14:00.200317
+2024-07-17 12:14:00,200 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:14:00,200 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:14:00,200 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:14:00,200 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:14:00,203 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_0/interactions.json
+2024-07-17 12:14:00,203 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_0/requests.json
+2024-07-17 12:14:00,203 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 1 Game: 1
+2024-07-17 12:14:00,204 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_1/instance.json
+2024-07-17 12:14:00,204 - games.datingsim.master - INFO - Setup
+2024-07-17 12:14:00,204 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:14:00,204 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:14:00,204 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:14:00,204 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:14:00,204 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:14:02,154 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:14:02,159 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:14:02,159 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:14:02.159404
+2024-07-17 12:14:02,159 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:14:02,159 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:14:02,159 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:14:02,159 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:14:02,161 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_1/interactions.json
+2024-07-17 12:14:02,161 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_1/requests.json
+2024-07-17 12:14:02,162 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 2 Game: 2
+2024-07-17 12:14:02,163 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_2/instance.json
+2024-07-17 12:14:02,163 - games.datingsim.master - INFO - Setup
+2024-07-17 12:14:02,163 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:14:02,163 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:14:02,163 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:14:02,163 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:14:02,163 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:14:04,896 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:14:04,900 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:14:04,900 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:14:04.900135
+2024-07-17 12:14:04,900 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:14:04,900 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:14:04,900 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:14:04,900 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:14:04,902 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_2/interactions.json
+2024-07-17 12:14:04,902 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_2/requests.json
+2024-07-17 12:14:04,904 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/experiment_Playthrough_all characters.json
+2024-07-17 12:14:04,904 - clemgame.benchmark - INFO - Run datingsim took 0:00:14.535447
+2024-07-17 12:15:19,316 - __main__ - INFO - Game file stored to /Users/altar/Desktop/rizzSim/games/datingsim/in/instances.json
+2024-07-17 12:15:25,253 - __main__ - INFO - Game file stored to /Users/altar/Desktop/rizzSim/games/datingsim/in/instances.json
+2024-07-17 12:16:02,179 - clemgame.benchmark - INFO - Running benchmark for 'datingsim' (models=[Llama-3-70B-Together.ai, Llama-3-70B-Together.ai])
+2024-07-17 12:16:02,179 - benchmark.run - INFO - Run experiment 1 of 2: Playthrough_same-sex non-binary
+2024-07-17 12:16:02,179 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Partners: Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0 Episode: 0
+2024-07-17 12:16:02,180 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/experiment_Playthrough_same-sex non-binary.json
+2024-07-17 12:16:02,191 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 0 Game: 0
+2024-07-17 12:16:02,192 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_0/instance.json
+2024-07-17 12:16:02,192 - games.datingsim.master - INFO - Setup
+2024-07-17 12:16:02,192 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:02,192 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:02,192 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:16:02,192 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:16:02,192 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:16:05,023 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:16:05,028 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:16:05,028 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:16:05.028767
+2024-07-17 12:16:05,029 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:16:05,029 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:16:05,029 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:05,029 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:05,030 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_0/interactions.json
+2024-07-17 12:16:05,030 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_0/requests.json
+2024-07-17 12:16:05,031 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 1 Game: 1
+2024-07-17 12:16:05,031 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_1/instance.json
+2024-07-17 12:16:05,031 - games.datingsim.master - INFO - Setup
+2024-07-17 12:16:05,031 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:05,031 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:05,031 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:16:05,031 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:16:05,031 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:16:06,645 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:16:06,648 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:16:06,648 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:16:06.648299
+2024-07-17 12:16:06,648 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:16:06,648 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:16:06,648 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:06,648 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:06,651 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_1/interactions.json
+2024-07-17 12:16:06,653 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_1/requests.json
+2024-07-17 12:16:06,653 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 2 Game: 2
+2024-07-17 12:16:06,654 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_2/instance.json
+2024-07-17 12:16:06,654 - games.datingsim.master - INFO - Setup
+2024-07-17 12:16:06,654 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:06,655 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:06,655 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:16:06,655 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:16:06,655 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:16:08,187 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:16:08,193 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:16:08,193 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:16:08.193027
+2024-07-17 12:16:08,193 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:16:08,193 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:16:08,193 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:08,193 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:08,194 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_2/interactions.json
+2024-07-17 12:16:08,195 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_2/requests.json
+2024-07-17 12:16:08,196 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/experiment_Playthrough_same-sex non-binary.json
+2024-07-17 12:16:08,196 - benchmark.run - INFO - Run experiment 2 of 2: Playthrough_all characters
+2024-07-17 12:16:08,197 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Partners: Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0 Episode: 0
+2024-07-17 12:16:08,197 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/experiment_Playthrough_all characters.json
+2024-07-17 12:16:08,198 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 0 Game: 0
+2024-07-17 12:16:08,199 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_0/instance.json
+2024-07-17 12:16:08,199 - games.datingsim.master - INFO - Setup
+2024-07-17 12:16:08,199 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:08,199 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:08,199 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:16:08,199 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:16:08,199 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:16:09,719 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:16:09,724 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:16:09,724 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:16:09.724054
+2024-07-17 12:16:09,724 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:16:09,724 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:16:09,724 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:09,724 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:09,726 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_0/interactions.json
+2024-07-17 12:16:09,727 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_0/requests.json
+2024-07-17 12:16:09,727 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 1 Game: 1
+2024-07-17 12:16:09,728 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_1/instance.json
+2024-07-17 12:16:09,728 - games.datingsim.master - INFO - Setup
+2024-07-17 12:16:09,728 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:09,728 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:09,729 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:16:09,729 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:16:09,729 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:16:11,356 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:16:11,361 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:16:11,361 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:16:11.361304
+2024-07-17 12:16:11,361 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:16:11,361 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:16:11,361 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:11,361 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:11,364 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_1/interactions.json
+2024-07-17 12:16:11,364 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_1/requests.json
+2024-07-17 12:16:11,365 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 2 Game: 2
+2024-07-17 12:16:11,365 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_2/instance.json
+2024-07-17 12:16:11,365 - games.datingsim.master - INFO - Setup
+2024-07-17 12:16:11,365 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:11,365 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:16:11,366 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:16:11,366 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:16:11,366 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:16:14,138 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:16:14,159 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:16:14,159 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:16:14.159064
+2024-07-17 12:16:14,159 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:16:14,159 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:16:14,159 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:14,159 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:16:14,160 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_2/interactions.json
+2024-07-17 12:16:14,160 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_2/requests.json
+2024-07-17 12:16:14,162 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/experiment_Playthrough_all characters.json
+2024-07-17 12:16:14,162 - clemgame.benchmark - INFO - Run datingsim took 0:00:11.982993
+2024-07-17 12:24:15,745 - clemgame.benchmark - INFO - Running benchmark for 'datingsim' (models=[Llama-3-70B-Together.ai, Llama-3-70B-Together.ai])
+2024-07-17 12:24:15,745 - benchmark.run - INFO - Run experiment 1 of 2: Playthrough_same-sex non-binary
+2024-07-17 12:24:15,746 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Partners: Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0 Episode: 0
+2024-07-17 12:24:15,746 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/experiment_Playthrough_same-sex non-binary.json
+2024-07-17 12:24:15,756 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 0 Game: 0
+2024-07-17 12:24:15,757 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_0/instance.json
+2024-07-17 12:24:15,757 - games.datingsim.master - INFO - Setup
+2024-07-17 12:24:15,757 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:15,757 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:15,757 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:24:15,757 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:24:15,757 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:24:17,965 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:24:17,974 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:24:17,974 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:24:17.974381
+2024-07-17 12:24:17,975 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:24:17,975 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:24:17,975 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:17,975 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:17,976 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_0/interactions.json
+2024-07-17 12:24:17,978 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_0/requests.json
+2024-07-17 12:24:17,978 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 1 Game: 1
+2024-07-17 12:24:17,979 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_1/instance.json
+2024-07-17 12:24:17,979 - games.datingsim.master - INFO - Setup
+2024-07-17 12:24:17,979 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:17,979 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:17,979 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:24:17,979 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:24:17,979 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:24:19,706 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:24:19,708 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:24:19,708 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:24:19.708603
+2024-07-17 12:24:19,708 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:24:19,708 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:24:19,709 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:19,709 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:19,711 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_1/interactions.json
+2024-07-17 12:24:19,713 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_1/requests.json
+2024-07-17 12:24:19,713 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_same-sex non-binary Episode: 2 Game: 2
+2024-07-17 12:24:19,714 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/episode_2/instance.json
+2024-07-17 12:24:19,714 - games.datingsim.master - INFO - Setup
+2024-07-17 12:24:19,714 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:19,714 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:19,714 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged players metadata.
+2024-07-17 12:24:19,714 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:24:19,714 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged send message action (GM->Player_1).
+2024-07-17 12:24:21,555 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:24:21,559 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged get message action (Player_1->GM).
+2024-07-17 12:24:21,559 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged a call with timestamp 2024-07-17T12:24:21.559299
+2024-07-17 12:24:21,559 - games.datingsim.master - INFO - Playthrough_same-sex non-binary: Logged invalid format action (GM->GM).
+2024-07-17 12:24:21,559 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:24:21,559 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:21,559 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:21,563 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_2/interactions.json
+2024-07-17 12:24:21,565 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_same-sex non-binary/0_Playthrough_same-sex non-binary/episode_2/requests.json
+2024-07-17 12:24:21,566 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/0_Playthrough_same-sex non-binary/experiment_Playthrough_same-sex non-binary.json
+2024-07-17 12:24:21,566 - benchmark.run - INFO - Run experiment 2 of 2: Playthrough_all characters
+2024-07-17 12:24:21,566 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Partners: Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0 Episode: 0
+2024-07-17 12:24:21,567 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/experiment_Playthrough_all characters.json
+2024-07-17 12:24:21,567 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 0 Game: 0
+2024-07-17 12:24:21,568 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_0/instance.json
+2024-07-17 12:24:21,568 - games.datingsim.master - INFO - Setup
+2024-07-17 12:24:21,568 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:21,568 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:21,569 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:24:21,569 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:24:21,569 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:24:23,374 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:24:23,377 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:24:23,377 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:24:23.377785
+2024-07-17 12:24:23,378 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:24:23,378 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:24:23,378 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:23,378 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:23,379 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_0/interactions.json
+2024-07-17 12:24:23,380 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_0/requests.json
+2024-07-17 12:24:23,380 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 1 Game: 1
+2024-07-17 12:24:23,381 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_1/instance.json
+2024-07-17 12:24:23,381 - games.datingsim.master - INFO - Setup
+2024-07-17 12:24:23,381 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:23,381 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:23,381 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:24:23,381 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:24:23,381 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:24:25,443 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:24:25,447 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:24:25,447 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:24:25.447583
+2024-07-17 12:24:25,448 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:24:25,448 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:24:25,448 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:25,448 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:25,451 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_1/interactions.json
+2024-07-17 12:24:25,452 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_1/requests.json
+2024-07-17 12:24:25,452 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_all characters Episode: 2 Game: 2
+2024-07-17 12:24:25,453 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/episode_2/instance.json
+2024-07-17 12:24:25,453 - games.datingsim.master - INFO - Setup
+2024-07-17 12:24:25,453 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:25,453 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-17 12:24:25,453 - games.datingsim.master - INFO - Playthrough_all characters: Logged players metadata.
+2024-07-17 12:24:25,453 - games.datingsim.master - INFO - Playthrough_all characters: Logged a game-specific interaction key: n_turns.
+2024-07-17 12:24:25,453 - games.datingsim.master - INFO - Playthrough_all characters: Logged send message action (GM->Player_1).
+2024-07-17 12:24:28,104 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-17 12:24:28,108 - games.datingsim.master - INFO - Playthrough_all characters: Logged get message action (Player_1->GM).
+2024-07-17 12:24:28,109 - games.datingsim.master - INFO - Playthrough_all characters: Logged a call with timestamp 2024-07-17T12:24:28.108801
+2024-07-17 12:24:28,109 - games.datingsim.master - INFO - Playthrough_all characters: Logged invalid format action (GM->GM).
+2024-07-17 12:24:28,109 - games.datingsim.master - INFO - invalid format
+2024-07-17 12:24:28,109 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:28,109 - games.datingsim.master - WARNING - Invalid player identifiers, html builder won't work.
+2024-07-17 12:24:28,110 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_2/interactions.json
+2024-07-17 12:24:28,110 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/Playthrough_all characters/1_Playthrough_all characters/episode_2/requests.json
+2024-07-17 12:24:28,111 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0/datingsim/1_Playthrough_all characters/experiment_Playthrough_all characters.json
+2024-07-17 12:24:28,111 - clemgame.benchmark - INFO - Run datingsim took 0:00:12.365873

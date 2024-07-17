@@ -269,6 +269,7 @@ class DatingSimGameMaster(GameMaster):
                 # check if they found agreement|mismatched agreement
                 self.proceed = self.check_for_agreement(self.last_sentiment, answer)
                 if self.proceed == False:
+                    self.log_key("completed_turns", self.turns_to_win_game)
                     break
                 
                 # if game continues: update recent sentiment and continue
@@ -278,8 +279,9 @@ class DatingSimGameMaster(GameMaster):
             self.complete_turns += 1
 
             if self.current_turn > self.n_turns:
-                action = {'type': 'metadata', 'content': 'game unsuccessful out of turns'}
+                action = {'type': 'no agreement', 'content': 'game unsuccessful out of turns'}
                 self.log_event(from_='GM', to='GM', action=action)
+                self.log_key("completed_turns", self.turns_to_win_game)
                 self.proceed = False
 
 
@@ -357,17 +359,17 @@ class DatingSimGameMaster(GameMaster):
             self.aborted = True
 
             # log the event that the sentimeents don't match
-            action = {'type': 'info', 'content': 'game unsuccessful, mismatched sentiment'}
+            action = {'type': 'mismatch agreement', 'content': 'game unsuccessful, mismatched sentiment'}
             self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"lost game")
+            logger.info(f"lost game, no agreement at the same time")
 
             return False
         
         if last_sentiment == "Found Agreement" and new_sentiment =="Found Agreement":
             self.won = True
-            action = {'type': 'info', 'content': 'game successful'}
+            action = {'type': 'agreement', 'content': 'game successful'}
             self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"won game")
+            logger.info(f"won game, agreement was settled")
 
             # update metric of how many turns they needed to win the game 
             self.turns_to_win_game[self.current_turn] += 1
@@ -448,7 +450,7 @@ class DatingSimGameMaster(GameMaster):
 class DatingSimGameScorer(GameScorer):
     def __init__(self, experiment: Dict, game_instance: Dict):
         super().__init__(GAME_NAME, experiment, game_instance)
-        # might need to add response patterns of players
+        # TODO: add response patterns of players if you want to work on avg dialogue length and vocab size
 
     def compute_scores(self, episode_interactions: Dict) -> None:
         """
@@ -457,18 +459,18 @@ class DatingSimGameScorer(GameScorer):
             efficiency: number of turns taken to agree / max pre-defined number of turns
             agreement rate
             error handling: error counter?
-            (?) clemscore = efficiency * agreement rate - error handling
+            clemscore = efficiency * agreement rate - error handling
             (bonus) average dialogue length:
             (bonus) vocabulary size:
         
         """
         """Episode level scores"""
-        max_n_turns = episode_interactions["max_n_turns"] # we need to add it to instance gen?
-        turns = episode_interactions["turns"]
+        max_n_turns = episode_interactions["n_turns"]
+        turns = episode_interactions["completed_turns"] # this might be wrong. need to fix it after looking at transcription. prob better with self.log_key("completed_turns", self.complete_turns) 
 
-        #aborted = False # maybe not needed
+        aborted = False 
         invalid_response = False
-        total_agreements = 0 # TODO: ask Imge and Jerycho whether we can have more than one agreement per episode? does the game end when we have an agreement?
+        total_agreements = 0 # TODO: can there be more than one agreement per episode?
         turn_scores = []
 
         # TODO look at the implementation of generated expression length from referencegame
@@ -477,37 +479,41 @@ class DatingSimGameScorer(GameScorer):
         for turn_idx, turn in enumerate(turns):
 
             turn_score = {
+                "last_message": None,
                 "agreement": 0,
                 "request_count": 0,
                 "violated_request_count": 0,
                 "parsed_request_count": 0,
                 "reprompts_count": 0,
-                "error_turn_sum": 0,
             }
 
             for event in turn:
                 action = event["action"]
 
+                invalid_response = False
+
                 if action["type"] == "invalid format":
                     invalid_response = True
 
                 if action["type"] == "agreement": # agreement rate
-                    turn_score["current_point"] = action["content"]
+                    turn_score["last_message"] = action["content"]
                     turn_score["agreement"] = 1
 
                 if action["type"] == "reprompt": # error handling
-                    turn_score["turn_reprompts"] += 1
-                    # should we add invalid_response here? im a bit confused
+                    turn_score["reprompts_count"] += 1
 
-                if invalid_response:
+                if action["type"] == "no agreement": # no agreement settled in max amount of turns
+                    pass
+
+                if invalid_response: # if not parsable
                     turn_score["violated_request_count"] = 1
                     turn_score["parsed_request_count"] = 0
-                else:
+                else: # if parsable
                     turn_score["violated_request_count"] = 0
                     turn_score["parsed_request_count"] = 1
 
                 self.log_turn_score(turn_idx, 'Turn Agreement', turn_score["agreement"])
-                self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['turn_reprompts'])
+                self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count'])
                 self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"])
                 self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
                 self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
@@ -523,12 +529,22 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score(METRIC_REQUEST_COUNT, request_count)
 
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
+        
+        efficiency =  max_n_turns / len(turns) 
+        efficiency = min(max(efficiency, 0), 1)
 
-        # TODO: how to report these game-specific metrics in logs?
-        episode_efficiency = len(turns) / max_n_turns 
         total_agreements = sum([turn["agreement"] for turn in turn_scores]) 
-        error_handling = sum([turn["turn_reprompts"] for turn in turn_scores])
 
+        error_handling = sum([turn["reprompts_count"] for turn in turn_scores]) 
+        error_handling = min(max(error_handling, 0), 0.1)  
+
+        clemscore = ((efficiency * total_agreements) - error_handling) * 100
+        clemscore = min(max(clemscore, 0), 1)
+
+        self.log_episode_score("Efficiency", efficiency)
+        self.log_episode_score("Total Agreement", total_agreements)
+        self.log_episode_score("Error Handling", error_handling)
+        
         # Common metrics
         if invalid_response:  # response not parsable
             self.log_episode_score(METRIC_ABORTED, 1)
@@ -541,7 +557,7 @@ class DatingSimGameScorer(GameScorer):
             if total_agreements > 0:
                 self.log_episode_score(METRIC_SUCCESS, 1)
                 self.log_episode_score(METRIC_LOSE, 0)
-                self.log_episode_score(BENCH_SCORE, 100 / ((episode_efficiency * total_agreements)) - error_handling)
+                self.log_episode_score(BENCH_SCORE, clemscore)
             else:
                 self.log_episode_score(METRIC_SUCCESS, 0)
                 self.log_episode_score(METRIC_LOSE, 1)
