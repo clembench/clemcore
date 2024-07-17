@@ -42,13 +42,14 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         # example: one where both players are male,
         # one where both players are female, etc.
         # TO DO: prepare the datasets 
-        char_sheets = get_random_npcs("games/datingsim/resources/testfile.json")
+        char_sheets = get_random_npcs(r"C:\Users\imgey\Desktop\MASTER_POTSDAM\SoSe24\PM2\project\rizzSim\rizzSim\games\datingsim\resources\testfile.json")
         # pre define location to keep it open for an experimeent 
         locations = None
         # predefine actions in case that we include them
         actions = None  # number of how often each player can say sth
         n_turns = 25
         max_retries = 3
+        re_promt_allowed = True
 
         # initial prompts for player A and player B
         # TO-DO: Change prompts
@@ -56,6 +57,8 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         initial_prompt_b = self.load_template('resources/initial_prompts/initialprompt_playerB.template')
 
         further_prompts = self.load_template('resources/prompts/further_prompts.template')
+
+        reprompt_prompt = self.load_template('resources/prompts/reprompt.template')
         """
         maybe we can still leave this in and generate more experiments with
         the amount of character information they get 
@@ -69,6 +72,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
             experiment = self.add_experiment(f"Playthrough_{experiment['exp_name']}")
             experiment["n_turns"] = n_turns
             experiment["max_retries"] = max_retries
+            experiment["re_promt_allowed"] = re_promt_allowed
             # build n instances for each experiment 
             for game_id in range(N_INSTANCES):
                 # set parameters
@@ -97,6 +101,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
                 instance["initial_prompt_player_a"] = initial_prompt_a.replace("$charsheet_a", str(instance["char_a"])).replace("charsheet_b", str(instance["char_b"]))
                 instance["initial_prompt_player_b"] = initial_prompt_b.replace("$charsheet_a", str(instance["char_a"])).replace("charsheet_b", str(instance["char_b"]))
                 instance["further_prompts"] = further_prompts
+                instance["reprompt_prompt"] = reprompt_prompt
 
 
         # THIS is the new pattern basically

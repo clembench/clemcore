@@ -30,6 +30,7 @@ class DatingSimGameMaster(GameMaster):
         self.model_a = player_models[0]
         self.model_b = player_models[1]
 
+        self.re_prompt = experiment["re_promt_allowed"] # fetches True or False from the experiment
         self.max_prompt_retries = experiment["max_retries"]
 
         # initialise attributes that will be used for the evaluation scores
@@ -159,6 +160,8 @@ class DatingSimGameMaster(GameMaster):
         self.further_prompt_a = self.further_prompt.replace("$character_name", self.game_instance["char_b"]["NAME"])
         self.further_prompt_b = self.further_prompt.replace("$character_name", self.game_instance["char_a"]["NAME"])
 
+        self.reprompt_prompt = self.game_instance["reprompt_prompt"]
+
     # TO DO: include checking every response of LLMs if they are following the pattern
     def play(self):
 
@@ -229,29 +232,86 @@ class DatingSimGameMaster(GameMaster):
                 # if game continues: update recent sentiment and continue
                 self.last_sentiment = self.update_sentiment(answer_b)
 
-
+            # further turns after turn 0 and 1
             else:
-                # prepare prompt 
-                # based on turn number we can determine which player is supposed to be adressed
+                
+                # based on turn number we can determine which player is supposed to be 
+                # adressed
                 # even numbers: player1 (writer) -> number%2 == False
                 # odd numbers: player2 (responder) -> number%2 == True
-                #
 
                 if self.current_turn%2 == False:
                     self.player = self.player_a
+                    utterance = self.further_prompt_a
                 else:
                     self.player = self.player_b
-                
-                self.add_message(self.player, utterance=self.further_prompt_a.replace("$response", self.last_response))
+                    utterance = self.further_prompt_b
 
-                # P1 to GM
-                # Writes a beginning message to P2
+                # GM -> Player
+                # prepare further prompt 
+                self.add_message(self.player, utterance=utterance.replace("$response", self.last_response))
+
+                # Player -> GM
+                # get answer from player
                 answer = self.get_answer(self.player)
+
                 # check if player a gives correct response
                 is_valid_turn = self.check_validity(answer)
-                self.proceed = is_valid_turn
-                if is_valid_turn == False:
-                    break
+                
+                # if answer is not valid and re-prompting is not allowed: end the game
+                if is_valid_turn == False and self.re_prompt == False:
+                    self.proceed = is_valid_turn
+                    if self.proceed == False:
+                        break
+
+                # elif answer is not valid and re-prompting IS allowed: start reprompting
+                elif is_valid_turn == False and self.re_prompt == True:
+                    # start process of re-prompting 
+
+                    # count how often this message was re-prompted 
+                    counter_reprompting = 0 
+
+                    # if the number of reprompts is below max. reprompts, 
+                    # allow to further re-prompt
+                    while counter_reprompting < self.max_prompt_retries:
+                        
+                        # increase number of reprompting by 1
+                        counter_reprompting += 1
+
+                        # GM -> Player
+                        # generate prompt to reprompt
+                        # reprompt is the same as add_message but with
+                        # differnt log information
+                        self.reprompt(self.player, utterance=self.reprompt_prompt)
+
+                        # Player -> GM
+                        # get answer from player
+                        answer = self.get_answer(self.player)
+
+                        # GM check if answer is valid/follows prompt
+                        is_valid_turn = self.check_validity(answer)
+
+                        if is_valid_turn == True:
+                            break
+                        
+
+                    # if the player used up all the ree-prompt tries,
+                    # end the game 
+                    if counter_reprompting >= self.max_prompt_retries:
+                        self.aborted = True
+                        
+                        # log the abortion event
+                        action = {'type': 'invalid format', 'content': 'aborted'}
+                        self.log_event(from_='GM', to='GM', action=action)
+                        action = {'type': 'too many prompt retries', 'content': 'aborted'}
+                        self.log_event(from_='GM', to='GM', action=action)
+                        logger.info(f"invalid format")
+
+                        self.proceed = False
+
+
+                # if neither of the both above if-statements are triggered,
+                # the game just continues
 
                 # update last response and sentiment
                 self.last_response = self.update_response(answer)
@@ -276,6 +336,8 @@ class DatingSimGameMaster(GameMaster):
 
 
     def check_validity(self, answer):
+        # TO-DO: ADD THE CHECK FOR NUMBER OF TOKENS
+
         """
         Check if given answer by yplayer is valid or
         if it must be re-entered.
@@ -283,21 +345,41 @@ class DatingSimGameMaster(GameMaster):
         # check, if answer begins and ends with 
         pattern_for_answer = r"\[reason\]\s.+\s\[end\]\s+\[sentiment\] (Continue Conversation|Found Agreement) \[end\]\s+\[response\]\s.+\s\[end\]"
         
+        follows_num_tokens = self.check_token_length(answer) 
+
         # check if the template is used correctly
-        if not re.fullmatch(pattern_for_answer, answer, re.DOTALL): # abort game
+        if not re.fullmatch(pattern_for_answer, answer, re.DOTALL) or follows_num_tokens == False: # abort game
 
-            self.aborted = True
-            
-            # log the abortion event
-            action = {'type': 'invalid format', 'content': 'Aborted'}
-            self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"invalid format")
+            # if re-prompt not allowed, ends the game
+            if self.re_prompt == False:
+                self.aborted = True
+                
+                # log the abortion event
+                action = {'type': 'invalid format', 'content': 'Aborted'}
+                self.log_event(from_='GM', to='GM', action=action)
+                logger.info(f"invalid format")
 
-            # increase the counter of requests that violate form rules
-            self.violated_request_counts[self.current_turn] += 1
-            return False
+                # increase the counter of requests that violate form rules
+                self.violated_request_counts[self.current_turn] += 1
+                
+                return False
+        
+            # otherwise, reprompting is allowed and we give th 
+            # chance to reprompt
+            # therefore we must log accordingly 
+            else:
+                # log the reprompting event
+                action = {'type': 'invalid format', 'content': 'reprompt'}
+                self.log_event(from_='GM', to='GM', action=action)
+                logger.info(f"invalid format - reprompt")
+
+                # increase the counter of requests that violate form rules
+                self.violated_request_counts[self.current_turn] += 1
+
+                return True
 
 
+        # answer matches, continue game
         else:
         
             # increase the counter of requests that conform to form rules
@@ -324,6 +406,7 @@ class DatingSimGameMaster(GameMaster):
         # print(f"Last message: {last_message}")
         return last_message
     
+
     def update_sentiment(self, answer):
         """
         Function which fetches the sentiment of the answer
@@ -373,6 +456,42 @@ class DatingSimGameMaster(GameMaster):
         # otherwise continue
         else:
             return True
+
+    
+    def reprompt(self, player:Player, utterance:str, role="user") -> None:
+        if player == self.player_a:
+            self.writer_history.append({'role': role, 'content': utterance})
+            action = {'type': 'send reprompt message', 'content': utterance}
+            self.log_event(from_='GM', to="Player_1", action=action)
+
+        else:
+            self.responder_history.append({'role': role, 'content': utterance})
+            action = {'type': 'send reprompt message', 'content': utterance}
+            self.log_event(from_='GM', to="Player_2", action=action)
+
+
+    def check_token_length(self, answer):
+        """
+        Function to check if player follows 
+        token length restriction.
+        """
+        # get response 
+        response_pattern = r"\[response\](.+)"
+        response_match = re.search(response_pattern, answer, re.DOTALL)
+
+        # clean response from [response] and [end]
+        cleaned_response = response_match.lstrip("[response] ").rstrip(" [end]")
+
+        # split into tokens at whitespace 
+        splitted_response = cleaned_response.split()
+        
+        num_tokens = len(splitted_response)
+
+        # if below or even 150 return true
+        if num_tokens <= 150:
+            return True
+        else:
+            return False
 
 
 # This needs to be adjusted or removed completely (replaced)

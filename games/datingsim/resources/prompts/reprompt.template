@@ -1,0 +1,11 @@
+Your answer does not follow the following template: 
+
+[reason] Your reason for your decision. [end]
+
+[sentiment] Choose one of the following: "Found Agreement", "Continue Conversation" [end]
+
+[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]
+
+Your answer for [response] must NOT exceed 100 tokens.
+
+Try again. 
