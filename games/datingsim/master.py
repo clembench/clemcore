@@ -1,3 +1,4 @@
+import collections
 import copy
 import re
 from typing import Dict, List
@@ -46,31 +47,20 @@ class DatingSimGameMaster(GameMaster):
         # self.invalid_response = False
         # self.score = {}  # this was affinity points
 
-        self.player_model_names = list()
-        for player_model in player_models:
-            name = player_model.get_name()
-            self.player_model_names.append(name)
-        self.player_model_names = [ # what does this do
-            player_model.get_name() for player_model in player_models]
-
+        # self.player_model_names = [ # what does this do
+        #     player_model.get_name() for player_model in player_models]
+        self.players_by_names: Dict[str, Player] = collections.OrderedDict()
         self.writer_history = []
         self.responder_history = []
 
     def add_player(self, player: Player) -> None:
-        idx = len(self.player_model_names)
         # print(self.player_model_names)
         # print(idx)
         # player writer and responder
-        if idx == 0:
-            player.descriptor = f"Writer"
-            self.player_model_names[idx] = player.descriptor
-            # self.writer_history = list()
-        elif idx == 1:
-            player.descriptor = f"Responder"
-            self.player_model_names[idx] = player.descriptor
-            # self.responder_history = list()
-        else:
-            logger.warning("Invalid player index: %d", idx)
+        idx = len(self.players_by_names)
+        self.players_by_names[player.descriptor] = player
+        player.descriptor = f"Player {idx + 1}"
+        logger.warning("Invalid player index: %d", idx)
         logger.info(f"Added player {player.descriptor} with index {idx}")
 
     def add_message(self, player: Player, utterance: str, role="user") -> None:
@@ -78,24 +68,24 @@ class DatingSimGameMaster(GameMaster):
         if player == self.player_a:
             self.writer_history.append({'role': role, 'content': utterance})
             action = {'type': 'send message', 'content': utterance}
-            self.log_event(from_='GM', to="Player_1", action=action)
+            self.log_event(from_='GM', to="Player 1", action=action)
         else:
             self.responder_history.append({'role': role, 'content': utterance})
             action = {'type': 'send message', 'content': utterance}
-            self.log_event(from_='GM', to="Player_2", action=action)
+            self.log_event(from_='GM', to="Player 2", action=action)
 
     def get_answer(self, player: Player) -> str:
         if player == self.player_a:
             prompt, raw_answer, answer = player(self.writer_history, self.current_turn)
             action = {"type": "get message", 'content': answer}
-            self.log_event(from_="Player_1", to="GM", action=action,
+            self.log_event(from_="Player 1", to="GM", action=action,
                         call=(copy.deepcopy(prompt), raw_answer))
             
             self.writer_history.append({'role': "assistant", 'content': answer})
         else:
             prompt, raw_answer, answer = player(self.responder_history, self.current_turn)
             action = {'type': 'get message', 'content': answer}
-            self.log_event(from_="Player_2", to="GM", action=action,
+            self.log_event(from_="Player 2", to="GM", action=action,
                         call=(copy.deepcopy(prompt), raw_answer))
             self.responder_history.append({'role': "assistant", 'content': answer})
 
@@ -159,8 +149,8 @@ class DatingSimGameMaster(GameMaster):
         self.location = self.game_instance['location']
         self.log_players({
             "GM": "Game master for datingsim",
-            "Player_1": self.player_models[0].get_name(),
-            "Player_2": self.player_models[1].get_name()}
+            "Player 1": self.player_models[0].get_name(),
+            "Player 2": self.player_models[1].get_name()}
         )
 
         self.log_key("n_turns", self.n_turns)
