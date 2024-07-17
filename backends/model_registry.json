@@ -692,5 +692,10 @@
     "bos_string": "<BOS_TOKEN>",
     "eos_string": "<|END_OF_TURN_TOKEN|>",
     "eos_to_cull": "<|END_OF_TURN_TOKEN|>"
-  }
+  },
+  {
+    "model_name": "Qwen2-72B-Instruct",
+    "model_id": "Qwen/Qwen2-72B-Instruct",
+    "backend": "openai_compatible"
+  }  
 ]
