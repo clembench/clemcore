@@ -17,7 +17,7 @@ from utils import *
 
 GAME_NAME = 'datingsim'
 # we will create 10 instances for each experiment; vary this as you wish
-N_INSTANCES = 3
+N_INSTANCES = 20
 # if the generation involves randomness, remember to set a random seed
 SEED = 42
 ASSISTANT_MODEL = "meta-llama/Llama-3-70b-chat-hf"
@@ -47,9 +47,9 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         locations = None
         # predefine actions in case that we include them
         actions = None  # number of how often each player can say sth
-        n_turns = 25
+        n_turns = 15
         max_retries = 3
-        re_promt_allowed = True
+        re_promt_allowed = False
 
         # initial prompts for player A and player B
         # TO-DO: Change prompts
