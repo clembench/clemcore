@@ -27,7 +27,7 @@ logger = clemgame.get_logger(__name__)
 
 class DatingSimInstanceGenerator(GameInstanceGenerator):
 
-    def __init__(self, name: str):
+    def __init__(self):
         super().__init__(GAME_NAME)
         # self.instances = dict(experiments=list())
 
@@ -106,4 +106,4 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 if __name__ == '__main__':
     random.seed(SEED)
     # always call this, which will actually generate and save the JSON file
-    DatingSimInstanceGenerator(GAME_NAME).generate()
+    DatingSimInstanceGenerator().generate(filename="instances.json")

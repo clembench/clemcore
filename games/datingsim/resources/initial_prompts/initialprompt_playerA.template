@@ -12,6 +12,7 @@ Your answer has to consist ONLY of the following information and follow the give
 Your answer for [response] must NOT exceed 100 tokens.
 
 The game ends when both you and the other player reply with the sentiment "Found agreement", when you run out of turns to communicate or you do not follow the template.
+Be careful with your sentiment "Found agreement". Unless you and the other player say "Found agreement" at the same in [sentiment], the game is evaluated as lost
 
 This is your character: $charsheet_a
 

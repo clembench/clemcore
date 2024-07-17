@@ -281,7 +281,7 @@ class DatingSimGameMaster(GameMaster):
         if it must be re-entered.
         """
         # check, if answer begins and ends with 
-        pattern_for_answer = r"\[reason\]\s.+\s\[end\]\s+\[sentiment\] (Continue Conversation|Found Agrement) \[end\]\s+\[response\]\s.+\s\[end\]"
+        pattern_for_answer = r"\[reason\]\s.+\s\[end\]\s+\[sentiment\] (Continue Conversation|Found Agreement) \[end\]\s+\[response\]\s.+\s\[end\]"
         
         # check if the template is used correctly
         if not re.fullmatch(pattern_for_answer, answer, re.DOTALL): # abort game
@@ -362,7 +362,7 @@ class DatingSimGameMaster(GameMaster):
             logger.info(f"won game, agreement was settled")
 
             # update metric of how many turns they needed to win the game 
-            self.turns_to_win_game[self.current_turn] += 1
+            self.turns_to_win_game = self.current_turn + 1
 
             logger.info(f"Players needed {self.turns_to_win_game} turns to win the game.")
 
