@@ -358,7 +358,7 @@ class DatingSimGameMaster(GameMaster):
 
                 return False
 
-            # otherwise, reprompting is allowed and we give th 
+            # otherwise, reprompting is allowed and we give the
             # chance to reprompt
             # therefore we must log accordingly 
             else:
