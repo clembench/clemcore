@@ -479,9 +479,11 @@ class DatingSimGameMaster(GameMaster):
         response_pattern = r"\[response\](.+)"
         response_match = re.search(response_pattern, answer, re.DOTALL)
 
+        response = response_match.group(1)
         # clean response from [response] and [end]
-        cleaned_response = response_match.lstrip("[response] ").rstrip(" [end]")
+        cleaned_response = response.lstrip("[response] ").rstrip(" [end]")
 
+        
         # split into tokens at whitespace 
         splitted_response = cleaned_response.split()
         
