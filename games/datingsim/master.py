@@ -385,8 +385,6 @@ class DatingSimGameMaster(GameMaster):
             return True
 
 
-        
-
 # This needs to be adjusted or removed completely (replaced)
 # def enforce_template(pattern, game_transcript, specific_transcript):
 #     """
@@ -422,28 +420,6 @@ class DatingSimGameMaster(GameMaster):
 #
 #     return response, game_status
 
-
-# this needs to be completely changed according to our new rules when the game ends
-# def check_if_continue_game(npc_reaction_values):
-#     """
-#     Function which checks the number of negative
-#     responses of the NPC in a row.
-#     """
-#     if len(npc_reaction_values) >= 2:
-#
-#         # count negative values:
-#         num_neg_values = 0
-#         for value in npc_reaction_values[-1:-3]:
-#             if value < 0:
-#                 num_neg_values += 1
-#         return num_neg_values
-#
-#     else:
-#         num_neg_values = 0
-#         return num_neg_values
-
-
-##########################################################
 ##########################################################
 
 
