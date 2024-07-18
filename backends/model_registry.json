@@ -697,5 +697,10 @@
     "model_name": "Qwen2-72B-Instruct",
     "model_id": "Qwen/Qwen2-72B-Instruct",
     "backend": "openai_compatible"
-  }  
+  },
+  {
+  "model_name": "Gemma-2-9b-it",
+  "model_id": "google/gemma-2-9b-it",
+  "backend": "openai_compatible"
+  }
 ]
