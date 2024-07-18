@@ -598,7 +598,7 @@ class DatingSimGameScorer(GameScorer):
                     turn_score["last_message"] = action["content"]
                     turn_score["agreement"] = 1
 
-                if action["type"] == "friendzone" # mismatch_agreement
+                if action["type"] == "friendzone": # mismatch_agreement
                     turn_score["last_message"] = action["content"]
                     turn_score["agreement"] = 0
 
@@ -631,7 +631,9 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
         
         efficiency =  max_n_turns / completed_turns 
-        efficiency = min(max(efficiency, 0), 1)
+        # efficiency = min(max(efficiency, 0), 1)
+        # 1 --> completed turns is 1
+        # 0 --> game aborted. all numbers needs to be normalised between 0-1
 
         total_agreements = sum([turn["agreement"] for turn in turn_scores]) 
         total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) 
@@ -639,7 +641,9 @@ class DatingSimGameScorer(GameScorer):
         total_out_of_reprompts = sum([turn["out of reprompts"] for turn in turn_scores]) 
 
         error_handling = sum([turn["reprompts_count"] for turn in turn_scores]) 
-        error_handling = min(max(error_handling, 0), 0.1)  
+        #error_handling = min(max(error_handling, 0), 0.1)  
+        # 0.1 --> # of reprompting exceeded.
+        # 0 --> # of reprompting is 0. all numbers needs to be normalised between 0-0.1
 
         clemscore = ((efficiency * total_agreements) - error_handling) * 100
         clemscore = min(max(clemscore, 0), 1)
@@ -647,7 +651,7 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score("Efficiency", efficiency)
         self.log_episode_score("Total Agreement", total_agreements)
         self.log_episode_score("Error Handling", error_handling)
-        
+
         self.log_episode_score("Total Friendzones", total_friendzones)
         self.log_episode_score("Total Out of turns", total_out_of_turns)
         self.log_episode_score("Total Out of reprompts", total_out_of_reprompts)
