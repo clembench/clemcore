@@ -18,8 +18,8 @@ logger = get_logger(__name__)
 
 
 class DatingSimGameMaster(GameMaster):
-    def __init__(self, game_name: str, experiment: Dict, player_models: List[Model]):
-        super().__init__(game_name, experiment, player_models)
+    def __init__(self, experiment: Dict, player_models: List[Model]):
+        super().__init__(GAME_NAME, experiment, player_models)
 
         # regex patterns here
 
@@ -29,7 +29,7 @@ class DatingSimGameMaster(GameMaster):
         self.model_a = player_models[0]
         self.model_b = player_models[1]
 
-        self.re_prompt = experiment["re_prompt_allowed"]  # fetches True or False from the experiment
+        self.re_prompt = experiment["re_promt_allowed"]  # fetches True or False from the experiment
         self.max_prompt_retries = experiment["max_retries"]
 
         # initialise attributes that will be used for the evaluation scores
@@ -630,23 +630,19 @@ class DatingSimGameScorer(GameScorer):
 
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
         
-        efficiency =  max_n_turns / completed_turns 
-        # efficiency = min(max(efficiency, 0), 1)
-        # 1 --> completed turns is 1
-        # 0 --> game aborted. all numbers needs to be normalised between 0-1
+        efficiency = completed_turns / max_n_turns
 
         total_agreements = sum([turn["agreement"] for turn in turn_scores]) 
         total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) 
         total_out_of_turns = sum([turn["out of turns"] for turn in turn_scores]) 
         total_out_of_reprompts = sum([turn["out of reprompts"] for turn in turn_scores]) 
 
+        
         error_handling = sum([turn["reprompts_count"] for turn in turn_scores]) 
+        error_mapping = {0: 0, 1: 0.05, 2: 0.1}
         #error_handling = min(max(error_handling, 0), 0.1)  
         # 0.1 --> # of reprompting exceeded.
         # 0 --> # of reprompting is 0. all numbers needs to be normalised between 0-0.1
-
-        clemscore = ((efficiency * total_agreements) - error_handling) * 100
-        clemscore = min(max(clemscore, 0), 1)
 
         self.log_episode_score("Efficiency", efficiency)
         self.log_episode_score("Total Agreement", total_agreements)
@@ -668,7 +664,7 @@ class DatingSimGameScorer(GameScorer):
             if total_agreements > 0:
                 self.log_episode_score(METRIC_SUCCESS, 1)
                 self.log_episode_score(METRIC_LOSE, 0)
-                self.log_episode_score(BENCH_SCORE, clemscore)
+                self.log_episode_score(BENCH_SCORE, total_agreements - efficiency - error_handling)
             else:
                 self.log_episode_score(METRIC_SUCCESS, 0)
                 self.log_episode_score(METRIC_LOSE, 1)
