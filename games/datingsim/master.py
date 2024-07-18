@@ -190,6 +190,7 @@ class DatingSimGameMaster(GameMaster):
                 is_valid_turn = self.check_validity(answer_a)
                 self.proceed = is_valid_turn
                 if is_valid_turn == False:
+                    self.log_key("completed_turns", self.turns_to_win_game)
                     break
 
                 self.last_response = self.update_response(answer_a)
@@ -217,6 +218,7 @@ class DatingSimGameMaster(GameMaster):
                 is_valid_turn = self.check_validity(answer_b)
                 self.proceed = is_valid_turn
                 if is_valid_turn == False:
+                    self.log_key("completed_turns", self.turns_to_win_game)
                     break
 
                 self.last_response = self.update_response(answer_b)
@@ -224,6 +226,7 @@ class DatingSimGameMaster(GameMaster):
                 # check if they found agreement|mismatched agreement
                 self.proceed = self.check_for_agreement(self.last_sentiment, answer_b)
                 if self.proceed == False:
+                    self.log_key("completed_turns", self.turns_to_win_game)
                     break
 
                 # if game continues: update recent sentiment and continue
@@ -259,6 +262,7 @@ class DatingSimGameMaster(GameMaster):
                 if is_valid_turn == False and self.re_prompt == False:
                     self.proceed = is_valid_turn
                     if self.proceed == False:
+                        self.log_key("completed_turns", self.turns_to_win_game)
                         break
 
                 # elif answer is not valid and re-prompting IS allowed: start reprompting
@@ -289,6 +293,7 @@ class DatingSimGameMaster(GameMaster):
                         is_valid_turn = self.check_validity(answer)
 
                         if is_valid_turn == True:
+                            self.log_key("completed_turns", self.turns_to_win_game)
                             break
 
                     # if the player used up all the re-prompt tries,
@@ -579,7 +584,7 @@ class DatingSimGameScorer(GameScorer):
         """Episode level scores"""
         max_n_turns = episode_interactions["n_turns"]
         turns = episode_interactions["turns"]
-        completed_turns = episode_interactions["completed_turns"]
+        #completed_turns = episode_interactions["completed_turns"]
 
         total_agreements = 0 # TODO: can there be more than one agreement per episode?
         turn_scores = []
@@ -599,7 +604,6 @@ class DatingSimGameScorer(GameScorer):
                 "agreement": 0,
                 "friendzone": 0,
                 "out_of_reprompts": 0,
-                "out of turns": 0
             }
 
             for event in turn:
@@ -638,17 +642,16 @@ class DatingSimGameScorer(GameScorer):
 
                 turn_score["request_count"] = turn_score["violated_request_count"] + turn_score["parsed_request_count"]
 
-                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"]) 
-                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
-                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
-                self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count']) 
-                self.log_turn_score(turn_idx, 'Out of reprompts', turn_score["out_of_reprompts"])
-                
-                self.log_turn_score(turn_idx, 'Turn Agreement', turn_score["agreement"]) 
-                self.log_turn_score(turn_idx, 'Turn Friendzone', turn_score["friendzone"])
-                self.log_turn_score(turn_idx, 'Out of turns', turn_score["out of turns"])
+            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"]) 
+            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
+            self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
+            self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count']) 
+            self.log_turn_score(turn_idx, 'Out of reprompts', turn_score["out_of_reprompts"])
+            
+            self.log_turn_score(turn_idx, 'Turn Agreement', turn_score["agreement"]) 
+            self.log_turn_score(turn_idx, 'Turn Friendzone', turn_score["friendzone"])
 
-                turn_scores.append(turn_score)
+            turn_scores.append(turn_score)
         
         violated_request_count = sum([turn["violated_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count)
@@ -661,12 +664,11 @@ class DatingSimGameScorer(GameScorer):
 
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
         
-        efficiency = completed_turns / max_n_turns
+        efficiency = len(turns) / max_n_turns
 
         total_agreements = sum([turn["agreement"] for turn in turn_scores]) 
         total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) 
-        total_out_of_turns = sum([turn["out of turns"] for turn in turn_scores]) 
-        total_out_of_reprompts = sum([turn["out of reprompts"] for turn in turn_scores]) 
+        total_out_of_reprompts = sum([turn["out_of_reprompts"] for turn in turn_scores]) 
 
         
         error_handling = sum([turn["reprompts_count"] for turn in turn_scores]) 
@@ -680,7 +682,6 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score("Error Handling", error_handling)
 
         self.log_episode_score("Total Friendzones", total_friendzones)
-        self.log_episode_score("Total Out of turns", total_out_of_turns)
         self.log_episode_score("Total Out of reprompts", total_out_of_reprompts)
         
         # Common metrics

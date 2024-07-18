@@ -197,3 +197,4 @@ cython_debug/
 key.txt
 games/datingsim/key.txt
 
+clembench.log
