@@ -29,7 +29,7 @@ class DatingSimGameMaster(GameMaster):
         self.model_a = player_models[0]
         self.model_b = player_models[1]
 
-        self.re_prompt = experiment["re_promt_allowed"]  # fetches True or False from the experiment
+        self.re_prompt = experiment["re_prompt_allowed"]  # fetches True or False from the experiment
         self.max_prompt_retries = experiment["max_retries"]
 
         # initialise attributes that will be used for the evaluation scores
@@ -291,7 +291,7 @@ class DatingSimGameMaster(GameMaster):
                         if is_valid_turn == True:
                             break
 
-                    # if the player used up all the ree-prompt tries,
+                    # if the player used up all the re-prompt tries,
                     # end the game 
                     if counter_reprompting >= self.max_prompt_retries:
                         self.aborted = True
@@ -299,7 +299,7 @@ class DatingSimGameMaster(GameMaster):
                         # log the abortion event
                         action = {'type': 'invalid format', 'content': 'aborted'}
                         self.log_event(from_='GM', to='GM', action=action)
-                        action = {'type': 'too many prompt retries', 'content': 'aborted'}
+                        action = {'type': 'reprompt limit exceeded', 'content': 'aborted'}
                         self.log_event(from_='GM', to='GM', action=action)
                         logger.info(f"invalid format")
 
@@ -324,7 +324,7 @@ class DatingSimGameMaster(GameMaster):
             self.complete_turns += 1
 
             if self.current_turn > self.n_turns:
-                action = {'type': 'no agreement', 'content': 'game unsuccessful out of turns'}
+                action = {'type': 'out of turns', 'content': 'game unsuccessful out of turns'}
                 self.log_event(from_='GM', to='GM', action=action)
                 self.log_key("completed_turns", self.turns_to_win_game)
                 self.proceed = False
@@ -363,9 +363,9 @@ class DatingSimGameMaster(GameMaster):
             # therefore we must log accordingly 
             else:
                 # log the reprompting event
-                action = {'type': 'invalid format', 'content': 'reprompt'}
+                action = {'type': 'reprompt', 'content': 'reprompt needed'}
                 self.log_event(from_='GM', to='GM', action=action)
-                logger.info(f"invalid format - reprompt")
+                logger.info(f"invalid format - reprompt needed")
 
                 # increase the counter of requests that violate form rules
                 self.violated_request_counts[self.current_turn] += 1
@@ -375,16 +375,16 @@ class DatingSimGameMaster(GameMaster):
 
         # answer matches, continue game
         else:
-
+        
             # increase the counter of requests that conform to form rules
             self.parsed_request_counts[self.current_turn] += 1
             # log the event that the string was valid (no strange characters)
-            action = {'type': 'metadata', 'content': 'valid string'}
+            action = {'type': 'valid', 'content': 'valid string'}
             self.log_event(from_='GM', to='GM', action=action)
 
             # log the fact that the answer was correct
             action = {'type': 'parse',
-                      'content': f'{answer} conforms to rules'}
+                    'content': f'{answer} conforms to rules'}
 
             self.log_event(from_='GM', to='GM', action=action)
             return True
@@ -399,6 +399,7 @@ class DatingSimGameMaster(GameMaster):
         last_message = response_match.group(1)
         # print(f"Last message: {last_message}")
         return last_message
+    
 
     def update_sentiment(self, answer):
         """
@@ -409,27 +410,29 @@ class DatingSimGameMaster(GameMaster):
         last_sentiment = sentiment_match.group(1)
         return last_sentiment
 
+
     def check_for_agreement(self, last_sentiment, answer):
         """
         Function which checks if the players found an agreement. 
         Takes last message and new message.
         If last message == Found Agreement, new message must also be "Found Agreement"
         Otherwise the players lost the came by not proper communicating :)
-        """
+        """    
         # get new sentiment from answer
         new_sentiment = self.update_sentiment(answer)
 
         if last_sentiment == "Found Agreement" and new_sentiment != "Found Agreement":
+
             self.aborted = True
 
-            # log the event that the sentiments don't match
-            action = {'type': 'mismatch agreement', 'content': 'game unsuccessful, mismatched sentiment'}
+            # log the event that the sentimeents don't match
+            action = {'type': 'friendzone', 'content': 'game unsuccessful, mismatched sentiment'}
             self.log_event(from_='GM', to='GM', action=action)
             logger.info(f"lost game, no agreement at the same time")
 
             return False
-
-        if last_sentiment == "Found Agreement" and new_sentiment == "Found Agreement":
+        
+        if last_sentiment == "Found Agreement" and new_sentiment =="Found Agreement":
             self.won = True
             action = {'type': 'agreement', 'content': 'game successful'}
             self.log_event(from_='GM', to='GM', action=action)
@@ -443,12 +446,13 @@ class DatingSimGameMaster(GameMaster):
             # return false bc when they won we want to end the game
             return False
 
-
+        
         # otherwise continue
         else:
             return True
 
-    def reprompt(self, player: Player, utterance: str, role="user") -> None:
+    
+    def reprompt(self, player:Player, utterance:str, role="user") -> None:
         if player == self.player_a:
             self.writer_history.append({'role': role, 'content': utterance})
             action = {'type': 'send reprompt message', 'content': utterance}
@@ -458,6 +462,7 @@ class DatingSimGameMaster(GameMaster):
             self.responder_history.append({'role': role, 'content': utterance})
             action = {'type': 'send reprompt message', 'content': utterance}
             self.log_event(from_='GM', to="Player_2", action=action)
+
 
     def check_token_length(self, answer):
         """
@@ -472,9 +477,10 @@ class DatingSimGameMaster(GameMaster):
         # clean response from [response] and [end]
         cleaned_response = response.lstrip("[response] ").rstrip(" [end]")
 
-        # split into tokens at whitespace
+        
+        # split into tokens at whitespace 
         splitted_response = cleaned_response.split()
-
+        
         num_tokens = len(splitted_response)
 
         # if below or even 150 return true
@@ -482,6 +488,44 @@ class DatingSimGameMaster(GameMaster):
             return True
         else:
             return False
+
+
+# This needs to be adjusted or removed completely (replaced)
+# def enforce_template(pattern, game_transcript, specific_transcript):
+#     """
+#     Function which checks the given answer of the LLMS.
+#     If they follow the given template, all gucci.
+#     If not, generate new prompt where we enforce the
+#     usage of the template
+#     """
+#
+#     tries_to_genrate_correct_output = 0
+#
+#     while True:
+#
+#         response = game_transcript[-1]["content"]
+#
+#         # Search for the pattern in the output
+#         match = re.search(pattern, response, re.DOTALL)
+#
+#         if match:
+#             game_status = "ongoing"
+#             break
+#         elif tries_to_genrate_correct_output > 2:
+#             game_status = "abort"
+#             print(game_status)
+#             break
+#         elif not match:
+#             # Handle cases where the output doesn't match the template
+#             prompt = f"""ERROR: Your given ANSWER doess not follow the given TEMPLATE. Try again. Use the following TEMPLATE: {pattern}
+#
+# DO NOT APOLOGIZE OR WHATEVER. JUST USE THE PATTERN"""
+#             tries_to_genrate_correct_output += 1
+#             prompting(prompt, game_transcript, specific_transcript)
+#
+#     return response, game_status
+
+##########################################################
 
 
 class DatingSimGameScorer(GameScorer):
@@ -503,78 +547,99 @@ class DatingSimGameScorer(GameScorer):
         """
         """Episode level scores"""
         max_n_turns = episode_interactions["n_turns"]
-        turns = episode_interactions[
-            "completed_turns"]  # this might be wrong. need to fix it after looking at transcription. prob better with self.log_key("completed_turns", self.complete_turns)
+        turns = episode_interactions["turns"]
+        completed_turns = episode_interactions["completed_turns"]
+
+        total_agreements = 0 # TODO: can there be more than one agreement per episode?
+        turn_scores = []
 
         aborted = False
-        invalid_response = False
-        total_agreements = 0  # TODO: can there be more than one agreement per episode?
-        turn_scores = []
 
         # TODO look at the implementation of generated expression length from referencegame
         # TODO differentiate between Player 1 and Player 2 when the game is aborted
 
-        for turn_idx, turn in enumerate(turns):
-
+        for turn_idx, turn in enumerate(turns): 
             turn_score = {
                 "last_message": None,
-                "agreement": 0,
                 "request_count": 0,
                 "violated_request_count": 0,
                 "parsed_request_count": 0,
                 "reprompts_count": 0,
+                "agreement": 0,
+                "friendzone": 0,
+                "out_of_reprompts": 0,
+                "out of turns": 0
             }
 
             for event in turn:
                 action = event["action"]
 
-                invalid_response = False
-
                 if action["type"] == "invalid format":
-                    invalid_response = True
+                    turn_score["violated_request_count"] = 1
+                    turn_score["parsed_request_count"] = 0
+                    turn_score["aborted"] = 0
+                    aborted = True
+                
+                if action["type"] == "parse":
+                    turn_score["violated_request_count"] = 0
+                    turn_score["parsed_request_count"] = 1
+                
+                if action["type"] == "reprompt": # error handling
+                    # TODO: since we do not go to next turn, check if reprompt overrides the prev failed one's stats
+                    turn_score["reprompts_count"] += 1
+                    turn_score["violated_request_count"] += 1
+                    turn_score["parsed_request_count"] = 0
+                
+                if action["type"] == "out_of_reprompts":
+                    turn_score["out_of_reprompts"] = 1
+                    aborted = True
 
-                if action["type"] == "agreement":  # agreement rate
+                if action["type"] == "agreement": # agreement rate
                     turn_score["last_message"] = action["content"]
                     turn_score["agreement"] = 1
 
-                if action["type"] == "reprompt":  # error handling
-                    turn_score["reprompts_count"] += 1
+                if action["type"] == "friendzone" # mismatch_agreement
+                    turn_score["last_message"] = action["content"]
+                    turn_score["agreement"] = 0
 
-                if action["type"] == "no agreement":  # no agreement settled in max amount of turns
-                    pass
+                if action["type"] == "out of turns": # no agreement settled in max amount of turns
+                    turn_score["agreement"] = 0
 
-                if invalid_response:  # if not parsable
-                    turn_score["violated_request_count"] = 1
-                    turn_score["parsed_request_count"] = 0
-                else:  # if parsable
-                    turn_score["violated_request_count"] = 0
-                    turn_score["parsed_request_count"] = 1
+                turn_score["request_count"] = turn_score["violated_request_count"] + turn_score["parsed_request_count"]
 
-                self.log_turn_score(turn_idx, 'Turn Agreement', turn_score["agreement"])
-                self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count'])
-                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"])
+                self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"]) 
                 self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
                 self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
-                turn_scores.append(turn_score)
+                self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count']) 
+                self.log_turn_score(turn_idx, 'Out of reprompts', turn_score["out_of_reprompts"])
+                
+                self.log_turn_score(turn_idx, 'Turn Agreement', turn_score["agreement"]) 
+                self.log_turn_score(turn_idx, 'Turn Friendzone', turn_score["friendzone"])
+                self.log_turn_score(turn_idx, 'Out of turns', turn_score["out of turns"])
 
+                turn_scores.append(turn_score)
+        
         violated_request_count = sum([turn["violated_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count)
 
         parsed_request_count = sum([turn["parsed_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_PARSED, parsed_request_count)
 
-        request_count = violated_request_count + parsed_request_count
+        request_count = sum([turn["request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT, request_count)
 
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
-
-        efficiency = max_n_turns / len(turns)
+        
+        efficiency =  max_n_turns / completed_turns 
         efficiency = min(max(efficiency, 0), 1)
 
-        total_agreements = sum([turn["agreement"] for turn in turn_scores])
+        total_agreements = sum([turn["agreement"] for turn in turn_scores]) 
+        total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) 
+        total_out_of_turns = sum([turn["out of turns"] for turn in turn_scores]) 
+        total_out_of_reprompts = sum([turn["out of reprompts"] for turn in turn_scores]) 
 
-        error_handling = sum([turn["reprompts_count"] for turn in turn_scores])
-        error_handling = min(max(error_handling, 0), 0.1)
+        error_handling = sum([turn["reprompts_count"] for turn in turn_scores]) 
+        error_handling = min(max(error_handling, 0), 0.1)  
 
         clemscore = ((efficiency * total_agreements) - error_handling) * 100
         clemscore = min(max(clemscore, 0), 1)
@@ -582,9 +647,13 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score("Efficiency", efficiency)
         self.log_episode_score("Total Agreement", total_agreements)
         self.log_episode_score("Error Handling", error_handling)
-
+        
+        self.log_episode_score("Total Friendzones", total_friendzones)
+        self.log_episode_score("Total Out of turns", total_out_of_turns)
+        self.log_episode_score("Total Out of reprompts", total_out_of_reprompts)
+        
         # Common metrics
-        if invalid_response:  # response not parsable
+        if aborted:  # invalid format / ouf of reprompts
             self.log_episode_score(METRIC_ABORTED, 1)
             self.log_episode_score(METRIC_SUCCESS, 0)
             self.log_episode_score(METRIC_LOSE, 0)
@@ -622,7 +691,7 @@ class DatingSimGameBenchmark(GameBenchmark):
     def create_game_master(
             self, experiment: Dict, player_models: List[Model]
     ) -> GameMaster:
-        return DatingSimGameMaster(game_name="datingsim", experiment=experiment, player_models=player_models)
+        return DatingSimGameMaster(experiment=experiment, player_models=player_models)
 
     def create_game_scorer(self, experiment: Dict, game_instance: Dict) -> GameScorer:
         return DatingSimGameScorer(experiment, game_instance)
