@@ -24192,3 +24192,54 @@ AttributeError: 'NoneType' object has no attribute 'group'
 2024-07-18 13:22:18,065 - benchmark.run - ERROR - datingsim: '9' exceptions occurred: See clembench.log for details.
 2024-07-18 13:22:18,066 - games.datingsim.master - INFO - Results file stored to /Users/altar/Desktop/rizzSim/results/Llama-3-70B-Together.ai-t0.0--Llama-3-8B-Together.ai-t0.0/datingsim/2_Playthrough_play_difficult_all_characters/experiment_Playthrough_play_difficult_all_characters.json
 2024-07-18 13:22:18,066 - clemgame.benchmark - INFO - Run datingsim took 0:03:44.826290
+2024-07-18 13:53:25,513 - clemgame.benchmark - INFO - Running benchmark for 'datingsim' (models=[Llama-3-70B-Together.ai])
+2024-07-18 13:53:25,513 - benchmark.run - INFO - Run experiment 1 of 3: Playthrough_play_normal_all_characters
+2024-07-18 13:53:25,513 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_play_normal_all_characters Partners: Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0 Episode: 0
+2024-07-18 13:53:25,523 - games.datingsim.master - INFO - Results file stored to C:\Users\imgey\Desktop\MASTER_POTSDAM\SoSe24\PM2\project\rizzSim\rizzSim\results\Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0\datingsim\0_Playthrough_play_normal_all_characters\experiment_Playthrough_play_normal_all_characters.json
+2024-07-18 13:53:25,523 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_play_normal_all_characters Episode: 0 Game: 0
+2024-07-18 13:53:25,523 - games.datingsim.master - INFO - Results file stored to C:\Users\imgey\Desktop\MASTER_POTSDAM\SoSe24\PM2\project\rizzSim\rizzSim\results\Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0\datingsim\0_Playthrough_play_normal_all_characters/episode_0\instance.json
+2024-07-18 13:53:25,523 - games.datingsim.master - INFO - Setup
+2024-07-18 13:53:25,523 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-18 13:53:25,523 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-18 13:53:25,523 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged players metadata.
+2024-07-18 13:53:25,523 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged a game-specific interaction key: n_turns.
+2024-07-18 13:53:25,523 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged send message action (GM->Player 1).
+2024-07-18 13:53:27,615 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-18 13:53:27,623 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged get message action (Player 1->GM).
+2024-07-18 13:53:27,623 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged a call with timestamp 2024-07-18T13:53:27.623081
+2024-07-18 13:53:27,623 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged invalid format action (GM->GM).
+2024-07-18 13:53:27,623 - games.datingsim.master - INFO - invalid format
+2024-07-18 13:53:27,623 - games.datingsim.master - INFO - Results file stored to C:\Users\imgey\Desktop\MASTER_POTSDAM\SoSe24\PM2\project\rizzSim\rizzSim\results\Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0\Playthrough_play_normal_all_characters\0_Playthrough_play_normal_all_characters/episode_0\interactions.json
+2024-07-18 13:53:27,623 - games.datingsim.master - INFO - Results file stored to C:\Users\imgey\Desktop\MASTER_POTSDAM\SoSe24\PM2\project\rizzSim\rizzSim\results\Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0\Playthrough_play_normal_all_characters\0_Playthrough_play_normal_all_characters/episode_0\requests.json
+2024-07-18 13:53:27,631 - games.datingsim.master - INFO - Activity: datingsim Experiment: Playthrough_play_normal_all_characters Episode: 1 Game: 1
+2024-07-18 13:53:27,631 - games.datingsim.master - INFO - Results file stored to C:\Users\imgey\Desktop\MASTER_POTSDAM\SoSe24\PM2\project\rizzSim\rizzSim\results\Llama-3-70B-Together.ai-t0.0--Llama-3-70B-Together.ai-t0.0\datingsim\0_Playthrough_play_normal_all_characters/episode_1\instance.json
+2024-07-18 13:53:27,631 - games.datingsim.master - INFO - Setup
+2024-07-18 13:53:27,631 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-18 13:53:27,631 - clemgame.clemgame - INFO - Player Dater, Llama-3-70B-Together.ai
+2024-07-18 13:53:27,631 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged players metadata.
+2024-07-18 13:53:27,631 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged a game-specific interaction key: n_turns.
+2024-07-18 13:53:27,633 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged send message action (GM->Player 1).
+2024-07-18 13:53:29,323 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-18 13:53:29,323 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged get message action (Player 1->GM).
+2024-07-18 13:53:29,323 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged a call with timestamp 2024-07-18T13:53:29.323259
+2024-07-18 13:53:29,323 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged valid action (GM->GM).
+2024-07-18 13:53:29,323 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged parse action (GM->GM).
+2024-07-18 13:53:29,323 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged send message action (GM->Player 2).
+2024-07-18 13:53:30,803 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-18 13:53:30,808 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged get message action (Player 2->GM).
+2024-07-18 13:53:30,808 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged a call with timestamp 2024-07-18T13:53:30.808885
+2024-07-18 13:53:30,812 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged valid action (GM->GM).
+2024-07-18 13:53:30,812 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged parse action (GM->GM).
+2024-07-18 13:53:30,812 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged send message action (GM->Player 1).
+2024-07-18 13:53:33,362 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-18 13:53:33,362 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged get message action (Player 1->GM).
+2024-07-18 13:53:33,362 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged a call with timestamp 2024-07-18T13:53:33.362944
+2024-07-18 13:53:33,362 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged valid action (GM->GM).
+2024-07-18 13:53:33,362 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged parse action (GM->GM).
+2024-07-18 13:53:33,362 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged send message action (GM->Player 2).
+2024-07-18 13:53:35,644 - httpx - INFO - HTTP Request: POST https://api.together.xyz/v1/chat/completions "HTTP/1.1 200 OK"
+2024-07-18 13:53:35,644 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged get message action (Player 2->GM).
+2024-07-18 13:53:35,644 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged a call with timestamp 2024-07-18T13:53:35.644299
+2024-07-18 13:53:35,644 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged valid action (GM->GM).
+2024-07-18 13:53:35,644 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged parse action (GM->GM).
+2024-07-18 13:53:35,653 - games.datingsim.master - INFO - Playthrough_play_normal_all_characters: Logged send message action (GM->Player 1).

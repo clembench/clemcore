@@ -339,10 +339,9 @@ class DatingSimGameMaster(GameMaster):
         # check, if answer begins and ends with 
         pattern_for_answer = r"\[reason\]\s.+\s\[end\]\s+\[sentiment\] (Continue Conversation|Found Agreement) \[end\]\s+\[response\]\s.+\s\[end\]"
 
-        follows_num_tokens = self.check_token_length(answer)
 
         # check if the template is used correctly
-        if not re.fullmatch(pattern_for_answer, answer, re.DOTALL) or follows_num_tokens == False:  # abort game
+        if not re.fullmatch(pattern_for_answer, answer, re.DOTALL):  # abort game
 
             # if re-prompt not allowed, ends the game
             if self.re_prompt == False:
@@ -371,6 +370,38 @@ class DatingSimGameMaster(GameMaster):
                 self.violated_request_counts[self.current_turn] += 1
 
                 return True
+
+
+        elif  re.fullmatch(pattern_for_answer, answer, re.DOTALL) is not None:
+            follows_num_tokens = self.check_token_length(answer)
+            
+            if follows_num_tokens == False:
+                self.aborted = True
+
+                # log the abortion event
+                action = {'type': 'invalid format', 'content': 'Aborted'}
+                self.log_event(from_='GM', to='GM', action=action)
+                logger.info(f"invalid format")
+
+                # increase the counter of requests that violate form rules
+                self.violated_request_counts[self.current_turn] += 1
+
+                return False
+            
+            else:
+                # increase the counter of requests that conform to form rules
+                self.parsed_request_counts[self.current_turn] += 1
+                # log the event that the string was valid (no strange characters)
+                action = {'type': 'valid', 'content': 'valid string'}
+                self.log_event(from_='GM', to='GM', action=action)
+
+                # log the fact that the answer was correct
+                action = {'type': 'parse',
+                        'content': f'{answer} conforms to rules'}
+
+                self.log_event(from_='GM', to='GM', action=action)
+                return True
+
 
 
         # answer matches, continue game
