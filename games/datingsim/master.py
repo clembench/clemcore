@@ -24,7 +24,6 @@ class DatingSimGameMaster(GameMaster):
         # regex patterns here
 
         self.experiment = experiment
-        self.name = experiment['name']
         # self.penalty_rules = experiment['penalty_rules']
         self.model_a = player_models[0]
         self.model_b = player_models[1]
