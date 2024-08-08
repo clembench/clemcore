@@ -1,23 +1,26 @@
 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.
-On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal.
+On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. 
+
+There are four types of agreement: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of these types.
+You can only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three types (Time, Location, Action), otherwise the game is evaluated as lost
 
 Your answer has to consist ONLY of the following information and follow the given template:
 
 [reason] Your reason for your decision. [end]
 
-[sentiment] Choose one of the following: "Found Agreement", "Continue Conversation" [end]
+[sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]
 
 [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]
 
 Your answer for [response] must NOT exceed 100 tokens.
 
-The game ends when both you and the other player reply with the sentiment "Found agreement", when you run out of turns to communicate or you do not follow the template.
-Be careful with your sentiment "Found agreement". Unless you and the other player say "Found agreement" at the same in [sentiment], the game is evaluated as lost
+The game ends when both you and the other player reply with the sentiment "Overall Agreement", when you run out of turns to communicate or you do not follow the template.
+Be careful with your sentiment "Overall Agreement". Unless you and the other player say "Found agreement" at the same in [sentiment], the game is evaluated as lost
 
 This is your character: $charsheet_a
 
 This is the character of the other player: $charsheet_b
 
-Remember, your goal is to find an agreement for your first date while staying in character.
+Remember, your goal is to find the overall agreement for your first date while staying in character.
 
 Start the game with the reason, your sentiment and the opening phrase.

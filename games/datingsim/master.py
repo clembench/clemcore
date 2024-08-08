@@ -131,6 +131,11 @@ class DatingSimGameMaster(GameMaster):
         self.last_response = None
         self.last_sentiment = None
 
+        self.conditions_met = False
+        self.time_agreement = False
+        self.location_agreement = False
+        self.action_agreement = False
+
         # initialise metrics
         self.request_counts = [0] * (self.n_turns + 1)
         self.parsed_request_counts = [0] * (self.n_turns + 1)
@@ -342,7 +347,7 @@ class DatingSimGameMaster(GameMaster):
         if it must be re-entered.
         """
         # check, if answer begins and ends with 
-        pattern_for_answer = r"\[reason\]\s.+\s\[end\]\s+\[sentiment\] (Continue Conversation|Found Agreement) \[end\]\s+\[response\]\s.+\s\[end\]"
+        pattern_for_answer = r"\[reason\]\s.+\s\[end\]\s+\[sentiment\] (Overall Agreement|Agreement on Location|Agreement on Time|Agreement on Action|Continue Conversation) \[end\]\s+\[response\]\s.+\s\[end\]"
 
 
         # check if the template is used correctly
@@ -441,7 +446,7 @@ class DatingSimGameMaster(GameMaster):
         """
         Function which fetches the sentiment of the answer
         """
-        sentiment_pattern = r"\[sentiment\] (Continue Conversation|Found Agreement) \[end\]"
+        sentiment_pattern = r"\[sentiment\] (Overall Agreement|Agreement on Location|Agreement on Time|Agreement on Action|Continue Conversation) \[end\]"
         sentiment_match = re.search(sentiment_pattern, answer, re.DOTALL)
         last_sentiment = sentiment_match.group(1)
         return last_sentiment
@@ -457,36 +462,140 @@ class DatingSimGameMaster(GameMaster):
         # get new sentiment from answer
         new_sentiment = self.update_sentiment(answer)
 
-        if last_sentiment == "Found Agreement" and new_sentiment != "Found Agreement":
+        if last_sentiment == "Agreement on Time":
+            if self.time_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
 
-            self.aborted = True
+                # log the event that the sentimeents don't match
+                action = {'type': 'already agreed', 'content': 'Agreement on Time was already achieved.'}
+                self.log_event(from_='GM', to='GM', action=action)
+                logger.info(f"Agreement on Time was already achieved")
 
-            # log the event that the sentimeents don't match
-            action = {'type': 'friendzone', 'content': 'game unsuccessful, mismatched sentiment'}
-            self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"lost game, no agreement at the same time")
+                # return True as they have not finished the game yet
+                return True 
 
-            return False
+            else:
+                if new_sentiment != "Agreement on Time":
+                    self.time_agreement = False
+
+                    # log the event that the sentimeents don't match
+                    action = {'type': 'no time agreement', 'content': 'no time agreement, mismatched sentiment'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"no agreement on time at the same time")
+
+                    # return True as they have not finished the game yet
+                    return True 
+                
+                elif new_sentiment =="Agreement on Time":
+                    self.time_agreement = True
+
+                    action = {'type': 'time agreement', 'content': 'agreement on time successful'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"successful agreement, agreement on time was settled")
+
+                    # return True as they have not finished the game yet
+                    return True
+            
+        elif last_sentiment == "Agreement on Location":
+            if self.location_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
+                # log the event that the sentimeents don't match
+                action = {'type': 'already agreed', 'content': 'Agreement on Location was already achieved.'}
+                self.log_event(from_='GM', to='GM', action=action)
+                logger.info(f"Agreement on Location was already achieved")
+
+                # return True as they have not finished the game yet
+                return True 
+
+            else:
+                if new_sentiment != "Agreement on Location":
+                    self.location_agreement = False
+
+                    # log the event that the sentimeents don't match
+                    action = {'type': 'no location agreement', 'content': 'no location agreement, mismatched sentiment'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"no agreement on location at the same time")
+
+                    # return True as they have not finished the game yet
+                    return True 
+                
+                elif new_sentiment == "Agreement on Location":
+                    self.location_agreement = True
+                    action = {'type': 'location agreement', 'content': 'agreement on location successful'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"successful agreement, agreement on location was settled")
+
+                    # return True as they have not finished the game yet
+                    return True
+    
+        elif last_sentiment == "Agreement on Action":
+            if self.action_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
+                # log the event that the sentimeents don't match
+                action = {'type': 'already agreed', 'content': 'Agreement on Action was already achieved.'}
+                self.log_event(from_='GM', to='GM', action=action)
+                logger.info(f"Agreement on Action was already achieved")
+
+                # return True as they have not finished the game yet
+                return True 
+            
+            else:
+                if new_sentiment != "Agreement on Action":
+                    self.action_agreement = False
+
+                    # log the event that the sentimeents don't match
+                    action = {'type': 'no location agreement', 'content': 'no action agreement, mismatched sentiment'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"no agreement on action at the same time")
+
+                    # return True as they have not finished the game yet
+                    return True 
+                
+                elif new_sentiment == "Agreement on Action":
+                    self.action_agreement = True
+                    action = {'type': 'action agreement', 'content': 'agreement on action successful'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"successful agreement, agreement on action was settled")
+
+                    # return True as they have not finished the game yet
+                    return True
         
-        if last_sentiment == "Found Agreement" and new_sentiment =="Found Agreement":
-            self.won = True
-            action = {'type': 'agreement', 'content': 'game successful'}
-            self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"won game, agreement was settled")
+        elif last_sentiment == "Overall Agreement":
+            if self.time_agreement == True and self.location_agreement == True and self.action_agreement == True: # if they have not agreed on Time/Location/Action
+                if new_sentiment != "Overall Agreement":
+                    self.aborted = True
 
-            # update metric of how many turns they needed to win the game 
-            self.turns_to_win_game = self.current_turn + 1
+                    # log the event that the sentimeents don't match
+                    action = {'type': 'friendzone', 'content': 'game unsuccessful, mismatched sentiment'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"lost game, no agreement at the same time")
 
-            logger.info(f"Players needed {self.turns_to_win_game} turns to win the game.")
+                    return False
+                
+                elif new_sentiment == "Overall Agreement":
+                    self.won = True
+                    action = {'type': 'overall agreement', 'content': 'game successful'}
+                    self.log_event(from_='GM', to='GM', action=action)
+                    logger.info(f"won game, agreement was settled")
 
-            # return false bc when they won we want to end the game
-            return False
+                    # update metric of how many turns they needed to win the game 
+                    self.turns_to_win_game = self.current_turn + 1
 
+                    logger.info(f"Players needed {self.turns_to_win_game} turns to win the game.")
+
+                    # return false bc when they won we want to end the game
+                    return False
+            
+            else: # if they have not agreed on Time/Location/Action
+                self.aborted = True
+
+                # log the event that the sentimeents don't match
+                action = {'type': 'conditions not met', 'content': 'game unsuccessful, conditions have not met to finalize the game'}
+                self.log_event(from_='GM', to='GM', action=action)
+                logger.info(f"lost game, The player tried to finish the game before meeting the conditions")
+
+                return False
         
         # otherwise continue
-        else:
+        else: # if players continued to conversation
             return True
-
     
     def reprompt(self, player:Player, utterance:str, role="user") -> None:
         if player == self.player_a:
@@ -665,6 +774,8 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
         
         efficiency = len(turns) / max_n_turns
+        #efficiency_penalty = len(turns) / max_n_turns
+        # efficiency = 1 - efficiency_penalty
 
         total_agreements = sum([turn["agreement"] for turn in turn_scores]) 
         total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) 

@@ -42,7 +42,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         # example: one where both players are male,
         # one where both players are female, etc.
         # TO DO: prepare the datasets 
-        char_sheets = get_random_npcs(r".\games\datingsim\resources\testfile.json")
+        char_sheets = get_random_npcs("games/datingsim/resources/testfile.json")
         # pre define location to keep it open for an experimeent 
         locations = None
         # predefine actions in case that we include them
