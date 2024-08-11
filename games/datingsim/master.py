@@ -851,7 +851,7 @@ class DatingSimGameScorer(GameScorer):
         total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) 
         total_out_of_reprompts = sum([turn["out_of_reprompts"] for turn in turn_scores]) 
 
-        time_efficiency = (len(completed_turns) - 3) / max_n_turns # TODO: adjust the number we substract
+        time_efficiency = (len(turns) - 3) / max_n_turns # TODO: adjust the number we substract
         agreement_efficiency = total_agreements / 3 # total possible number of agreements is 3
         efficiency_penalty = time_efficiency * (1 - agreement_efficiency) # TODO: revise it if needed
 
@@ -861,9 +861,9 @@ class DatingSimGameScorer(GameScorer):
         redundancy = sum([turn["already agreed"] for turn in turn_scores])
         redundancy_penalty = redundancy * 0.02 # TODO: adjust the penalty number
 
-        self.log_episode_score("Efficiency", (1 - efficiency_penalty) * 100)
-        self.log_episode_score("Time Efficiency", time_efficiency * 100)    
+        self.log_episode_score("Number of turns", len(turns))
         self.log_episode_score("Number of Agreements", total_agreements)
+        self.log_episode_score("Agreement Efficiency", agreement_efficiency * 100)
         self.log_episode_score("Number of Reprompts", error_handling)
         self.log_episode_score("Number of Redundancy", redundancy)
 
@@ -883,12 +883,15 @@ class DatingSimGameScorer(GameScorer):
             if success > 0: # basically it is 1 or 0
                 self.log_episode_score(METRIC_SUCCESS, 1)
                 self.log_episode_score(METRIC_LOSE, 0)
-                self.log_episode_score("Number of turns", completed_turns)
+                self.log_episode_score("Efficiency", (1 - efficiency_penalty) * 100)
+                self.log_episode_score("Time Efficiency", time_efficiency * 100)   
                 self.log_episode_score(BENCH_SCORE, 100 * (success - efficiency_penalty - error_penalty - redundancy_penalty)) # TODO: revise the final score
             else:
                 self.log_episode_score(METRIC_SUCCESS, 0)
                 self.log_episode_score(METRIC_LOSE, 1)
                 self.log_episode_score(BENCH_SCORE, 0)
+                self.log_episode_score("Efficiency", 0)
+                self.log_episode_score("Time Efficiency", 0)
 
 
 ##########################################################
