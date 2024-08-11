@@ -363,7 +363,7 @@ class DatingSimGameMaster(GameMaster):
                     self.aborted = True
 
                     # log the abortion event
-                    action = {'type': 'out of retries', 'content': 'The game is aborted because no reprompt retries is left.'}
+                    action = {'type': 'out of retries', 'content': 'The game is aborted: no reprompt retries left.'}
                     self.log_event(from_='GM', to='GM', action=action)
                     logger.info(f"out of retries")
 
@@ -493,9 +493,9 @@ class DatingSimGameMaster(GameMaster):
             else:
                 # increase the counter of requests that conform to form rules
                 self.parsed_request_counts[self.current_turn] += 1
-                # log the event that the string was valid (no strange characters)
+                """# log the event that the string was valid (no strange characters)
                 action = {'type': 'valid', 'content': 'valid string'}
-                self.log_event(from_='GM', to='GM', action=action) # I think this action type can be deleted? because valid and parse are kinda the same for us
+                self.log_event(from_='GM', to='GM', action=action) # I think this action type can be deleted? because valid and parse are kinda the same for us"""
 
                 # log the fact that the answer was correct
                 action = {'type': 'parse',
@@ -515,9 +515,9 @@ class DatingSimGameMaster(GameMaster):
         
             # increase the counter of requests that conform to form rules
             self.parsed_request_counts[self.current_turn] += 1
-            # log the event that the string was valid (no strange characters)
+            """# log the event that the string was valid (no strange characters)
             action = {'type': 'valid', 'content': 'valid string'}
-            self.log_event(from_='GM', to='GM', action=action)
+            self.log_event(from_='GM', to='GM', action=action)"""
 
             # log the fact that the answer was correct
             action = {'type': 'parse',
@@ -811,7 +811,7 @@ class DatingSimGameScorer(GameScorer):
                 
                 if action["type"] == "location agreement": #action/location/time
                     turn_score["last_message"] = action["content"]
-                    turn_score["location agreement"] += 1
+                    turn_score["location agreement"] = 1
                 
                 if (action["type"] == "mismatch time agreement" or
                     action["type"] == "mismatch action agreement" or
