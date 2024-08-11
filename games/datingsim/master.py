@@ -878,6 +878,8 @@ class DatingSimGameScorer(GameScorer):
             self.log_episode_score(METRIC_LOSE, 0)
             # Game-specific metrics 
             self.log_episode_score(BENCH_SCORE, np.nan)  # metric not applicable
+            self.log_episode_score("Efficiency", np.nan)
+            self.log_episode_score("Time Efficiency", np.nan)
         else:
             self.log_episode_score(METRIC_ABORTED, 0)
             if success > 0: # basically it is 1 or 0
