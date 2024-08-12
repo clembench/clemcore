@@ -11,7 +11,9 @@ Once you run the game/s look at the 'results' folder.
 **If you have more than 1 model or more than 1 game, clem will FORCE YOU to include it in the plot.**
 
 For example:
+
 ![img.png](img.png)
+
 In this case both datingsim and taboo must be plotted.
 
 To run the games use the following command:
