@@ -134,7 +134,7 @@ ncol=n_models
 
 ![img_6.png](img_6.png)
 
-<h3> Finish </h3>
+<h3> 4. Finish </h3>
 
 If you have survived all the previous steps, now feel free to run the final evaluation script:
 
@@ -145,6 +145,26 @@ python3 evaluation/papereval.py
 This command will create many plots for all the games you have prepared and added before.
 
 If you have ANY questions or something doesn't work, just ping the creator of this file (Jerycho).
-<h3> Future Work </h3>
+<h3> 5. Future Work Already Done </h3>
 
-I will do my best to make bencheval.py work too, but I need a bit more time.
+To run becheval for any games you have to first have results for some games in your **results** folder (it is necessary that you save *score.json* files for every episode and that they are not empty).
+
+If you have these files, you can simply run this command:
+
+
+```
+python3 evaluation/bencheval.py 
+```
+
+Once you run it, you should acquire 3 new files in *results folder* (you may have had *raw.csv* before but it was empty):
+- raw.csv
+- results.csv
+- results.html
+
+![img_8.png](img_8.png)
+
+After opening results.html you should see something like this:
+
+![img_9.png](img_9.png)
+
+I hope this manual was useful for you and good luck with suffering with clem further <3
