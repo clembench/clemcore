@@ -157,9 +157,9 @@ python3 evaluation/bencheval.py
 ```
 
 Once you run it, you should acquire 3 new files in *results folder* (you may have had *raw.csv* before but it was empty):
-- raw.csv
-- results.csv
-- results.html
+- *raw.csv*
+- *results.csv*
+- *results.html*
 
 ![img_8.png](img_8.png)
 
