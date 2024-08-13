@@ -27,13 +27,13 @@ class DatingSimGameMaster(GameMaster):
         self.model_a = player_models[0]
         self.model_b = player_models[1]
 
-        self.re_prompt = experiment["re_promt_allowed"]  # fetches True or False from the experiment
-        self.max_prompt_retries = experiment["max_retries"]
-
         # initialise attributes that will be used for the evaluation scores
         self.aborted: bool = False
         self.lose: bool = False
         self.won: bool = False
+
+        self.re_prompt = experiment["re_prompt_allowed"]  # fetches True or False from the experiment
+        self.max_prompt_retries = experiment["max_retries"] # max reprompt retries
 
         # define game status
         self.proceed = True
@@ -142,7 +142,6 @@ class DatingSimGameMaster(GameMaster):
         self.further_prompt_b = self.further_prompt.replace("$character_name", self.game_instance["char_a"]["NAME"])
 
         self.reprompt_prompt = self.game_instance["reprompt_prompt"]
-        self.re_prompt = self.game_instance["re_prompt_allowed"]
 
 
     def play(self):
