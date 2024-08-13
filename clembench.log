@@ -8392,3 +8392,4 @@
 2024-08-13 16:47:41,335 - games.datingsim.master - INFO - datingsim: Logged a call with timestamp 2024-08-13T16:47:41.335067
 2024-08-13 16:47:41,335 - games.datingsim.master - INFO - datingsim: Logged parse action (GM->GM).
 2024-08-13 16:47:41,335 - games.datingsim.master - INFO - datingsim: Logged send message action (GM->Player 2).
+2024-08-13 17:11:07,264 - __main__ - INFO - Game file stored to /Users/altar/Desktop/rizzSim/games/datingsim/in/instances.json

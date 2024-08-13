@@ -142,6 +142,7 @@ class DatingSimGameMaster(GameMaster):
         self.further_prompt_b = self.further_prompt.replace("$character_name", self.game_instance["char_a"]["NAME"])
 
         self.reprompt_prompt = self.game_instance["reprompt_prompt"]
+        self.re_prompt = self.game_instance["re_prompt_allowed"]
 
 
     def play(self):
