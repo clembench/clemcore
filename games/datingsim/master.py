@@ -510,7 +510,7 @@ class DatingSimGameMaster(GameMaster):
         new_sentiment = self.update_sentiment(answer)
 
         if last_sentiment == "Agreement on Time":
-            if self.time_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
+            if new_sentiment == "Agreement on Time" and self.time_agreement == True:  # if they have already agreed for it, to penalize later or for smh like that
 
                 # log the event that the sentimeents don't match
                 action = {'type': 'already agreed', 'content': 'Agreement on Time was already achieved.'}
@@ -543,7 +543,7 @@ class DatingSimGameMaster(GameMaster):
                     return True
             
         elif last_sentiment == "Agreement on Location":
-            if self.location_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
+            if new_sentiment == "Agreement on Location" and self.location_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
                 # log the event that the sentimeents don't match
                 action = {'type': 'already agreed', 'content': 'Agreement on Location was already achieved.'}
                 self.log_event(from_='GM', to='GM', action=action)
@@ -574,7 +574,7 @@ class DatingSimGameMaster(GameMaster):
                     return True
     
         elif last_sentiment == "Agreement on Action":
-            if self.action_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
+            if new_sentiment == "Agreement on Action" and self.action_agreement == True: # if they have already agreed for it, to penalize later or for smh like that
                 # log the event that the sentimeents don't match
                 action = {'type': 'already agreed', 'content': 'Agreement on Action was already achieved.'}
                 self.log_event(from_='GM', to='GM', action=action)
@@ -762,7 +762,7 @@ class DatingSimGameScorer(GameScorer):
                     turn_score["last_message"] = action["content"]
             
                 if action["type"] == "already agreed":
-                    turn_score["already agreed"] += 1
+                    turn_score["already agreed"] = 1
 
                 turn_score["request_count"] = turn_score["violated_request_count"] + turn_score["parsed_request_count"]
 
@@ -788,31 +788,40 @@ class DatingSimGameScorer(GameScorer):
 
         self.log_episode_score(METRIC_REQUEST_SUCCESS, parsed_request_count / request_count)
     
-        success = sum([turn["success"] for turn in turn_scores]) 
+        success = sum([turn["success"] for turn in turn_scores]) # technically there is a single turn logged with "succcess", so this one returns 1 or 0
         total_agreements = sum(turn["time agreement"] + turn["location agreement"] + turn["action agreement"] for turn in turn_scores)
-        total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) 
+        total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) # # technically there is a single turn logged with "success", so this one returns 0 or 1
         total_out_of_reprompts = sum([turn["out_of_reprompts"] for turn in turn_scores])
         total_out_of_turns = sum([turn["out of turns"] for turn in turn_scores])
 
-        time_efficiency = (completed_turns - 3) / max_n_turns # TODO: adjust the number we substract
-        agreement_efficiency = total_agreements / 3 # total possible number of agreements is 3
-        efficiency_penalty = time_efficiency * (1 - agreement_efficiency) # TODO: revise it if needed
+        turn_penalty = max(0, (completed_turns - 10)) * 5 # the penalty only applies if the result is positive (if the player takes more than 10 turns)
+
+        # I used round() to prevent scores like 66.6666666...
+        agreement_efficiency = agreement_efficiency = round(total_agreements / 3, 2) # total possible number of agreements is 3
+        agreement_penalty = (3 - total_agreements) * 7.5
 
         error_handling = sum([turn["reprompts_count"] for turn in turn_scores])
-        error_penalty = error_handling * 0.05 # TODO: adjust the penalty number
+        error_penalty = error_handling * 5
 
         redundancy = sum([turn["already agreed"] for turn in turn_scores])
-        redundancy_penalty = redundancy * 0.02 # TODO: adjust the penalty number
+        inefficiency_penalty = redundancy * 10
 
         self.log_episode_score("Number of completed turns", completed_turns)
         self.log_episode_score("Number of Agreements", total_agreements)
         self.log_episode_score("Agreement Efficiency", agreement_efficiency * 100)
+        
         self.log_episode_score("Number of Reprompts", error_handling)
         self.log_episode_score("Number of Redundancy", redundancy)
 
         self.log_episode_score("Friendzoned?", total_friendzones)
         self.log_episode_score("Out of turns?", total_out_of_turns)
-        self.log_episode_score("Total out of reprompts", total_out_of_reprompts)
+        self.log_episode_score("Out of reprompts?", total_out_of_reprompts)
+
+        # penalties
+        self.log_episode_score("Turn penalty", turn_penalty)
+        self.log_episode_score("Agreement penalty", agreement_penalty)
+        self.log_episode_score("Inefficiency penalty", inefficiency_penalty)
+        self.log_episode_score("Error penalty", error_penalty)
         
         # Common metrics
         if aborted:  # invalid format / ouf of reprompts
@@ -821,23 +830,16 @@ class DatingSimGameScorer(GameScorer):
             self.log_episode_score(METRIC_LOSE, 0)
             # Game-specific metrics 
             self.log_episode_score(BENCH_SCORE, np.nan)  # metric not applicable
-            self.log_episode_score("Efficiency", np.nan)
-            self.log_episode_score("Time Efficiency", np.nan)
         else:
             self.log_episode_score(METRIC_ABORTED, 0)
             if success > 0: # basically it is 1 or 0
                 self.log_episode_score(METRIC_SUCCESS, 1)
-                self.log_episode_score(METRIC_LOSE, 0)
-                self.log_episode_score("Efficiency", (1 - efficiency_penalty) * 100)
-                self.log_episode_score("Time Efficiency", time_efficiency * 100)   
-                self.log_episode_score(BENCH_SCORE, 100 * (success - efficiency_penalty - error_penalty - redundancy_penalty)) # TODO: revise the final score
+                self.log_episode_score(METRIC_LOSE, 0)  
+                self.log_episode_score(BENCH_SCORE, success * (100 - (turn_penalty + agreement_penalty + inefficiency_penalty + error_penalty)))
             else:
                 self.log_episode_score(METRIC_SUCCESS, 0)
                 self.log_episode_score(METRIC_LOSE, 1)
-                self.log_episode_score(BENCH_SCORE, 0)
-                self.log_episode_score("Efficiency", 0) # not efficient as game state is failed
-                self.log_episode_score("Time Efficiency", 0) 
-
+                self.log_episode_score(BENCH_SCORE, 0) # no need to compute as the success is 0, and we multiply the the rest of the formula with the success
 
 ##########################################################
 ##########################################################
