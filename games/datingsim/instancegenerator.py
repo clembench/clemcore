@@ -42,14 +42,14 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         # example: one where both players are male,
         # one where both players are female, etc.
         # TO DO: prepare the datasets 
-        char_sheets = get_random_npcs("games/datingsim/resources/testfile.json")
+        char_sheets = get_random_npcs('games/datingsim/resources/testfile.json')
         # pre define location to keep it open for an experimeent 
         locations = None
         # predefine actions in case that we include them
         actions = None  # number of how often each player can say sth
         n_turns = 15
         max_retries = 3
-        re_promt_allowed = False
+        re_prompt_allowed = True # adjustable per experiment
 
         # initial prompts for player A and player B
         # TO-DO: Change prompts
@@ -72,7 +72,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
             experiment = self.add_experiment(f"Playthrough_{experiment['exp_name']}")
             experiment["n_turns"] = n_turns
             experiment["max_retries"] = max_retries
-            experiment["re_promt_allowed"] = re_promt_allowed
+            experiment["re_prompt_allowed"] = re_prompt_allowed
             # build n instances for each experiment 
             for game_id in range(N_INSTANCES):
                 # set parameters
