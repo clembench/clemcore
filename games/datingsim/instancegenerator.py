@@ -49,7 +49,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         actions = None  # number of how often each player can say sth
         n_turns = 15
         max_retries = 3
-        re_prompt_allowed = True
+        re_prompt_allowed = True # adjustable per experiment
 
         # initial prompts for player A and player B
         # TO-DO: Change prompts
