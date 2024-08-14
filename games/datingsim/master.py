@@ -105,7 +105,7 @@ class DatingSimGameMaster(GameMaster):
 
         self.current_turn = 0
         self.completed_turns = 0
-        self.max_turns = self.experiment['n_turns']
+        self.max_turns = self.experiment['n_turns']-1
         self.num_reprompts = 0
 
         self.last_response = None
