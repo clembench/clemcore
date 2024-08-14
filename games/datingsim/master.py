@@ -115,11 +115,6 @@ class DatingSimGameMaster(GameMaster):
         self.location_agreement = False
         self.action_agreement = False
 
-        # initialise metrics
-        #self.request_counts = [0] * (self.n_turns + 1)
-        #self.parsed_request_counts = [0] * (self.n_turns + 1)
-        #self.violated_request_counts = [0] * (self.n_turns + 1)
-
         # create player/s here
         self.player_a = Dater(self.model_a, "Writer")
         self.player_b = Dater(self.model_b, "Responder")
@@ -312,8 +307,6 @@ class DatingSimGameMaster(GameMaster):
                             the template or too many reprompts were used.
         """
 
-        #print("Checking validity")
-
         # if reprompting is not allowed, just use the normal one
         if self.re_prompt == False:
         
@@ -346,16 +339,13 @@ class DatingSimGameMaster(GameMaster):
                 # if it is True, answer of player fits pattern and game can continue
                 if valid == True:
 
-                    # 3.1.1.: increase counter of requests that conform rules
-                    #self.parsed_request_counts[self.current_turn] += 1
-
-                    # 3.1.2.: log the fact that the answer was correct
+                    # log the fact that the answer was correct
                     action = {'type': 'parse',
                             'content': f'{answer} conforms to rules'}
                     self.log_event(from_='GM', to='GM', action=action)
                     break
 
-                # 3.2 check if rempromt still allowed
+                # 3.2 check if reprompt still allowed
                 elif self.num_reprompts >= self.max_prompt_retries:
                     
                     # if not, abort game 
@@ -373,7 +363,8 @@ class DatingSimGameMaster(GameMaster):
 
                 # 3.3.: Check if follows answer pattern
                 elif not re.fullmatch(pattern_for_answer, answer, re.DOTALL):
-                    print("answer does not match the pattern !!")
+                    #print("answer does not match the pattern !!")
+
                     # 3.3.1.: Log wrong answer pattern
                     action = {'type': 'invalid format', 'content': 'invalid format, reprompt needed'}
                     print(f"action: {action}")
@@ -381,8 +372,6 @@ class DatingSimGameMaster(GameMaster):
                     logger.info(f"invalid format")
 
                     # 3.3.2.: increase counter of requests that violate template
-                    #self.violated_request_counts[self.current_turn] += 1
-                    #print(f"number of violated requests: {self.violated_request_counts}")
                     self.num_reprompts += 1
 
                     # 3.3.3.: Reprompt to the player
@@ -406,7 +395,6 @@ class DatingSimGameMaster(GameMaster):
                         logger.info(f"invalid format, reprompt needed")
 
                         # 3.4.2.: increase counter of requests that violate template
-                        #self.violated_request_counts[self.current_turn] += 1
                         self.num_reprompts += 1
 
                         # 3.4.3.: Reprompt to the player
@@ -452,9 +440,6 @@ class DatingSimGameMaster(GameMaster):
             self.log_event(from_='GM', to='GM', action=action)
             logger.info(f"invalid format")
 
-            # increase the counter of requests that violate form rules
-            #self.violated_request_counts[self.current_turn] += 1
-
             return False
 
 
@@ -469,25 +454,15 @@ class DatingSimGameMaster(GameMaster):
                 self.log_event(from_='GM', to='GM', action=action)
                 logger.info(f"invalid format, not following token limit")
 
-                # increase the counter of requests that violate form rules
-                #self.violated_request_counts[self.current_turn] += 1
-
                 return False
             
             else:
-                # increase the counter of requests that conform to form rules
-                #self.parsed_request_counts[self.current_turn] += 1
-                """# log the event that the string was valid (no strange characters)
-                action = {'type': 'valid', 'content': 'valid string'}
-                self.log_event(from_='GM', to='GM', action=action) # I think this action type can be deleted? because valid and parse are kinda the same for us"""
-
                 # log the fact that the answer was correct
                 action = {'type': 'parse',
                         'content': f'{answer} conforms to rules'} 
 
                 self.log_event(from_='GM', to='GM', action=action)
                 return True
-
 
         # check, if we even need this else statement???
         # Bc so far, if pattern does not match - is catched by if statement
@@ -496,13 +471,6 @@ class DatingSimGameMaster(GameMaster):
 
         # answer matches, continue game
         else:
-        
-            # increase the counter of requests that conform to form rules
-            #self.parsed_request_counts[self.current_turn] += 1
-            """# log the event that the string was valid (no strange characters)
-            action = {'type': 'valid', 'content': 'valid string'}
-            self.log_event(from_='GM', to='GM', action=action)"""
-
             # log the fact that the answer was correct
             action = {'type': 'parse',
                     'content': f'{answer} conforms to rules'}
@@ -696,7 +664,10 @@ class DatingSimGameMaster(GameMaster):
             return False
 
     def log_agreement(self):
-        """Logs the agreements related to time, location, and action."""
+        """
+        Logs the agreements related to time, 
+        location, and action.
+        """
         self.log_key("time_agreement", self.time_agreement)
         self.log_key("location_agreement", self.location_agreement)
         self.log_key("action_agreement", self.action_agreement)
@@ -707,7 +678,6 @@ class DatingSimGameMaster(GameMaster):
 class DatingSimGameScorer(GameScorer):
     def __init__(self, experiment: Dict, game_instance: Dict):
         super().__init__(GAME_NAME, experiment, game_instance)
-        # TODO: add response patterns of players if you want to work on avg dialogue length and vocab size
 
     def compute_scores(self, episode_interactions: Dict) -> None:
         """Episode level scores"""
@@ -718,9 +688,6 @@ class DatingSimGameScorer(GameScorer):
         turn_scores = []
 
         aborted = False
-
-        # TODO look at the implementation of generated expression length from referencegame
-        # TODO differentiate between Player 1 and Player 2 when the game is aborted
 
         for turn_idx, turn in enumerate(turns): 
             turn_score = {
