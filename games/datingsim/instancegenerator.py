@@ -20,7 +20,6 @@ GAME_NAME = 'datingsim'
 N_INSTANCES = 20
 # if the generation involves randomness, remember to set a random seed
 SEED = 42
-ASSISTANT_MODEL = "meta-llama/Llama-3-70b-chat-hf"
 
 logger = clemgame.get_logger(__name__)
 
@@ -102,10 +101,6 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
                 instance["initial_prompt_player_b"] = initial_prompt_b.replace("$charsheet_a", str(instance["char_a"])).replace("charsheet_b", str(instance["char_b"]))
                 instance["further_prompts"] = further_prompts
                 instance["reprompt_prompt"] = reprompt_prompt
-
-
-        # THIS is the new pattern basically
-        # experiment["pattern_response_players"] = r"REASON:\s*(.+?)\s*SENTIMENT:\s*(.+)\s*RESPONSE:\s*(.+)$"
 
 
 if __name__ == '__main__':

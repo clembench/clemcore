@@ -130,7 +130,11 @@ class DatingSimGameMaster(GameMaster):
             "Player 2": self.player_models[1].get_name()}
         )
 
-        self.log_key("max_turns", self.max_turns)
+        # max_turns is set to 15, but the loop logic treats the first turn as the 0th turn.
+        # That's why we subtract 1 earlier. However, for logging purposes, it makes more sense 
+        # to log it as 15 instead of 14. Since we log both completed turns and max_turns, 
+        # and both should reflect the number of turns, we adjust by adding 1 to max_turns here.
+        self.log_key("max_turns", self.max_turns + 1)
 
         self.further_prompt = self.game_instance["further_prompts"]
         self.further_prompt_a = self.further_prompt.replace("$character_name", self.game_instance["char_b"]["NAME"])
@@ -522,8 +526,6 @@ class DatingSimGameMaster(GameMaster):
 
             else:
                 if new_sentiment != "Agreement on Time":
-                    self.time_agreement = False
-
                     # log the event that the sentimeents don't match
                     action = {'type': 'mismatch time agreement', 'content': 'no time agreement, mismatched sentiment'}
                     self.log_event(from_='GM', to='GM', action=action)
@@ -554,8 +556,6 @@ class DatingSimGameMaster(GameMaster):
 
             else:
                 if new_sentiment != "Agreement on Location":
-                    self.location_agreement = False
-
                     # log the event that the sentimeents don't match
                     action = {'type': 'mismatch location agreement', 'content': 'no location agreement, mismatched sentiment'}
                     self.log_event(from_='GM', to='GM', action=action)
@@ -585,8 +585,6 @@ class DatingSimGameMaster(GameMaster):
             
             else:
                 if new_sentiment != "Agreement on Action":
-                    self.action_agreement = False
-
                     # log the event that the sentimeents don't match
                     action = {'type': 'mismatch action agreement', 'content': 'no action agreement, mismatched sentiment'}
                     self.log_event(from_='GM', to='GM', action=action)
@@ -684,6 +682,11 @@ class DatingSimGameScorer(GameScorer):
         max_n_turns = episode_interactions["max_turns"]
         turns = episode_interactions["turns"]
         completed_turns = episode_interactions["completed_turns"]
+
+        location_agreement = episode_interactions["location_agreement"]
+        action_agreement = episode_interactions["action_agreement"]
+        time_agreement = episode_interactions["time_agreement"]
+
 
         turn_scores = []
 
@@ -822,6 +825,11 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score("Agreement penalty", agreement_penalty)
         self.log_episode_score("Inefficiency penalty", inefficiency_penalty)
         self.log_episode_score("Error penalty", error_penalty)
+
+        # agreement types
+        self.log_episode_score("Location agreement?", 1 if location_agreement else 0)
+        self.log_episode_score("Action agreement?", 1 if action_agreement else 0)
+        self.log_episode_score("Time agreement?", 1 if time_agreement else 0)
         
         # Common metrics
         if aborted:  # invalid format / ouf of reprompts
