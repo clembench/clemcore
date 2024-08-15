@@ -370,10 +370,9 @@ class DatingSimGameMaster(GameMaster):
                     #print("answer does not match the pattern !!")
 
                     # 3.3.1.: Log wrong answer pattern
-                    action = {'type': 'invalid format', 'content': 'invalid format, reprompt needed'}
-                    print(f"action: {action}")
+                    action = {'type': 'invalid format: pattern', 'content': 'invalid format: pattern, reprompt needed'}
                     self.log_event(from_='GM', to='GM', action=action)
-                    logger.info(f"invalid format")
+                    logger.info(f"invalid format: pattern")
 
                     # 3.3.2.: increase counter of requests that violate template
                     self.num_reprompts += 1
@@ -394,9 +393,9 @@ class DatingSimGameMaster(GameMaster):
 
                     if follows_num_tokens == False:
                         # 3.4.1.: log wrong format
-                        action = {'type': 'invalid format', 'content': 'invalid format, reprompt needed'}
+                        action = {'type': 'invalid format: token length', 'content': 'invalid format: token length, reprompt needed'}
                         self.log_event(from_='GM', to='GM', action=action)
-                        logger.info(f"invalid format, reprompt needed")
+                        logger.info(f"invalid format: token length, reprompt needed")
 
                         # 3.4.2.: increase counter of requests that violate template
                         self.num_reprompts += 1
@@ -440,9 +439,9 @@ class DatingSimGameMaster(GameMaster):
             self.aborted = True
 
             # log the abortion event
-            action = {'type': 'invalid format', 'content': 'Aborted game because of invalid format'}
+            action = {'type': 'invalid format: pattern', 'content': 'Aborted game because of invalid format: pattern'}
             self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"invalid format")
+            logger.info(f"invalid format: pattern")
 
             return False
 
@@ -454,9 +453,9 @@ class DatingSimGameMaster(GameMaster):
                 self.aborted = True
 
                 # log the abortion event
-                action = {'type': 'invalid format', 'content': 'Aborted because of not following token limit'}
+                action = {'type': 'invalid format: token length', 'content': 'Aborted because of invalid format: token length'}
                 self.log_event(from_='GM', to='GM', action=action)
-                logger.info(f"invalid format, not following token limit")
+                logger.info(f"invalid format: token length, not following token limit")
 
                 return False
             
@@ -696,7 +695,8 @@ class DatingSimGameScorer(GameScorer):
             turn_score = {
                 "last_message": None,
                 "request_count": 0,
-                "violated_request_count": 0,
+                "violated_request_count_pattern": 0,
+                "violated_request_count_token_length": 0,
                 "parsed_request_count": 0,
                 "reprompts_count": 0,
                 "out_of_reprompts": 0,
@@ -713,7 +713,7 @@ class DatingSimGameScorer(GameScorer):
             for event in turn:
                 action = event["action"]
 
-                if action["type"] == "invalid format":
+                if action["type"] == "invalid format: pattern" or action["type"] == "invalid format: token length":
                     turn_score["violated_request_count"] = 1
                     turn_score["parsed_request_count"] = 0
                     turn_score["aborted"] = 0
