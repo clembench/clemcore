@@ -9,9 +9,8 @@ import re
 from backends import Model
 from clemgame import get_logger
 from clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC_REQUEST_COUNT, \
-    METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE, \
-    METRIC_REQUEST_COUNT_VIOLATED_PATTERN, METRIC_REQUEST_COUNT_VIOLATED_TOKEN_LENGTH
-from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer, DialogueGameMaster
+    METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE
+from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer
 from games.datingsim.player import *
 
 GAME_NAME = "datingsim"
@@ -714,18 +713,20 @@ class DatingSimGameScorer(GameScorer):
 
             for event in turn:
                 action = event["action"]
-
-                if action["type"] == "invalid format: pattern" or action["type"] == "invalid format: token length":
+                
+                if action["type"] == "invalid format: pattern":
+                    turn_score["violated_request_count_pattern"] = 1
                     turn_score["violated_request_count"] = 1
                     turn_score["parsed_request_count"] = 0
                     turn_score["aborted"] = 0
                     aborted = True
-                
-                if action["type"] == "invalid format: pattern":
-                    turn_score["violated_request_count_pattern"] = 1
 
                 if action["type"] == "invalid format: token length":
                     turn_score["violated_request_count_token_length"] = 1
+                    turn_score["violated_request_count"] = 1
+                    turn_score["parsed_request_count"] = 0
+                    turn_score["aborted"] = 0
+                    aborted = True
 
                 if action["type"] == "parse":
                     turn_score["violated_request_count"] = 0
@@ -769,7 +770,7 @@ class DatingSimGameScorer(GameScorer):
                 if (action["type"] == "mismatch time agreement" or
                     action["type"] == "mismatch action agreement" or
                     action["type"] == "mismatch location agreement"):
-                    turn_score["mismatch agreement"] += 1
+                    turn_score["mismatch agreement"] = 1
                     turn_score["last_message"] = action["content"]
             
                 if action["type"] == "already agreed":
@@ -787,6 +788,11 @@ class DatingSimGameScorer(GameScorer):
             
             self.log_turn_score(turn_idx, 'Success', turn_score["success"]) 
             self.log_turn_score(turn_idx, 'Turn Friendzone', turn_score["friendzone"])
+            self.log_turn_score(turn_idx, 'Location agreement', turn_score["location agreement"])
+            self.log_turn_score(turn_idx, 'Action agreement', turn_score["action agreement"])
+            self.log_turn_score(turn_idx, 'Time agreement', turn_score["time agreement"])
+            self.log_turn_score(turn_idx, 'Mismatch agreement', turn_score["mismatch agreement"])
+            self.log_turn_score(turn_idx, 'Already agreed', turn_score["already agreed"])
 
             turn_scores.append(turn_score)
         
@@ -796,7 +802,7 @@ class DatingSimGameScorer(GameScorer):
         violated_request_count_pattern = sum([turn["violated_request_count_pattern"] for turn in turn_scores])
         self.log_episode_score("Violated pattern", violated_request_count_pattern)
 
-        violated_request_count_token_length = sum([turn["violated_request_token_length"] for turn in turn_scores])
+        violated_request_count_token_length = sum([turn["violated_request_count_token_length"] for turn in turn_scores])
         self.log_episode_score("Violated token length", violated_request_count_token_length)
 
         parsed_request_count = sum([turn["parsed_request_count"] for turn in turn_scores])
@@ -828,6 +834,7 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score("Number of completed turns", completed_turns)
         self.log_episode_score("Number of Agreements", total_agreements)
         self.log_episode_score("Agreement Efficiency", agreement_efficiency * 100)
+        self.log_episode_score("Number of Mismatched Agreements", sum([turn["mismatch agreement"] for turn in turn_scores]))
         
         self.log_episode_score("Number of Reprompts", error_handling)
         self.log_episode_score("Number of Redundancy", redundancy)
