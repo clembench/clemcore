@@ -9,7 +9,8 @@ import re
 from backends import Model
 from clemgame import get_logger
 from clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC_REQUEST_COUNT, \
-    METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE
+    METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE, \
+    METRIC_REQUEST_COUNT_VIOLATED_PATTERN, METRIC_REQUEST_COUNT_VIOLATED_TOKEN_LENGTH
 from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer, DialogueGameMaster
 from games.datingsim.player import *
 
@@ -793,10 +794,10 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count)
 
         violated_request_count_pattern = sum([turn["violated_request_count_pattern"] for turn in turn_scores])
-        self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count_pattern)
+        self.log_episode_score("Violated pattern", violated_request_count_pattern)
 
         violated_request_count_token_length = sum([turn["violated_request_token_length"] for turn in turn_scores])
-        self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count_token_length)
+        self.log_episode_score("Violated token length", violated_request_count_token_length)
 
         parsed_request_count = sum([turn["parsed_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_PARSED, parsed_request_count)
