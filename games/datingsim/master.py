@@ -695,6 +695,7 @@ class DatingSimGameScorer(GameScorer):
             turn_score = {
                 "last_message": None,
                 "request_count": 0,
+                "violated_request_count": 0,
                 "violated_request_count_pattern": 0,
                 "violated_request_count_token_length": 0,
                 "parsed_request_count": 0,
@@ -719,6 +720,12 @@ class DatingSimGameScorer(GameScorer):
                     turn_score["aborted"] = 0
                     aborted = True
                 
+                if action["type"] == "invalid format: pattern":
+                    turn_score["violated_request_count_pattern"] = 1
+
+                if action["type"] == "invalid format: token length":
+                    turn_score["violated_request_count_token_length"] = 1
+
                 if action["type"] == "parse":
                     turn_score["violated_request_count"] = 0
                     turn_score["parsed_request_count"] = 1
@@ -770,6 +777,8 @@ class DatingSimGameScorer(GameScorer):
                 turn_score["request_count"] = turn_score["violated_request_count"] + turn_score["parsed_request_count"]
 
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"]) 
+            self.log_turn_score(turn_idx, "Violated pattern", turn_score["violated_request_count_pattern"])
+            self.log_turn_score(turn_idx, "Violated token length", turn_score["violated_request_count_token_length"])
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
             self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count']) 
@@ -782,6 +791,12 @@ class DatingSimGameScorer(GameScorer):
         
         violated_request_count = sum([turn["violated_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count)
+
+        violated_request_count_pattern = sum([turn["violated_request_count_pattern"] for turn in turn_scores])
+        self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count_pattern)
+
+        violated_request_count_token_length = sum([turn["violated_request_token_length"] for turn in turn_scores])
+        self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count_token_length)
 
         parsed_request_count = sum([turn["parsed_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_PARSED, parsed_request_count)
