@@ -9,7 +9,8 @@ import re
 from backends import Model
 from clemgame import get_logger
 from clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC_REQUEST_COUNT, \
-    METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE
+    METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, METRIC_REQUEST_SUCCESS, BENCH_SCORE, \
+    METRIC_REQUEST_COUNT_VIOLATED_PATTERN, METRIC_REQUEST_COUNT_VIOLATED_TOKEN_LENGTH
 from clemgame.clemgame import GameMaster, GameBenchmark, GameScorer, DialogueGameMaster
 from games.datingsim.player import *
 
@@ -370,10 +371,9 @@ class DatingSimGameMaster(GameMaster):
                     #print("answer does not match the pattern !!")
 
                     # 3.3.1.: Log wrong answer pattern
-                    action = {'type': 'invalid format', 'content': 'invalid format, reprompt needed'}
-                    print(f"action: {action}")
+                    action = {'type': 'invalid format: pattern', 'content': 'invalid format: pattern, reprompt needed'}
                     self.log_event(from_='GM', to='GM', action=action)
-                    logger.info(f"invalid format")
+                    logger.info(f"invalid format: pattern")
 
                     # 3.3.2.: increase counter of requests that violate template
                     self.num_reprompts += 1
@@ -394,9 +394,9 @@ class DatingSimGameMaster(GameMaster):
 
                     if follows_num_tokens == False:
                         # 3.4.1.: log wrong format
-                        action = {'type': 'invalid format', 'content': 'invalid format, reprompt needed'}
+                        action = {'type': 'invalid format: token length', 'content': 'invalid format: token length, reprompt needed'}
                         self.log_event(from_='GM', to='GM', action=action)
-                        logger.info(f"invalid format, reprompt needed")
+                        logger.info(f"invalid format: token length, reprompt needed")
 
                         # 3.4.2.: increase counter of requests that violate template
                         self.num_reprompts += 1
@@ -440,9 +440,9 @@ class DatingSimGameMaster(GameMaster):
             self.aborted = True
 
             # log the abortion event
-            action = {'type': 'invalid format', 'content': 'Aborted game because of invalid format'}
+            action = {'type': 'invalid format: pattern', 'content': 'Aborted game because of invalid format: pattern'}
             self.log_event(from_='GM', to='GM', action=action)
-            logger.info(f"invalid format")
+            logger.info(f"invalid format: pattern")
 
             return False
 
@@ -454,9 +454,9 @@ class DatingSimGameMaster(GameMaster):
                 self.aborted = True
 
                 # log the abortion event
-                action = {'type': 'invalid format', 'content': 'Aborted because of not following token limit'}
+                action = {'type': 'invalid format: token length', 'content': 'Aborted because of invalid format: token length'}
                 self.log_event(from_='GM', to='GM', action=action)
-                logger.info(f"invalid format, not following token limit")
+                logger.info(f"invalid format: token length, not following token limit")
 
                 return False
             
@@ -697,6 +697,8 @@ class DatingSimGameScorer(GameScorer):
                 "last_message": None,
                 "request_count": 0,
                 "violated_request_count": 0,
+                "violated_request_count_pattern": 0,
+                "violated_request_count_token_length": 0,
                 "parsed_request_count": 0,
                 "reprompts_count": 0,
                 "out_of_reprompts": 0,
@@ -713,12 +715,18 @@ class DatingSimGameScorer(GameScorer):
             for event in turn:
                 action = event["action"]
 
-                if action["type"] == "invalid format":
+                if action["type"] == "invalid format: pattern" or action["type"] == "invalid format: token length":
                     turn_score["violated_request_count"] = 1
                     turn_score["parsed_request_count"] = 0
                     turn_score["aborted"] = 0
                     aborted = True
                 
+                if action["type"] == "invalid format: pattern":
+                    turn_score["violated_request_count_pattern"] = 1
+
+                if action["type"] == "invalid format: token length":
+                    turn_score["violated_request_count_token_length"] = 1
+
                 if action["type"] == "parse":
                     turn_score["violated_request_count"] = 0
                     turn_score["parsed_request_count"] = 1
@@ -770,6 +778,8 @@ class DatingSimGameScorer(GameScorer):
                 turn_score["request_count"] = turn_score["violated_request_count"] + turn_score["parsed_request_count"]
 
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_VIOLATED, turn_score["violated_request_count"]) 
+            self.log_turn_score(turn_idx, "Violated pattern", turn_score["violated_request_count_pattern"])
+            self.log_turn_score(turn_idx, "Violated token length", turn_score["violated_request_count_token_length"])
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
             self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count']) 
@@ -782,6 +792,12 @@ class DatingSimGameScorer(GameScorer):
         
         violated_request_count = sum([turn["violated_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_VIOLATED, violated_request_count)
+
+        violated_request_count_pattern = sum([turn["violated_request_count_pattern"] for turn in turn_scores])
+        self.log_episode_score("Violated pattern", violated_request_count_pattern)
+
+        violated_request_count_token_length = sum([turn["violated_request_token_length"] for turn in turn_scores])
+        self.log_episode_score("Violated token length", violated_request_count_token_length)
 
         parsed_request_count = sum([turn["parsed_request_count"] for turn in turn_scores])
         self.log_episode_score(METRIC_REQUEST_COUNT_PARSED, parsed_request_count)
