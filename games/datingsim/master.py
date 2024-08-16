@@ -149,8 +149,6 @@ class DatingSimGameMaster(GameMaster):
 
             self.log_next_turn()
 
-            print(f"current turn:{self.current_turn}")
-
             # this would be the initial prompt
             # and the FIRST TURN
             if self.current_turn == 0:
@@ -167,7 +165,7 @@ class DatingSimGameMaster(GameMaster):
                 answer_a = self.get_answer(self.player_a)
 
                 # check if player a gives correct response
-                is_valid_turn = self.check_validity_reprompt(answer_a, self.player_a)
+                is_valid_turn, answer = self.check_validity_reprompt(answer_a, self.player_a)
                 self.proceed = is_valid_turn
                 if is_valid_turn == False:
                     self.log_key("completed_turns", self.completed_turns) # no turn was succesfully completed
@@ -197,7 +195,7 @@ class DatingSimGameMaster(GameMaster):
                 answer_b = self.get_answer(self.player_b)
 
                 # check if player a gives correct response
-                is_valid_turn = self.check_validity_reprompt(answer_b, self.player_b)
+                is_valid_turn, answer = self.check_validity_reprompt(answer_b, self.player_b)
                 self.proceed = is_valid_turn
                 if is_valid_turn == False:
                     self.completed_turns = 1 # only the first (previous) turn was succesfully completed
@@ -246,7 +244,7 @@ class DatingSimGameMaster(GameMaster):
                 answer = self.get_answer(self.player)
 
                 # check if player a gives correct response
-                is_valid_turn = self.check_validity_reprompt(answer, self.player)
+                is_valid_turn, answer = self.check_validity_reprompt(answer, self.player)
 
                 self.proceed = is_valid_turn
 
@@ -261,18 +259,20 @@ class DatingSimGameMaster(GameMaster):
                     self.log_agreement()
                     break
 
-                # update last response and sentiment
-                self.last_response = self.update_response(answer)
+                else:
 
-                # check if they found agreement|mismatched agreement
-                self.proceed = self.check_for_agreement(self.last_sentiment, answer)
-                if self.proceed == False:
-                    # completed_turns logging of this case is under check_for_agreement() overall_agreement elif statement
-                    self.log_agreement()
-                    break
+                    # update last response and sentiment
+                    self.last_response = self.update_response(answer)
 
-                # if game continues: update recent sentiment and continue
-                self.last_sentiment = self.update_sentiment(answer)
+                    # check if they found agreement|mismatched agreement
+                    self.proceed = self.check_for_agreement(self.last_sentiment, answer)
+                    if self.proceed == False:
+                        # completed_turns logging of this case is under check_for_agreement() overall_agreement elif statement
+                        self.log_agreement()
+                        break
+
+                    # if game continues: update recent sentiment and continue
+                    self.last_sentiment = self.update_sentiment(answer)
 
             self.current_turn += 1
             self.completed_turns += 1
@@ -349,25 +349,9 @@ class DatingSimGameMaster(GameMaster):
                     self.log_event(from_='GM', to='GM', action=action)
                     break
 
-                # 3.2 check if reprompt still allowed
-                elif self.num_reprompts >= self.max_prompt_retries:
-                    
-                    # if not, abort game 
-                    self.aborted = True
-
-                    # log the abortion event
-                    action = {'type': 'out of retries', 'content': 'The game is aborted: no reprompt retries left.'}
-                    self.log_event(from_='GM', to='GM', action=action)
-                    logger.info(f"Game is aborted at the turn {self.completed_turns+1}: out of reprompt retries")
-
-                    self.log_key("completed_turns", self.completed_turns)
-                    self.log_agreement()
-
-                    break
 
                 # 3.3.: Check if follows answer pattern
                 elif not re.fullmatch(pattern_for_answer, answer, re.DOTALL):
-                    #print("answer does not match the pattern !!")
 
                     # 3.3.1.: Log wrong answer pattern
                     action = {'type': 'invalid format: pattern', 'content': 'invalid format: pattern, reprompt needed'}
@@ -377,13 +361,29 @@ class DatingSimGameMaster(GameMaster):
                     # 3.3.2.: increase counter of requests that violate template
                     self.num_reprompts += 1
 
-                    # 3.3.3.: Reprompt to the player
-                    self.add_reprompt(player, utterance=self.reprompt_prompt)
+                    if self.num_reprompts >= self.max_prompt_retries:
+                    
+                        # if not, abort game 
+                        self.aborted = True
 
-                    # 3.3.4.: Get answer from the player
-                    answer = self.get_answer(player)
-                
-                    # 3.3.5.: Repeat while loop :)
+                        # log the abortion event
+                        action = {'type': 'out of retries', 'content': 'The game is aborted: no reprompt retries left.'}
+                        self.log_event(from_='GM', to='GM', action=action)
+                        logger.info(f"Game is aborted at the turn {self.completed_turns+1}: out of reprompt retries")
+
+                        self.log_key("completed_turns", self.completed_turns)
+                        self.log_agreement()
+
+                        break
+
+                    else:
+                        # 3.3.3.: Reprompt to the player
+                        self.add_reprompt(player, utterance=self.reprompt_prompt)
+
+                        # 3.3.4.: Get answer from the player
+                        answer = self.get_answer(player)
+                    
+                        # 3.3.5.: Repeat while loop :)
 
 
                 # 3.4.: check token length
@@ -400,16 +400,32 @@ class DatingSimGameMaster(GameMaster):
                         # 3.4.2.: increase counter of requests that violate template
                         self.num_reprompts += 1
 
-                        # 3.4.3.: Reprompt to the player
-                        self.add_reprompt(player, utterance=self.reprompt_prompt)
+                        if self.num_reprompts >= self.max_prompt_retries:
+                    
+                            # if not, abort game 
+                            self.aborted = True
 
-                        # 3.4.4.: Get answer from the player
-                        answer = self.get_answer(self.player)
+                            # log the abortion event
+                            action = {'type': 'out of retries', 'content': 'The game is aborted: no reprompt retries left.'}
+                            self.log_event(from_='GM', to='GM', action=action)
+                            logger.info(f"Game is aborted at the turn {self.completed_turns+1}: out of reprompt retries")
 
-                        # 3.4.5.: Repeat while loop :)
+                            self.log_key("completed_turns", self.completed_turns)
+                            self.log_agreement()
+
+                            break
+                        
+                        else:
+                            # 3.4.3.: Reprompt to the player
+                            self.add_reprompt(player, utterance=self.reprompt_prompt)
+
+                            # 3.4.4.: Get answer from the player
+                            answer = self.get_answer(self.player)
+
+                            # 3.4.5.: Repeat while loop :)
 
                     # 3.4.5.: If number is correct, the answer follows the template.
-                    else:
+                    elif follows_num_tokens == True:
                         valid = True
 
                 # 3.5.: If none of the above happen, the answer follows the template.
@@ -417,7 +433,7 @@ class DatingSimGameMaster(GameMaster):
                     valid = True 
 
         # valid is either True or False 
-        return valid
+        return valid, answer
 
 
     def check_validity(self, answer):
@@ -641,14 +657,13 @@ class DatingSimGameMaster(GameMaster):
         token length restriction.
         """
         # get response 
-        response_pattern = r"\[response\](.+)"
+        response_pattern = r"\[response\](.+)\[end\]"
         response_match = re.search(response_pattern, answer, re.DOTALL)
 
         response = response_match.group(1)
         # clean response from [response] and [end]
-        cleaned_response = response.lstrip("[response] ").rstrip(" [end]")
+        cleaned_response = response.lstrip("[response]").rstrip("[end]")
 
-        
         # split into tokens at whitespace 
         splitted_response = cleaned_response.split()
         
@@ -656,9 +671,11 @@ class DatingSimGameMaster(GameMaster):
 
         # if below or even 100 return true
         if num_tokens <= 100:
-            return True
+            correct_length = True
         else:
-            return False
+            correct_length = False
+        
+        return correct_length
 
     def log_agreement(self):
         """
