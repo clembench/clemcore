@@ -1,0 +1,288 @@
+[
+    {
+        "NAME": "Kai Nakamura",
+        "GENDER": "Male",
+        "AGE": 28,
+        "APPEARANCE": "Chiseled jawline, kind eyes, messy black hair, athletic build.",
+        "OCCUPATION": "Bakery Owner",
+        "LIKES": "Baking, early mornings, seeing people happy with his pastries.",
+        "DISLIKES": "Burnt bread, negativity, rushing.",
+        "HOBBIES": "Rock climbing, sketching, volunteering at a local animal shelter.",
+        "SUMMARY": "I am a baker with a passion for creating delicious treats. I always find time to pursue my hobbies and give back to the community."    
+    },
+
+    {
+        "NAME": "Maya Flores",
+        "GENDER": "Female",
+        "AGE": 25,
+        "APPEARANCE": "Sparkling brown eyes, infectious laugh, flowing dark hair with colorful streaks, stylish and comfortable clothes.",
+        "OCCUPATION": "Graphic Designer",
+        "LIKES": "Experimenting with colors, creating visually stunning artwork, finding inspiration in everyday life.",
+        "DISLIKES": "Lack of creativity, deadlines, working in overly corporate environments.",
+        "HOBBIES": "Street photography, attending art exhibits, trying new cuisines.",
+        "SUMMARY": "I see beauty in the world around me. My enthusiasm is infectious and will make you see the world with fresh eyes."    
+    },
+
+    {
+        "NAME": "Robin Aster",
+        "GENDER": "Non-binary",
+        "AGE": 27,
+        "APPEARANCE": "Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).",
+        "OCCUPATION": "Florist",
+        "LIKES": "Experimenting with floral arrangements, creating beauty with nature's bounty, seeing the joy flowers bring to people.",
+        "DISLIKES": "Monotony, negativity, anything artificial.",
+        "HOBBIES": "Hiking, learning about different plant life, volunteering at a community garden.",
+        "SUMMARY": "I like to transform flowers into stunning works of art. I am known to brighten the day of people around me."    
+    },
+
+    {
+        "NAME": "Leo Rodriguez",
+        "GENDER": "Male",
+        "AGE": 35,
+        "APPEARANCE": "Tanned skin, warm brown eyes, charming smile, wears stylish glasses.",
+        "OCCUPATION": "Travel Photographer",
+        "LIKES": "Exploring new places, capturing breathtaking moments, meeting interesting people.",
+        "DISLIKES": "Routine, bad weather, being stuck indoors for too long.",
+        "HOBBIES": "Learning new languages, playing the guitar, collecting souvenirs from his travels.",
+        "SUMMARY": "Adventure? I am your man! Let's pack your bags and join me on my next journey."    
+    },
+
+    {
+        "NAME": "Dr. Olivia Khan",
+        "GENDER": "Female",
+        "AGE": 42,
+        "APPEARANCE": "Confident smile, sharp blue eyes, stylishly short black hair, professional attire with a touch of personality.",
+        "OCCUPATION": "Cardiovascular Surgeon",
+        "LIKES": "Helping people, pushing the boundaries of medicine, a good intellectual challenge.",
+        "DISLIKES": "Arrogance, inefficiency, seeing people give up.",
+        "HOBBIES": "Rock climbing (to manage stress), playing the cello, volunteering at a medical clinic for the underprivileged.",
+        "SUMMARY": "I love my work as much as I love a good riddle."    
+    },
+
+    {
+        "NAME": "Riley Jones",
+        "GENDER": "Non-binary",
+        "AGE": 38,
+        "APPEARANCE": "Buzz cut, warm hazel eyes, androgynous build with toned muscles, wears comfortable yet stylish clothing.",
+        "OCCUPATION": "Blacksmith",
+        "LIKES": "The rhythm of forging metal, creating functional art, working with their hands.",
+        "DISLIKES": "Idleness, pretentiousness, following the rules just for the sake of it.",
+        "HOBBIES": "Sculpting metal into art pieces, weightlifting, historical reenactment.",
+        "SUMMARY": "Creating jewlry is a passion of mine! Maybe we can forge something together sometime."    
+    },
+
+    {
+        "NAME": "Ethan Moore",
+        "GENDER": "Male",
+        "AGE": 42,
+        "APPEARANCE": "Salt and pepper hair, warm smile, crinkled eyes when he laughs, wears well-fitting suits.",
+        "OCCUPATION": "University Professor (Literature)",
+        "LIKES": "Engaging discussions, classic literature, a good cup of tea.",
+        "DISLIKES": "Superficiality, technology dependence, loud noises.",
+        "HOBBIES": "Reading, attending plays and concerts, spending time in nature.",
+        "SUMMARY": "Good books are twice as fun when you converse about them with a nice cup of tea. This pretty much describes me as a person."    
+    },
+
+    {
+        "NAME": "Sakura Nakamura",
+        "GENDER": "Female",
+        "AGE": 32,
+        "APPEARANCE": "Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.",
+        "OCCUPATION": "Tea Ceremony Master",
+        "LIKES": "Maintaining traditions, fostering inner peace, creating a beautiful and harmonious atmosphere.",
+        "DISLIKES": "Disharmony, disrespect, rushing through life.",
+        "HOBBIES": "Calligraphy, flower arranging (Ikebana), practicing mindfulness meditation.",
+        "SUMMARY": "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."    
+    },
+
+    {
+        "NAME": "Samira Hassan",
+        "GENDER": "Non-binary",
+        "AGE": 45,
+        "APPEARANCE": "Short, neatly trimmed silver hair, warm and inviting smile, wears comfortable clothing with a focus on cultural elements (e.g., scarves, jewelry).",
+        "OCCUPATION": "Astronomer",
+        "LIKES": "Exploring the vastness of space, learning about the universe's mysteries, sharing their knowledge with others.",
+        "DISLIKES": "Ignorance, closed-mindedness, the idea that anything is impossible",
+        "HOBBIES": "Stargazing, attending astronomy lectures, writing about their research in a captivating way.",
+        "SUMMARY": "I like to explore the cosmos and try to embrace the wonders of the universe."    
+    },
+
+    {
+        "NAME": "Hiro Suzuki",
+        "GENDER": "Male",
+        "AGE": 21,
+        "APPEARANCE": "Bright blue hair (dyed), energetic eyes, playful grin, wears trendy clothes.",
+        "OCCUPATION": "Up-and-Coming Esports Player (Streamer)",
+        "LIKES": "Gaming, sharing his passion with his viewers, pushing his limits.",
+        "DISLIKES": "Losing, negativity, feeling stagnant.",
+        "HOBBIES": "Exercising, attending gaming conventions, trying out new games.",
+        "SUMMARY": "Esports player who likes to connect with his viewers."    
+    },
+
+    {
+        "NAME": "Chloe Kim",
+        "GENDER": "Female",
+        "AGE": 21,
+        "APPEARANCE": "Confident smirk, bright green eyes, athletic build, wears comfortable clothes with a sporty flair.",
+        "OCCUPATION": "Lead Mechanic at a Motorcycle Repair Shop",
+        "LIKES": "Fixing things with her own hands, the roar of a motorcycle engine, a good challenge.",
+        "DISLIKES": "Idleness, people who give up easily, following the crowd.",
+        "HOBBIES": "Motocross racing (competitively), tinkering with old machines, participating in hackathons.",
+        "SUMMARY": "I am a pretty confident mechanic who looves a good challenge."
+    },
+
+    {
+        "NAME": "Jamie Park",
+        "GENDER": "Non-binary",
+        "AGE": 21,
+        "APPEARANCE": "Vibrant dyed hair (changes color often), bright and expressive eyes, wears bold and trendy clothing that reflects their artistic personality.",
+        "OCCUPATION": "Tattoo Artist",
+        "LIKES": "Creating meaningful and personalized tattoos, expressing their artistic vision, connecting with people through their work.",
+        "DISLIKES": "Conformity, negativity, limitations on creativity.",
+        "HOBBIES": "Painting, attending art festivals, experimenting with different artistic mediums.",
+        "SUMMARY": "A passionate tattoo artist is who I am with which I try to tell stories and express individuality."    
+    },
+
+    {
+        "NAME": "Ethan Cooper",
+        "GENDER": "Male",
+        "AGE": 28,
+        "APPEARANCE": "Athletic build, tousled brown hair, blue eyes, casual but stylish clothing, confident smile.",
+        "OCCUPATION": "Software Engineer",
+        "LIKES": "Hiking, indie music, coffee shops.",
+        "DISLIKES": "Crowded places, dishonesty, early mornings.",
+        "HOBBIES": "Rock climbing, playing guitar, video game development.",
+        "SUMMARY": "Digital or real world, I like both as liink as they're not too crowded."    
+    },
+
+    {
+        "NAME": "Sophia Martinez",
+        "GENDER": "Female",
+        "AGE": 27,
+        "APPEARANCE": "Curly dark hair, brown eyes, petite, stylish outfits, warm smile.",
+        "OCCUPATION": "Graphic Designer",
+        "LIKES": "Art galleries, spicy food, romantic movies.",
+        "DISLIKES": "Cold weather, arrogance, traffic.",
+        "HOBBIES": "Painting, dancing, yoga.",
+        "SUMMARY": "Just a girl, preferring and enjoying the warm summer days."    
+    },
+
+    {
+        "NAME": "Alex Morgan",
+        "GENDER": "Non-binary",
+        "AGE": 30,
+        "APPEARANCE": "Short dyed blue hair, green eyes, androgynous fashion, piercings, confident demeanor.",
+        "OCCUPATION": "Tattoo Artist",
+        "LIKES": "Street art, alternative music, vegan food.",
+        "DISLIKES": "Stereotypes, conformity, pollution.",
+        "HOBBIES": "Skateboarding, drawing, attending music festivals.",
+        "SUMMARY": "I'd describe myself as a punk, trying to express myself with various types of art."    
+    },
+
+    {
+        "NAME": "Marcus Bennett",
+        "GENDER": "Male",
+        "AGE": 34,
+        "APPEARANCE": "Tall and muscular, shaved head, dark skin, wears glasses, often dressed in professional attire.",
+        "OCCUPATION": "Corporate Lawyer",
+        "LIKES": "Fine dining, classical music, strategic games.",
+        "DISLIKES": "Junk food, disorganization, lateness.",
+        "HOBBIES": "Chess, cooking gourmet meals, wine tasting.",
+        "SUMMARY": "I like to approach life with strategies and indulge myself in sophisticated activities."
+        
+    },
+
+    {
+        "NAME": "Emily Chen",
+        "GENDER": "Female",
+        "AGE": 31,
+        "APPEARANCE": "Long black hair, almond-shaped eyes, medium height, elegant fashion, calm demeanor.",
+        "OCCUPATION": "Pediatrician",
+        "LIKES": "Baking, classical music, beach sunsets.",
+        "DISLIKES": "Loud noises, clutter, spicy food.",
+        "HOBBIES": "Playing piano, reading, baking desserts.",
+        "SUMMARY": "I have a sweet tooth and enjoy calm evenings."
+    },
+    {
+        "NAME": "Casey Rivers",
+        "GENDER": "Non-binary",
+        "AGE": 25,
+        "APPEARANCE": "Long auburn hair, hazel eyes, casual chic attire, freckles, soft-spokenr.",
+        "OCCUPATION": "Bookstore Owner",
+        "LIKES": "Poetry, herbal tea, rainy days.",
+        "DISLIKES": "Loud environments, fast fashion, injustice.",
+        "HOBBIES": "Writing, gardening, knitting.",
+        "SUMMARY": "Some might say I have grandma hobbies, others however appreciate the quality and time I invest to handmade them clothes."    
+    },
+
+    {
+        "NAME": "Aiden Reyes",
+        "GENDER": "Male",
+        "AGE": 26,
+        "APPEARANCE": "Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.",
+        "OCCUPATION": "Photographer",
+        "LIKES": "Street art, animals, spontaneous trips.",
+        "DISLIKES": "Routine, pessimism, junk food.",
+        "HOBBIES": "Urban exploration, skateboarding, wildlife photography.",
+        "SUMMARY": "I like spontanious actions that keep me and my mind active." },
+
+    {
+        "NAME": "Olivia Thompson",
+        "GENDER": "Female",
+        "AGE": 35,
+        "APPEARANCE": "Athletic build, blonde hair in a ponytail, blue eyes, casual and sporty attire, energetic presence.",
+        "OCCUPATION": "Fitness Instructor",
+        "LIKES": "Outdoor activities, healthy eating, comedy shows.",
+        "DISLIKES": "Laziness, fast food, dishonesty.",
+        "HOBBIES": "Running, cycling, hiking.",
+        "SUMMARY": "I'm an energetic fitness instructor who loves to stay on her feet and enjoys good jokes."    
+    },
+
+    {
+        "NAME": "Riley Taylor",
+        "GENDER": "Non-binary",
+        "AGE": 38,
+        "APPEARANCE": "Short silver hair, dark eyes, modern professional attire, glasses, calm and composed.",
+        "OCCUPATION": "Architect",
+        "LIKES": "Modern design, sustainability, jazz music.",
+        "DISLIKES": "Wastefulness, misinformation, extreme heat.",
+        "HOBBIES": "Sketching, visiting art museums, playing the saxophone.",
+        "SUMMARY": "I am an architect with a passion for modern design and sustainability."
+    },
+
+    {
+        "NAME": "Noah Sullivan",
+        "GENDER": "Male",
+        "AGE": 42,
+        "APPEARANCE": "Broad shoulders, graying hair, hazel eyes, rugged outdoor look, always has a slight stubble.",
+        "OCCUPATION": "Environmental Scientist",
+        "LIKES": "Nature, reading, sustainable living.",
+        "DISLIKES": "Pollution, ignorance, loud noises.",
+        "HOBBIES": "Hiking, gardening, birdwatching.",
+        "SUMMARY": "Noah of the Noah's Ark? Not quite. I believe more in science."
+    },
+
+    {
+        "NAME": "Mia Patel",
+        "GENDER": "Female",
+        "AGE": 29,
+        "APPEARANCE": "Long wavy black hair, dark brown eyes, olive skin, trendy and bohemian style, infectious laughter.",
+        "OCCUPATION": "Travel Blogger",
+        "LIKES": "Adventure, photography, cultural experiences.",
+        "DISLIKES": "Routine, negativity, bad weather.",
+        "HOBBIES": "Traveling, writing, learning new languages.",
+        "SUMMARY": "I like to travel a lot and keep my precious memories saved with pictures!"    
+    },
+
+    {
+        "NAME": "Taylor Jordan",
+        "GENDER": "Non-binary",
+        "AGE": 29,
+        "APPEARANCE": "Curly brown hair, warm brown eyes, eclectic fashion, colorful accessories, enthusiastic.",
+        "OCCUPATION": "Event Planner",
+        "LIKES": "Festivals, fashion, spicy cuisine.",
+        "DISLIKES": "Monotony, pessimism, early mornings.",
+        "HOBBIES": "Dancing, crafting, exploring new restaurants.",
+        "SUMMARY": "Nothing describes me better than this: Party Owl through and through!"    
+    }
+]
