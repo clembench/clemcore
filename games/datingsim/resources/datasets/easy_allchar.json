@@ -1,0 +1,291 @@
+    {
+        "exp_name": "easy all characters",
+        "chars" : [
+            {
+            "NAME": "Kai Nakamura",
+            "GENDER": "Male",
+            "AGE": 28,
+            "APPEARANCE": "Chiseled jawline, kind eyes, messy black hair, athletic build.",
+            "OCCUPATION": "Bakery Owner",
+            "LIKES": "Baking, early mornings, seeing people happy with his pastries.",
+            "DISLIKES": "Burnt bread, negativity, rushing.",
+            "HOBBIES": "Rock climbing, sketching, volunteering at a local animal shelter.",
+            "SUMMARY": "A kind-hearted baker with a passion for creating delicious treats. Despite his busy schedule, Kai always finds time to pursue his hobbies and give back to the community."
+        },
+
+        {
+            "NAME": "Maya Flores",
+            "GENDER": "Female",
+            "AGE": 25,
+            "APPEARANCE": "Sparkling brown eyes, infectious laugh, flowing dark hair with colorful streaks, stylish and comfortable clothes.",
+            "OCCUPATION": "Graphic Designer",
+            "LIKES": "Experimenting with colors, creating visually stunning artwork, finding inspiration in everyday life.",
+            "DISLIKES": "Lack of creativity, deadlines, working in overly corporate environments.",
+            "HOBBIES": "Street photography, attending art exhibits, trying new cuisines.",
+            "SUMMARY": "A free-spirited and artistic graphic designer who sees beauty in the world around her. Maya's vibrant energy and infectious enthusiasm will make you see the world with fresh eyes."
+        },
+
+        {
+            "NAME": "Robin Aster",
+            "GENDER": "Non-binary",
+            "AGE": 27,
+            "APPEARANCE": "Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).",
+            "OCCUPATION": "Florist",
+            "LIKES": "Experimenting with floral arrangements, creating beauty with nature's bounty, seeing the joy flowers bring to people.",
+            "DISLIKES": "Monotony, negativity, anything artificial.",
+            "HOBBIES": "Hiking, learning about different plant life, volunteering at a community garden.",
+            "SUMMARY": " A creative and free-spirited florist with a passion for transforming flowers into stunning works of art. Robin's infectious enthusiasm and love for nature will brighten your day."
+        },
+
+        {
+            "NAME": "Leo Rodriguez",
+            "GENDER": "Male",
+            "AGE": 35,
+            "APPEARANCE": "Tanned skin, warm brown eyes, charming smile, wears stylish glasses.",
+            "OCCUPATION": "Travel Photographer",
+            "LIKES": "Exploring new places, capturing breathtaking moments, meeting interesting people.",
+            "DISLIKES": "Routine, bad weather, being stuck indoors for too long.",
+            "HOBBIES": "Learning new languages, playing the guitar, collecting souvenirs from his travels.",
+            "SUMMARY": "A free-spirited photographer who thrives on adventure. Leo's captivating stories and infectious enthusiasm will make you want to pack your bags and join him on his next journey."
+        },
+
+        {
+            "NAME": "Dr. Olivia Khan",
+            "GENDER": "Female",
+            "AGE": 42,
+            "APPEARANCE": "Confident smile, sharp blue eyes, stylishly short black hair, professional attire with a touch of personality.",
+            "OCCUPATION": "Cardiovascular Surgeon",
+            "LIKES": "Helping people, pushing the boundaries of medicine, a good intellectual challenge.",
+            "DISLIKES": "Arrogance, inefficiency, seeing people give up.",
+            "HOBBIES": "Rock climbing (to manage stress), playing the cello, volunteering at a medical clinic for the underprivileged.",
+            "SUMMARY": "A brilliant and determined surgeon with a strong work ethic and a compassionate heart. Dr. Khan's dedication and strength will inspire you to reach your own full potential."
+        },
+
+        {
+            "NAME": "Riley Jones",
+            "GENDER": "Non-binary",
+            "AGE": 38,
+            "APPEARANCE": "Buzz cut, warm hazel eyes, androgynous build with toned muscles, wears comfortable yet stylish clothing.",
+            "OCCUPATION": "Blacksmith",
+            "LIKES": "The rhythm of forging metal, creating functional art, working with their hands.",
+            "DISLIKES": "Idleness, pretentiousness, following the rules just for the sake of it.",
+            "HOBBIES": "Sculpting metal into art pieces, weightlifting, historical reenactment.",
+            "SUMMARY": " A strong and independent blacksmith with a passion for transforming raw materials into beauty. Riley's dedication and down-to-earth personality will inspire you to embrace your own inner strength."
+        },
+
+        {
+            "NAME": "Ethan Moore",
+            "GENDER": "Male",
+            "AGE": 42,
+            "APPEARANCE": "Salt and pepper hair, warm smile, crinkled eyes when he laughs, wears well-fitting suits.",
+            "OCCUPATION": "University Professor (Literature)",
+            "LIKES": "Engaging discussions, classic literature, a good cup of tea.",
+            "DISLIKES": "Superficiality, technology dependence, loud noises.",
+            "HOBBIES": "Reading, attending plays and concerts, spending time in nature.",
+            "SUMMARY": "A sophisticated and well-spoken professor with a passion for the written word. Ethan's insightful mind and gentle demeanor will make you see the beauty hidden within literature."
+        },
+
+        {
+            "NAME": "Sakura Nakamura",
+            "GENDER": "Female",
+            "AGE": 32,
+            "APPEARANCE": "Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.",
+            "OCCUPATION": "Tea Ceremony Master",
+            "LIKES": "Maintaining traditions, fostering inner peace, creating a beautiful and harmonious atmosphere.",
+            "DISLIKES": "Disharmony, disrespect, rushing through life.",
+            "HOBBIES": "Calligraphy, flower arranging (Ikebana), practicing mindfulness meditation.",
+            "SUMMARY": "A serene and graceful tea ceremony master who finds beauty in simplicity. Sakura's gentle guidance will help you find your own inner peace and appreciate the present moment."
+        },
+
+        {
+            "NAME": "Samira Hassan",
+            "GENDER": "Non-binary",
+            "AGE": 45,
+            "APPEARANCE": "Short, neatly trimmed silver hair, warm and inviting smile, wears comfortable clothing with a focus on cultural elements (e.g., scarves, jewelry).",
+            "OCCUPATION": "Astronomer",
+            "LIKES": "Exploring the vastness of space, learning about the universe's mysteries, sharing their knowledge with others.",
+            "DISLIKES": "Ignorance, closed-mindedness, the idea that anything is impossible",
+            "HOBBIES": "Stargazing, attending astronomy lectures, writing about their research in a captivating way.",
+            "SUMMARY": "A brilliant and curious astronomer with a passion for unraveling the secrets of the cosmos. Samira's infectious wonder and thirst for knowledge will inspire you to dream big."
+        },
+
+        {
+            "NAME": "Hiro Suzuki",
+            "GENDER": "Male",
+            "AGE": 21,
+            "APPEARANCE": "Bright blue hair (dyed), energetic eyes, playful grin, wears trendy clothes.",
+            "OCCUPATION": "Up-and-Coming Esports Player (Streamer)",
+            "LIKES": "Gaming, sharing his passion with his viewers, pushing his limits.",
+            "DISLIKES": "Losing, negativity, feeling stagnant.",
+            "HOBBIES": "Exercising, attending gaming conventions, trying out new games.",
+            "SUMMARY": "A vibrant and enthusiastic esports player with a loyal fanbase. Hiro's infectious positivity and competitive spirit will draw you into the exciting world of gaming."
+        },
+
+        {
+            "NAME": "Chloe Kim",
+            "GENDER": "Female",
+            "AGE": 21,
+            "APPEARANCE": "Confident smirk, bright green eyes, athletic build, wears comfortable clothes with a sporty flair.",
+            "OCCUPATION": "Lead Mechanic at a Motorcycle Repair Shop",
+            "LIKES": "Fixing things with her own hands, the roar of a motorcycle engine, a good challenge.",
+            "DISLIKES": "Idleness, people who give up easily, following the crowd.",
+            "HOBBIES": "Motocross racing (competitively), tinkering with old machines, participating in hackathons.",
+            "SUMMARY": " A fearless and independent mechanic who thrives on a good challenge. Chloe's confident attitude and adventurous spirit will make you want to break free from the ordinary."
+        },
+
+        {
+            "NAME": "Jamie Park",
+            "GENDER": "Non-binary",
+            "AGE": 21,
+            "APPEARANCE": "Vibrant dyed hair (changes color often), bright and expressive eyes, wears bold and trendy clothing that reflects their artistic personality.",
+            "OCCUPATION": "Tattoo Artist",
+            "LIKES": "Creating meaningful and personalized tattoos, expressing their artistic vision, connecting with people through their work.",
+            "DISLIKES": "Conformity, negativity, limitations on creativity.",
+            "HOBBIES": "Painting, attending art festivals, experimenting with different artistic mediums.",
+            "SUMMARY": "A passionate and artistic tattoo artist who uses their craft to tell stories and express individuality. Jamie's vibrant personality and artistic vision will inspire you to embrace your own unique voice."
+        },
+
+        {
+            "NAME": "Ethan Cooper",
+            "GENDER": "Male",
+            "AGE": 28,
+            "APPEARANCE": "Athletic build, tousled brown hair, blue eyes, casual but stylish clothing, confident smile.",
+            "OCCUPATION": "Software Engineer",
+            "LIKES": "Hiking, indie music, coffee shops.",
+            "DISLIKES": "Crowded places, dishonesty, early mornings.",
+            "HOBBIES": "Rock climbing, playing guitar, video game development.",
+            "SUMMARY": "Ethan is a tech-savvy adventurer who loves exploring both the digital and natural worlds. He's always up for a new challenge and enjoys the thrill of rock climbing. His laid-back personality makes him easy to talk to, but he's also deeply passionate about his interests."
+        },
+
+        {
+            "NAME": "Sophia Martinez",
+            "GENDER": "Female",
+            "AGE": 27,
+            "APPEARANCE": "Curly dark hair, brown eyes, petite, stylish outfits, warm smile.",
+            "OCCUPATION": "Graphic Designer",
+            "LIKES": "Art galleries, spicy food, romantic movies.",
+            "DISLIKES": "Cold weather, arrogance, traffic.",
+            "HOBBIES": "Painting, dancing, yoga.",
+            "SUMMARY": "Sophia is a vibrant and creative graphic designer with a passion for the arts. She enjoys expressing herself through painting and dance, and loves sharing her favorite romantic movies. Her cheerful personality and warm smile make her instantly likable."
+        },
+
+        {
+            "NAME": "Alex Morgan",
+            "GENDER": "Non-binary",
+            "AGE": 30,
+            "APPEARANCE": "Short dyed blue hair, green eyes, androgynous fashion, piercings, confident demeanor.",
+            "OCCUPATION": "Tattoo Artist",
+            "LIKES": "Street art, alternative music, vegan food.",
+            "DISLIKES": "Stereotypes, conformity, pollution.",
+            "HOBBIES": "Skateboarding, drawing, attending music festivals.",
+            "SUMMARY": "Alex is a talented tattoo artist with a passion for street art and alternative culture. They love expressing their creativity through both their work and personal style. Always up for a good time, Alex enjoys skateboarding and attending music festivals."
+        },
+
+        {
+            "NAME": "Marcus Bennett",
+            "GENDER": "Male",
+            "AGE": 34,
+            "APPEARANCE": "Tall and muscular, shaved head, dark skin, wears glasses, often dressed in professional attire.",
+            "OCCUPATION": "Corporate Lawyer",
+            "LIKES": "Fine dining, classical music, strategic games.",
+            "DISLIKES": "Junk food, disorganization, lateness.",
+            "HOBBIES": "Chess, cooking gourmet meals, wine tasting.",
+            "SUMMARY": "Marcus is a sophisticated and highly disciplined lawyer with a taste for the finer things in life. His strategic mind makes him a formidable chess player and an excellent cook. Despite his serious exterior, he has a warm and caring side that he shows to those close to him."
+        },
+
+        {
+            "NAME": "Emily Chen",
+            "GENDER": "Female",
+            "AGE": 31,
+            "APPEARANCE": "Long black hair, almond-shaped eyes, medium height, elegant fashion, calm demeanor.",
+            "OCCUPATION": "Pediatrician",
+            "LIKES": "Baking, classical music, beach sunsets.",
+            "DISLIKES": "Loud noises, clutter, spicy food.",
+            "HOBBIES": "Playing piano, reading, baking desserts.",
+            "SUMMARY": "Emily is a compassionate and dedicated pediatrician who finds joy in helping children. Her serene and calm nature is complemented by her love for playing the piano and baking delicious treats. She finds peace in simple pleasures like reading and watching beach sunsets."
+        },
+
+        {
+            "NAME": "Casey Rivers",
+            "GENDER": "Non-binary",
+            "AGE": 25,
+            "APPEARANCE": "Long auburn hair, hazel eyes, casual chic attire, freckles, soft-spokenr.",
+            "OCCUPATION": "Bookstore Owner",
+            "LIKES": "Poetry, herbal tea, rainy days.",
+            "DISLIKES": "Loud environments, fast fashion, injustice.",
+            "HOBBIES": "Writing, gardening, knitting.",
+            "SUMMARY": "Casey is the gentle and introspective owner of a cozy bookstore, where they find joy in sharing their love for literature. They appreciate the quiet moments in life and often spend time writing poetry or tending to their garden. Their compassionate nature makes them a comforting presence."
+        },
+
+        {
+            "NAME": "Aiden Reyes",
+            "GENDER": "Male",
+            "AGE": 26,
+            "APPEARANCE": "Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.",
+            "OCCUPATION": "Photographer",
+            "LIKES": "Street art, animals, spontaneous trips.",
+            "DISLIKES": "Routine, pessimism, junk food.",
+            "HOBBIES": "Urban exploration, skateboarding, wildlife photography.",
+            "SUMMARY": "Aiden is a free-spirited and creative photographer who finds beauty in unexpected places. His love for adventure leads him to explore urban landscapes and capture stunning photos. He is always full of energy and loves living life to the fullest."
+        },
+
+        {
+            "NAME": "Olivia Thompson",
+            "GENDER": "Female",
+            "AGE": 35,
+            "APPEARANCE": "Athletic build, blonde hair in a ponytail, blue eyes, casual and sporty attire, energetic presence.",
+            "OCCUPATION": "Fitness Instructor",
+            "LIKES": "Outdoor activities, healthy eating, comedy shows.",
+            "DISLIKES": "Laziness, fast food, dishonesty.",
+            "HOBBIES": "Running, cycling, hiking.",
+            "SUMMARY": "Olivia is an enthusiastic and energetic fitness instructor who thrives on staying active and healthy. Her love for the outdoors drives her to explore new trails and scenic routes. She enjoys bringing humor into her life and the lives of others, often watching and sharing comedy shows."
+        },
+
+        {
+            "NAME": "Riley Taylor",
+            "GENDER": "Non-binary",
+            "AGE": 38,
+            "APPEARANCE": "Short silver hair, dark eyes, modern professional attire, glasses, calm and composed.",
+            "OCCUPATION": "Architect",
+            "LIKES": "Modern design, sustainability, jazz music.",
+            "DISLIKES": "Wastefulness, misinformation, extreme heat.",
+            "HOBBIES": "Sketching, visiting art museums, playing the saxophone.",
+            "SUMMARY": "Riley is a visionary architect with a focus on sustainable and modern design. They enjoy blending functionality with aesthetics in their work and often draw inspiration from art and music. In their free time, Riley loves playing the saxophone and visiting art museums."
+        },
+
+        {
+            "NAME": "Noah Sullivan",
+            "GENDER": "Male",
+            "AGE": 42,
+            "APPEARANCE": "Broad shoulders, graying hair, hazel eyes, rugged outdoor look, always has a slight stubble.",
+            "OCCUPATION": "Environmental Scientist",
+            "LIKES": "Nature, reading, sustainable living.",
+            "DISLIKES": "Pollution, ignorance, loud noises.",
+            "HOBBIES": "Hiking, gardening, birdwatching.",
+            "SUMMARY": "Noah is a dedicated environmentalist with a deep love for nature. His work revolves around preserving the planet, and he enjoys spending his free time in the great outdoors. He is thoughtful, knowledgeable, and passionate about making a positive impact on the world."
+        },
+
+        {
+            "NAME": "Mia Patel",
+            "GENDER": "Female",
+            "AGE": 29,
+            "APPEARANCE": "Long wavy black hair, dark brown eyes, olive skin, trendy and bohemian style, infectious laughter.",
+            "OCCUPATION": "Travel Blogger",
+            "LIKES": "Adventure, photography, cultural experiences.",
+            "DISLIKES": "Routine, negativity, bad weather.",
+            "HOBBIES": "Traveling, writing, learning new languages.",
+            "SUMMARY": "Mia is a spirited and adventurous travel blogger who loves exploring new cultures and destinations. Her passion for travel is matched by her love for photography and storytelling. She brings a positive energy and curiosity to everything she does, always looking for the next great adventure."
+        },
+
+        {
+            "NAME": "Taylor Jordan",
+            "GENDER": "Non-binary",
+            "AGE": 29,
+            "APPEARANCE": "Curly brown hair, warm brown eyes, eclectic fashion, colorful accessories, enthusiastic.",
+            "OCCUPATION": "Event Planner",
+            "LIKES": "Festivals, fashion, spicy cuisine.",
+            "DISLIKES": "Monotony, pessimism, early mornings.",
+            "HOBBIES": "Dancing, crafting, exploring new restaurants.",
+            "SUMMARY": "Taylor is an energetic and creative event planner who thrives on organizing unique and memorable experiences. They have a vibrant personality and love adding a personal touch to everything they do. Taylor's enthusiasm for life is evident in their hobbies, which include dancing and trying out new restaurants."
+        }]
+          }
