@@ -42,10 +42,6 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
         # one where both players are female, etc.
         # TO DO: prepare the datasets 
         char_sheets = get_random_npcs('games/datingsim/resources/testfile.json')
-        # pre define location to keep it open for an experimeent 
-        locations = None
-        # predefine actions in case that we include them
-        actions = None  # number of how often each player can say sth
         n_turns = 15
         max_retries = 3
         re_prompt_allowed = True # adjustable per experiment
