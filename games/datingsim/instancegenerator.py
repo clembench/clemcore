@@ -79,23 +79,11 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
                 charsheet_a = random.choice(char_sheets[index]["chars"])
                 charsheet_b = random.choice(char_sheets[index]["chars"])
 
-                if locations is not None:
-                    location = random.choice(locations)
-                else:
-                    location = None
-
-                if actions is not None:
-                    set_of_actions = random.choice(actions)
-                else:
-                    set_of_actions = None
-
                 instance = self.add_game_instance(experiment, game_id)
 
                 # populate game with parameters
                 instance["char_a"] = charsheet_a
                 instance["char_b"] = charsheet_b
-                instance["location"] = location
-                instance["set_of_actions"] = set_of_actions
 
                 instance["initial_prompt_player_a"] = initial_prompt_a.replace("$charsheet_a", str(instance["char_a"])).replace("charsheet_b", str(instance["char_b"]))
                 instance["initial_prompt_player_b"] = initial_prompt_b.replace("$charsheet_a", str(instance["char_a"])).replace("charsheet_b", str(instance["char_b"]))
