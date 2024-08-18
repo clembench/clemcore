@@ -122,8 +122,6 @@ class DatingSimGameMaster(GameMaster):
         self.initial_prompt_player_a = self.game_instance["initial_prompt_player_a"]
         self.initial_prompt_player_b = self.game_instance["initial_prompt_player_b"]
         
-        self.location = self.game_instance['location']
-        
         self.log_players({
             "GM": "Game master for datingsim",
             "Player 1": self.player_models[0].get_name(),
@@ -137,8 +135,8 @@ class DatingSimGameMaster(GameMaster):
         self.log_key("max_turns", self.max_turns + 1)
 
         self.further_prompt = self.game_instance["further_prompts"]
-        self.further_prompt_a = self.further_prompt.replace("$character_name", self.game_instance["char_b"]["NAME"])
-        self.further_prompt_b = self.further_prompt.replace("$character_name", self.game_instance["char_a"]["NAME"])
+        self.further_prompt_a = self.further_prompt.replace("$character_name", self.game_instance["char_b_b"]["NAME"])
+        self.further_prompt_b = self.further_prompt.replace("$character_name", self.game_instance["char_a_a"]["NAME"])
 
         self.reprompt_prompt = self.game_instance["reprompt_prompt"]
 
