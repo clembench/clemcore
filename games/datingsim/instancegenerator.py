@@ -41,13 +41,21 @@ SEED = 42
 #                "medium-less_turns",
 #                "difficult-less_turns"]
 
-EXPERIMENTS = ["easy", 
-               "medium", 
-               "difficult", 
+EXPERIMENTS = ["easy",
+               "medium",
+               "difficult",
+               "easy-reprompt",
+               "medium-reprompt",
+               "difficult-reprompt",
+               "easy-themselves",
                "medium-themselves",
+               "difficult-themselves",
+               "easy-same_gender",
                "medium-same_gender",
-               "medium-more_turns",
-               "medium-less_turns"]
+               "difficult-same_gender",
+               "medium-less_turns",
+               "medium-more_turns"
+]
 
 logger = clemgame.get_logger(__name__)
 
@@ -63,7 +71,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
     def on_generate(self):
         
         # get resources
-        char_sheets = get_random_npcs(r'games\datingsim\resources\charactersheets.json')
+        char_sheets = get_random_npcs(r'.\games\datingsim\resources\charactersheets.json')
         # number of how often each player can say sth
         n_turns = 15
         max_retries = 2
@@ -263,7 +271,7 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
 
                 experiment["n_turns"] = n_turns
                 experiment["max_retries"] = max_retries
-                experiment["re_prompt_allowed"] = False
+                experiment["re_prompt_allowed"] = True
 
                 for game_id in range(N_INSTANCES):
 
@@ -547,13 +555,13 @@ class DatingSimInstanceGenerator(GameInstanceGenerator):
                     
                     # info player b has about player a
                     instance["char_b_a"] = deepcopy(char_player_a)
-                    instance["char_a_b"].pop("HOBBIES")
-                    instance["char_a_b"].pop("LIKES")
-                    instance["char_a_b"].pop("DISLIKES")
-                    instance["char_a_b"].pop("AGE")
-                    instance["char_a_b"].pop("APPEARANCE")
-                    instance["char_a_b"].pop("OCCUPATION")
-                    instance["char_a_b"].pop("GENDER")
+                    instance["char_b_a"].pop("HOBBIES")
+                    instance["char_b_a"].pop("LIKES")
+                    instance["char_b_a"].pop("DISLIKES")
+                    instance["char_b_a"].pop("AGE")
+                    instance["char_b_a"].pop("APPEARANCE")
+                    instance["char_b_a"].pop("OCCUPATION")
+                    instance["char_b_a"].pop("GENDER")
                     
                     # info player b has about themselves 
                     instance["char_b_b"] = deepcopy(char_player_b)
