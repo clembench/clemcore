@@ -1,0 +1,240 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'LIKES': 'Street art, animals, spontaneous trips.', 'DISLIKES': 'Routine, pessimism, junk food.', 'HOBBIES': 'Urban exploration, skateboarding, wildlife photography.', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in getting to know the other player better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey, I'm Aiden. I saw your profile and couldn't help but notice the similarities between us. I'm also a photographer and love spontaneous adventures. What kind of photography do you enjoy? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in getting to know the other player better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey, I'm Aiden. I saw your profile and couldn't help but notice the similarities between us. I'm also a photographer and love spontaneous adventures. What kind of photography do you enjoy? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'LIKES': 'Street art, animals, spontaneous trips.', 'DISLIKES': 'Routine, pessimism, junk food.', 'HOBBIES': 'Urban exploration, skateboarding, wildlife photography.', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hey, I'm Aiden. I saw your profile and couldn't help but notice the similarities between us. I'm also a photographer and love spontaneous adventures. What kind of photography do you enjoy? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player initiated the conversation and showed interest in my profile, so I'll respond and see where the conversation goes. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey Aiden, nice to meet you too. I'm actually really into wildlife photography, there's something about capturing the beauty of nature that I find really fulfilling. What about you, what kind of photography do you enjoy? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player initiated the conversation and showed interest in my profile, so I'll respond and see where the conversation goes. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey Aiden, nice to meet you too. I'm actually really into wildlife photography, there's something about capturing the beauty of nature that I find really fulfilling. What about you, what kind of photography do you enjoy? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  Hey Aiden, nice to meet you too. I'm actually really into wildlife photography, there's something about capturing the beauty of nature that I find really fulfilling. What about you, what kind of photography do you enjoy? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to build a connection by sharing my interests and finding common ground with the other player. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That's amazing, I've always been fascinated by wildlife photography. I'm more into urban exploration and street art, but I've recently started experimenting with wildlife photography too. Have you traveled to any exciting places for your photography? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to build a connection by sharing my interests and finding common ground with the other player. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That's amazing, I've always been fascinated by wildlife photography. I'm more into urban exploration and street art, but I've recently started experimenting with wildlife photography too. Have you traveled to any exciting places for your photography? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  That's amazing, I've always been fascinated by wildlife photography. I'm more into urban exploration and street art, but I've recently started experimenting with wildlife photography too. Have you traveled to any exciting places for your photography? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player is showing genuine interest in my photography and sharing their own experiences, so I'll continue the conversation to build a connection. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Yeah, I've been to some amazing places, like the Amazon rainforest and the Serengeti. But I'm also really passionate about exploring local hidden gems, like abandoned buildings or street art alleys. Speaking of which, have you found any cool spots in the city that you'd like to check out? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player is showing genuine interest in my photography and sharing their own experiences, so I'll continue the conversation to build a connection. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Yeah, I've been to some amazing places, like the Amazon rainforest and the Serengeti. But I'm also really passionate about exploring local hidden gems, like abandoned buildings or street art alleys. Speaking of which, have you found any cool spots in the city that you'd like to check out? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  Yeah, I've been to some amazing places, like the Amazon rainforest and the Serengeti. But I'm also really passionate about exploring local hidden gems, like abandoned buildings or street art alleys. Speaking of which, have you found any cool spots in the city that you'd like to check out? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to suggest a potential location for the date and gauge the other player's interest. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds incredible, I've always wanted to visit the Serengeti. As for local spots, I've been meaning to check out this new street art alley that just popped up downtown. It could be a great spot for a date, we could grab some coffee and explore the area together. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to suggest a potential location for the date and gauge the other player's interest. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds incredible, I've always wanted to visit the Serengeti. As for local spots, I've been meaning to check out this new street art alley that just popped up downtown. It could be a great spot for a date, we could grab some coffee and explore the area together. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  That sounds incredible, I've always wanted to visit the Serengeti. As for local spots, I've been meaning to check out this new street art alley that just popped up downtown. It could be a great spot for a date, we could grab some coffee and explore the area together. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player is suggesting a potential date idea, which includes a location and an action, so I'll respond with my thoughts on the proposal. [end]\\ \tt \\ \tt [sentiment] Agreement on Location, Agreement on Action [end]\\ \tt \\ \tt [response] I love that idea, the street art alley sounds like a great spot to explore. Grabbing coffee and checking out the art together sounds like a perfect date to me. How about we plan to meet there on a weekend morning, when the crowds are smaller? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Aborted game because of invalid format: pattern 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

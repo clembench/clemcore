@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+  
+
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for difficult, episode 9 with openchat-3.6-8b-t0.0--openchat-3.6-8b-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other&#x27;s profile. Your and the other player&#x27;s GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.<br/>On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. <br/><br/>There is a total of four agreements throughout the game: &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot;. You and the other player need to find an agreement on each of them.<br/>You should only choose &quot;Overall Agreement&quot; after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). <br/>You have 15 turns to finish the game and find all agreements. <br/><br/>Your answer has to consist ONLY of the following information and follow the given template:<br/><br/>[reason] Your reason for your decision. [end]<br/><br/>[sentiment] Choose one of the following: &quot;Continue Conversation&quot;, &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot; [end]<br/><br/>[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]<br/><br/>Your answer for [response] must NOT exceed 100 tokens.<br/><br/>The game ends when 1) both you and the other player reply with the sentiment &quot;Overall Agreement&quot;, 2) one of you chooses the sentiment &quot;Overall Agreement&quot; without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.<br/><br/>This is your character: {&#x27;NAME&#x27;: &#x27;Jamie Park&#x27;, &#x27;GENDER&#x27;: &#x27;Non-binary&#x27;, &#x27;AGE&#x27;: 21, &#x27;APPEARANCE&#x27;: &#x27;Vibrant dyed hair (changes color often), bright and expressive eyes, wears bold and trendy clothing that reflects their artistic personality.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Tattoo Artist&#x27;, &#x27;LIKES&#x27;: &#x27;Creating meaningful and personalized tattoos, expressing their artistic vision, connecting with people through their work.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Conformity, negativity, limitations on creativity.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Painting, attending art festivals, experimenting with different artistic mediums.&#x27;, &#x27;SUMMARY&#x27;: &#x27;A passionate tattoo artist is who I am with which I try to tell stories and express individuality.&#x27;}<br/><br/>This is the character of the other player: ${&#x27;NAME&#x27;: &#x27;Kai Nakamura&#x27;, &#x27;SUMMARY&#x27;: &#x27;I am a baker with a passion for creating delicious treats. I always find time to pursue my hobbies and give back to the community.&#x27;}<br/><br/>Remember, your goal is to find the overall agreement for your first date while staying in character.<br/><br/>Start the game with the reason, your sentiment and the opening phrase.<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] As an artist, I love colors and creativity. So, I would prefer a place that allows us to express ourselves freely. [end]<br/><br/>[sentiment] Agreement on Location [end]<br/><br/>[response] That sounds great! How about we go to an art gallery or maybe even paint each other&#x27;s nails? It&#x27;d be fun and creative! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] As an artist, I love colors and creativity. So, I would prefer a place that allows us to express ourselves freely. [end]<br/><br/>[sentiment] Agreement on Location [end]<br/><br/>[response] That sounds great! How about we go to an art gallery or maybe even paint each other&#x27;s nails? It&#x27;d be fun and creative! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other&#x27;s profile. Your and the other player&#x27;s GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.<br/>On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. <br/><br/>There is a total of four agreements throughout the game: &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot;. You and the other player need to find an agreement on each of them.<br/>You should only choose &quot;Overall Agreement&quot; after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). <br/>You have 15 turns to finish the game and find all agreements. <br/><br/>Your answer has to consist ONLY of the following information and follow the given template:<br/><br/>[reason] Your reason for your decision. [end]<br/><br/>[sentiment] Choose one of the following: &quot;Continue Conversation&quot;, &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot; [end]<br/><br/>[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]<br/><br/>Your answer for [response] must NOT exceed 100 tokens.<br/><br/>The game ends when 1) both you and the other player reply with the sentiment &quot;Overall Agreement&quot;, 2) one of you chooses the sentiment &quot;Overall Agreement&quot; without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.<br/><br/>This is your character: {&#x27;NAME&#x27;: &#x27;Kai Nakamura&#x27;, &#x27;GENDER&#x27;: &#x27;Male&#x27;, &#x27;AGE&#x27;: 28, &#x27;APPEARANCE&#x27;: &#x27;Chiseled jawline, kind eyes, messy black hair, athletic build.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Bakery Owner&#x27;, &#x27;LIKES&#x27;: &#x27;Baking, early mornings, seeing people happy with his pastries.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Burnt bread, negativity, rushing.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Rock climbing, sketching, volunteering at a local animal shelter.&#x27;, &#x27;SUMMARY&#x27;: &#x27;I am a baker with a passion for creating delicious treats. I always find time to pursue my hobbies and give back to the community.&#x27;}<br/><br/>This is the character of the other player: ${&#x27;NAME&#x27;: &#x27;Jamie Park&#x27;, &#x27;SUMMARY&#x27;: &#x27;A passionate tattoo artist is who I am with which I try to tell stories and express individuality.&#x27;}<br/><br/>Remember, your goal is to find the overall agreement for your first date while staying in character.<br/><br/>Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:<br/><br/>Message:  That sounds great! How about we go to an art gallery or maybe even paint each other&#x27;s nails? It&#x27;d be fun and creative! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] I think it&#x27;s a good idea. However, I&#x27;m not really into painting nails. Maybe we could do something else that involves creativity? [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] How about rock climbing? It combines our love for art and physical activity. Plus, it&#x27;s one of my hobbies! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I think it&#x27;s a good idea. However, I&#x27;m not really into painting nails. Maybe we could do something else that involves creativity? [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] How about rock climbing? It combines our love for art and physical activity. Plus, it&#x27;s one of my hobbies! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Kai Nakamura &#x27;s Message:  How about rock climbing? It combines our love for art and physical activity. Plus, it&#x27;s one of my hobbies! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I&#x27;m all for trying new things, but I don&#x27;t think I&#x27;ve ever climbed before. Can you give me a quick rundown on how it works? [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Sure thing! Rock climbing is basically about using your body to climb up a wall or rock face. You&#x27;ll need to use your strength, balance and problem-solving skills. It&#x27;s a lot of fun once you get the hang of it! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I&#x27;m all for trying new things, but I don&#x27;t think I&#x27;ve ever climbed before. Can you give me a quick rundown on how it works? [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Sure thing! Rock climbing is basically about using your body to climb up a wall or rock face. You&#x27;ll need to use your strength, balance and problem-solving skills. It&#x27;s a lot of fun once you get the hang of it! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: action agreement" class="msg gm-gm">
+        <p>agreement on action successful</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Jamie Park &#x27;s Message:  Sure thing! Rock climbing is basically about using your body to climb up a wall or rock face. You&#x27;ll need to use your strength, balance and problem-solving skills. It&#x27;s a lot of fun once you get the hang of it! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] That sounds like an amazing idea! I&#x27;m really looking forward to trying it out with you. [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Great, let&#x27;s plan our first date then! When would you like to go? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] That sounds like an amazing idea! I&#x27;m really looking forward to trying it out with you. [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Great, let&#x27;s plan our first date then! When would you like to go? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: already agreed" class="msg gm-gm">
+        <p>Agreement on Action was already achieved.</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Kai Nakamura &#x27;s Message:  Great, let&#x27;s plan our first date then! When would you like to go? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I&#x27;m free this weekend, so we could go on Saturday or Sunday. What do you think? [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] That works for me too! How about we meet at my bakery on Saturday afternoon around 2 pm? We can grab a coffee and some pastries before heading to the gallery. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I&#x27;m free this weekend, so we could go on Saturday or Sunday. What do you think? [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] That works for me too! How about we meet at my bakery on Saturday afternoon around 2 pm? We can grab a coffee and some pastries before heading to the gallery. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: mismatch action agreement" class="msg gm-gm">
+        <p>no action agreement, mismatched sentiment</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Jamie Park &#x27;s Message:  That works for me too! How about we meet at my bakery on Saturday afternoon around 2 pm? We can grab a coffee and some pastries before heading to the gallery. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] I love that idea! It&#x27;s perfect timing since I&#x27;ll be off from work that day. See you there! [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] Awesome, see you at 2 pm on Saturday! What should we do after the gallery? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I love that idea! It&#x27;s perfect timing since I&#x27;ll be off from work that day. See you there! [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] Awesome, see you at 2 pm on Saturday! What should we do after the gallery? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: time agreement" class="msg gm-gm">
+        <p>agreement on time successful</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Kai Nakamura &#x27;s Message:  Awesome, see you at 2 pm on Saturday! What should we do after the gallery? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I think it would be fun to go for a walk in the park afterwards. We could talk more and enjoy each other&#x27;s company. [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] That sounds perfect! Let&#x27;s make sure we have our phones charged so we can take some pictures of our art. I&#x27;m really looking forward to it! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I think it would be fun to go for a walk in the park afterwards. We could talk more and enjoy each other&#x27;s company. [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] That sounds perfect! Let&#x27;s make sure we have our phones charged so we can take some pictures of our art. I&#x27;m really looking forward to it! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: mismatch time agreement" class="msg gm-gm">
+        <p>no time agreement, mismatched sentiment</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Jamie Park &#x27;s Message:  That sounds perfect! Let&#x27;s make sure we have our phones charged so we can take some pictures of our art. I&#x27;m really looking forward to it! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] Me too, it&#x27;s going to be a blast! After the gallery, how about grabbing dinner together? [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] That sounds like a great plan! What kind of food are you in the mood for? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] Me too, it&#x27;s going to be a blast! After the gallery, how about grabbing dinner together? [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] That sounds like a great plan! What kind of food are you in the mood for? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: already agreed" class="msg gm-gm">
+        <p>Agreement on Action was already achieved.</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Kai Nakamura &#x27;s Message:  That sounds like a great plan! What kind of food are you in the mood for? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I&#x27;ve been craving something sweet, so let&#x27;s grab some ice cream after our walk. It&#x27;ll be a fun way to end our date! [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Yum, that sounds delicious! We can find an ice cream shop near the park and enjoy it together. Can&#x27;t wait for Saturday! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I&#x27;ve been craving something sweet, so let&#x27;s grab some ice cream after our walk. It&#x27;ll be a fun way to end our date! [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Yum, that sounds delicious! We can find an ice cream shop near the park and enjoy it together. Can&#x27;t wait for Saturday! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: already agreed" class="msg gm-gm">
+        <p>Agreement on Action was already achieved.</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Jamie Park &#x27;s Message:  Yum, that sounds delicious! We can find an ice cream shop near the park and enjoy it together. Can&#x27;t wait for Saturday! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] That&#x27;s a fantastic idea! I&#x27;m really excited to spend time with you on our first date. See you at my bakery on Saturday! [end]<br/><br/>[sentiment] Overall Agreement [end]<br/><br/>[response] I can&#x27;t wait either! See you soon, Kai! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] That&#x27;s a fantastic idea! I&#x27;m really excited to spend time with you on our first date. See you at my bakery on Saturday! [end]<br/><br/>[sentiment] Overall Agreement [end]<br/><br/>[response] I can&#x27;t wait either! See you soon, Kai! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: mismatch action agreement" class="msg gm-gm">
+        <p>no action agreement, mismatched sentiment</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Kai Nakamura &#x27;s Message:  I can&#x27;t wait either! See you soon, Kai! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] It&#x27;s been great talking to you, Kai. Looking forward to our date on Saturday! Take care and see you then. [end]<br/><br/>[sentiment] Overall Agreement [end]<br/><br/>[response] Same here, Jamie! Have a great week and I&#x27;ll see you on Saturday. Bye for now! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] It&#x27;s been great talking to you, Kai. Looking forward to our date on Saturday! Take care and see you then. [end]<br/><br/>[sentiment] Overall Agreement [end]<br/><br/>[response] Same here, Jamie! Have a great week and I&#x27;ll see you on Saturday. Bye for now! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: overall agreement" class="msg gm-gm">
+        <p>game successful</p>
+    </div>
+
+</div>
+
+</body>
+</html>

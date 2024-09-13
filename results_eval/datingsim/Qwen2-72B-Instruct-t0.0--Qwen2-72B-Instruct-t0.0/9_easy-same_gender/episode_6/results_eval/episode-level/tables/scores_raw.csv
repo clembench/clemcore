@@ -1,0 +1,28 @@
+,metric,value
+32942,Violated Request Count,0.0
+32943,Violated pattern,0.0
+32944,Violated token length,0.0
+32945,Parsed Request Count,10.0
+32946,Request Count,10.0
+32947,Request Success Ratio,1.0
+32948,Number of completed turns,10.0
+32949,Number of Agreements,3.0
+32950,Agreement Efficiency,100.0
+32951,Number of Mismatched Agreements,3.0
+32952,Number of Reprompts,0.0
+32953,Number of Redundancy,0.0
+32954,Friendzoned,0.0
+32955,Out of turns,0.0
+32956,Out of reprompts,0.0
+32957,Turn penalty,0.0
+32958,Agreement penalty,0.0
+32959,Inefficiency penalty,0.0
+32960,Error penalty,0.0
+32961,Location agreement,1.0
+32962,Action agreement,1.0
+32963,Time agreement,1.0
+32964,Aborted,0.0
+32965,Success,1.0
+32966,Lose,0.0
+32967,Main Score,100.0
+34313,Played,1.0

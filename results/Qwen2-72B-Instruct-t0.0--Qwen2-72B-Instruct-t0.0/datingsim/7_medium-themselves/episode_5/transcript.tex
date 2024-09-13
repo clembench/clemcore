@@ -1,0 +1,384 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'LIKES': 'Street art, animals, spontaneous trips.', 'DISLIKES': 'Routine, pessimism, junk food.', 'HOBBIES': 'Urban exploration, skateboarding, wildlife photography.', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I think it's best to start with suggesting a time that fits my schedule. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] How about we meet this Saturday evening? I'm free after 6 PM. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I think it's best to start with suggesting a time that fits my schedule. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] How about we meet this Saturday evening? I'm free after 6 PM. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'LIKES': 'Street art, animals, spontaneous trips.', 'DISLIKES': 'Routine, pessimism, junk food.', 'HOBBIES': 'Urban exploration, skateboarding, wildlife photography.', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  How about we meet this Saturday evening? I'm free after 6 PM. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I'm glad we're thinking along the same lines for the timing. [end]\\ \tt [sentiment] Agreement on Time [end]\\ \tt [response] Sounds perfect, I'm free after 6 PM too. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm glad we're thinking along the same lines for the timing. [end]\\ \tt [sentiment] Agreement on Time [end]\\ \tt [response] Sounds perfect, I'm free after 6 PM too. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  Sounds perfect, I'm free after 6 PM too. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Now that we have a time, I should suggest a location that fits both our interests. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] Great! How about we meet at the city park? It's perfect for a walk and some good conversation. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Now that we have a time, I should suggest a location that fits both our interests. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] Great! How about we meet at the city park? It's perfect for a walk and some good conversation. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  Great! How about we meet at the city park? It's perfect for a walk and some good conversation. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The city park is a good spot for a first date, it's neutral and has plenty of space to explore. [end]\\ \tt [sentiment] Agreement on Location [end]\\ \tt [response] I like that idea, the city park is always full of surprises. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The city park is a good spot for a first date, it's neutral and has plenty of space to explore. [end]\\ \tt [sentiment] Agreement on Location [end]\\ \tt [response] I like that idea, the city park is always full of surprises. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on location successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  I like that idea, the city park is always full of surprises. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] With the location agreed upon, I should now suggest an activity that aligns with our shared interests. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] Awesome! We could bring our cameras and explore some street art together. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] With the location agreed upon, I should now suggest an activity that aligns with our shared interests. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] Awesome! We could bring our cameras and explore some street art together. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  Awesome! We could bring our cameras and explore some street art together. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Combining our shared interests in photography and street art will make for a memorable date. [end]\\ \tt [sentiment] Agreement on Action [end]\\ \tt [response] Perfect, I'd love to capture some urban art with you. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Combining our shared interests in photography and street art will make for a memorable date. [end]\\ \tt [sentiment] Agreement on Action [end]\\ \tt [response] Perfect, I'd love to capture some urban art with you. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  Perfect, I'd love to capture some urban art with you. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] We have agreed on the time, location, and activity. Now is the right time to confirm the overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Great! So it's settled. Saturday evening at 6 PM, the city park, and we'll explore street art with our cameras. Looking forward to it! [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] We have agreed on the time, location, and activity. Now is the right time to confirm the overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Great! So it's settled. Saturday evening at 6 PM, the city park, and we'll explore street art with our cameras. Looking forward to it! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  Great! So it's settled. Saturday evening at 6 PM, the city park, and we'll explore street art with our cameras. Looking forward to it! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] We have agreed on all aspects of the date, and I'm excited to meet Aiden. [end]\\ \tt [sentiment] Overall Agreement [end]\\ \tt [response] Absolutely, I can't wait for our date either! See you there. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] We have agreed on all aspects of the date, and I'm excited to meet Aiden. [end]\\ \tt [sentiment] Overall Agreement [end]\\ \tt [response] Absolutely, I can't wait for our date either! See you there. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

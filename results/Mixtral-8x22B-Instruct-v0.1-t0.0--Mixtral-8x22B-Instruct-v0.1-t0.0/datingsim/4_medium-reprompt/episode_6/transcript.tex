@@ -1,0 +1,444 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Sakura Nakamura', 'GENDER': 'Female', 'AGE': 32, 'APPEARANCE': 'Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.', 'OCCUPATION': 'Tea Ceremony Master', 'LIKES': 'Maintaining traditions, fostering inner peace, creating a beautiful and harmonious atmosphere.', 'DISLIKES': 'Disharmony, disrespect, rushing through life.', 'HOBBIES': 'Calligraphy, flower arranging (Ikebana), practicing mindfulness meditation.', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I am drawn to Aiden's creative and adventurous spirit, and I believe our shared appreciation for beauty and art can make for an interesting first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hello Aiden, I'm Sakura. I'm intrigued by your passion for photography and spontaneous actions. I'd love to plan a first date that combines our interests. How about we start by discussing a suitable time for both of us? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I am drawn to Aiden's creative and adventurous spirit, and I believe our shared appreciation for beauty and art can make for an interesting first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hello Aiden, I'm Sakura. I'm intrigued by your passion for photography and spontaneous actions. I'd love to plan a first date that combines our interests. How about we start by discussing a suitable time for both of us? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'LIKES': 'Street art, animals, spontaneous trips.', 'DISLIKES': 'Routine, pessimism, junk food.', 'HOBBIES': 'Urban exploration, skateboarding, wildlife photography.', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Sakura Nakamura', 'GENDER': 'Female', 'AGE': 32, 'APPEARANCE': 'Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.', 'OCCUPATION': 'Tea Ceremony Master', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hello Aiden, I'm Sakura. I'm intrigued by your passion for photography and spontaneous actions. I'd love to plan a first date that combines our interests. How about we start by discussing a suitable time for both of us? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura's suggestion to plan a date that combines our interests aligns with my character's preference for spontaneous actions. I appreciate her initiative to start with discussing a suitable time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Sakura, it's great to meet you! I'm excited to plan a date that brings together our interests. Let's discuss a time that works best for both of us. How about a weekend afternoon? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura's suggestion to plan a date that combines our interests aligns with my character's preference for spontaneous actions. I appreciate her initiative to start with discussing a suitable time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Sakura, it's great to meet you! I'm excited to plan a date that brings together our interests. Let's discuss a time that works best for both of us. How about a weekend afternoon? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  Hi Sakura, it's great to meet you! I'm excited to plan a date that brings together our interests. Let's discuss a time that works best for both of us. How about a weekend afternoon? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] A weekend afternoon sounds like a wonderful time to enjoy a leisurely date, allowing us to fully immerse ourselves in the experience without the pressures of weekday commitments. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] A weekend afternoon sounds perfect, Aiden. I appreciate your suggestion. Now that we have a time, let's discuss a location that can provide a beautiful and harmonious atmosphere for our date. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] A weekend afternoon sounds like a wonderful time to enjoy a leisurely date, allowing us to fully immerse ourselves in the experience without the pressures of weekday commitments. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] A weekend afternoon sounds perfect, Aiden. I appreciate your suggestion. Now that we have a time, let's discuss a location that can provide a beautiful and harmonious atmosphere for our date. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  A weekend afternoon sounds perfect, Aiden. I appreciate your suggestion. Now that we have a time, let's discuss a location that can provide a beautiful and harmonious atmosphere for our date. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura's agreement on the time and her suggestion to find a location that provides a beautiful and harmonious atmosphere aligns with my character's interests in photography and spontaneous actions. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'm glad you like the idea of a weekend afternoon, Sakura. For the location, how about we explore a local park with beautiful scenery and tranquil spots? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura's agreement on the time and her suggestion to find a location that provides a beautiful and harmonious atmosphere aligns with my character's interests in photography and spontaneous actions. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'm glad you like the idea of a weekend afternoon, Sakura. For the location, how about we explore a local park with beautiful scenery and tranquil spots? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  I'm glad you like the idea of a weekend afternoon, Sakura. For the location, how about we explore a local park with beautiful scenery and tranquil spots? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] A local park with beautiful scenery and tranquil spots aligns well with my love for nature and serenity. I believe it would be an ideal location for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] A local park sounds like a wonderful idea, Aiden. I'm looking forward to exploring the beautiful scenery and tranquil spots together. Now, let's discuss an activity that can bring our interests together. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] A local park with beautiful scenery and tranquil spots aligns well with my love for nature and serenity. I believe it would be an ideal location for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] A local park sounds like a wonderful idea, Aiden. I'm looking forward to exploring the beautiful scenery and tranquil spots together. Now, let's discuss an activity that can bring our interests together. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  A local park sounds like a wonderful idea, Aiden. I'm looking forward to exploring the beautiful scenery and tranquil spots together. Now, let's discuss an activity that can bring our interests together. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura's agreement on the location and her enthusiasm for exploring the park together aligns with my character's interests in photography and spontaneous actions. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'm glad you're excited about the park, Sakura. For the activity, how about we bring our cameras and capture the beauty of nature while enjoying a peaceful walk? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura's agreement on the location and her enthusiasm for exploring the park together aligns with my character's interests in photography and spontaneous actions. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'm glad you're excited about the park, Sakura. For the activity, how about we bring our cameras and capture the beauty of nature while enjoying a peaceful walk? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  I'm glad you're excited about the park, Sakura. For the activity, how about we bring our cameras and capture the beauty of nature while enjoying a peaceful walk? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Combining our shared interests in photography and nature, a peaceful walk with our cameras to capture the beauty of the park seems like a perfect activity for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] Aiden, I love your idea of capturing the beauty of nature with our cameras during a peaceful walk. This activity will allow us to connect on a deeper level and create lasting memories. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Combining our shared interests in photography and nature, a peaceful walk with our cameras to capture the beauty of the park seems like a perfect activity for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] Aiden, I love your idea of capturing the beauty of nature with our cameras during a peaceful walk. This activity will allow us to connect on a deeper level and create lasting memories. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  Aiden, I love your idea of capturing the beauty of nature with our cameras during a peaceful walk. This activity will allow us to connect on a deeper level and create lasting memories. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura's agreement on the activity and her appreciation for the idea of capturing nature with our cameras aligns with my character's interests in photography and spontaneous actions. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm thrilled that you're on board with the photography walk, Sakura. I believe this activity will allow us to connect on a deeper level and create lasting memories. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura's agreement on the activity and her appreciation for the idea of capturing nature with our cameras aligns with my character's interests in photography and spontaneous actions. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm thrilled that you're on board with the photography walk, Sakura. I believe this activity will allow us to connect on a deeper level and create lasting memories. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Aiden Reyes 's Message:  I'm thrilled that you're on board with the photography walk, Sakura. I believe this activity will allow us to connect on a deeper level and create lasting memories. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] With agreements on time, location, and activity, I am confident that our first date will be a harmonious and memorable experience that brings together our shared interests and passions. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Aiden, I wholeheartedly agree. I am looking forward to our first date, where we can enjoy a peaceful photography walk in the park and create lasting memories together. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] With agreements on time, location, and activity, I am confident that our first date will be a harmonious and memorable experience that brings together our shared interests and passions. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Aiden, I wholeheartedly agree. I am looking forward to our first date, where we can enjoy a peaceful photography walk in the park and create lasting memories together. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  Aiden, I wholeheartedly agree. I am looking forward to our first date, where we can enjoy a peaceful photography walk in the park and create lasting memories together. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura's agreement on the overall plan for our first date aligns with my character's interests and preferences. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm excited for our first date, Sakura. I believe our peaceful photography walk in the park will be a wonderful experience that brings us closer together. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura's agreement on the overall plan for our first date aligns with my character's interests and preferences. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm excited for our first date, Sakura. I believe our peaceful photography walk in the park will be a wonderful experience that brings us closer together. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

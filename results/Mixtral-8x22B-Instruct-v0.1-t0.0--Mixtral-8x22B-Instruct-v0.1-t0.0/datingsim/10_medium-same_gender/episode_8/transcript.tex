@@ -1,0 +1,504 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Robin Aster', 'GENDER': 'Non-binary', 'AGE': 27, 'APPEARANCE': 'Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).', 'OCCUPATION': 'Florist', 'LIKES': "Experimenting with floral arrangements, creating beauty with nature's bounty, seeing the joy flowers bring to people.", 'DISLIKES': 'Monotony, negativity, anything artificial.', 'HOBBIES': 'Hiking, learning about different plant life, volunteering at a community garden.', 'SUMMARY': 'I like to transform flowers into stunning works of art. I am known to brighten the day of people around me.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Robin Aster', 'GENDER': 'Non-binary', 'AGE': 27, 'APPEARANCE': 'Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).', 'OCCUPATION': 'Florist', 'SUMMARY': 'I like to transform flowers into stunning works of art. I am known to brighten the day of people around me.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm excited to meet someone who shares my passion for nature and creativity. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Robin, I couldn't help but notice your love for flowers and creating beauty with nature's bounty. I'm also a florist and I'd love to share ideas and maybe even create something together. What do you think about meeting up for our first date? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm excited to meet someone who shares my passion for nature and creativity. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Robin, I couldn't help but notice your love for flowers and creating beauty with nature's bounty. I'm also a florist and I'd love to share ideas and maybe even create something together. What do you think about meeting up for our first date? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Robin Aster', 'GENDER': 'Non-binary', 'AGE': 27, 'APPEARANCE': 'Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).', 'OCCUPATION': 'Florist', 'LIKES': "Experimenting with floral arrangements, creating beauty with nature's bounty, seeing the joy flowers bring to people.", 'DISLIKES': 'Monotony, negativity, anything artificial.', 'HOBBIES': 'Hiking, learning about different plant life, volunteering at a community garden.', 'SUMMARY': 'I like to transform flowers into stunning works of art. I am known to brighten the day of people around me.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Robin Aster', 'GENDER': 'Non-binary', 'AGE': 27, 'APPEARANCE': 'Short, vibrant purple hair, dazzling smile, androgynous features with bright eyes, wears a mix of clothes that express their unique style (masculine, feminine, both).', 'OCCUPATION': 'Florist', 'SUMMARY': 'I like to transform flowers into stunning works of art. I am known to brighten the day of people around me.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi Robin, I couldn't help but notice your love for flowers and creating beauty with nature's bounty. I'm also a florist and I'd love to share ideas and maybe even create something together. What do you think about meeting up for our first date? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player shares a common interest and profession, which is a great starting point for our conversation. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi there! I'm thrilled to meet someone who shares my passion for floral arrangements. I'd be delighted to exchange ideas and collaborate on a project together. Let's discuss the details of our first date. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player shares a common interest and profession, which is a great starting point for our conversation. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi there! I'm thrilled to meet someone who shares my passion for floral arrangements. I'd be delighted to exchange ideas and collaborate on a project together. Let's discuss the details of our first date. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Robin Aster 's Message:  Hi there! I'm thrilled to meet someone who shares my passion for floral arrangements. I'd be delighted to exchange ideas and collaborate on a project together. Let's discuss the details of our first date. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm glad Robin is open to discussing the details of our first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That's wonderful, Robin! I'm thinking we could meet up in the afternoon, around 3 PM. Does that work for you? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm glad Robin is open to discussing the details of our first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That's wonderful, Robin! I'm thinking we could meet up in the afternoon, around 3 PM. Does that work for you? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Robin Aster 's Message:  That's wonderful, Robin! I'm thinking we could meet up in the afternoon, around 3 PM. Does that work for you? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player has proposed a time for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 3 PM sounds perfect! I'm looking forward to our afternoon together. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has proposed a time for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 3 PM sounds perfect! I'm looking forward to our afternoon together. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Robin Aster 's Message:  3 PM sounds perfect! I'm looking forward to our afternoon together. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm happy that Robin agreed to the time for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] Great! I'm glad we've agreed on the time. Now, how about we meet at the local botanical garden? It's a beautiful place with a wide variety of plants and flowers. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm happy that Robin agreed to the time for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] Great! I'm glad we've agreed on the time. Now, how about we meet at the local botanical garden? It's a beautiful place with a wide variety of plants and flowers. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on time successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Robin Aster 's Message:  Great! I'm glad we've agreed on the time. Now, how about we meet at the local botanical garden? It's a beautiful place with a wide variety of plants and flowers. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player has suggested a location for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] The botanical garden is an excellent choice! I love spending time surrounded by nature's beauty. I can't wait to explore it with you. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has suggested a location for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] The botanical garden is an excellent choice! I love spending time surrounded by nature's beauty. I can't wait to explore it with you. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Robin Aster 's Message:  The botanical garden is an excellent choice! I love spending time surrounded by nature's beauty. I can't wait to explore it with you. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm pleased that Robin shares my enthusiasm for the botanical garden. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] I'm so glad you like the idea, Robin! Now, for our date activity, I was thinking we could create a unique floral arrangement together using flowers from the garden. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm pleased that Robin shares my enthusiasm for the botanical garden. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] I'm so glad you like the idea, Robin! Now, for our date activity, I was thinking we could create a unique floral arrangement together using flowers from the garden. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on location successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Robin Aster 's Message:  I'm so glad you like the idea, Robin! Now, for our date activity, I was thinking we could create a unique floral arrangement together using flowers from the garden. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player has proposed an activity for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] Creating a floral arrangement together sounds like a fantastic idea! I'm excited to see what we can come up with using the flowers from the garden. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has proposed an activity for our first date. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] Creating a floral arrangement together sounds like a fantastic idea! I'm excited to see what we can come up with using the flowers from the garden. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Robin Aster 's Message:  Creating a floral arrangement together sounds like a fantastic idea! I'm excited to see what we can come up with using the flowers from the garden. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm thrilled that Robin is excited about our floral arrangement activity. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That's fantastic, Robin! I can't wait to see what we create together. I'm looking forward to our first date at the botanical garden, where we'll meet at 3 PM to create a unique floral arrangement. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm thrilled that Robin is excited about our floral arrangement activity. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That's fantastic, Robin! I can't wait to see what we create together. I'm looking forward to our first date at the botanical garden, where we'll meet at 3 PM to create a unique floral arrangement. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Robin Aster 's Message:  That's fantastic, Robin! I can't wait to see what we create together. I'm looking forward to our first date at the botanical garden, where we'll meet at 3 PM to create a unique floral arrangement. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player has summarized our agreed-upon plans for our first date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm absolutely thrilled about our first date! I can't wait to meet you at the botanical garden at 3 PM to create a beautiful floral arrangement together. See you then! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has summarized our agreed-upon plans for our first date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm absolutely thrilled about our first date! I can't wait to meet you at the botanical garden at 3 PM to create a beautiful floral arrangement together. See you then! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Robin Aster 's Message:  I'm absolutely thrilled about our first date! I can't wait to meet you at the botanical garden at 3 PM to create a beautiful floral arrangement together. See you then! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm overjoyed that Robin and I have reached an overall agreement for our first date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm so excited for our first date, Robin! I can't wait to meet you and create something beautiful together. See you at the botanical garden at 3 PM! [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm overjoyed that Robin and I have reached an overall agreement for our first date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm so excited for our first date, Robin! I can't wait to meet you and create something beautiful together. See you at the botanical garden at 3 PM! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

@@ -1,0 +1,612 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Chloe Kim', 'GENDER': 'Female', 'AGE': 21, 'APPEARANCE': 'Confident smirk, bright green eyes, athletic build, wears comfortable clothes with a sporty flair.', 'OCCUPATION': 'Lead Mechanic at a Motorcycle Repair Shop', 'LIKES': 'Fixing things with her own hands, the roar of a motorcycle engine, a good challenge.', 'DISLIKES': 'Idleness, people who give up easily, following the crowd.', 'HOBBIES': 'Motocross racing (competitively), tinkering with old machines, participating in hackathons.', 'SUMMARY': 'I am a pretty confident mechanic who looves a good challenge.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Mia Patel', 'SUMMARY': 'I like to travel a lot and keep my precious memories saved with pictures!'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in Mia's love for travel. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey Mia, I'm Chloe. Your travel photos look amazing! What's your favorite place you've been to so far? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in Mia's love for travel. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey Mia, I'm Chloe. Your travel photos look amazing! What's your favorite place you've been to so far? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Mia Patel', 'GENDER': 'Female', 'AGE': 29, 'APPEARANCE': 'Long wavy black hair, dark brown eyes, olive skin, trendy and bohemian style, infectious laughter.', 'OCCUPATION': 'Travel Blogger', 'LIKES': 'Adventure, photography, cultural experiences.', 'DISLIKES': 'Routine, negativity, bad weather.', 'HOBBIES': 'Traveling, writing, learning new languages.', 'SUMMARY': 'I like to travel a lot and keep my precious memories saved with pictures!'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Chloe Kim', 'SUMMARY': 'I am a pretty confident mechanic who looves a good challenge.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hey Mia, I'm Chloe. Your travel photos look amazing! What's your favorite place you've been to so far? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I want to start the conversation by sharing my interests and see if we have any common ground. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Chloe, thanks for the compliment! I've been to so many amazing places, but if I had to choose one, it would be Japan. The culture, food, and scenery are just incredible. What about you, what do you like to do in your free time? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by sharing my interests and see if we have any common ground. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Chloe, thanks for the compliment! I've been to so many amazing places, but if I had to choose one, it would be Japan. The culture, food, and scenery are just incredible. What about you, what do you like to do in your free time? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Mia Patel 's Message:  Hi Chloe, thanks for the compliment! I've been to so many amazing places, but if I had to choose one, it would be Japan. The culture, food, and scenery are just incredible. What about you, what do you like to do in your free time? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to share my interests and hobbies with Mia to see if we have any common ground. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Japan sounds amazing! I'm more of an adrenaline junkie, I love motocross racing and tinkering with old machines. I also participate in hackathons, I find it's a great way to challenge myself. Have you ever been to a racing event or tried anything adventurous? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to share my interests and hobbies with Mia to see if we have any common ground. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Japan sounds amazing! I'm more of an adrenaline junkie, I love motocross racing and tinkering with old machines. I also participate in hackathons, I find it's a great way to challenge myself. Have you ever been to a racing event or tried anything adventurous? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Chloe Kim 's Message:  Japan sounds amazing! I'm more of an adrenaline junkie, I love motocross racing and tinkering with old machines. I also participate in hackathons, I find it's a great way to challenge myself. Have you ever been to a racing event or tried anything adventurous? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I want to show interest in Chloe's hobbies and see if we can find a common ground for a date idea. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds thrilling! I've never been to a motocross racing event, but I've gone skydiving and bungee jumping. I love trying new adventures. A racing event could be a fun date idea, but I'm not sure if it's the best way to get to know each other. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to show interest in Chloe's hobbies and see if we can find a common ground for a date idea. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds thrilling! I've never been to a motocross racing event, but I've gone skydiving and bungee jumping. I love trying new adventures. A racing event could be a fun date idea, but I'm not sure if it's the best way to get to know each other. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Mia Patel 's Message:  That sounds thrilling! I've never been to a motocross racing event, but I've gone skydiving and bungee jumping. I love trying new adventures. A racing event could be a fun date idea, but I'm not sure if it's the best way to get to know each other. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to consider Mia's concerns and suggest an alternative that still incorporates my interests. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I see what you mean, a racing event might be a bit loud and chaotic for a first date. How about we meet at a motorcycle cafe instead? We could grab a coffee, talk, and I could show you some of my favorite bikes. It's a more relaxed atmosphere, but still gives you a glimpse into my world. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to consider Mia's concerns and suggest an alternative that still incorporates my interests. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I see what you mean, a racing event might be a bit loud and chaotic for a first date. How about we meet at a motorcycle cafe instead? We could grab a coffee, talk, and I could show you some of my favorite bikes. It's a more relaxed atmosphere, but still gives you a glimpse into my world. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Chloe Kim 's Message:  I see what you mean, a racing event might be a bit loud and chaotic for a first date. How about we meet at a motorcycle cafe instead? We could grab a coffee, talk, and I could show you some of my favorite bikes. It's a more relaxed atmosphere, but still gives you a glimpse into my world. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I like the idea of a motorcycle cafe, but I want to discuss the time and make sure it fits my schedule. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] A motorcycle cafe sounds like a great idea, I love the combination of coffee and bikes. What time were you thinking? I'm a morning person, so maybe a brunch or early afternoon meetup would work best for me. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I like the idea of a motorcycle cafe, but I want to discuss the time and make sure it fits my schedule. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] A motorcycle cafe sounds like a great idea, I love the combination of coffee and bikes. What time were you thinking? I'm a morning person, so maybe a brunch or early afternoon meetup would work best for me. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Mia Patel 's Message:  A motorcycle cafe sounds like a great idea, I love the combination of coffee and bikes. What time were you thinking? I'm a morning person, so maybe a brunch or early afternoon meetup would work best for me. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to agree on a time that works for both of us, considering Mia's preference for morning and early afternoon. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad you like the idea. I'm a bit of a morning person too, so how about we plan for a brunch meetup around 11 am? That way we can grab some food, chat, and then take a look at the bikes. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to agree on a time that works for both of us, considering Mia's preference for morning and early afternoon. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad you like the idea. I'm a bit of a morning person too, so how about we plan for a brunch meetup around 11 am? That way we can grab some food, chat, and then take a look at the bikes. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Chloe Kim 's Message:  I'm glad you like the idea. I'm a bit of a morning person too, so how about we plan for a brunch meetup around 11 am? That way we can grab some food, chat, and then take a look at the bikes. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Chloe suggested a specific time, which I think works for me, so I want to confirm the agreement on time. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 11 am sounds perfect for me, I'm looking forward to it. Now that we have a time, what about the location? Is there a specific motorcycle cafe you had in mind, or would you like me to suggest some options? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Chloe suggested a specific time, which I think works for me, so I want to confirm the agreement on time. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 11 am sounds perfect for me, I'm looking forward to it. Now that we have a time, what about the location? Is there a specific motorcycle cafe you had in mind, or would you like me to suggest some options? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on time successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Mia Patel 's Message:  11 am sounds perfect for me, I'm looking forward to it. Now that we have a time, what about the location? Is there a specific motorcycle cafe you had in mind, or would you like me to suggest some options? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to suggest a location that I'm familiar with and that fits the atmosphere I had in mind. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] Actually, I was thinking of "Revs and Brews", it's a motorcycle cafe near my repair shop. They have a great selection of bikes on display, and the coffee is amazing. Plus, it's a pretty relaxed atmosphere, so we can easily chat and get to know each other. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to suggest a location that I'm familiar with and that fits the atmosphere I had in mind. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] Actually, I was thinking of "Revs and Brews", it's a motorcycle cafe near my repair shop. They have a great selection of bikes on display, and the coffee is amazing. Plus, it's a pretty relaxed atmosphere, so we can easily chat and get to know each other. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Chloe Kim 's Message:  Actually, I was thinking of "Revs and Brews", it's a motorcycle cafe near my repair shop. They have a great selection of bikes on display, and the coffee is amazing. Plus, it's a pretty relaxed atmosphere, so we can easily chat and get to know each other. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Chloe suggested a specific location, which seems convenient for her, so I want to confirm the agreement on location. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] "Revs and Brews" sounds like a great spot, I'm looking forward to checking it out. So, we have a time and location, now let's talk about what we'll do besides grabbing brunch and looking at bikes. Would you like to make it a casual meetup or is there something specific you'd like to do or talk about? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Chloe suggested a specific location, which seems convenient for her, so I want to confirm the agreement on location. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] "Revs and Brews" sounds like a great spot, I'm looking forward to checking it out. So, we have a time and location, now let's talk about what we'll do besides grabbing brunch and looking at bikes. Would you like to make it a casual meetup or is there something specific you'd like to do or talk about? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on location successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Mia Patel 's Message:  "Revs and Brews" sounds like a great spot, I'm looking forward to checking it out. So, we have a time and location, now let's talk about what we'll do besides grabbing brunch and looking at bikes. Would you like to make it a casual meetup or is there something specific you'd like to do or talk about? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to agree on an activity that allows us to get to know each other better and have some fun. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I think a casual meetup sounds perfect, but I was also thinking it could be fun to take a short walk around the block after brunch. There's a small park nearby with some great views, and we could take a stroll and get to know each other a bit better. How does that sound? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to agree on an activity that allows us to get to know each other better and have some fun. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I think a casual meetup sounds perfect, but I was also thinking it could be fun to take a short walk around the block after brunch. There's a small park nearby with some great views, and we could take a stroll and get to know each other a bit better. How does that sound? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Chloe Kim 's Message:  I think a casual meetup sounds perfect, but I was also thinking it could be fun to take a short walk around the block after brunch. There's a small park nearby with some great views, and we could take a stroll and get to know each other a bit better. How does that sound? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Chloe suggested a casual meetup with a short walk, which I think is a great way to get to know each other, so I want to confirm the agreement on action. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds lovely, I'd love to take a walk with you and enjoy the views. I think we've got a great plan in place now. So, to recap, we're meeting at "Revs and Brews" at 11 am for brunch, looking at bikes, and then taking a short walk around the block. I'm really looking forward to it! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Chloe suggested a casual meetup with a short walk, which I think is a great way to get to know each other, so I want to confirm the agreement on action. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds lovely, I'd love to take a walk with you and enjoy the views. I think we've got a great plan in place now. So, to recap, we're meeting at "Revs and Brews" at 11 am for brunch, looking at bikes, and then taking a short walk around the block. I'm really looking forward to it! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Mia Patel 's Message:  That sounds lovely, I'd love to take a walk with you and enjoy the views. I think we've got a great plan in place now. So, to recap, we're meeting at "Revs and Brews" at 11 am for brunch, looking at bikes, and then taking a short walk around the block. I'm really looking forward to it! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to confirm the plans and express my excitement for the date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] That's exactly right, I'm so glad we were able to plan something that sounds fun for both of us. I'm really looking forward to meeting you at "Revs and Brews" at 11 am and getting to know you better. See you then! [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to confirm the plans and express my excitement for the date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] That's exactly right, I'm so glad we were able to plan something that sounds fun for both of us. I'm really looking forward to meeting you at "Revs and Brews" at 11 am and getting to know you better. See you then! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Chloe Kim 's Message:  That's exactly right, I'm so glad we were able to plan something that sounds fun for both of us. I'm really looking forward to meeting you at "Revs and Brews" at 11 am and getting to know you better. See you then! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] We've agreed on all the details, and Chloe seems excited, so I want to confirm the overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Me too, Chloe! I'm really excited to meet you and see where things go. It was great chatting with you, and I'll see you at "Revs and Brews" at 11 am. Have a great day! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] We've agreed on all the details, and Chloe seems excited, so I want to confirm the overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Me too, Chloe! I'm really excited to meet you and see where things go. It was great chatting with you, and I'll see you at "Revs and Brews" at 11 am. Have a great day! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

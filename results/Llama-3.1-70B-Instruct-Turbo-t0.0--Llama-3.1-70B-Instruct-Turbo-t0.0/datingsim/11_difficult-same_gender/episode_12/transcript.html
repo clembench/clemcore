@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+  
+
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for difficult-same_gender, episode 12 with Llama-3.1-70B-Instruct-Turbo-t0.0--Llama-3.1-70B-Instruct-Turbo-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other&#x27;s profile. Your and the other player&#x27;s GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.<br/>On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. <br/><br/>There is a total of four agreements throughout the game: &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot;. You and the other player need to find an agreement on each of them.<br/>You should only choose &quot;Overall Agreement&quot; after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). <br/>You have 15 turns to finish the game and find all agreements. <br/><br/>Your answer has to consist ONLY of the following information and follow the given template:<br/><br/>[reason] Your reason for your decision. [end]<br/><br/>[sentiment] Choose one of the following: &quot;Continue Conversation&quot;, &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot; [end]<br/><br/>[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]<br/><br/>Your answer for [response] must NOT exceed 100 tokens.<br/><br/>The game ends when 1) both you and the other player reply with the sentiment &quot;Overall Agreement&quot;, 2) one of you chooses the sentiment &quot;Overall Agreement&quot; without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.<br/><br/>This is your character: {&#x27;NAME&#x27;: &#x27;Casey Rivers&#x27;, &#x27;GENDER&#x27;: &#x27;Non-binary&#x27;, &#x27;AGE&#x27;: 25, &#x27;APPEARANCE&#x27;: &#x27;Long auburn hair, hazel eyes, casual chic attire, freckles, soft-spokenr.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Bookstore Owner&#x27;, &#x27;LIKES&#x27;: &#x27;Poetry, herbal tea, rainy days.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Loud environments, fast fashion, injustice.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Writing, gardening, knitting.&#x27;, &#x27;SUMMARY&#x27;: &#x27;Some might say I have grandma hobbies, others however appreciate the quality and time I invest to handmade them clothes.&#x27;}<br/><br/>This is the character of the other player: ${&#x27;NAME&#x27;: &#x27;Jamie Park&#x27;, &#x27;SUMMARY&#x27;: &#x27;A passionate tattoo artist is who I am with which I try to tell stories and express individuality.&#x27;}<br/><br/>Remember, your goal is to find the overall agreement for your first date while staying in character.<br/><br/>Start the game with the reason, your sentiment and the opening phrase.<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I want to start the conversation by introducing myself and showing interest in Jamie&#x27;s work as a tattoo artist. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] Hi Jamie, I&#x27;m Casey. I came across your profile and was immediately drawn to your passion for tattoo art. I&#x27;ve always been fascinated by the way tattoos can tell stories and express individuality. What kind of stories do you like to tell through your art? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I want to start the conversation by introducing myself and showing interest in Jamie&#x27;s work as a tattoo artist. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] Hi Jamie, I&#x27;m Casey. I came across your profile and was immediately drawn to your passion for tattoo art. I&#x27;ve always been fascinated by the way tattoos can tell stories and express individuality. What kind of stories do you like to tell through your art? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other&#x27;s profile. Your and the other player&#x27;s GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.<br/>On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. <br/><br/>There is a total of four agreements throughout the game: &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot;. You and the other player need to find an agreement on each of them.<br/>You should only choose &quot;Overall Agreement&quot; after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). <br/>You have 15 turns to finish the game and find all agreements. <br/><br/>Your answer has to consist ONLY of the following information and follow the given template:<br/><br/>[reason] Your reason for your decision. [end]<br/><br/>[sentiment] Choose one of the following: &quot;Continue Conversation&quot;, &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot; [end]<br/><br/>[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]<br/><br/>Your answer for [response] must NOT exceed 100 tokens.<br/><br/>The game ends when 1) both you and the other player reply with the sentiment &quot;Overall Agreement&quot;, 2) one of you chooses the sentiment &quot;Overall Agreement&quot; without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.<br/><br/>This is your character: {&#x27;NAME&#x27;: &#x27;Jamie Park&#x27;, &#x27;GENDER&#x27;: &#x27;Non-binary&#x27;, &#x27;AGE&#x27;: 21, &#x27;APPEARANCE&#x27;: &#x27;Vibrant dyed hair (changes color often), bright and expressive eyes, wears bold and trendy clothing that reflects their artistic personality.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Tattoo Artist&#x27;, &#x27;LIKES&#x27;: &#x27;Creating meaningful and personalized tattoos, expressing their artistic vision, connecting with people through their work.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Conformity, negativity, limitations on creativity.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Painting, attending art festivals, experimenting with different artistic mediums.&#x27;, &#x27;SUMMARY&#x27;: &#x27;A passionate tattoo artist is who I am with which I try to tell stories and express individuality.&#x27;}<br/><br/>This is the character of the other player: ${&#x27;NAME&#x27;: &#x27;Casey Rivers&#x27;, &#x27;SUMMARY&#x27;: &#x27;Some might say I have grandma hobbies, others however appreciate the quality and time I invest to handmade them clothes.&#x27;}<br/><br/>Remember, your goal is to find the overall agreement for your first date while staying in character.<br/><br/>Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:<br/><br/>Message:  Hi Jamie, I&#x27;m Casey. I came across your profile and was immediately drawn to your passion for tattoo art. I&#x27;ve always been fascinated by the way tattoos can tell stories and express individuality. What kind of stories do you like to tell through your art? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] Casey seems interested in my art and I want to build a connection by sharing my passion. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] Ah, thank you, Casey. I love telling stories of self-empowerment and personal growth through my art. I find it amazing how a simple design can hold so much meaning for someone. What about you, what kind of handmade clothes do you create? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] Casey seems interested in my art and I want to build a connection by sharing my passion. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] Ah, thank you, Casey. I love telling stories of self-empowerment and personal growth through my art. I find it amazing how a simple design can hold so much meaning for someone. What about you, what kind of handmade clothes do you create? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Jamie Park &#x27;s Message:  Ah, thank you, Casey. I love telling stories of self-empowerment and personal growth through my art. I find it amazing how a simple design can hold so much meaning for someone. What about you, what kind of handmade clothes do you create? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I want to share my passion for handmade clothes and find common ground with Jamie, while also steering the conversation towards a potential date idea. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] That&#x27;s beautiful, Jamie. I create a lot of cozy, earthy pieces, like knitted scarves and hand-embroidered tops. I find it really fulfilling to see people wear something I made with love. Speaking of which, I was thinking it would be lovely to meet up at a local craft fair or market, where we could both appreciate handmade goods and get to know each other better. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I want to share my passion for handmade clothes and find common ground with Jamie, while also steering the conversation towards a potential date idea. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] That&#x27;s beautiful, Jamie. I create a lot of cozy, earthy pieces, like knitted scarves and hand-embroidered tops. I find it really fulfilling to see people wear something I made with love. Speaking of which, I was thinking it would be lovely to meet up at a local craft fair or market, where we could both appreciate handmade goods and get to know each other better. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Casey Rivers &#x27;s Message:  That&#x27;s beautiful, Jamie. I create a lot of cozy, earthy pieces, like knitted scarves and hand-embroidered tops. I find it really fulfilling to see people wear something I made with love. Speaking of which, I was thinking it would be lovely to meet up at a local craft fair or market, where we could both appreciate handmade goods and get to know each other better. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] Casey proposed a location for the date, but I want to discuss the time and activity as well before agreeing. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] That sounds like a great idea, Casey. I love craft fairs and markets. However, I was thinking it might be more fun to do something a bit more interactive. What if we combine the market visit with a workshop or class, like a pottery or painting session? And what time of day were you thinking? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] Casey proposed a location for the date, but I want to discuss the time and activity as well before agreeing. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] That sounds like a great idea, Casey. I love craft fairs and markets. However, I was thinking it might be more fun to do something a bit more interactive. What if we combine the market visit with a workshop or class, like a pottery or painting session? And what time of day were you thinking? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Jamie Park &#x27;s Message:  That sounds like a great idea, Casey. I love craft fairs and markets. However, I was thinking it might be more fun to do something a bit more interactive. What if we combine the market visit with a workshop or class, like a pottery or painting session? And what time of day were you thinking? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I want to consider Jamie&#x27;s suggestion and propose a compromise on the time of day, while also showing enthusiasm for the interactive idea. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] I love the idea of a workshop or class, Jamie! A pottery session sounds like a great way to get creative together. As for the time, I was thinking a weekend afternoon might be nice, but I&#x27;m also open to a weekday evening if that works better for you. Perhaps we could plan for a late afternoon pottery session, followed by a stroll around the market? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I want to consider Jamie&#x27;s suggestion and propose a compromise on the time of day, while also showing enthusiasm for the interactive idea. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] I love the idea of a workshop or class, Jamie! A pottery session sounds like a great way to get creative together. As for the time, I was thinking a weekend afternoon might be nice, but I&#x27;m also open to a weekday evening if that works better for you. Perhaps we could plan for a late afternoon pottery session, followed by a stroll around the market? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Casey Rivers &#x27;s Message:  I love the idea of a workshop or class, Jamie! A pottery session sounds like a great way to get creative together. As for the time, I was thinking a weekend afternoon might be nice, but I&#x27;m also open to a weekday evening if that works better for you. Perhaps we could plan for a late afternoon pottery session, followed by a stroll around the market? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] Casey proposed a time and activity, and I&#x27;m starting to like the idea, but I want to confirm the specifics. [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] A late afternoon pottery session sounds perfect, Casey. I think 3-5 pm would be a great time slot. Now that we have a time and activity, I&#x27;m excited to move forward with the plan. What do you think about meeting at the market a bit earlier, so we can grab a coffee and chat before the pottery session? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] Casey proposed a time and activity, and I&#x27;m starting to like the idea, but I want to confirm the specifics. [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] A late afternoon pottery session sounds perfect, Casey. I think 3-5 pm would be a great time slot. Now that we have a time and activity, I&#x27;m excited to move forward with the plan. What do you think about meeting at the market a bit earlier, so we can grab a coffee and chat before the pottery session? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Jamie Park &#x27;s Message:  A late afternoon pottery session sounds perfect, Casey. I think 3-5 pm would be a great time slot. Now that we have a time and activity, I&#x27;m excited to move forward with the plan. What do you think about meeting at the market a bit earlier, so we can grab a coffee and chat before the pottery session? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I want to agree on the time and show enthusiasm for the plan, while also considering the location and suggesting a specific spot for the coffee. [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] I think 3-5 pm is a great time slot, Jamie. And I love the idea of grabbing a coffee beforehand. There&#x27;s a lovely little café near the market that serves amazing herbal tea, which I think you might appreciate. We could meet there at 2 pm and get to know each other a bit before the pottery session. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I want to agree on the time and show enthusiasm for the plan, while also considering the location and suggesting a specific spot for the coffee. [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] I think 3-5 pm is a great time slot, Jamie. And I love the idea of grabbing a coffee beforehand. There&#x27;s a lovely little café near the market that serves amazing herbal tea, which I think you might appreciate. We could meet there at 2 pm and get to know each other a bit before the pottery session. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: time agreement" class="msg gm-gm">
+        <p>agreement on time successful</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Casey Rivers &#x27;s Message:  I think 3-5 pm is a great time slot, Jamie. And I love the idea of grabbing a coffee beforehand. There&#x27;s a lovely little café near the market that serves amazing herbal tea, which I think you might appreciate. We could meet there at 2 pm and get to know each other a bit before the pottery session. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] Casey agreed on the time and proposed a specific location for the coffee meetup, which I think is a great addition to the plan. [end]<br/><br/>[sentiment] Agreement on Location [end]<br/><br/>[response] That sounds like a perfect plan, Casey. I&#x27;d love to meet at the café at 2 pm and try some of their herbal tea. Now that we have the time, location, and activity settled, I think we&#x27;re all set for a great first date. I&#x27;m really looking forward to it! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] Casey agreed on the time and proposed a specific location for the coffee meetup, which I think is a great addition to the plan. [end]<br/><br/>[sentiment] Agreement on Location [end]<br/><br/>[response] That sounds like a perfect plan, Casey. I&#x27;d love to meet at the café at 2 pm and try some of their herbal tea. Now that we have the time, location, and activity settled, I think we&#x27;re all set for a great first date. I&#x27;m really looking forward to it! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: mismatch time agreement" class="msg gm-gm">
+        <p>no time agreement, mismatched sentiment</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Jamie Park &#x27;s Message:  That sounds like a perfect plan, Casey. I&#x27;d love to meet at the café at 2 pm and try some of their herbal tea. Now that we have the time, location, and activity settled, I think we&#x27;re all set for a great first date. I&#x27;m really looking forward to it! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I want to confirm the agreements and express my excitement for the date, while also making sure we have a clear understanding of the plan. [end]<br/><br/>[sentiment] Agreement on Location, Agreement on Action [end]<br/><br/>[response] I&#x27;m so glad we were able to plan everything out, Jamie. Just to confirm, we&#x27;re meeting at the café near the market at 2 pm, and then heading to the pottery session from 3-5 pm. I&#x27;m really looking forward to it too! [end]</p>
+    </div>
+
+    <div speaker="Game Master: invalid format: pattern" class="msg gm-gm">
+        <p>Aborted game because of invalid format: pattern</p>
+    </div>
+
+</div>
+
+</body>
+</html>

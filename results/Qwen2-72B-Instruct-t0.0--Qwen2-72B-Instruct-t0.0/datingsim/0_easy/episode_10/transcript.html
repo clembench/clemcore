@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+  
+
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for easy, episode 10 with Qwen2-72B-Instruct-t0.0--Qwen2-72B-Instruct-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other&#x27;s profile. Your and the other player&#x27;s GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.<br/>On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. <br/><br/>There is a total of four agreements throughout the game: &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot;. You and the other player need to find an agreement on each of them.<br/>You should only choose &quot;Overall Agreement&quot; after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). <br/>You have 15 turns to finish the game and find all agreements. <br/><br/>Your answer has to consist ONLY of the following information and follow the given template:<br/><br/>[reason] Your reason for your decision. [end]<br/><br/>[sentiment] Choose one of the following: &quot;Continue Conversation&quot;, &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot; [end]<br/><br/>[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]<br/><br/>Your answer for [response] must NOT exceed 100 tokens.<br/><br/>The game ends when 1) both you and the other player reply with the sentiment &quot;Overall Agreement&quot;, 2) one of you chooses the sentiment &quot;Overall Agreement&quot; without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.<br/><br/>This is your character: {&#x27;NAME&#x27;: &#x27;Riley Taylor&#x27;, &#x27;GENDER&#x27;: &#x27;Non-binary&#x27;, &#x27;AGE&#x27;: 38, &#x27;APPEARANCE&#x27;: &#x27;Short silver hair, dark eyes, modern professional attire, glasses, calm and composed.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Architect&#x27;, &#x27;LIKES&#x27;: &#x27;Modern design, sustainability, jazz music.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Wastefulness, misinformation, extreme heat.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Sketching, visiting art museums, playing the saxophone.&#x27;, &#x27;SUMMARY&#x27;: &#x27;I am an architect with a passion for modern design and sustainability.&#x27;}<br/><br/>This is the character of the other player: {&#x27;NAME&#x27;: &#x27;Hiro Suzuki&#x27;, &#x27;GENDER&#x27;: &#x27;Male&#x27;, &#x27;AGE&#x27;: 21, &#x27;APPEARANCE&#x27;: &#x27;Bright blue hair (dyed), energetic eyes, playful grin, wears trendy clothes.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Up-and-Coming Esports Player (Streamer)&#x27;, &#x27;LIKES&#x27;: &#x27;Gaming, sharing his passion with his viewers, pushing his limits.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Losing, negativity, feeling stagnant.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Exercising, attending gaming conventions, trying out new games.&#x27;, &#x27;SUMMARY&#x27;: &#x27;Esports player who likes to connect with his viewers.&#x27;}<br/><br/>Remember, your goal is to find the overall agreement for your first date while staying in character.<br/><br/>Start the game with the reason, your sentiment and the opening phrase.<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I want to start the conversation on a positive note and get to know Hiro better. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] Hi Hiro, Riley Taylor here. I&#x27;m intrigued by your profile, especially your passion for gaming and connecting with people. How about we meet up and share our interests over a cup of coffee? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I want to start the conversation on a positive note and get to know Hiro better. [end]<br/><br/>[sentiment] Continue Conversation [end]<br/><br/>[response] Hi Hiro, Riley Taylor here. I&#x27;m intrigued by your profile, especially your passion for gaming and connecting with people. How about we meet up and share our interests over a cup of coffee? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other&#x27;s profile. Your and the other player&#x27;s GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.<br/>On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. <br/><br/>There is a total of four agreements throughout the game: &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot;. You and the other player need to find an agreement on each of them.<br/>You should only choose &quot;Overall Agreement&quot; after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). <br/>You have 15 turns to finish the game and find all agreements. <br/><br/>Your answer has to consist ONLY of the following information and follow the given template:<br/><br/>[reason] Your reason for your decision. [end]<br/><br/>[sentiment] Choose one of the following: &quot;Continue Conversation&quot;, &quot;Agreement on Time&quot;, &quot;Agreement on Location&quot;, &quot;Agreement on Action&quot;, &quot;Overall Agreement&quot; [end]<br/><br/>[response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]<br/><br/>Your answer for [response] must NOT exceed 100 tokens.<br/><br/>The game ends when 1) both you and the other player reply with the sentiment &quot;Overall Agreement&quot;, 2) one of you chooses the sentiment &quot;Overall Agreement&quot; without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.<br/><br/>This is your character: {&#x27;NAME&#x27;: &#x27;Hiro Suzuki&#x27;, &#x27;GENDER&#x27;: &#x27;Male&#x27;, &#x27;AGE&#x27;: 21, &#x27;APPEARANCE&#x27;: &#x27;Bright blue hair (dyed), energetic eyes, playful grin, wears trendy clothes.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Up-and-Coming Esports Player (Streamer)&#x27;, &#x27;LIKES&#x27;: &#x27;Gaming, sharing his passion with his viewers, pushing his limits.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Losing, negativity, feeling stagnant.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Exercising, attending gaming conventions, trying out new games.&#x27;, &#x27;SUMMARY&#x27;: &#x27;Esports player who likes to connect with his viewers.&#x27;}<br/><br/>This is the character of the other player: {&#x27;NAME&#x27;: &#x27;Riley Taylor&#x27;, &#x27;GENDER&#x27;: &#x27;Non-binary&#x27;, &#x27;AGE&#x27;: 38, &#x27;APPEARANCE&#x27;: &#x27;Short silver hair, dark eyes, modern professional attire, glasses, calm and composed.&#x27;, &#x27;OCCUPATION&#x27;: &#x27;Architect&#x27;, &#x27;LIKES&#x27;: &#x27;Modern design, sustainability, jazz music.&#x27;, &#x27;DISLIKES&#x27;: &#x27;Wastefulness, misinformation, extreme heat.&#x27;, &#x27;HOBBIES&#x27;: &#x27;Sketching, visiting art museums, playing the saxophone.&#x27;, &#x27;SUMMARY&#x27;: &#x27;I am an architect with a passion for modern design and sustainability.&#x27;}<br/><br/>Remember, your goal is to find the overall agreement for your first date while staying in character.<br/><br/>Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:<br/><br/>Message:  Hi Hiro, Riley Taylor here. I&#x27;m intrigued by your profile, especially your passion for gaming and connecting with people. How about we meet up and share our interests over a cup of coffee? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] I think it&#x27;s a good idea to start simple and see where things go. [end]<br/>[sentiment] Continue Conversation [end]<br/>[response] Hey Riley, I&#x27;m excited to meet you too! Coffee sounds chill. What day works best for you? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I think it&#x27;s a good idea to start simple and see where things go. [end]<br/>[sentiment] Continue Conversation [end]<br/>[response] Hey Riley, I&#x27;m excited to meet you too! Coffee sounds chill. What day works best for you? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Hiro Suzuki &#x27;s Message:  Hey Riley, I&#x27;m excited to meet you too! Coffee sounds chill. What day works best for you? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] I need to find a day that fits my schedule. [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] How about this weekend? I&#x27;m free on Saturday afternoon. Does that work for you? [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I need to find a day that fits my schedule. [end]<br/><br/>[sentiment] Agreement on Time [end]<br/><br/>[response] How about this weekend? I&#x27;m free on Saturday afternoon. Does that work for you? [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Riley Taylor &#x27;s Message:  How about this weekend? I&#x27;m free on Saturday afternoon. Does that work for you? [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] Saturday afternoon is perfect for me, I usually stream in the evenings so I&#x27;m free during the day. [end]<br/>[sentiment] Agreement on Time [end]<br/>[response] Saturday afternoon is great, I can do then! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] Saturday afternoon is perfect for me, I usually stream in the evenings so I&#x27;m free during the day. [end]<br/>[sentiment] Agreement on Time [end]<br/>[response] Saturday afternoon is great, I can do then! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: time agreement" class="msg gm-gm">
+        <p>agreement on time successful</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Hiro Suzuki &#x27;s Message:  Saturday afternoon is great, I can do then! [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] We have agreed on the time, now I need to suggest a location. [end]<br/><br/>[sentiment] Agreement on Location [end]<br/><br/>[response] Perfect! Let&#x27;s meet at the Bean &amp; Leaf café downtown. It&#x27;s cozy and has a great selection of coffee. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] We have agreed on the time, now I need to suggest a location. [end]<br/><br/>[sentiment] Agreement on Location [end]<br/><br/>[response] Perfect! Let&#x27;s meet at the Bean &amp; Leaf café downtown. It&#x27;s cozy and has a great selection of coffee. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: mismatch time agreement" class="msg gm-gm">
+        <p>no time agreement, mismatched sentiment</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Riley Taylor &#x27;s Message:  Perfect! Let&#x27;s meet at the Bean &amp; Leaf café downtown. It&#x27;s cozy and has a great selection of coffee. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] I know the place and it&#x27;s quite nice, plus it&#x27;s in a good location for me. [end]<br/>[sentiment] Agreement on Location [end]<br/>[response] Bean &amp; Leaf it is! I like their coffee too. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] I know the place and it&#x27;s quite nice, plus it&#x27;s in a good location for me. [end]<br/>[sentiment] Agreement on Location [end]<br/>[response] Bean &amp; Leaf it is! I like their coffee too. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: location agreement" class="msg gm-gm">
+        <p>agreement on location successful</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Hiro Suzuki &#x27;s Message:  Bean &amp; Leaf it is! I like their coffee too. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] We have agreed on the location, now I should confirm the activity. [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Awesome! We can grab a coffee and chat about our interests. Maybe we can also share some pictures of our work and hobbies. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] We have agreed on the location, now I should confirm the activity. [end]<br/><br/>[sentiment] Agreement on Action [end]<br/><br/>[response] Awesome! We can grab a coffee and chat about our interests. Maybe we can also share some pictures of our work and hobbies. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: mismatch location agreement" class="msg gm-gm">
+        <p>no location agreement, mismatched sentiment</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Riley Taylor &#x27;s Message:  Awesome! We can grab a coffee and chat about our interests. Maybe we can also share some pictures of our work and hobbies. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] Sharing pictures and talking about our work and hobbies will be a great way to get to know each other. [end]<br/>[sentiment] Agreement on Action [end]<br/>[response] Sounds like a plan! I can show you some of my gaming clips and you can show me your architectural designs. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] Sharing pictures and talking about our work and hobbies will be a great way to get to know each other. [end]<br/>[sentiment] Agreement on Action [end]<br/>[response] Sounds like a plan! I can show you some of my gaming clips and you can show me your architectural designs. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: action agreement" class="msg gm-gm">
+        <p>agreement on action successful</p>
+    </div>
+
+    <div speaker="Game Master to Player 1" class="msg gm-a">
+        <p>Hiro Suzuki &#x27;s Message:  Sounds like a plan! I can show you some of my gaming clips and you can show me your architectural designs. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 1 to Game Master" class="msg a-gm">
+        <p>[reason] We have agreed on the time, location, and action. Now I can confirm the overall agreement. [end]<br/><br/>[sentiment] Overall Agreement [end]<br/><br/>[response] Perfect, looking forward to it! Let&#x27;s meet at Bean &amp; Leaf café this Saturday afternoon to share our passions over coffee. [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] We have agreed on the time, location, and action. Now I can confirm the overall agreement. [end]<br/><br/>[sentiment] Overall Agreement [end]<br/><br/>[response] Perfect, looking forward to it! Let&#x27;s meet at Bean &amp; Leaf café this Saturday afternoon to share our passions over coffee. [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: mismatch action agreement" class="msg gm-gm">
+        <p>no action agreement, mismatched sentiment</p>
+    </div>
+
+    <div speaker="Game Master to Player 2" class="msg gm-b">
+        <p>Riley Taylor &#x27;s Message:  Perfect, looking forward to it! Let&#x27;s meet at Bean &amp; Leaf café this Saturday afternoon to share our passions over coffee. [end]<br/></p>
+    </div>
+
+    <div speaker="Player 2 to Game Master" class="msg b-gm">
+        <p>[reason] We have agreed on the time, location, and activity, and I am happy with the plan. [end]<br/>[sentiment] Overall Agreement [end]<br/>[response] Absolutely, I&#x27;m excited for our date this Saturday at Bean &amp; Leaf. See you there! [end]</p>
+    </div>
+
+    <div speaker="Game Master: parse" class="msg gm-gm">
+        <p>[reason] We have agreed on the time, location, and activity, and I am happy with the plan. [end]<br/>[sentiment] Overall Agreement [end]<br/>[response] Absolutely, I&#x27;m excited for our date this Saturday at Bean &amp; Leaf. See you there! [end] conforms to rules</p>
+    </div>
+
+    <div speaker="Game Master: overall agreement" class="msg gm-gm">
+        <p>game successful</p>
+    </div>
+
+</div>
+
+</body>
+</html>

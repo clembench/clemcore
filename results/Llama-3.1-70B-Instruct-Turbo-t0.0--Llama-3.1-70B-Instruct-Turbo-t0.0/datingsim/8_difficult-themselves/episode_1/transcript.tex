@@ -1,0 +1,240 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Sakura Nakamura', 'GENDER': 'Female', 'AGE': 32, 'APPEARANCE': 'Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.', 'OCCUPATION': 'Tea Ceremony Master', 'LIKES': 'Maintaining traditions, fostering inner peace, creating a beautiful and harmonious atmosphere.', 'DISLIKES': 'Disharmony, disrespect, rushing through life.', 'HOBBIES': 'Calligraphy, flower arranging (Ikebana), practicing mindfulness meditation.', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Sakura Nakamura', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by introducing myself and expressing my interest in getting to know the other player better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "Hello, I must say I was delighted to see that we share the same name and profession. I'm intrigued by your profile and would love to learn more about you. What do you think about meeting in person for a traditional tea ceremony?" [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by introducing myself and expressing my interest in getting to know the other player better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "Hello, I must say I was delighted to see that we share the same name and profession. I'm intrigued by your profile and would love to learn more about you. What do you think about meeting in person for a traditional tea ceremony?" [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Sakura Nakamura', 'GENDER': 'Female', 'AGE': 32, 'APPEARANCE': 'Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.', 'OCCUPATION': 'Tea Ceremony Master', 'LIKES': 'Maintaining traditions, fostering inner peace, creating a beautiful and harmonious atmosphere.', 'DISLIKES': 'Disharmony, disrespect, rushing through life.', 'HOBBIES': 'Calligraphy, flower arranging (Ikebana), practicing mindfulness meditation.', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Sakura Nakamura', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  "Hello, I must say I was delighted to see that we share the same name and profession. I'm intrigued by your profile and would love to learn more about you. What do you think about meeting in person for a traditional tea ceremony?" [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player has shown interest in meeting in person and has suggested a traditional tea ceremony, which aligns with my profession and interests. However, I would like to discuss the details further. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "Ah, what a lovely idea! I'm glad you appreciate the art of traditional tea ceremonies. However, I was thinking of a more casual setting for our first meeting. Would you be open to a stroll in a nearby park or garden, followed by a tea ceremony at a serene location?" [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has shown interest in meeting in person and has suggested a traditional tea ceremony, which aligns with my profession and interests. However, I would like to discuss the details further. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "Ah, what a lovely idea! I'm glad you appreciate the art of traditional tea ceremonies. However, I was thinking of a more casual setting for our first meeting. Would you be open to a stroll in a nearby park or garden, followed by a tea ceremony at a serene location?" [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Sakura Nakamura 's Message:  "Ah, what a lovely idea! I'm glad you appreciate the art of traditional tea ceremonies. However, I was thinking of a more casual setting for our first meeting. Would you be open to a stroll in a nearby park or garden, followed by a tea ceremony at a serene location?" [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] The other player has proposed a casual setting and a combination of activities, which seems like a good compromise, but I'd like to discuss the specifics of the location and time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "A stroll in a park or garden sounds lovely, and I appreciate your suggestion to combine it with a tea ceremony. I'm open to that idea. What time of day do you think would be most suitable for our meeting, and do you have a specific park or garden in mind?" [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has proposed a casual setting and a combination of activities, which seems like a good compromise, but I'd like to discuss the specifics of the location and time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "A stroll in a park or garden sounds lovely, and I appreciate your suggestion to combine it with a tea ceremony. I'm open to that idea. What time of day do you think would be most suitable for our meeting, and do you have a specific park or garden in mind?" [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  "A stroll in a park or garden sounds lovely, and I appreciate your suggestion to combine it with a tea ceremony. I'm open to that idea. What time of day do you think would be most suitable for our meeting, and do you have a specific park or garden in mind?" [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player has agreed to the general idea of a stroll and a tea ceremony, and is now asking for more specific details about the time and location. I will provide my preferences and see if we can come to an agreement. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "I think late afternoon would be perfect, just before sunset. The soft light would add to the serenity of the atmosphere. As for the location, I was thinking of the Shinjuku Gyoen National Garden. Have you been there before?" [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has agreed to the general idea of a stroll and a tea ceremony, and is now asking for more specific details about the time and location. I will provide my preferences and see if we can come to an agreement. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] "I think late afternoon would be perfect, just before sunset. The soft light would add to the serenity of the atmosphere. As for the location, I was thinking of the Shinjuku Gyoen National Garden. Have you been there before?" [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Sakura Nakamura 's Message:  "I think late afternoon would be perfect, just before sunset. The soft light would add to the serenity of the atmosphere. As for the location, I was thinking of the Shinjuku Gyoen National Garden. Have you been there before?" [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] The other player has proposed a specific time and location, which I find appealing, but I'd like to confirm the agreement on time and location before moving forward. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] "Late afternoon is a beautiful time of day, and I agree that the soft light would be lovely. I've been to the Shinjuku Gyoen National Garden before, and it's indeed a serene and peaceful place. Shall we plan to meet there around 4 pm, just before sunset?" [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player has proposed a specific time and location, which I find appealing, but I'd like to confirm the agreement on time and location before moving forward. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] "Late afternoon is a beautiful time of day, and I agree that the soft light would be lovely. I've been to the Shinjuku Gyoen National Garden before, and it's indeed a serene and peaceful place. Shall we plan to meet there around 4 pm, just before sunset?" [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  "Late afternoon is a beautiful time of day, and I agree that the soft light would be lovely. I've been to the Shinjuku Gyoen National Garden before, and it's indeed a serene and peaceful place. Shall we plan to meet there around 4 pm, just before sunset?" [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player has agreed to the time of day and the location, and has even suggested a specific meeting time. I will confirm this agreement and then move on to discussing the action or activity. [end]\\ \tt \\ \tt [sentiment] Agreement on Time, Agreement on Location [end]\\ \tt \\ \tt [response] "That sounds perfect, 4 pm at the Shinjuku Gyoen National Garden it is. Now, regarding the tea ceremony, would you like to participate in a traditional ceremony, or would you prefer a more casual, picnic-style tea gathering?" [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Aborted game because of invalid format: pattern 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

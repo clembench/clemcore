@@ -1,0 +1,444 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 10 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Samira Hassan', 'GENDER': 'Non-binary', 'AGE': 45, 'APPEARANCE': 'Short, neatly trimmed silver hair, warm and inviting smile, wears comfortable clothing with a focus on cultural elements (e.g., scarves, jewelry).', 'OCCUPATION': 'Astronomer', 'LIKES': "Exploring the vastness of space, learning about the universe's mysteries, sharing their knowledge with others.", 'DISLIKES': 'Ignorance, closed-mindedness, the idea that anything is impossible', 'HOBBIES': 'Stargazing, attending astronomy lectures, writing about their research in a captivating way.', 'SUMMARY': 'I like to explore the cosmos and try to embrace the wonders of the universe.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Emily Chen', 'GENDER': 'Female', 'AGE': 31, 'APPEARANCE': 'Long black hair, almond-shaped eyes, medium height, elegant fashion, calm demeanor.', 'OCCUPATION': 'Pediatrician', 'SUMMARY': 'I have a sweet tooth and enjoy calm evenings.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to initiate the conversation by showing interest in Emily's calm demeanor and finding common ground for our first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Emily, I must say, your profile caught my eye, especially your love for calm evenings. As an astronomer, I often find myself lost in the vastness of space, but I also appreciate a peaceful night under the stars. What do you think about a stargazing date? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to initiate the conversation by showing interest in Emily's calm demeanor and finding common ground for our first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Emily, I must say, your profile caught my eye, especially your love for calm evenings. As an astronomer, I often find myself lost in the vastness of space, but I also appreciate a peaceful night under the stars. What do you think about a stargazing date? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 10 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Emily Chen', 'GENDER': 'Female', 'AGE': 31, 'APPEARANCE': 'Long black hair, almond-shaped eyes, medium height, elegant fashion, calm demeanor.', 'OCCUPATION': 'Pediatrician', 'LIKES': 'Baking, classical music, beach sunsets.', 'DISLIKES': 'Loud noises, clutter, spicy food.', 'HOBBIES': 'Playing piano, reading, baking desserts.', 'SUMMARY': 'I have a sweet tooth and enjoy calm evenings.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Samira Hassan', 'GENDER': 'Non-binary', 'AGE': 45, 'APPEARANCE': 'Short, neatly trimmed silver hair, warm and inviting smile, wears comfortable clothing with a focus on cultural elements (e.g., scarves, jewelry).', 'OCCUPATION': 'Astronomer', 'SUMMARY': 'I like to explore the cosmos and try to embrace the wonders of the universe.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi Emily, I must say, your profile caught my eye, especially your love for calm evenings. As an astronomer, I often find myself lost in the vastness of space, but I also appreciate a peaceful night under the stars. What do you think about a stargazing date? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player initiated the conversation and proposed a stargazing date, which seems like a unique and interesting idea, but I'd like to discuss the details before agreeing. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Samira, I'm glad you liked my profile. Stargazing sounds like a lovely idea, but I was thinking, wouldn't it be better to do it during a time when the sky is clearer? Maybe we could plan it around a specific celestial event or a night with minimal moonlight? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player initiated the conversation and proposed a stargazing date, which seems like a unique and interesting idea, but I'd like to discuss the details before agreeing. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Samira, I'm glad you liked my profile. Stargazing sounds like a lovely idea, but I was thinking, wouldn't it be better to do it during a time when the sky is clearer? Maybe we could plan it around a specific celestial event or a night with minimal moonlight? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Emily Chen 's Message:  Hi Samira, I'm glad you liked my profile. Stargazing sounds like a lovely idea, but I was thinking, wouldn't it be better to do it during a time when the sky is clearer? Maybe we could plan it around a specific celestial event or a night with minimal moonlight? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Emily's suggestion about planning around a specific celestial event or minimal moonlight shows she's interested in stargazing, but also wants to optimize the experience, which I appreciate as an astronomer. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Ah, I love that idea, Emily. As it happens, there's a meteor shower scheduled for next weekend, and the moon will be in its new phase. Would you be available to meet on Saturday evening? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Emily's suggestion about planning around a specific celestial event or minimal moonlight shows she's interested in stargazing, but also wants to optimize the experience, which I appreciate as an astronomer. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Ah, I love that idea, Emily. As it happens, there's a meteor shower scheduled for next weekend, and the moon will be in its new phase. Would you be available to meet on Saturday evening? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Samira Hassan 's Message:  Ah, I love that idea, Emily. As it happens, there's a meteor shower scheduled for next weekend, and the moon will be in its new phase. Would you be available to meet on Saturday evening? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player proposed a specific time and event for the stargazing date, which aligns with my suggestion, but I'd like to discuss the location before agreeing on the time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds perfect, Samira. However, I was thinking, where would be the best spot to watch the meteor shower? Somewhere with minimal light pollution would be ideal. Do you have a favorite spot in mind or would you like me to suggest a few options? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player proposed a specific time and event for the stargazing date, which aligns with my suggestion, but I'd like to discuss the location before agreeing on the time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds perfect, Samira. However, I was thinking, where would be the best spot to watch the meteor shower? Somewhere with minimal light pollution would be ideal. Do you have a favorite spot in mind or would you like me to suggest a few options? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Emily Chen 's Message:  That sounds perfect, Samira. However, I was thinking, where would be the best spot to watch the meteor shower? Somewhere with minimal light pollution would be ideal. Do you have a favorite spot in mind or would you like me to suggest a few options? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Emily's concern about light pollution shows she's considerate of the details, and I appreciate her willingness to suggest options or hear mine. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad you like the timing, Emily. As for the location, I actually have a favorite spot just outside the city, a secluded hill with minimal light pollution. It's about a 30-minute drive from the city center. Would you be comfortable meeting there, or would you prefer a more central location? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Emily's concern about light pollution shows she's considerate of the details, and I appreciate her willingness to suggest options or hear mine. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad you like the timing, Emily. As for the location, I actually have a favorite spot just outside the city, a secluded hill with minimal light pollution. It's about a 30-minute drive from the city center. Would you be comfortable meeting there, or would you prefer a more central location? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Samira Hassan 's Message:  I'm glad you like the timing, Emily. As for the location, I actually have a favorite spot just outside the city, a secluded hill with minimal light pollution. It's about a 30-minute drive from the city center. Would you be comfortable meeting there, or would you prefer a more central location? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player proposed a location that seems suitable for stargazing, but I'd like to discuss the logistics and ensure it's convenient for both of us before agreeing. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds like a great spot, Samira. I'm comfortable meeting there, but would you be willing to pick me up from the city center or meet at a midpoint? I'd rather not drive at night, especially if we're planning to stay out late. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player proposed a location that seems suitable for stargazing, but I'd like to discuss the logistics and ensure it's convenient for both of us before agreeing. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds like a great spot, Samira. I'm comfortable meeting there, but would you be willing to pick me up from the city center or meet at a midpoint? I'd rather not drive at night, especially if we're planning to stay out late. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Emily Chen 's Message:  That sounds like a great spot, Samira. I'm comfortable meeting there, but would you be willing to pick me up from the city center or meet at a midpoint? I'd rather not drive at night, especially if we're planning to stay out late. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Emily's concern about driving at night is reasonable, and I appreciate her willingness to compromise on the meeting location. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That's completely understandable, Emily. I'd be happy to pick you up from the city center. We can meet at the central park, and I'll drive us to the hill from there. Now that we have the time and location settled, what do you think about bringing some snacks and drinks to make the evening a bit more special? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Emily's concern about driving at night is reasonable, and I appreciate her willingness to compromise on the meeting location. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That's completely understandable, Emily. I'd be happy to pick you up from the city center. We can meet at the central park, and I'll drive us to the hill from there. Now that we have the time and location settled, what do you think about bringing some snacks and drinks to make the evening a bit more special? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on location successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Samira Hassan 's Message:  That's completely understandable, Emily. I'd be happy to pick you up from the city center. We can meet at the central park, and I'll drive us to the hill from there. Now that we have the time and location settled, what do you think about bringing some snacks and drinks to make the evening a bit more special? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player agreed to pick me up and proposed bringing snacks and drinks, which seems like a thoughtful gesture, but I'd like to discuss the specifics of the snacks and drinks before agreeing on the action. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds lovely, Samira. I'd love to bring some baked goods, maybe some cookies or brownies. What kind of drinks were you thinking of bringing? And would you have any dietary restrictions I should be aware of? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player agreed to pick me up and proposed bringing snacks and drinks, which seems like a thoughtful gesture, but I'd like to discuss the specifics of the snacks and drinks before agreeing on the action. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds lovely, Samira. I'd love to bring some baked goods, maybe some cookies or brownies. What kind of drinks were you thinking of bringing? And would you have any dietary restrictions I should be aware of? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Emily Chen 's Message:  That sounds lovely, Samira. I'd love to bring some baked goods, maybe some cookies or brownies. What kind of drinks were you thinking of bringing? And would you have any dietary restrictions I should be aware of? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Emily's offer to bring baked goods and her consideration of dietary restrictions shows she's thoughtful and considerate, which I appreciate. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That's very kind of you, Emily. I was thinking of bringing some hot tea or coffee to keep us warm during the meteor shower. As for dietary restrictions, I'm a bit of a foodie, but I do try to avoid overly spicy or heavy foods. Your baked goods sound perfect, though! Now that we have the details settled, I'm really looking forward to our date. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Emily's offer to bring baked goods and her consideration of dietary restrictions shows she's thoughtful and considerate, which I appreciate. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That's very kind of you, Emily. I was thinking of bringing some hot tea or coffee to keep us warm during the meteor shower. As for dietary restrictions, I'm a bit of a foodie, but I do try to avoid overly spicy or heavy foods. Your baked goods sound perfect, though! Now that we have the details settled, I'm really looking forward to our date. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Samira Hassan 's Message:  That's very kind of you, Emily. I was thinking of bringing some hot tea or coffee to keep us warm during the meteor shower. As for dietary restrictions, I'm a bit of a foodie, but I do try to avoid overly spicy or heavy foods. Your baked goods sound perfect, though! Now that we have the details settled, I'm really looking forward to our date. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player discussed the specifics of the snacks and drinks, and it seems like we have a good understanding of what to bring, so I'm ready to agree on the action. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm glad we're on the same page, Samira. I'm really looking forward to our date as well. It sounds like we have a lovely evening planned, with stargazing, good company, and delicious treats. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player discussed the specifics of the snacks and drinks, and it seems like we have a good understanding of what to bring, so I'm ready to agree on the action. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm glad we're on the same page, Samira. I'm really looking forward to our date as well. It sounds like we have a lovely evening planned, with stargazing, good company, and delicious treats. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game unsuccessful out of turns 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}
