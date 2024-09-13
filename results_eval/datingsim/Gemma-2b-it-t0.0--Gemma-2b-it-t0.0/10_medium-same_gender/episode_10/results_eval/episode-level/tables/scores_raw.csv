@@ -13,7 +13,7 @@
 401,Number of Redundancy,0.0
 402,Friendzoned,0.0
 403,Out of turns,0.0
-404,Out of reprompts,0.0
+404,Out of retries,0.0
 405,Turn penalty,0.0
 406,Agreement penalty,22.5
 407,Inefficiency penalty,0.0

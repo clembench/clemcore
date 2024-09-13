@@ -13,7 +13,7 @@
 20109,Number of Redundancy,0.0
 20110,Friendzoned,0.0
 20111,Out of turns,1.0
-20112,Out of reprompts,0.0
+20112,Out of retries,0.0
 20113,Turn penalty,0.0
 20114,Agreement penalty,15.0
 20115,Inefficiency penalty,0.0

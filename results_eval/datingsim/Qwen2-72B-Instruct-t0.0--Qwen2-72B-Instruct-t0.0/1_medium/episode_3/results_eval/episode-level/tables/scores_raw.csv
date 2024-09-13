@@ -13,7 +13,7 @@
 30171,Number of Redundancy,0.0
 30172,Friendzoned,0.0
 30173,Out of turns,0.0
-30174,Out of reprompts,0.0
+30174,Out of retries,0.0
 30175,Turn penalty,10.0
 30176,Agreement penalty,0.0
 30177,Inefficiency penalty,0.0

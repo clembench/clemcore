@@ -13,7 +13,7 @@
 2819,Number of Redundancy,0.0
 2820,Friendzoned,0.0
 2821,Out of turns,0.0
-2822,Out of reprompts,0.0
+2822,Out of retries,1.0
 2823,Turn penalty,0.0
 2824,Agreement penalty,22.5
 2825,Inefficiency penalty,0.0

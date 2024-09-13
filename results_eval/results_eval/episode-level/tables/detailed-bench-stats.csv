@@ -14,7 +14,7 @@ datingsim,gem--gem,0_easy,Number of Mismatched Agreements,0.0,0.0,0.0,0.0,0.0,0.
 datingsim,gem--gem,0_easy,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,0_easy,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,0_easy,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,0_easy,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,0_easy,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,0_easy,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,0_easy,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,0_easy,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -41,7 +41,7 @@ datingsim,gem--gem,10_medium-same_gender,Number of Mismatched Agreements,0.0,0.0
 datingsim,gem--gem,10_medium-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,10_medium-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,10_medium-same_gender,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,10_medium-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,10_medium-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,10_medium-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,10_medium-same_gender,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,10_medium-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -68,7 +68,7 @@ datingsim,gem--gem,11_difficult-same_gender,Number of Mismatched Agreements,0.0,
 datingsim,gem--gem,11_difficult-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,11_difficult-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,11_difficult-same_gender,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,11_difficult-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,11_difficult-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,11_difficult-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,11_difficult-same_gender,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,11_difficult-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -95,7 +95,7 @@ datingsim,gem--gem,12_medium-less_turns,Number of Mismatched Agreements,0.0,0.0,
 datingsim,gem--gem,12_medium-less_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,12_medium-less_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,12_medium-less_turns,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,12_medium-less_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,12_medium-less_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,12_medium-less_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,12_medium-less_turns,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,12_medium-less_turns,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -122,7 +122,7 @@ datingsim,gem--gem,13_medium-more_turns,Number of Mismatched Agreements,0.0,0.0,
 datingsim,gem--gem,13_medium-more_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,13_medium-more_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,13_medium-more_turns,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,13_medium-more_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,13_medium-more_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,13_medium-more_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,13_medium-more_turns,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,13_medium-more_turns,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -149,7 +149,7 @@ datingsim,gem--gem,1_medium,Number of Mismatched Agreements,0.0,0.0,0.0,0.0,0.0,
 datingsim,gem--gem,1_medium,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,1_medium,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,1_medium,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,1_medium,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,1_medium,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,1_medium,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,1_medium,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,1_medium,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -176,7 +176,7 @@ datingsim,gem--gem,2_difficult,Number of Mismatched Agreements,0.0,0.0,0.0,0.0,0
 datingsim,gem--gem,2_difficult,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,2_difficult,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,2_difficult,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,2_difficult,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,2_difficult,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,2_difficult,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,2_difficult,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,2_difficult,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -203,7 +203,7 @@ datingsim,gem--gem,3_easy-reprompt,Number of Mismatched Agreements,0.0,0.0,0.0,0
 datingsim,gem--gem,3_easy-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,3_easy-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,gem--gem,3_easy-reprompt,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,3_easy-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,3_easy-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,gem--gem,3_easy-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,3_easy-reprompt,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,3_easy-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -230,7 +230,7 @@ datingsim,gem--gem,4_medium-reprompt,Number of Mismatched Agreements,0.0,0.0,0.0
 datingsim,gem--gem,4_medium-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,4_medium-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,gem--gem,4_medium-reprompt,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,4_medium-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,4_medium-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,gem--gem,4_medium-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,4_medium-reprompt,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,4_medium-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -257,7 +257,7 @@ datingsim,gem--gem,5_difficult-reprompt,Number of Mismatched Agreements,0.0,0.0,
 datingsim,gem--gem,5_difficult-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,5_difficult-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,gem--gem,5_difficult-reprompt,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,5_difficult-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,5_difficult-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,gem--gem,5_difficult-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,5_difficult-reprompt,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,5_difficult-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -284,7 +284,7 @@ datingsim,gem--gem,6_easy-themselves,Number of Mismatched Agreements,0.0,0.0,0.0
 datingsim,gem--gem,6_easy-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,6_easy-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,6_easy-themselves,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,6_easy-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,6_easy-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,6_easy-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,6_easy-themselves,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,6_easy-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -311,7 +311,7 @@ datingsim,gem--gem,7_medium-themselves,Number of Mismatched Agreements,0.0,0.0,0
 datingsim,gem--gem,7_medium-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,7_medium-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,7_medium-themselves,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,7_medium-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,7_medium-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,7_medium-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,7_medium-themselves,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,7_medium-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -338,7 +338,7 @@ datingsim,gem--gem,8_difficult-themselves,Number of Mismatched Agreements,0.0,0.
 datingsim,gem--gem,8_difficult-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,8_difficult-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,8_difficult-themselves,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,8_difficult-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,8_difficult-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,8_difficult-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,8_difficult-themselves,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,8_difficult-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -365,7 +365,7 @@ datingsim,gem--gem,9_easy-same_gender,Number of Mismatched Agreements,0.0,0.0,0.
 datingsim,gem--gem,9_easy-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,9_easy-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,9_easy-same_gender,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,gem--gem,9_easy-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,gem--gem,9_easy-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,9_easy-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,9_easy-same_gender,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,gem--gem,9_easy-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -392,7 +392,7 @@ datingsim,ll70b--ll70b,0_easy,Number of Mismatched Agreements,3.230769230769231,
 datingsim,ll70b--ll70b,0_easy,Number of Redundancy,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.605551275463987
 datingsim,ll70b--ll70b,0_easy,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,0_easy,Number of completed turns,11.692307692307692,2.323238235187235,5.397435897435898,12.0,15.0,7.0,-0.7369701374299119
-datingsim,ll70b--ll70b,0_easy,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,0_easy,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,0_easy,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,0_easy,Parsed Request Count,11.692307692307692,2.323238235187235,5.397435897435898,12.0,15.0,7.0,-0.7369701374299119
 datingsim,ll70b--ll70b,0_easy,Played,0.7692307692307693,0.43852900965351466,0.19230769230769237,1.0,1.0,0.0,-1.4511323592170853
@@ -419,7 +419,7 @@ datingsim,ll70b--ll70b,10_medium-same_gender,Number of Mismatched Agreements,2.0
 datingsim,ll70b--ll70b,10_medium-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,10_medium-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,10_medium-same_gender,Number of completed turns,10.23076923076923,3.0863637221884637,9.525641025641027,11.0,14.0,5.0,-0.4766727915384871
-datingsim,ll70b--ll70b,10_medium-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,10_medium-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,10_medium-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,10_medium-same_gender,Parsed Request Count,10.23076923076923,3.0863637221884637,9.525641025641027,11.0,14.0,5.0,-0.4766727915384871
 datingsim,ll70b--ll70b,10_medium-same_gender,Played,0.6153846153846154,0.5063696835418333,0.2564102564102564,1.0,1.0,0.0,-0.5385932088581318
@@ -446,7 +446,7 @@ datingsim,ll70b--ll70b,11_difficult-same_gender,Number of Mismatched Agreements,
 datingsim,ll70b--ll70b,11_difficult-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,11_difficult-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,11_difficult-same_gender,Number of completed turns,10.538461538461538,2.933012803000373,8.602564102564104,11.0,15.0,5.0,-0.561238058850392
-datingsim,ll70b--ll70b,11_difficult-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,11_difficult-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,11_difficult-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,11_difficult-same_gender,Parsed Request Count,10.538461538461538,2.933012803000373,8.602564102564104,11.0,15.0,5.0,-0.561238058850392
 datingsim,ll70b--ll70b,11_difficult-same_gender,Played,0.5384615384615384,0.5188745216627708,0.2692307692307692,1.0,1.0,0.0,-0.17520438393807813
@@ -473,7 +473,7 @@ datingsim,ll70b--ll70b,12_medium-less_turns,Number of Mismatched Agreements,1.46
 datingsim,ll70b--ll70b,12_medium-less_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,12_medium-less_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,12_medium-less_turns,Number of completed turns,9.153846153846153,1.7246329970051526,2.9743589743589745,10.0,10.0,5.0,-1.891502331851447
-datingsim,ll70b--ll70b,12_medium-less_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,12_medium-less_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,12_medium-less_turns,Out of turns,0.7692307692307693,0.4385290096535146,0.1923076923076923,1.0,1.0,0.0,-1.4511323592170848
 datingsim,ll70b--ll70b,12_medium-less_turns,Parsed Request Count,9.153846153846153,1.7246329970051526,2.9743589743589745,10.0,10.0,5.0,-1.891502331851447
 datingsim,ll70b--ll70b,12_medium-less_turns,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -500,7 +500,7 @@ datingsim,ll70b--ll70b,13_medium-more_turns,Number of Mismatched Agreements,3.15
 datingsim,ll70b--ll70b,13_medium-more_turns,Number of Redundancy,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.6055512754639873
 datingsim,ll70b--ll70b,13_medium-more_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,13_medium-more_turns,Number of completed turns,11.461538461538462,2.569545505058064,6.602564102564102,12.0,14.0,6.0,-0.8880583895399535
-datingsim,ll70b--ll70b,13_medium-more_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,13_medium-more_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,13_medium-more_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,13_medium-more_turns,Parsed Request Count,11.461538461538462,2.569545505058064,6.602564102564102,12.0,14.0,6.0,-0.8880583895399535
 datingsim,ll70b--ll70b,13_medium-more_turns,Played,0.6923076923076923,0.4803844614152614,0.2307692307692308,1.0,1.0,0.0,-0.9462118179391512
@@ -527,7 +527,7 @@ datingsim,ll70b--ll70b,1_medium,Number of Mismatched Agreements,2.23076923076923
 datingsim,ll70b--ll70b,1_medium,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,1_medium,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,1_medium,Number of completed turns,10.76923076923077,3.789323733725368,14.358974358974363,12.0,15.0,4.0,-0.7123354113283354
-datingsim,ll70b--ll70b,1_medium,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,1_medium,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,1_medium,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,1_medium,Parsed Request Count,10.76923076923077,3.789323733725368,14.358974358974363,12.0,15.0,4.0,-0.7123354113283354
 datingsim,ll70b--ll70b,1_medium,Played,0.6923076923076923,0.48038446141526137,0.23076923076923075,1.0,1.0,0.0,-0.9462118179391512
@@ -554,7 +554,7 @@ datingsim,ll70b--ll70b,2_difficult,Number of Mismatched Agreements,2.53846153846
 datingsim,ll70b--ll70b,2_difficult,Number of Redundancy,0.23076923076923078,0.43852900965351466,0.19230769230769237,0.0,1.0,0.0,1.4511323592170844
 datingsim,ll70b--ll70b,2_difficult,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,2_difficult,Number of completed turns,11.461538461538462,3.230463966042252,10.435897435897436,12.0,15.0,5.0,-0.9309408923868717
-datingsim,ll70b--ll70b,2_difficult,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,2_difficult,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,2_difficult,Out of turns,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,ll70b--ll70b,2_difficult,Parsed Request Count,11.461538461538462,3.230463966042252,10.435897435897436,12.0,15.0,5.0,-0.9309408923868717
 datingsim,ll70b--ll70b,2_difficult,Played,0.6153846153846154,0.5063696835418333,0.25641025641025644,1.0,1.0,0.0,-0.5385932088581318
@@ -581,7 +581,7 @@ datingsim,ll70b--ll70b,3_easy-reprompt,Number of Mismatched Agreements,3.3076923
 datingsim,ll70b--ll70b,3_easy-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,3_easy-reprompt,Number of Reprompts,0.23076923076923078,0.4385290096535146,0.1923076923076923,0.0,1.0,0.0,1.4511323592170844
 datingsim,ll70b--ll70b,3_easy-reprompt,Number of completed turns,11.384615384615385,2.2560460078960247,5.089743589743589,11.0,15.0,7.0,-0.41351367914565135
-datingsim,ll70b--ll70b,3_easy-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,3_easy-reprompt,Out of retries,0.15384615384615385,0.3755338080994054,0.14102564102564102,0.0,1.0,0.0,2.1787168040147322
 datingsim,ll70b--ll70b,3_easy-reprompt,Out of turns,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.6055512754639873
 datingsim,ll70b--ll70b,3_easy-reprompt,Parsed Request Count,11.384615384615385,2.2560460078960247,5.089743589743589,11.0,15.0,7.0,-0.41351367914565135
 datingsim,ll70b--ll70b,3_easy-reprompt,Played,0.6923076923076923,0.48038446141526137,0.23076923076923075,1.0,1.0,0.0,-0.9462118179391512
@@ -608,7 +608,7 @@ datingsim,ll70b--ll70b,4_medium-reprompt,Number of Mismatched Agreements,2.38461
 datingsim,ll70b--ll70b,4_medium-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,4_medium-reprompt,Number of Reprompts,0.38461538461538464,0.5063696835418333,0.25641025641025644,0.0,1.0,0.0,0.5385932088581317
 datingsim,ll70b--ll70b,4_medium-reprompt,Number of completed turns,10.692307692307692,3.727926487665214,13.897435897435898,12.0,15.0,4.0,-0.7179462535737643
-datingsim,ll70b--ll70b,4_medium-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,4_medium-reprompt,Out of retries,0.3076923076923077,0.4803844614152614,0.2307692307692308,0.0,1.0,0.0,0.9462118179391512
 datingsim,ll70b--ll70b,4_medium-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,4_medium-reprompt,Parsed Request Count,10.692307692307692,3.727926487665214,13.897435897435898,12.0,15.0,4.0,-0.7179462535737643
 datingsim,ll70b--ll70b,4_medium-reprompt,Played,0.6153846153846154,0.5063696835418333,0.25641025641025644,1.0,1.0,0.0,-0.5385932088581318
@@ -635,7 +635,7 @@ datingsim,ll70b--ll70b,5_difficult-reprompt,Number of Mismatched Agreements,2.92
 datingsim,ll70b--ll70b,5_difficult-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,5_difficult-reprompt,Number of Reprompts,0.3076923076923077,0.48038446141526137,0.23076923076923075,0.0,1.0,0.0,0.946211817939151
 datingsim,ll70b--ll70b,5_difficult-reprompt,Number of completed turns,12.23076923076923,2.7432901825437686,7.525641025641023,13.0,15.0,6.0,-1.629950191723438
-datingsim,ll70b--ll70b,5_difficult-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,5_difficult-reprompt,Out of retries,0.15384615384615385,0.3755338080994054,0.14102564102564105,0.0,1.0,0.0,2.1787168040147336
 datingsim,ll70b--ll70b,5_difficult-reprompt,Out of turns,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.6055512754639887
 datingsim,ll70b--ll70b,5_difficult-reprompt,Parsed Request Count,12.23076923076923,2.7432901825437686,7.525641025641023,13.0,15.0,6.0,-1.629950191723438
 datingsim,ll70b--ll70b,5_difficult-reprompt,Played,0.6153846153846154,0.5063696835418333,0.2564102564102564,1.0,1.0,0.0,-0.5385932088581317
@@ -662,7 +662,7 @@ datingsim,ll70b--ll70b,6_easy-themselves,Number of Mismatched Agreements,2.53846
 datingsim,ll70b--ll70b,6_easy-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,6_easy-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,6_easy-themselves,Number of completed turns,9.461538461538462,2.757274760078165,7.602564102564102,11.0,13.0,4.0,-1.2478244345288187
-datingsim,ll70b--ll70b,6_easy-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,6_easy-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,6_easy-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,6_easy-themselves,Parsed Request Count,9.461538461538462,2.757274760078165,7.602564102564102,11.0,13.0,4.0,-1.2478244345288187
 datingsim,ll70b--ll70b,6_easy-themselves,Played,0.6923076923076923,0.48038446141526137,0.23076923076923075,1.0,1.0,0.0,-0.946211817939151
@@ -689,7 +689,7 @@ datingsim,ll70b--ll70b,7_medium-themselves,Number of Mismatched Agreements,2.461
 datingsim,ll70b--ll70b,7_medium-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,7_medium-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,7_medium-themselves,Number of completed turns,9.538461538461538,2.846500325410855,8.102564102564104,10.0,13.0,4.0,-0.9056605941867745
-datingsim,ll70b--ll70b,7_medium-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,7_medium-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,7_medium-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,7_medium-themselves,Parsed Request Count,9.538461538461538,2.846500325410855,8.102564102564104,10.0,13.0,4.0,-0.9056605941867745
 datingsim,ll70b--ll70b,7_medium-themselves,Played,0.6923076923076923,0.4803844614152614,0.2307692307692308,1.0,1.0,0.0,-0.9462118179391512
@@ -716,7 +716,7 @@ datingsim,ll70b--ll70b,8_difficult-themselves,Number of Mismatched Agreements,2.
 datingsim,ll70b--ll70b,8_difficult-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,8_difficult-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,8_difficult-themselves,Number of completed turns,10.307692307692308,3.859719665653957,14.897435897435892,13.0,14.0,4.0,-0.6772279887214212
-datingsim,ll70b--ll70b,8_difficult-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,8_difficult-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,8_difficult-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,8_difficult-themselves,Parsed Request Count,10.307692307692308,3.859719665653957,14.897435897435892,13.0,14.0,4.0,-0.6772279887214212
 datingsim,ll70b--ll70b,8_difficult-themselves,Played,0.6153846153846154,0.5063696835418333,0.2564102564102564,1.0,1.0,0.0,-0.5385932088581317
@@ -743,7 +743,7 @@ datingsim,ll70b--ll70b,9_easy-same_gender,Number of Mismatched Agreements,2.2307
 datingsim,ll70b--ll70b,9_easy-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,9_easy-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,9_easy-same_gender,Number of completed turns,9.23076923076923,3.876292174958052,15.025641025641024,10.0,14.0,3.0,-0.3280160874358385
-datingsim,ll70b--ll70b,9_easy-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll70b--ll70b,9_easy-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,9_easy-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll70b--ll70b,9_easy-same_gender,Parsed Request Count,9.23076923076923,3.876292174958052,15.025641025641024,10.0,14.0,3.0,-0.3280160874358385
 datingsim,ll70b--ll70b,9_easy-same_gender,Played,0.6153846153846154,0.5063696835418333,0.2564102564102564,1.0,1.0,0.0,-0.5385932088581317
@@ -770,7 +770,7 @@ datingsim,ll8b--ll8b,0_easy,Number of Mismatched Agreements,0.0,0.0,0.0,0.0,0.0,
 datingsim,ll8b--ll8b,0_easy,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,0_easy,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,0_easy,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,0_easy,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,0_easy,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,0_easy,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,0_easy,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,0_easy,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -797,7 +797,7 @@ datingsim,ll8b--ll8b,10_medium-same_gender,Number of Mismatched Agreements,0.0,0
 datingsim,ll8b--ll8b,10_medium-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,10_medium-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,10_medium-same_gender,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,10_medium-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,10_medium-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,10_medium-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,10_medium-same_gender,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,10_medium-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -824,7 +824,7 @@ datingsim,ll8b--ll8b,11_difficult-same_gender,Number of Mismatched Agreements,0.
 datingsim,ll8b--ll8b,11_difficult-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,11_difficult-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,11_difficult-same_gender,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,11_difficult-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,11_difficult-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,11_difficult-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,11_difficult-same_gender,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,11_difficult-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -851,7 +851,7 @@ datingsim,ll8b--ll8b,12_medium-less_turns,Number of Mismatched Agreements,0.0,0.
 datingsim,ll8b--ll8b,12_medium-less_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,12_medium-less_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,12_medium-less_turns,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,12_medium-less_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,12_medium-less_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,12_medium-less_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,12_medium-less_turns,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,12_medium-less_turns,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -878,7 +878,7 @@ datingsim,ll8b--ll8b,13_medium-more_turns,Number of Mismatched Agreements,0.0,0.
 datingsim,ll8b--ll8b,13_medium-more_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,13_medium-more_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,13_medium-more_turns,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,13_medium-more_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,13_medium-more_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,13_medium-more_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,13_medium-more_turns,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,13_medium-more_turns,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -905,7 +905,7 @@ datingsim,ll8b--ll8b,1_medium,Number of Mismatched Agreements,0.0,0.0,0.0,0.0,0.
 datingsim,ll8b--ll8b,1_medium,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,1_medium,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,1_medium,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,1_medium,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,1_medium,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,1_medium,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,1_medium,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,1_medium,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -932,7 +932,7 @@ datingsim,ll8b--ll8b,2_difficult,Number of Mismatched Agreements,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,2_difficult,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,2_difficult,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,2_difficult,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,2_difficult,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,2_difficult,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,2_difficult,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,2_difficult,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,2_difficult,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -959,7 +959,7 @@ datingsim,ll8b--ll8b,3_easy-reprompt,Number of Mismatched Agreements,0.0,0.0,0.0
 datingsim,ll8b--ll8b,3_easy-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,3_easy-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,ll8b--ll8b,3_easy-reprompt,Number of completed turns,0.6666666666666666,0.4923659639173309,0.2424242424242424,1.0,1.0,0.0,-0.8124038404635956
-datingsim,ll8b--ll8b,3_easy-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,3_easy-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,ll8b--ll8b,3_easy-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,3_easy-reprompt,Parsed Request Count,0.6666666666666666,0.4923659639173309,0.2424242424242424,1.0,1.0,0.0,-0.8124038404635956
 datingsim,ll8b--ll8b,3_easy-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -986,7 +986,7 @@ datingsim,ll8b--ll8b,4_medium-reprompt,Number of Mismatched Agreements,0.0,0.0,0
 datingsim,ll8b--ll8b,4_medium-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,4_medium-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,ll8b--ll8b,4_medium-reprompt,Number of completed turns,0.3076923076923077,0.4803844614152614,0.2307692307692308,0.0,1.0,0.0,0.9462118179391512
-datingsim,ll8b--ll8b,4_medium-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,4_medium-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,ll8b--ll8b,4_medium-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,4_medium-reprompt,Parsed Request Count,0.3076923076923077,0.4803844614152614,0.2307692307692308,0.0,1.0,0.0,0.9462118179391512
 datingsim,ll8b--ll8b,4_medium-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1013,7 +1013,7 @@ datingsim,ll8b--ll8b,5_difficult-reprompt,Number of Mismatched Agreements,0.0,0.
 datingsim,ll8b--ll8b,5_difficult-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,5_difficult-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,ll8b--ll8b,5_difficult-reprompt,Number of completed turns,0.38461538461538464,0.5063696835418333,0.2564102564102564,0.0,1.0,0.0,0.5385932088581316
-datingsim,ll8b--ll8b,5_difficult-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,5_difficult-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,ll8b--ll8b,5_difficult-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,5_difficult-reprompt,Parsed Request Count,0.38461538461538464,0.5063696835418333,0.2564102564102564,0.0,1.0,0.0,0.5385932088581316
 datingsim,ll8b--ll8b,5_difficult-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1040,7 +1040,7 @@ datingsim,ll8b--ll8b,6_easy-themselves,Number of Mismatched Agreements,0.0,0.0,0
 datingsim,ll8b--ll8b,6_easy-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,6_easy-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,6_easy-themselves,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,6_easy-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,6_easy-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,6_easy-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,6_easy-themselves,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,6_easy-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1067,7 +1067,7 @@ datingsim,ll8b--ll8b,7_medium-themselves,Number of Mismatched Agreements,0.0,0.0
 datingsim,ll8b--ll8b,7_medium-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,7_medium-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,7_medium-themselves,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,7_medium-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,7_medium-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,7_medium-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,7_medium-themselves,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,7_medium-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1094,7 +1094,7 @@ datingsim,ll8b--ll8b,8_difficult-themselves,Number of Mismatched Agreements,0.0,
 datingsim,ll8b--ll8b,8_difficult-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,8_difficult-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,8_difficult-themselves,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,8_difficult-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,8_difficult-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,8_difficult-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,8_difficult-themselves,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,8_difficult-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1121,7 +1121,7 @@ datingsim,ll8b--ll8b,9_easy-same_gender,Number of Mismatched Agreements,0.0,0.0,
 datingsim,ll8b--ll8b,9_easy-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,9_easy-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,9_easy-same_gender,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,ll8b--ll8b,9_easy-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,ll8b--ll8b,9_easy-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,9_easy-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,9_easy-same_gender,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,ll8b--ll8b,9_easy-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1148,7 +1148,7 @@ datingsim,mis--mis,0_easy,Number of Mismatched Agreements,0.15384615384615385,0.
 datingsim,mis--mis,0_easy,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,0_easy,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,0_easy,Number of completed turns,0.8461538461538461,1.405118847058488,1.9743589743589751,0.0,4.0,0.0,1.3838758475767472
-datingsim,mis--mis,0_easy,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,0_easy,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,0_easy,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,0_easy,Parsed Request Count,0.8461538461538461,1.405118847058488,1.9743589743589751,0.0,4.0,0.0,1.3838758475767472
 datingsim,mis--mis,0_easy,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1175,7 +1175,7 @@ datingsim,mis--mis,10_medium-same_gender,Number of Mismatched Agreements,0.0,0.0
 datingsim,mis--mis,10_medium-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,10_medium-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,10_medium-same_gender,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,mis--mis,10_medium-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,10_medium-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,10_medium-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,10_medium-same_gender,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,10_medium-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1202,7 +1202,7 @@ datingsim,mis--mis,11_difficult-same_gender,Number of Mismatched Agreements,0.15
 datingsim,mis--mis,11_difficult-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,11_difficult-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,11_difficult-same_gender,Number of completed turns,0.7692307692307693,1.535895295576609,2.358974358974359,0.0,4.0,0.0,1.760248449252518
-datingsim,mis--mis,11_difficult-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,11_difficult-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,11_difficult-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,11_difficult-same_gender,Parsed Request Count,0.7692307692307693,1.535895295576609,2.358974358974359,0.0,4.0,0.0,1.760248449252518
 datingsim,mis--mis,11_difficult-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1229,7 +1229,7 @@ datingsim,mis--mis,12_medium-less_turns,Number of Mismatched Agreements,0.153846
 datingsim,mis--mis,12_medium-less_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,12_medium-less_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,12_medium-less_turns,Number of completed turns,0.5384615384615384,1.3301243435223526,1.7692307692307694,0.0,4.0,0.0,2.2881156003881657
-datingsim,mis--mis,12_medium-less_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,12_medium-less_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,12_medium-less_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,12_medium-less_turns,Parsed Request Count,0.5384615384615384,1.3301243435223526,1.7692307692307694,0.0,4.0,0.0,2.2881156003881657
 datingsim,mis--mis,12_medium-less_turns,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1256,7 +1256,7 @@ datingsim,mis--mis,13_medium-more_turns,Number of Mismatched Agreements,0.153846
 datingsim,mis--mis,13_medium-more_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,13_medium-more_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,13_medium-more_turns,Number of completed turns,0.6153846153846154,1.5021352323976216,2.256410256410257,0.0,4.0,0.0,2.1787168040147336
-datingsim,mis--mis,13_medium-more_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,13_medium-more_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,13_medium-more_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,13_medium-more_turns,Parsed Request Count,0.6153846153846154,1.5021352323976216,2.256410256410257,0.0,4.0,0.0,2.1787168040147336
 datingsim,mis--mis,13_medium-more_turns,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1283,7 +1283,7 @@ datingsim,mis--mis,1_medium,Number of Mismatched Agreements,0.07692307692307693,
 datingsim,mis--mis,1_medium,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,1_medium,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,1_medium,Number of completed turns,0.3076923076923077,1.1094003924504583,1.2307692307692308,0.0,4.0,0.0,3.605551275463987
-datingsim,mis--mis,1_medium,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,1_medium,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,1_medium,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,1_medium,Parsed Request Count,0.3076923076923077,1.1094003924504583,1.2307692307692308,0.0,4.0,0.0,3.605551275463987
 datingsim,mis--mis,1_medium,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1310,7 +1310,7 @@ datingsim,mis--mis,2_difficult,Number of Mismatched Agreements,0.0,0.0,0.0,0.0,0
 datingsim,mis--mis,2_difficult,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,2_difficult,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,2_difficult,Number of completed turns,0.38461538461538464,0.9607689228305227,0.923076923076923,0.0,3.0,0.0,2.3852422910549453
-datingsim,mis--mis,2_difficult,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,2_difficult,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,2_difficult,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,2_difficult,Parsed Request Count,0.38461538461538464,0.9607689228305227,0.923076923076923,0.0,3.0,0.0,2.3852422910549453
 datingsim,mis--mis,2_difficult,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1337,7 +1337,7 @@ datingsim,mis--mis,3_easy-reprompt,Number of Mismatched Agreements,0.46153846153
 datingsim,mis--mis,3_easy-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,3_easy-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,mis--mis,3_easy-reprompt,Number of completed turns,1.4615384615384615,2.0254787341673333,4.102564102564102,0.0,5.0,0.0,0.8125183486758225
-datingsim,mis--mis,3_easy-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,3_easy-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,mis--mis,3_easy-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,3_easy-reprompt,Parsed Request Count,1.4615384615384615,2.0254787341673333,4.102564102564102,0.0,5.0,0.0,0.8125183486758225
 datingsim,mis--mis,3_easy-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1364,7 +1364,7 @@ datingsim,mis--mis,4_medium-reprompt,Number of Mismatched Agreements,0.230769230
 datingsim,mis--mis,4_medium-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,4_medium-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,mis--mis,4_medium-reprompt,Number of completed turns,0.8461538461538461,1.6756169931378435,2.807692307692308,0.0,5.0,0.0,1.791871694021373
-datingsim,mis--mis,4_medium-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,4_medium-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,mis--mis,4_medium-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,4_medium-reprompt,Parsed Request Count,0.8461538461538461,1.6756169931378435,2.807692307692308,0.0,5.0,0.0,1.791871694021373
 datingsim,mis--mis,4_medium-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1391,7 +1391,7 @@ datingsim,mis--mis,5_difficult-reprompt,Number of Mismatched Agreements,0.076923
 datingsim,mis--mis,5_difficult-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,5_difficult-reprompt,Number of Reprompts,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,mis--mis,5_difficult-reprompt,Number of completed turns,0.6153846153846154,1.1929278784054478,1.4230769230769227,0.0,3.0,0.0,1.5921020320202337
-datingsim,mis--mis,5_difficult-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,5_difficult-reprompt,Out of retries,1.0,0.0,0.0,1.0,1.0,1.0,0.0
 datingsim,mis--mis,5_difficult-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,5_difficult-reprompt,Parsed Request Count,0.6153846153846154,1.1929278784054478,1.4230769230769227,0.0,3.0,0.0,1.5921020320202337
 datingsim,mis--mis,5_difficult-reprompt,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1418,7 +1418,7 @@ datingsim,mis--mis,6_easy-themselves,Number of Mismatched Agreements,0.230769230
 datingsim,mis--mis,6_easy-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,6_easy-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,6_easy-themselves,Number of completed turns,0.6153846153846154,1.5021352323976216,2.256410256410257,0.0,4.0,0.0,2.1787168040147336
-datingsim,mis--mis,6_easy-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,6_easy-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,6_easy-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,6_easy-themselves,Parsed Request Count,0.6153846153846154,1.5021352323976216,2.256410256410257,0.0,4.0,0.0,2.1787168040147336
 datingsim,mis--mis,6_easy-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1445,7 +1445,7 @@ datingsim,mis--mis,7_medium-themselves,Number of Mismatched Agreements,0.0,0.0,0
 datingsim,mis--mis,7_medium-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,7_medium-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,7_medium-themselves,Number of completed turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-datingsim,mis--mis,7_medium-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,7_medium-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,7_medium-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,7_medium-themselves,Parsed Request Count,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,7_medium-themselves,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1472,7 +1472,7 @@ datingsim,mis--mis,8_difficult-themselves,Number of Mismatched Agreements,0.2307
 datingsim,mis--mis,8_difficult-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,8_difficult-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,8_difficult-themselves,Number of completed turns,0.6923076923076923,1.9741924671712983,3.8974358974358974,0.0,7.0,0.0,3.1941774459645043
-datingsim,mis--mis,8_difficult-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,8_difficult-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,8_difficult-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,8_difficult-themselves,Parsed Request Count,0.6923076923076923,1.9741924671712983,3.8974358974358974,0.0,7.0,0.0,3.1941774459645043
 datingsim,mis--mis,8_difficult-themselves,Played,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.605551275463987
@@ -1499,7 +1499,7 @@ datingsim,mis--mis,9_easy-same_gender,Number of Mismatched Agreements,0.0,0.0,0.
 datingsim,mis--mis,9_easy-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,9_easy-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,9_easy-same_gender,Number of completed turns,0.3076923076923077,0.7510676161988108,0.5641025641025642,0.0,2.0,0.0,2.1787168040147336
-datingsim,mis--mis,9_easy-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mis--mis,9_easy-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,9_easy-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mis--mis,9_easy-same_gender,Parsed Request Count,0.3076923076923077,0.7510676161988108,0.5641025641025642,0.0,2.0,0.0,2.1787168040147336
 datingsim,mis--mis,9_easy-same_gender,Played,0.0,0.0,0.0,0.0,0.0,0.0,0.0
@@ -1526,7 +1526,7 @@ datingsim,mix--mix,0_easy,Number of Mismatched Agreements,2.769230769230769,0.83
 datingsim,mix--mix,0_easy,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,0_easy,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,0_easy,Number of completed turns,9.538461538461538,2.633609203336257,6.935897435897435,10.0,15.0,3.0,-0.5686992101199266
-datingsim,mix--mix,0_easy,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,0_easy,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,0_easy,Out of turns,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,mix--mix,0_easy,Parsed Request Count,9.538461538461538,2.633609203336257,6.935897435897435,10.0,15.0,3.0,-0.5686992101199266
 datingsim,mix--mix,0_easy,Played,0.7692307692307693,0.43852900965351466,0.19230769230769237,1.0,1.0,0.0,-1.4511323592170848
@@ -1553,7 +1553,7 @@ datingsim,mix--mix,10_medium-same_gender,Number of Mismatched Agreements,3.07692
 datingsim,mix--mix,10_medium-same_gender,Number of Redundancy,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.6055512754639873
 datingsim,mix--mix,10_medium-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,10_medium-same_gender,Number of completed turns,10.692307692307692,1.5483655567842813,2.3974358974358974,10.0,15.0,9.0,1.8819537447309673
-datingsim,mix--mix,10_medium-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,10_medium-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,10_medium-same_gender,Out of turns,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,mix--mix,10_medium-same_gender,Parsed Request Count,10.692307692307692,1.5483655567842813,2.3974358974358974,10.0,15.0,9.0,1.8819537447309673
 datingsim,mix--mix,10_medium-same_gender,Played,0.8461538461538461,0.3755338080994054,0.14102564102564102,1.0,1.0,0.0,-2.178716804014733
@@ -1580,7 +1580,7 @@ datingsim,mix--mix,11_difficult-same_gender,Number of Mismatched Agreements,2.76
 datingsim,mix--mix,11_difficult-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,11_difficult-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,11_difficult-same_gender,Number of completed turns,9.153846153846153,2.4781092875467863,6.141025641025641,9.0,14.0,5.0,0.37496674708715727
-datingsim,mix--mix,11_difficult-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,11_difficult-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,11_difficult-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,11_difficult-same_gender,Parsed Request Count,9.153846153846153,2.4781092875467863,6.141025641025641,9.0,14.0,5.0,0.37496674708715727
 datingsim,mix--mix,11_difficult-same_gender,Played,0.6923076923076923,0.48038446141526137,0.23076923076923075,1.0,1.0,0.0,-0.9462118179391509
@@ -1607,7 +1607,7 @@ datingsim,mix--mix,12_medium-less_turns,Number of Mismatched Agreements,2.615384
 datingsim,mix--mix,12_medium-less_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,12_medium-less_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,12_medium-less_turns,Number of completed turns,9.923076923076923,0.2773500981126145,0.07692307692307691,10.0,10.0,9.0,-3.6055512754639945
-datingsim,mix--mix,12_medium-less_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,12_medium-less_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,12_medium-less_turns,Out of turns,0.5384615384615384,0.5188745216627708,0.2692307692307692,1.0,1.0,0.0,-0.17520438393807822
 datingsim,mix--mix,12_medium-less_turns,Parsed Request Count,9.923076923076923,0.2773500981126145,0.07692307692307691,10.0,10.0,9.0,-3.6055512754639945
 datingsim,mix--mix,12_medium-less_turns,Played,0.46153846153846156,0.5188745216627708,0.2692307692307692,0.0,1.0,0.0,0.17520438393807822
@@ -1634,7 +1634,7 @@ datingsim,mix--mix,13_medium-more_turns,Number of Mismatched Agreements,3.230769
 datingsim,mix--mix,13_medium-more_turns,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,13_medium-more_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,13_medium-more_turns,Number of completed turns,11.0,2.273030282830976,5.166666666666665,10.0,16.0,8.0,0.8050539569500684
-datingsim,mix--mix,13_medium-more_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,13_medium-more_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,13_medium-more_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,13_medium-more_turns,Parsed Request Count,11.0,2.273030282830976,5.166666666666665,10.0,16.0,8.0,0.8050539569500684
 datingsim,mix--mix,13_medium-more_turns,Played,0.9230769230769231,0.2773500981126145,0.07692307692307691,1.0,1.0,0.0,-3.605551275463987
@@ -1661,7 +1661,7 @@ datingsim,mix--mix,1_medium,Number of Mismatched Agreements,2.769230769230769,0.
 datingsim,mix--mix,1_medium,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,1_medium,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,1_medium,Number of completed turns,10.461538461538462,2.846500325410855,8.102564102564104,10.0,15.0,3.0,-1.1695968336375906
-datingsim,mix--mix,1_medium,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,1_medium,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,1_medium,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,1_medium,Parsed Request Count,10.461538461538462,2.846500325410855,8.102564102564104,10.0,15.0,3.0,-1.1695968336375906
 datingsim,mix--mix,1_medium,Played,0.9230769230769231,0.2773500981126145,0.07692307692307691,1.0,1.0,0.0,-3.605551275463987
@@ -1688,7 +1688,7 @@ datingsim,mix--mix,2_difficult,Number of Mismatched Agreements,3.0,0.40824829046
 datingsim,mix--mix,2_difficult,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,2_difficult,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,2_difficult,Number of completed turns,11.0,1.0801234497346432,1.1666666666666665,11.0,13.0,10.0,0.9378437374319352
-datingsim,mix--mix,2_difficult,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,2_difficult,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,2_difficult,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,2_difficult,Parsed Request Count,11.0,1.0801234497346432,1.1666666666666665,11.0,13.0,10.0,0.9378437374319352
 datingsim,mix--mix,2_difficult,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -1715,7 +1715,7 @@ datingsim,mix--mix,3_easy-reprompt,Number of Mismatched Agreements,3.15384615384
 datingsim,mix--mix,3_easy-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,3_easy-reprompt,Number of Reprompts,0.15384615384615385,0.37553380809940534,0.141025641025641,0.0,1.0,0.0,2.178716804014733
 datingsim,mix--mix,3_easy-reprompt,Number of completed turns,10.692307692307692,1.4366984945013908,2.064102564102563,10.0,13.0,9.0,0.4397905453881581
-datingsim,mix--mix,3_easy-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,3_easy-reprompt,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,3_easy-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,3_easy-reprompt,Parsed Request Count,10.692307692307692,1.4366984945013908,2.064102564102563,10.0,13.0,9.0,0.4397905453881581
 datingsim,mix--mix,3_easy-reprompt,Played,0.8461538461538461,0.3755338080994054,0.14102564102564102,1.0,1.0,0.0,-2.178716804014733
@@ -1742,7 +1742,7 @@ datingsim,mix--mix,4_medium-reprompt,Number of Mismatched Agreements,2.769230769
 datingsim,mix--mix,4_medium-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,4_medium-reprompt,Number of Reprompts,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.605551275463987
 datingsim,mix--mix,4_medium-reprompt,Number of completed turns,10.307692307692308,1.6012815380508714,2.5641025641025643,10.0,14.0,8.0,0.7008590935475276
-datingsim,mix--mix,4_medium-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,4_medium-reprompt,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,4_medium-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,4_medium-reprompt,Parsed Request Count,10.307692307692308,1.6012815380508714,2.5641025641025643,10.0,14.0,8.0,0.7008590935475276
 datingsim,mix--mix,4_medium-reprompt,Played,0.9230769230769231,0.2773500981126145,0.07692307692307691,1.0,1.0,0.0,-3.605551275463987
@@ -1769,7 +1769,7 @@ datingsim,mix--mix,5_difficult-reprompt,Number of Mismatched Agreements,3.153846
 datingsim,mix--mix,5_difficult-reprompt,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,5_difficult-reprompt,Number of Reprompts,0.15384615384615385,0.3755338080994054,0.14102564102564102,0.0,1.0,0.0,2.178716804014733
 datingsim,mix--mix,5_difficult-reprompt,Number of completed turns,10.76923076923077,1.8776690404970273,3.525641025641027,10.0,15.0,9.0,1.1075803970954878
-datingsim,mix--mix,5_difficult-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,5_difficult-reprompt,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,5_difficult-reprompt,Out of turns,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.6055512754639887
 datingsim,mix--mix,5_difficult-reprompt,Parsed Request Count,10.76923076923077,1.8776690404970273,3.525641025641027,10.0,15.0,9.0,1.1075803970954878
 datingsim,mix--mix,5_difficult-reprompt,Played,0.7692307692307693,0.4385290096535146,0.1923076923076923,1.0,1.0,0.0,-1.4511323592170853
@@ -1796,7 +1796,7 @@ datingsim,mix--mix,6_easy-themselves,Number of Mismatched Agreements,2.846153846
 datingsim,mix--mix,6_easy-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,6_easy-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,6_easy-themselves,Number of completed turns,9.307692307692308,1.031553471276484,1.064102564102564,9.0,11.0,7.0,-0.7326331546220002
-datingsim,mix--mix,6_easy-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,6_easy-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,6_easy-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,6_easy-themselves,Parsed Request Count,9.307692307692308,1.031553471276484,1.064102564102564,9.0,11.0,7.0,-0.7326331546220002
 datingsim,mix--mix,6_easy-themselves,Played,0.7692307692307693,0.4385290096535146,0.1923076923076923,1.0,1.0,0.0,-1.451132359217085
@@ -1823,7 +1823,7 @@ datingsim,mix--mix,7_medium-themselves,Number of Mismatched Agreements,2.3846153
 datingsim,mix--mix,7_medium-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,7_medium-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,7_medium-themselves,Number of completed turns,8.76923076923077,1.7867030229749132,3.192307692307693,9.0,13.0,7.0,1.1340927619141608
-datingsim,mix--mix,7_medium-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,7_medium-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,7_medium-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,7_medium-themselves,Parsed Request Count,8.76923076923077,1.7867030229749132,3.192307692307693,9.0,13.0,7.0,1.1340927619141608
 datingsim,mix--mix,7_medium-themselves,Played,0.6153846153846154,0.5063696835418333,0.2564102564102564,1.0,1.0,0.0,-0.5385932088581317
@@ -1850,7 +1850,7 @@ datingsim,mix--mix,8_difficult-themselves,Number of Mismatched Agreements,2.7692
 datingsim,mix--mix,8_difficult-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,8_difficult-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,8_difficult-themselves,Number of completed turns,9.923076923076923,2.6913917855989946,7.2435897435897445,10.0,14.0,3.0,-1.055479168734085
-datingsim,mix--mix,8_difficult-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,8_difficult-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,8_difficult-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,8_difficult-themselves,Parsed Request Count,9.923076923076923,2.6913917855989946,7.2435897435897445,10.0,14.0,3.0,-1.055479168734085
 datingsim,mix--mix,8_difficult-themselves,Played,0.8461538461538461,0.3755338080994054,0.14102564102564102,1.0,1.0,0.0,-2.178716804014733
@@ -1877,7 +1877,7 @@ datingsim,mix--mix,9_easy-same_gender,Number of Mismatched Agreements,2.76923076
 datingsim,mix--mix,9_easy-same_gender,Number of Redundancy,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,mix--mix,9_easy-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,9_easy-same_gender,Number of completed turns,10.076923076923077,1.6052797503622467,2.576923076923077,10.0,14.0,7.0,0.7108496936232183
-datingsim,mix--mix,9_easy-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,mix--mix,9_easy-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,9_easy-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,mix--mix,9_easy-same_gender,Parsed Request Count,10.076923076923077,1.6052797503622467,2.576923076923077,10.0,14.0,7.0,0.7108496936232183
 datingsim,mix--mix,9_easy-same_gender,Played,0.9230769230769231,0.2773500981126145,0.07692307692307691,1.0,1.0,0.0,-3.605551275463987
@@ -1904,7 +1904,7 @@ datingsim,open--open,0_easy,Number of Mismatched Agreements,0.7692307692307693,1
 datingsim,open--open,0_easy,Number of Redundancy,0.15384615384615385,0.3755338080994054,0.14102564102564102,0.0,1.0,0.0,2.1787168040147336
 datingsim,open--open,0_easy,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,0_easy,Number of completed turns,2.3846153846153846,3.841407327583246,14.756410256410255,0.0,10.0,0.0,1.4037116197823463
-datingsim,open--open,0_easy,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,0_easy,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,0_easy,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,0_easy,Parsed Request Count,2.3846153846153846,3.841407327583246,14.756410256410255,0.0,10.0,0.0,1.4037116197823463
 datingsim,open--open,0_easy,Played,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
@@ -1931,7 +1931,7 @@ datingsim,open--open,10_medium-same_gender,Number of Mismatched Agreements,2.461
 datingsim,open--open,10_medium-same_gender,Number of Redundancy,1.0769230769230769,3.3030677271676416,10.910256410256409,0.0,12.0,0.0,3.527520700299345
 datingsim,open--open,10_medium-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,10_medium-same_gender,Number of completed turns,7.538461538461538,4.332347027793453,18.76923076923077,9.0,15.0,1.0,-0.42010593743132224
-datingsim,open--open,10_medium-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,10_medium-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,10_medium-same_gender,Out of turns,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,open--open,10_medium-same_gender,Parsed Request Count,7.538461538461538,4.332347027793453,18.76923076923077,9.0,15.0,1.0,-0.42010593743132224
 datingsim,open--open,10_medium-same_gender,Played,0.6923076923076923,0.4803844614152614,0.2307692307692308,1.0,1.0,0.0,-0.9462118179391512
@@ -1958,7 +1958,7 @@ datingsim,open--open,11_difficult-same_gender,Number of Mismatched Agreements,1.
 datingsim,open--open,11_difficult-same_gender,Number of Redundancy,0.38461538461538464,0.9607689228305227,0.923076923076923,0.0,3.0,0.0,2.3852422910549445
 datingsim,open--open,11_difficult-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,11_difficult-same_gender,Number of completed turns,3.6923076923076925,4.607685886729827,21.230769230769234,1.0,11.0,0.0,0.613663613247573
-datingsim,open--open,11_difficult-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,11_difficult-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,11_difficult-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,11_difficult-same_gender,Parsed Request Count,3.6923076923076925,4.607685886729827,21.230769230769234,1.0,11.0,0.0,0.613663613247573
 datingsim,open--open,11_difficult-same_gender,Played,0.38461538461538464,0.5063696835418332,0.25641025641025633,0.0,1.0,0.0,0.5385932088581317
@@ -1985,7 +1985,7 @@ datingsim,open--open,12_medium-less_turns,Number of Mismatched Agreements,2.6153
 datingsim,open--open,12_medium-less_turns,Number of Redundancy,0.5384615384615384,1.1982893790305562,1.435897435897436,0.0,4.0,0.0,2.469022882016591
 datingsim,open--open,12_medium-less_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,12_medium-less_turns,Number of completed turns,6.615384615384615,4.46352740812431,19.923076923076923,9.0,10.0,0.0,-0.8952872091398842
-datingsim,open--open,12_medium-less_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,12_medium-less_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,12_medium-less_turns,Out of turns,0.3076923076923077,0.4803844614152614,0.2307692307692308,0.0,1.0,0.0,0.9462118179391512
 datingsim,open--open,12_medium-less_turns,Parsed Request Count,6.615384615384615,4.46352740812431,19.923076923076923,9.0,10.0,0.0,-0.8952872091398842
 datingsim,open--open,12_medium-less_turns,Played,0.38461538461538464,0.5063696835418333,0.2564102564102564,0.0,1.0,0.0,0.5385932088581316
@@ -2012,7 +2012,7 @@ datingsim,open--open,13_medium-more_turns,Number of Mismatched Agreements,2.6153
 datingsim,open--open,13_medium-more_turns,Number of Redundancy,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,open--open,13_medium-more_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,13_medium-more_turns,Number of completed turns,6.923076923076923,3.639174321682014,13.243589743589746,8.0,10.0,0.0,-1.324798858086818
-datingsim,open--open,13_medium-more_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,13_medium-more_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,13_medium-more_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,13_medium-more_turns,Parsed Request Count,6.923076923076923,3.639174321682014,13.243589743589746,8.0,10.0,0.0,-1.324798858086818
 datingsim,open--open,13_medium-more_turns,Played,0.7692307692307693,0.43852900965351466,0.19230769230769237,1.0,1.0,0.0,-1.4511323592170855
@@ -2039,7 +2039,7 @@ datingsim,open--open,1_medium,Number of Mismatched Agreements,2.5384615384615383
 datingsim,open--open,1_medium,Number of Redundancy,0.3076923076923077,0.7510676161988108,0.5641025641025641,0.0,2.0,0.0,2.1787168040147336
 datingsim,open--open,1_medium,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,1_medium,Number of completed turns,5.384615384615385,5.331329751860873,28.42307692307692,7.0,15.0,0.0,0.4177128952851724
-datingsim,open--open,1_medium,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,1_medium,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,1_medium,Out of turns,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463989
 datingsim,open--open,1_medium,Parsed Request Count,5.384615384615385,5.331329751860873,28.42307692307692,7.0,15.0,0.0,0.4177128952851724
 datingsim,open--open,1_medium,Played,0.3076923076923077,0.48038446141526137,0.23076923076923075,0.0,1.0,0.0,0.946211817939151
@@ -2066,7 +2066,7 @@ datingsim,open--open,2_difficult,Number of Mismatched Agreements,2.2307692307692
 datingsim,open--open,2_difficult,Number of Redundancy,2.0,4.102844541697057,16.833333333333332,0.0,12.0,0.0,2.05341499016769
 datingsim,open--open,2_difficult,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,2_difficult,Number of completed turns,7.153846153846154,6.066934341798361,36.807692307692314,8.0,15.0,0.0,-0.01230689876616164
-datingsim,open--open,2_difficult,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,2_difficult,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,2_difficult,Out of turns,0.23076923076923078,0.4385290096535146,0.19230769230769232,0.0,1.0,0.0,1.4511323592170835
 datingsim,open--open,2_difficult,Parsed Request Count,7.153846153846154,6.066934341798361,36.807692307692314,8.0,15.0,0.0,-0.01230689876616164
 datingsim,open--open,2_difficult,Played,0.38461538461538464,0.5063696835418333,0.2564102564102564,0.0,1.0,0.0,0.5385932088581316
@@ -2093,7 +2093,7 @@ datingsim,open--open,3_easy-reprompt,Number of Mismatched Agreements,0.833333333
 datingsim,open--open,3_easy-reprompt,Number of Redundancy,0.4166666666666667,1.1645001528813153,1.3560606060606064,0.0,4.0,0.0,3.14230776873751
 datingsim,open--open,3_easy-reprompt,Number of Reprompts,0.75,0.4522670168666455,0.20454545454545459,1.0,1.0,0.0,-1.3266499161421599
 datingsim,open--open,3_easy-reprompt,Number of completed turns,2.5,4.661252270288825,21.727272727272727,0.0,13.0,0.0,1.5705011588219853
-datingsim,open--open,3_easy-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,3_easy-reprompt,Out of retries,0.75,0.4522670168666455,0.20454545454545459,1.0,1.0,0.0,-1.3266499161421599
 datingsim,open--open,3_easy-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,3_easy-reprompt,Parsed Request Count,2.5,4.661252270288825,21.727272727272727,0.0,13.0,0.0,1.5705011588219853
 datingsim,open--open,3_easy-reprompt,Played,0.25,0.4522670168666455,0.20454545454545459,0.0,1.0,0.0,1.3266499161421599
@@ -2120,7 +2120,7 @@ datingsim,open--open,4_medium-reprompt,Number of Mismatched Agreements,1.6153846
 datingsim,open--open,4_medium-reprompt,Number of Redundancy,0.23076923076923078,0.5991446895152781,0.358974358974359,0.0,2.0,0.0,2.6823952298451874
 datingsim,open--open,4_medium-reprompt,Number of Reprompts,0.6153846153846154,0.5063696835418333,0.2564102564102564,1.0,1.0,0.0,-0.5385932088581317
 datingsim,open--open,4_medium-reprompt,Number of completed turns,4.846153846153846,4.469268281761454,19.974358974358974,2.0,14.0,1.0,0.6825310300783515
-datingsim,open--open,4_medium-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,4_medium-reprompt,Out of retries,0.6153846153846154,0.5063696835418333,0.2564102564102564,1.0,1.0,0.0,-0.5385932088581317
 datingsim,open--open,4_medium-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,4_medium-reprompt,Parsed Request Count,4.846153846153846,4.469268281761454,19.974358974358974,2.0,14.0,1.0,0.6825310300783515
 datingsim,open--open,4_medium-reprompt,Played,0.38461538461538464,0.5063696835418333,0.2564102564102564,0.0,1.0,0.0,0.5385932088581316
@@ -2147,7 +2147,7 @@ datingsim,open--open,5_difficult-reprompt,Number of Mismatched Agreements,4.8333
 datingsim,open--open,5_difficult-reprompt,Number of Redundancy,0.16666666666666666,0.38924947208076144,0.1515151515151515,0.0,1.0,0.0,2.0552372125864204
 datingsim,open--open,5_difficult-reprompt,Number of Reprompts,0.25,0.4522670168666455,0.20454545454545459,0.0,1.0,0.0,1.3266499161421599
 datingsim,open--open,5_difficult-reprompt,Number of completed turns,8.333333333333334,5.314360191257669,28.242424242424246,10.0,15.0,0.0,-0.6418757245500132
-datingsim,open--open,5_difficult-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,5_difficult-reprompt,Out of retries,0.25,0.4522670168666455,0.20454545454545459,0.0,1.0,0.0,1.3266499161421599
 datingsim,open--open,5_difficult-reprompt,Out of turns,0.16666666666666666,0.38924947208076144,0.1515151515151515,0.0,1.0,0.0,2.055237212586421
 datingsim,open--open,5_difficult-reprompt,Parsed Request Count,8.333333333333334,5.314360191257669,28.242424242424246,10.0,15.0,0.0,-0.6418757245500132
 datingsim,open--open,5_difficult-reprompt,Played,0.5833333333333334,0.5149286505444373,0.26515151515151514,1.0,1.0,0.0,-0.38840332498209024
@@ -2174,7 +2174,7 @@ datingsim,open--open,6_easy-themselves,Number of Mismatched Agreements,0.8461538
 datingsim,open--open,6_easy-themselves,Number of Redundancy,0.15384615384615385,0.37553380809940534,0.141025641025641,0.0,1.0,0.0,2.1787168040147322
 datingsim,open--open,6_easy-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,6_easy-themselves,Number of completed turns,2.5384615384615383,3.5734060459498256,12.769230769230768,1.0,9.0,0.0,1.0822923087348397
-datingsim,open--open,6_easy-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,6_easy-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,6_easy-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,6_easy-themselves,Parsed Request Count,2.5384615384615383,3.5734060459498256,12.769230769230768,1.0,9.0,0.0,1.0822923087348397
 datingsim,open--open,6_easy-themselves,Played,0.23076923076923078,0.4385290096535146,0.1923076923076923,0.0,1.0,0.0,1.4511323592170844
@@ -2201,7 +2201,7 @@ datingsim,open--open,7_medium-themselves,Number of Mismatched Agreements,1.61538
 datingsim,open--open,7_medium-themselves,Number of Redundancy,0.07692307692307693,0.2773500981126145,0.07692307692307691,0.0,1.0,0.0,3.6055512754639887
 datingsim,open--open,7_medium-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,7_medium-themselves,Number of completed turns,3.4615384615384617,4.771711513621792,22.76923076923077,1.0,15.0,0.0,1.5322759146705072
-datingsim,open--open,7_medium-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,7_medium-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,7_medium-themselves,Out of turns,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,open--open,7_medium-themselves,Parsed Request Count,3.4615384615384617,4.771711513621792,22.76923076923077,1.0,15.0,0.0,1.5322759146705072
 datingsim,open--open,7_medium-themselves,Played,0.23076923076923078,0.4385290096535146,0.1923076923076923,0.0,1.0,0.0,1.4511323592170842
@@ -2228,7 +2228,7 @@ datingsim,open--open,8_difficult-themselves,Number of Mismatched Agreements,2.38
 datingsim,open--open,8_difficult-themselves,Number of Redundancy,1.6153846153846154,3.3050078552216666,10.92307692307692,0.0,12.0,0.0,2.970795335660728
 datingsim,open--open,8_difficult-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,8_difficult-themselves,Number of completed turns,8.153846153846153,4.412976203692806,19.474358974358974,9.0,15.0,0.0,-0.6645562722876786
-datingsim,open--open,8_difficult-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,8_difficult-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,8_difficult-themselves,Out of turns,0.07692307692307693,0.2773500981126146,0.07692307692307693,0.0,1.0,0.0,3.605551275463987
 datingsim,open--open,8_difficult-themselves,Parsed Request Count,8.153846153846153,4.412976203692806,19.474358974358974,9.0,15.0,0.0,-0.6645562722876786
 datingsim,open--open,8_difficult-themselves,Played,0.6923076923076923,0.4803844614152614,0.2307692307692308,1.0,1.0,0.0,-0.9462118179391512
@@ -2255,7 +2255,7 @@ datingsim,open--open,9_easy-same_gender,Number of Mismatched Agreements,1.307692
 datingsim,open--open,9_easy-same_gender,Number of Redundancy,0.23076923076923078,0.5991446895152781,0.358974358974359,0.0,2.0,0.0,2.6823952298451874
 datingsim,open--open,9_easy-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,9_easy-same_gender,Number of completed turns,3.3846153846153846,4.770367937215143,22.75641025641026,1.0,13.0,0.0,1.1604931917843024
-datingsim,open--open,9_easy-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,open--open,9_easy-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,9_easy-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,open--open,9_easy-same_gender,Parsed Request Count,3.3846153846153846,4.770367937215143,22.75641025641026,1.0,13.0,0.0,1.1604931917843024
 datingsim,open--open,9_easy-same_gender,Played,0.3076923076923077,0.48038446141526137,0.23076923076923075,0.0,1.0,0.0,0.946211817939151
@@ -2282,7 +2282,7 @@ datingsim,qwen--qwen,0_easy,Number of Mismatched Agreements,3.3076923076923075,0
 datingsim,qwen--qwen,0_easy,Number of Redundancy,0.38461538461538464,0.7679476477883045,0.5897435897435898,0.0,2.0,0.0,1.7602484492525186
 datingsim,qwen--qwen,0_easy,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,0_easy,Number of completed turns,10.384615384615385,1.660244035197915,2.756410256410256,10.0,14.0,9.0,1.2071889959061366
-datingsim,qwen--qwen,0_easy,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,0_easy,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,0_easy,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,0_easy,Parsed Request Count,10.384615384615385,1.660244035197915,2.756410256410256,10.0,14.0,9.0,1.2071889959061366
 datingsim,qwen--qwen,0_easy,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2309,7 +2309,7 @@ datingsim,qwen--qwen,10_medium-same_gender,Number of Mismatched Agreements,3.076
 datingsim,qwen--qwen,10_medium-same_gender,Number of Redundancy,0.3076923076923077,0.6304251719561152,0.3974358974358974,0.0,2.0,0.0,2.0514014818793362
 datingsim,qwen--qwen,10_medium-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,10_medium-same_gender,Number of completed turns,10.307692307692308,1.7021856236720767,2.8974358974358965,10.0,15.0,8.0,1.8276630223969752
-datingsim,qwen--qwen,10_medium-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,10_medium-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,10_medium-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,10_medium-same_gender,Parsed Request Count,10.307692307692308,1.7021856236720767,2.8974358974358965,10.0,15.0,8.0,1.8276630223969752
 datingsim,qwen--qwen,10_medium-same_gender,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2336,7 +2336,7 @@ datingsim,qwen--qwen,11_difficult-same_gender,Number of Mismatched Agreements,3.
 datingsim,qwen--qwen,11_difficult-same_gender,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,11_difficult-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,11_difficult-same_gender,Number of completed turns,10.153846153846153,0.8006407690254357,0.641025641025641,10.0,12.0,9.0,0.8447779110560764
-datingsim,qwen--qwen,11_difficult-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,11_difficult-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,11_difficult-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,11_difficult-same_gender,Parsed Request Count,10.153846153846153,0.8006407690254357,0.641025641025641,10.0,12.0,9.0,0.8447779110560764
 datingsim,qwen--qwen,11_difficult-same_gender,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2363,7 +2363,7 @@ datingsim,qwen--qwen,12_medium-less_turns,Number of Mismatched Agreements,3.0,0.
 datingsim,qwen--qwen,12_medium-less_turns,Number of Redundancy,0.23076923076923078,0.4385290096535146,0.1923076923076923,0.0,1.0,0.0,1.4511323592170844
 datingsim,qwen--qwen,12_medium-less_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,12_medium-less_turns,Number of completed turns,9.692307692307692,0.48038446141526125,0.23076923076923064,10.0,10.0,9.0,-0.9462118179391461
-datingsim,qwen--qwen,12_medium-less_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,12_medium-less_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,12_medium-less_turns,Out of turns,0.15384615384615385,0.3755338080994054,0.14102564102564102,0.0,1.0,0.0,2.1787168040147336
 datingsim,qwen--qwen,12_medium-less_turns,Parsed Request Count,9.692307692307692,0.48038446141526125,0.23076923076923064,10.0,10.0,9.0,-0.9462118179391461
 datingsim,qwen--qwen,12_medium-less_turns,Played,0.8461538461538461,0.3755338080994054,0.14102564102564102,1.0,1.0,0.0,-2.1787168040147336
@@ -2390,7 +2390,7 @@ datingsim,qwen--qwen,13_medium-more_turns,Number of Mismatched Agreements,3.0769
 datingsim,qwen--qwen,13_medium-more_turns,Number of Redundancy,0.15384615384615385,0.554700196225229,0.30769230769230765,0.0,2.0,0.0,3.605551275463987
 datingsim,qwen--qwen,13_medium-more_turns,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,13_medium-more_turns,Number of completed turns,11.076923076923077,2.059997510578531,4.243589743589745,10.0,15.0,9.0,1.163130067034798
-datingsim,qwen--qwen,13_medium-more_turns,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,13_medium-more_turns,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,13_medium-more_turns,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,13_medium-more_turns,Parsed Request Count,11.076923076923077,2.059997510578531,4.243589743589745,10.0,15.0,9.0,1.163130067034798
 datingsim,qwen--qwen,13_medium-more_turns,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2417,7 +2417,7 @@ datingsim,qwen--qwen,1_medium,Number of Mismatched Agreements,3.076923076923077,
 datingsim,qwen--qwen,1_medium,Number of Redundancy,0.46153846153846156,0.9674179220468452,0.9358974358974358,0.0,3.0,0.0,2.0853806552455567
 datingsim,qwen--qwen,1_medium,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,1_medium,Number of completed turns,10.923076923076923,1.7541160386140584,3.0769230769230766,10.0,15.0,9.0,1.1226840975550028
-datingsim,qwen--qwen,1_medium,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,1_medium,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,1_medium,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,1_medium,Parsed Request Count,10.923076923076923,1.7541160386140584,3.0769230769230766,10.0,15.0,9.0,1.1226840975550028
 datingsim,qwen--qwen,1_medium,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2444,7 +2444,7 @@ datingsim,qwen--qwen,2_difficult,Number of Mismatched Agreements,3.3076923076923
 datingsim,qwen--qwen,2_difficult,Number of Redundancy,0.15384615384615385,0.37553380809940534,0.141025641025641,0.0,1.0,0.0,2.1787168040147327
 datingsim,qwen--qwen,2_difficult,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,2_difficult,Number of completed turns,10.384615384615385,1.043907845426784,1.0897435897435903,10.0,12.0,9.0,0.6208673927352385
-datingsim,qwen--qwen,2_difficult,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,2_difficult,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,2_difficult,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,2_difficult,Parsed Request Count,10.384615384615385,1.043907845426784,1.0897435897435903,10.0,12.0,9.0,0.6208673927352385
 datingsim,qwen--qwen,2_difficult,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2471,7 +2471,7 @@ datingsim,qwen--qwen,3_easy-reprompt,Number of Mismatched Agreements,3.076923076
 datingsim,qwen--qwen,3_easy-reprompt,Number of Redundancy,0.46153846153846156,0.9674179220468453,0.935897435897436,0.0,3.0,0.0,2.0853806552455563
 datingsim,qwen--qwen,3_easy-reprompt,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,3_easy-reprompt,Number of completed turns,10.846153846153847,2.034951016861497,4.141025641025641,10.0,15.0,9.0,1.4373084233038347
-datingsim,qwen--qwen,3_easy-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,3_easy-reprompt,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,3_easy-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,3_easy-reprompt,Parsed Request Count,10.846153846153847,2.034951016861497,4.141025641025641,10.0,15.0,9.0,1.4373084233038347
 datingsim,qwen--qwen,3_easy-reprompt,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2498,7 +2498,7 @@ datingsim,qwen--qwen,4_medium-reprompt,Number of Mismatched Agreements,3.0,0.0,0
 datingsim,qwen--qwen,4_medium-reprompt,Number of Redundancy,0.15384615384615385,0.5547001962252291,0.3076923076923077,0.0,2.0,0.0,3.605551275463989
 datingsim,qwen--qwen,4_medium-reprompt,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,4_medium-reprompt,Number of completed turns,10.153846153846153,1.1435437497937309,1.3076923076923068,10.0,13.0,9.0,1.6273645561707595
-datingsim,qwen--qwen,4_medium-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,4_medium-reprompt,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,4_medium-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,4_medium-reprompt,Parsed Request Count,10.153846153846153,1.1435437497937309,1.3076923076923068,10.0,13.0,9.0,1.6273645561707595
 datingsim,qwen--qwen,4_medium-reprompt,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2525,7 +2525,7 @@ datingsim,qwen--qwen,5_difficult-reprompt,Number of Mismatched Agreements,3.3846
 datingsim,qwen--qwen,5_difficult-reprompt,Number of Redundancy,0.46153846153846156,0.7762500258061849,0.6025641025641026,0.0,2.0,0.0,1.4128331882507232
 datingsim,qwen--qwen,5_difficult-reprompt,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,5_difficult-reprompt,Number of completed turns,10.923076923076923,1.55250005161237,2.410256410256411,10.0,14.0,9.0,0.6232537940233013
-datingsim,qwen--qwen,5_difficult-reprompt,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,5_difficult-reprompt,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,5_difficult-reprompt,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,5_difficult-reprompt,Parsed Request Count,10.923076923076923,1.55250005161237,2.410256410256411,10.0,14.0,9.0,0.6232537940233013
 datingsim,qwen--qwen,5_difficult-reprompt,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2552,7 +2552,7 @@ datingsim,qwen--qwen,6_easy-themselves,Number of Mismatched Agreements,3.0,0.0,0
 datingsim,qwen--qwen,6_easy-themselves,Number of Redundancy,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,6_easy-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,6_easy-themselves,Number of completed turns,9.461538461538462,0.6602252917735245,0.4358974358974356,10.0,10.0,8.0,-0.8626126924760417
-datingsim,qwen--qwen,6_easy-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,6_easy-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,6_easy-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,6_easy-themselves,Parsed Request Count,9.461538461538462,0.6602252917735245,0.4358974358974356,10.0,10.0,8.0,-0.8626126924760417
 datingsim,qwen--qwen,6_easy-themselves,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2579,7 +2579,7 @@ datingsim,qwen--qwen,7_medium-themselves,Number of Mismatched Agreements,3.0,0.0
 datingsim,qwen--qwen,7_medium-themselves,Number of Redundancy,0.15384615384615385,0.554700196225229,0.30769230769230765,0.0,2.0,0.0,3.6055512754639873
 datingsim,qwen--qwen,7_medium-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,7_medium-themselves,Number of completed turns,9.153846153846153,1.5191090506254998,2.3076923076923075,9.0,13.0,8.0,1.5499515677139581
-datingsim,qwen--qwen,7_medium-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,7_medium-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,7_medium-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,7_medium-themselves,Parsed Request Count,9.153846153846153,1.5191090506254998,2.3076923076923075,9.0,13.0,8.0,1.5499515677139581
 datingsim,qwen--qwen,7_medium-themselves,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2606,7 +2606,7 @@ datingsim,qwen--qwen,8_difficult-themselves,Number of Mismatched Agreements,3.07
 datingsim,qwen--qwen,8_difficult-themselves,Number of Redundancy,0.6923076923076923,0.9473309334313419,0.8974358974358975,0.0,3.0,0.0,1.4271127482886476
 datingsim,qwen--qwen,8_difficult-themselves,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,8_difficult-themselves,Number of completed turns,10.461538461538462,1.7614096918559583,3.1025641025641018,10.0,15.0,9.0,1.7511672209838542
-datingsim,qwen--qwen,8_difficult-themselves,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,8_difficult-themselves,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,8_difficult-themselves,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,8_difficult-themselves,Parsed Request Count,10.461538461538462,1.7614096918559583,3.1025641025641018,10.0,15.0,9.0,1.7511672209838542
 datingsim,qwen--qwen,8_difficult-themselves,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0
@@ -2633,7 +2633,7 @@ datingsim,qwen--qwen,9_easy-same_gender,Number of Mismatched Agreements,3.153846
 datingsim,qwen--qwen,9_easy-same_gender,Number of Redundancy,0.15384615384615385,0.37553380809940534,0.141025641025641,0.0,1.0,0.0,2.1787168040147327
 datingsim,qwen--qwen,9_easy-same_gender,Number of Reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,9_easy-same_gender,Number of completed turns,9.615384615384615,0.6504436355879909,0.4230769230769231,10.0,11.0,9.0,0.5717648787663054
-datingsim,qwen--qwen,9_easy-same_gender,Out of reprompts,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+datingsim,qwen--qwen,9_easy-same_gender,Out of retries,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,9_easy-same_gender,Out of turns,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 datingsim,qwen--qwen,9_easy-same_gender,Parsed Request Count,9.615384615384615,0.6504436355879909,0.4230769230769231,10.0,11.0,9.0,0.5717648787663054
 datingsim,qwen--qwen,9_easy-same_gender,Played,1.0,0.0,0.0,1.0,1.0,1.0,0.0

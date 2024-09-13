@@ -13,7 +13,7 @@
 31471,Number of Redundancy,0.0
 31472,Friendzoned,0.0
 31473,Out of turns,0.0
-31474,Out of reprompts,0.0
+31474,Out of retries,0.0
 31475,Turn penalty,10.0
 31476,Agreement penalty,7.5
 31477,Inefficiency penalty,0.0

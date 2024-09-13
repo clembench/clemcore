@@ -13,7 +13,7 @@
 21149,Number of Redundancy,0.0
 21150,Friendzoned,0.0
 21151,Out of turns,0.0
-21152,Out of reprompts,0.0
+21152,Out of retries,0.0
 21153,Turn penalty,5.0
 21154,Agreement penalty,7.5
 21155,Inefficiency penalty,0.0

@@ -13,7 +13,7 @@
 6823,Number of Redundancy,0.0
 6824,Friendzoned,0.0
 6825,Out of turns,0.0
-6826,Out of reprompts,0.0
+6826,Out of retries,0.0
 6827,Turn penalty,10.0
 6828,Agreement penalty,7.5
 6829,Inefficiency penalty,0.0

@@ -13,7 +13,7 @@
 7031,Number of Redundancy,1.0
 7032,Friendzoned,0.0
 7033,Out of turns,0.0
-7034,Out of reprompts,0.0
+7034,Out of retries,0.0
 7035,Turn penalty,15.0
 7036,Agreement penalty,0.0
 7037,Inefficiency penalty,10.0

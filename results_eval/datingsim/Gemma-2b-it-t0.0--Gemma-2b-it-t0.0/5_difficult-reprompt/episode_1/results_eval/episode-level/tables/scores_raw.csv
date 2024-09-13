@@ -13,7 +13,7 @@
 3079,Number of Redundancy,0.0
 3080,Friendzoned,0.0
 3081,Out of turns,0.0
-3082,Out of reprompts,0.0
+3082,Out of retries,1.0
 3083,Turn penalty,0.0
 3084,Agreement penalty,22.5
 3085,Inefficiency penalty,0.0

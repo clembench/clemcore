@@ -13,7 +13,7 @@
 12023,Number of Redundancy,0.0
 12024,Friendzoned,0.0
 12025,Out of turns,0.0
-12026,Out of reprompts,0.0
+12026,Out of retries,1.0
 12027,Turn penalty,0.0
 12028,Agreement penalty,22.5
 12029,Inefficiency penalty,0.0

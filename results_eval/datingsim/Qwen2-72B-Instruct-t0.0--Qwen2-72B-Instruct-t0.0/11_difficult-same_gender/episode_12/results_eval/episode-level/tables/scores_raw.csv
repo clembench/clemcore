@@ -13,7 +13,7 @@
 29105,Number of Redundancy,0.0
 29106,Friendzoned,0.0
 29107,Out of turns,0.0
-29108,Out of reprompts,0.0
+29108,Out of retries,0.0
 29109,Turn penalty,10.0
 29110,Agreement penalty,0.0
 29111,Inefficiency penalty,0.0

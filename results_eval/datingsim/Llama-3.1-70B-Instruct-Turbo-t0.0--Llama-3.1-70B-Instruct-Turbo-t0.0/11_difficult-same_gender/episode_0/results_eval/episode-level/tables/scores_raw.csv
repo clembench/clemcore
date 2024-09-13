@@ -13,7 +13,7 @@
 5419,Number of Redundancy,0.0
 5420,Friendzoned,0.0
 5421,Out of turns,0.0
-5422,Out of reprompts,0.0
+5422,Out of retries,0.0
 5423,Turn penalty,10.0
 5424,Agreement penalty,0.0
 5425,Inefficiency penalty,0.0

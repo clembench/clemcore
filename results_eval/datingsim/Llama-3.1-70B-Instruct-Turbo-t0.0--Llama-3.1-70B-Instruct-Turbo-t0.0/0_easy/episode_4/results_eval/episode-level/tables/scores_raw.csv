@@ -13,7 +13,7 @@
 4925,Number of Redundancy,1.0
 4926,Friendzoned,0.0
 4927,Out of turns,0.0
-4928,Out of reprompts,0.0
+4928,Out of retries,0.0
 4929,Turn penalty,0.0
 4930,Agreement penalty,15.0
 4931,Inefficiency penalty,10.0

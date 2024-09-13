@@ -13,7 +13,7 @@
 16651,Number of Redundancy,0.0
 16652,Friendzoned,0.0
 16653,Out of turns,0.0
-16654,Out of reprompts,0.0
+16654,Out of retries,1.0
 16655,Turn penalty,0.0
 16656,Agreement penalty,22.5
 16657,Inefficiency penalty,0.0

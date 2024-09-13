@@ -13,7 +13,7 @@
 19303,Number of Redundancy,0.0
 19304,Friendzoned,0.0
 19305,Out of turns,1.0
-19306,Out of reprompts,0.0
+19306,Out of retries,0.0
 19307,Turn penalty,25.0
 19308,Agreement penalty,22.5
 19309,Inefficiency penalty,0.0

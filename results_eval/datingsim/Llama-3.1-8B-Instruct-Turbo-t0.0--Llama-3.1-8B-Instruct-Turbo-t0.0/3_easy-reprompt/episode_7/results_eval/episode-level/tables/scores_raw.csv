@@ -13,7 +13,7 @@
 12101,Number of Redundancy,0.0
 12102,Friendzoned,0.0
 12103,Out of turns,0.0
-12104,Out of reprompts,0.0
+12104,Out of retries,1.0
 12105,Turn penalty,0.0
 12106,Agreement penalty,22.5
 12107,Inefficiency penalty,0.0

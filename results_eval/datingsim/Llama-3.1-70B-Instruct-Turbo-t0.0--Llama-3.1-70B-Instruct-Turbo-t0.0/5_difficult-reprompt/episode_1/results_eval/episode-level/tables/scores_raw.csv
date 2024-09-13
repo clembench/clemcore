@@ -13,7 +13,7 @@
 7811,Number of Redundancy,0.0
 7812,Friendzoned,0.0
 7813,Out of turns,0.0
-7814,Out of reprompts,0.0
+7814,Out of retries,0.0
 7815,Turn penalty,10.0
 7816,Agreement penalty,7.5
 7817,Inefficiency penalty,0.0

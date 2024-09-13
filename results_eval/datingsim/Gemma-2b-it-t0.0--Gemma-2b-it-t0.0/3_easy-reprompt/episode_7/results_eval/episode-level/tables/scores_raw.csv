@@ -13,7 +13,7 @@
 2637,Number of Redundancy,0.0
 2638,Friendzoned,0.0
 2639,Out of turns,0.0
-2640,Out of reprompts,0.0
+2640,Out of retries,1.0
 2641,Turn penalty,0.0
 2642,Agreement penalty,22.5
 2643,Inefficiency penalty,0.0

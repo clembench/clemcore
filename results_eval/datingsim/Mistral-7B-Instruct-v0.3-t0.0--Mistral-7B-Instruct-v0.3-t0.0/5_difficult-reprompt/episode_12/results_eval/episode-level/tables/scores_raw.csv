@@ -13,7 +13,7 @@
 17327,Number of Redundancy,0.0
 17328,Friendzoned,0.0
 17329,Out of turns,0.0
-17330,Out of reprompts,0.0
+17330,Out of retries,1.0
 17331,Turn penalty,0.0
 17332,Agreement penalty,22.5
 17333,Inefficiency penalty,0.0

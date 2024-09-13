@@ -13,7 +13,7 @@
 8071,Number of Redundancy,0.0
 8072,Friendzoned,0.0
 8073,Out of turns,1.0
-8074,Out of reprompts,0.0
+8074,Out of retries,0.0
 8075,Turn penalty,25.0
 8076,Agreement penalty,7.5
 8077,Inefficiency penalty,0.0

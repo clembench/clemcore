@@ -13,7 +13,7 @@
 12699,Number of Redundancy,0.0
 12700,Friendzoned,0.0
 12701,Out of turns,0.0
-12702,Out of reprompts,0.0
+12702,Out of retries,1.0
 12703,Turn penalty,0.0
 12704,Agreement penalty,22.5
 12705,Inefficiency penalty,0.0

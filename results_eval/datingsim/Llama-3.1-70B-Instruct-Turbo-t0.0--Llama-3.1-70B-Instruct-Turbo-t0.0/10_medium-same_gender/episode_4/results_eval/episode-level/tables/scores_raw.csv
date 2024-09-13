@@ -13,7 +13,7 @@
 5263,Number of Redundancy,0.0
 5264,Friendzoned,0.0
 5265,Out of turns,0.0
-5266,Out of reprompts,0.0
+5266,Out of retries,0.0
 5267,Turn penalty,10.0
 5268,Agreement penalty,7.5
 5269,Inefficiency penalty,0.0

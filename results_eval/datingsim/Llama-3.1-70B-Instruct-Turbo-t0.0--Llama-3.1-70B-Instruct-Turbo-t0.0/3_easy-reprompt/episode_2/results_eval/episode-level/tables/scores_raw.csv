@@ -13,7 +13,7 @@
 7239,Number of Redundancy,0.0
 7240,Friendzoned,0.0
 7241,Out of turns,0.0
-7242,Out of reprompts,0.0
+7242,Out of retries,0.0
 7243,Turn penalty,5.0
 7244,Agreement penalty,7.5
 7245,Inefficiency penalty,0.0

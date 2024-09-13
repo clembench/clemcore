@@ -13,7 +13,7 @@
 5003,Number of Redundancy,0.0
 5004,Friendzoned,0.0
 5005,Out of turns,0.0
-5006,Out of reprompts,0.0
+5006,Out of retries,0.0
 5007,Turn penalty,25.0
 5008,Agreement penalty,7.5
 5009,Inefficiency penalty,0.0

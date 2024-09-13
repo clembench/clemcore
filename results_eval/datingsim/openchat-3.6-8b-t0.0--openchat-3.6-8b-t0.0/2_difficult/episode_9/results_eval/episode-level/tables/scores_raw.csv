@@ -13,7 +13,7 @@
 25985,Number of Redundancy,3.0
 25986,Friendzoned,0.0
 25987,Out of turns,0.0
-25988,Out of reprompts,0.0
+25988,Out of retries,0.0
 25989,Turn penalty,5.0
 25990,Agreement penalty,7.5
 25991,Inefficiency penalty,30.0

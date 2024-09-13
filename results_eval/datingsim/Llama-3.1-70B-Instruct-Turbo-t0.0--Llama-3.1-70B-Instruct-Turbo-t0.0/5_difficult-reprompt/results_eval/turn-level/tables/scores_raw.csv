@@ -1,4 +1,4 @@
-episode,turn,Action agreement,Already agreed,Location agreement,Mismatch agreement,Out of reprompts,Parsed Request Count,Request Count,Success,Time agreement,Turn Friendzone,Turn Reprompts,Violated Request Count,Violated pattern,Violated token length
+episode,turn,Action agreement,Already agreed,Location agreement,Mismatch agreement,Out of retries,Parsed Request Count,Request Count,Success,Time agreement,Turn Friendzone,Turn Reprompts,Violated Request Count,Violated pattern,Violated token length
 episode_0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_0,10,0,0,0,1,0,1,1,0,0,0,0,0,0,0
@@ -58,14 +58,14 @@ episode_12,3,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_12,4,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_12,5,0,0,1,0,0,1,1,0,0,0,0,0,0,0
 episode_12,6,0,0,0,1,0,1,1,0,0,0,0,0,0,0
-episode_12,7,0,0,0,0,0,0,1,0,0,0,1,1,1,0
+episode_12,7,0,0,0,0,1,0,1,0,0,0,1,1,1,0
 episode_2,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_2,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_2,2,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_2,3,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_2,4,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_2,5,0,0,0,0,0,1,1,0,0,0,0,0,0,0
-episode_2,6,0,0,0,0,0,0,1,0,0,0,1,1,1,0
+episode_2,6,0,0,0,0,1,0,1,0,0,0,1,1,1,0
 episode_3,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_3,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
 episode_3,10,0,0,0,1,0,1,1,0,0,0,0,0,0,0
