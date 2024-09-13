@@ -1,0 +1,1 @@
+{"name": "medium-reprompt", "n_turns": 15, "max_retries": 2, "re_prompt_allowed": true, "timestamp": "2024-09-12T14:51:43.710318", "dialogue_partners": "Qwen2-72B-Instruct-t0.0--Qwen2-72B-Instruct-t0.0", "duration": "0:19:07.004438"}
