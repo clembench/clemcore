@@ -715,7 +715,7 @@ class DatingSimGameScorer(GameScorer):
                 "violated_request_count_token_length": 0,
                 "parsed_request_count": 0,
                 "reprompts_count": 0,
-                "out_of_reprompts": 0,
+                "out of retries": 0,
                 "out of turns": 0,
                 "success": 0,
                 "friendzone": 0,
@@ -753,8 +753,8 @@ class DatingSimGameScorer(GameScorer):
                     turn_score["violated_request_count"] += 1
                     turn_score["parsed_request_count"] = 0
                 
-                if action["type"] == "out_of_reprompts":
-                    turn_score["out_of_reprompts"] = 1
+                if action["type"] == "out of retries":
+                    turn_score["out of retries"] = 1
                     aborted = True
 
                 if action["type"] == "out of turns": # no agreement settled in max amount of turns
@@ -799,7 +799,7 @@ class DatingSimGameScorer(GameScorer):
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT_PARSED, turn_score["parsed_request_count"])
             self.log_turn_score(turn_idx, METRIC_REQUEST_COUNT, turn_score["request_count"])
             self.log_turn_score(turn_idx, 'Turn Reprompts', turn_score['reprompts_count']) 
-            self.log_turn_score(turn_idx, 'Out of reprompts', turn_score["out_of_reprompts"])
+            self.log_turn_score(turn_idx, 'Out of retries', turn_score["out of retries"])
             
             self.log_turn_score(turn_idx, 'Success', turn_score["success"]) 
             self.log_turn_score(turn_idx, 'Turn Friendzone', turn_score["friendzone"])
@@ -831,7 +831,7 @@ class DatingSimGameScorer(GameScorer):
         success = sum([turn["success"] for turn in turn_scores]) # technically there is a single turn logged with "succcess", so this one returns 1 or 0
         total_agreements = sum(turn["time agreement"] + turn["location agreement"] + turn["action agreement"] for turn in turn_scores)
         total_friendzones = sum([turn["friendzone"] for turn in turn_scores]) # # technically there is a single turn logged with "success", so this one returns 0 or 1
-        total_out_of_reprompts = sum([turn["out_of_reprompts"] for turn in turn_scores])
+        total_out_of_retries = sum([turn["out of retries"] for turn in turn_scores])
         total_out_of_turns = sum([turn["out of turns"] for turn in turn_scores])
 
         turn_penalty = max(0, (completed_turns - 10)) * 5 # the penalty only applies if the result is positive (if the player takes more than 10 turns)
@@ -856,7 +856,7 @@ class DatingSimGameScorer(GameScorer):
 
         self.log_episode_score("Friendzoned", total_friendzones)
         self.log_episode_score("Out of turns", total_out_of_turns)
-        self.log_episode_score("Out of reprompts", total_out_of_reprompts)
+        self.log_episode_score("Out of retries", total_out_of_retries)
 
         # penalties
         self.log_episode_score("Turn penalty", turn_penalty)
