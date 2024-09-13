@@ -769,6 +769,7 @@ class DatingSimGameScorer(GameScorer):
                 if action["type"] == "friendzone": # mismatch_agreement
                     turn_score["last_message"] = action["content"]
                     turn_score["success"] = 0
+                    turn_score["friendzone"] = 1
                 
                 if action["type"] == "time agreement": #action/location/time
                     turn_score["last_message"] = action["content"]
