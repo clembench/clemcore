@@ -29,7 +29,12 @@ def plot_escore_benchmark(df: pd.DataFrame, ending: str) -> None:
     n_models = len(df.model.unique())
 
     fig, all_axes = plt.subplots(n_games, 1, figsize=(15, n_games * 5))
-    axs = all_axes.flatten()
+    #axs = all_axes.flatten()
+    # Check if all_axes is a single Axes object or an array of Axes
+    if isinstance(all_axes, np.ndarray):
+        axs = all_axes.flatten()
+    else:
+        axs = [all_axes]  # Convert single Axes object to list
 
     for n, (game, df_group) in enumerate(df.groupby('game')):
         g = sns.barplot(data=df_group,

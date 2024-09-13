@@ -854,9 +854,9 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score("Number of Reprompts", error_handling)
         self.log_episode_score("Number of Redundancy", redundancy)
 
-        self.log_episode_score("Friendzoned?", total_friendzones)
-        self.log_episode_score("Out of turns?", total_out_of_turns)
-        self.log_episode_score("Out of reprompts?", total_out_of_reprompts)
+        self.log_episode_score("Friendzoned", total_friendzones)
+        self.log_episode_score("Out of turns", total_out_of_turns)
+        self.log_episode_score("Out of reprompts", total_out_of_reprompts)
 
         # penalties
         self.log_episode_score("Turn penalty", turn_penalty)
@@ -865,9 +865,9 @@ class DatingSimGameScorer(GameScorer):
         self.log_episode_score("Error penalty", error_penalty)
 
         # agreement types
-        self.log_episode_score("Location agreement?", 1 if location_agreement else 0)
-        self.log_episode_score("Action agreement?", 1 if action_agreement else 0)
-        self.log_episode_score("Time agreement?", 1 if time_agreement else 0)
+        self.log_episode_score("Location agreement", 1 if location_agreement else 0)
+        self.log_episode_score("Action agreement", 1 if action_agreement else 0)
+        self.log_episode_score("Time agreement", 1 if time_agreement else 0)
         
         # Common metrics
         if aborted:  # invalid format / ouf of reprompts

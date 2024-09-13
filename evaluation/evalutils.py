@@ -27,7 +27,7 @@ PERC_METRICS = [
     clemmetrics.METRIC_ABORTED,
     clemmetrics.METRIC_LOSE,
     clemmetrics.METRIC_REQUEST_SUCCESS,
-    ]
+]
 
 # metrics that all games log
 COMMON_METRICS = [
@@ -40,52 +40,71 @@ COMMON_METRICS = [
     clemmetrics.METRIC_REQUEST_COUNT_PARSED,
     clemmetrics.METRIC_REQUEST_COUNT_VIOLATED,
     clemmetrics.METRIC_REQUEST_SUCCESS,
-    ]
+]
 
 GAMEPLAY_METRICS = [
     clemmetrics.METRIC_SUCCESS,
     clemmetrics.METRIC_ABORTED,
     clemmetrics.METRIC_LOSE
-    ]
+]
 
 # order of the rows in the main table, to be used as a key in pandas
-ROW_ORDER = ['lm--lm', 'ko--ko', 'flc--flc', 'ost--ost', 'vcn--vcn',
-             'cl--cl',  '3--3', '3.5--3.5', '3.5--4', '4--3.5', '4--4',
+# ROW_ORDER = ['lm--lm', 'ko--ko', 'flc--flc', 'ost--ost', 'vcn--vcn',
+#              'cl--cl',  '3--3', '3.5--3.5', '3.5--4', '4--3.5', '4--4',
+#              clemmetrics.METRIC_PLAYED, clemmetrics.BENCH_SCORE]
+ROW_ORDER = ['gem--gem', 'll8b--ll8b', 'll70b--ll70b', 'mis--mis', 'mix--mix',
+             'open--open', 'qwen--qwen',
              clemmetrics.METRIC_PLAYED, clemmetrics.BENCH_SCORE]
 
 # order of the columns in the main table
-COLUMN_ORDER = ['all', 'taboo', 'wordle', 'wordle_withclue',
-                'wordle_withcritic', 'imagegame', 'referencegame',
-                'privateshared']
+# COLUMN_ORDER = ['all', 'taboo', 'wordle', 'wordle_withclue',
+#                 'wordle_withcritic', 'imagegame', 'referencegame',
+#                 'privateshared']
+COLUMN_ORDER = ['all', 'datingsim']
 
 # shorter names for the models
+# short_names = {
+#
+# "t0.0": "",
+# "claude-v1.3-": "cl",
+# "gpt-3.5-turbo-": "3.5",
+# "gpt-4-": "4",
+# "text-davinci-003-": "3",
+# "luminous-supreme-": "lm",
+# "koala-13b-": "ko",
+# "falcon-40b-": "flc",
+# "oasst-12b-": "ost",
+# "vicuna-13b-": "vcn"
+# }
 short_names = {
     "t0.0": "",
-    "claude-v1.3-": "cl",
-    "gpt-3.5-turbo-": "3.5",
-    "gpt-4-": "4",
-    "text-davinci-003-": "3",
-    "luminous-supreme-": "lm",
-    "koala-13b-": "ko",
-    "falcon-40b-": "flc",
-    "oasst-12b-": "ost",
-    "vicuna-13b-": "vcn"
+    "Gemma-2b-it-": "gem",
+    "Llama-3.1-8B-Instruct-Turbo-": "ll8b",
+    "Llama-3.1-70B-Instruct-Turbo-": "ll70b",
+    "Mistral-7B-Instruct-v0.3-": "mis",
+    "Mixtral-8x22B-Instruct-v0.1-": "mix",
+    "openchat-3.6-8b-": "open",
+    "Qwen2-72B-Instruct-": "qwen"
 }
-
+# "Gemma-2b-it-t0.0-": "gemma",
+# "Llama-3.1-8B-Instruct-Turbo-t0.0-": "ll8b",
+# "Llama-3.1-70B-Instruct-Turbo-t0.0-": "ll70b",
+# "Mistral-7B-Instruct-v0.3-t0.0-": "mis",
+# "Mixtral-8x22B-Instruct-v0.1-t0.0-": "mix",
+# "openchat-3.6-8b-t0.0-": "open",
+# "Qwen2-72B-Instruct-t0.0-": "qwen"
+# 'gm--gm', 'll8b--llb8b', 'll70b--ll70b', 'mis--mis', 'mix--mix',
+#              'open--open', 'qwen-qwen',
 # short names for the scatterplot
 plot_annotations = {
-    '4--4': '4',
-    '3--3': '3',
-    'lm--lm': 'lm',
-    'cl--cl': 'cl',
-    '3.5--3.5': '3.5',
-    '4--3.5': '4/3.5',
-    '3.5--4': '3.5/4',
-    'ko--ko': 'ko',
-    'flc--flc': 'flc',
-    'ost--ost': 'ost',
-    'vcn--vcn': 'vcn'
-    }
+    'gem--gem': 'gem',
+    'll8b--ll8b': 'll8b',
+    'll70b--ll70b': 'll70b',
+    'mis--mis': 'mis',
+    'mix--mix': 'mix',
+    'open--open': 'open',
+    'qwen--qwen': 'qwen'
+}
 
 metric_lims = {
     clemmetrics.BENCH_SCORE: (-2, 102),
@@ -111,7 +130,7 @@ def savefig(name: str) -> None:
 def parse_directory_name(name: str) -> dict:
     """Extract information from the directory name structure."""
 
-    splits = str(name).split('/')
+    splits = str(name).split('\\')
     model, game, experiment, episode, _ = splits[-5:]
     return {'game': game,
             'model': model,
@@ -290,7 +309,7 @@ def save_raw_episode_scores(keys: list, df_scores: pd.DataFrame) -> None:
         df_aux = filter_df_by_key(df_scores, filter_dic)
         df_aux = df_aux.pivot(index=['model', 'episode'],
                               columns=['experiment', 'metric'],
-                              values='value') 
+                              values='value')
         prefix = f'{EVAL_DIR}/{game}/{EVAL_DIR}'
         name = f'{prefix}/episode-level/tables/scores_raw.csv'
         df_aux.to_csv(name)
@@ -324,7 +343,7 @@ def save_raw_turn_scores(keys: list, df_scores: pd.DataFrame) -> None:
         df_aux = filter_df_by_key(df_scores, filter_dic)
         df_aux = df_aux.pivot(index=['episode', 'turn'],
                               columns=['experiment', 'metric'],
-                              values='value') 
+                              values='value')
         prefix = f'{EVAL_DIR}/{game}/{model}/{EVAL_DIR}'
         name = f'{prefix}/turn-level/tables/scores_raw.csv'
         df_aux.to_csv()
@@ -334,7 +353,7 @@ def save_raw_turn_scores(keys: list, df_scores: pd.DataFrame) -> None:
         df_aux = filter_df_by_key(df_scores, filter_dic)
         df_aux = df_aux.pivot(index=['model', 'episode', 'turn'],
                               columns=['experiment', 'metric'],
-                              values='value') 
+                              values='value')
         prefix = f'{EVAL_DIR}/{game}/{EVAL_DIR}'
         name = f'{prefix}/turn-level/tables/scores_raw.csv'
         df_aux.to_csv(name)
