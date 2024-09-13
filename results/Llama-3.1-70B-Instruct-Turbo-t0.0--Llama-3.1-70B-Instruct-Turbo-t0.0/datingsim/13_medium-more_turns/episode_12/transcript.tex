@@ -1,0 +1,600 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 20 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Leo Rodriguez', 'GENDER': 'Male', 'AGE': 35, 'APPEARANCE': 'Tanned skin, warm brown eyes, charming smile, wears stylish glasses.', 'OCCUPATION': 'Travel Photographer', 'LIKES': 'Exploring new places, capturing breathtaking moments, meeting interesting people.', 'DISLIKES': 'Routine, bad weather, being stuck indoors for too long.', 'HOBBIES': 'Learning new languages, playing the guitar, collecting souvenirs from his travels.', 'SUMMARY': "Adventure? I am your man! Let's pack your bags and join me on my next journey."}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Maya Flores', 'GENDER': 'Female', 'AGE': 25, 'APPEARANCE': 'Sparkling brown eyes, infectious laugh, flowing dark hair with colorful streaks, stylish and comfortable clothes.', 'OCCUPATION': 'Graphic Designer', 'SUMMARY': 'I see beauty in the world around me. My enthusiasm is infectious and will make you see the world with fresh eyes.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in getting to know Maya better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Maya, I'm Leo. Your profile caught my eye, and I love the way you see beauty in the world. What's the most beautiful thing you've seen recently? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in getting to know Maya better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Maya, I'm Leo. Your profile caught my eye, and I love the way you see beauty in the world. What's the most beautiful thing you've seen recently? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 20 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Maya Flores', 'GENDER': 'Female', 'AGE': 25, 'APPEARANCE': 'Sparkling brown eyes, infectious laugh, flowing dark hair with colorful streaks, stylish and comfortable clothes.', 'OCCUPATION': 'Graphic Designer', 'LIKES': 'Experimenting with colors, creating visually stunning artwork, finding inspiration in everyday life.', 'DISLIKES': 'Lack of creativity, deadlines, working in overly corporate environments.', 'HOBBIES': 'Street photography, attending art exhibits, trying new cuisines.', 'SUMMARY': 'I see beauty in the world around me. My enthusiasm is infectious and will make you see the world with fresh eyes.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Leo Rodriguez', 'GENDER': 'Male', 'AGE': 35, 'APPEARANCE': 'Tanned skin, warm brown eyes, charming smile, wears stylish glasses.', 'OCCUPATION': 'Travel Photographer', 'SUMMARY': "Adventure? I am your man! Let's pack your bags and join me on my next journey."}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi Maya, I'm Leo. Your profile caught my eye, and I love the way you see beauty in the world. What's the most beautiful thing you've seen recently? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I want to get to know Leo better and see if we have common interests before discussing the date details. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Leo, thanks for the compliment! I recently stumbled upon a hidden street art alley in the city, and it was breathtaking. The colors, the creativity, it all just came together in a beautiful way. What about you, what's the most beautiful thing you've captured with your lens lately? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to get to know Leo better and see if we have common interests before discussing the date details. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Leo, thanks for the compliment! I recently stumbled upon a hidden street art alley in the city, and it was breathtaking. The colors, the creativity, it all just came together in a beautiful way. What about you, what's the most beautiful thing you've captured with your lens lately? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Maya Flores 's Message:  Hi Leo, thanks for the compliment! I recently stumbled upon a hidden street art alley in the city, and it was breathtaking. The colors, the creativity, it all just came together in a beautiful way. What about you, what's the most beautiful thing you've captured with your lens lately? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to share my passion for photography and see if Maya is interested in exploring new places. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds amazing, I'd love to see that alley. As for me, I recently captured a stunning sunset over the mountains in New Zealand. It was truly breathtaking. Speaking of which, I was thinking of planning a hike for our first date, would you be up for that? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to share my passion for photography and see if Maya is interested in exploring new places. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds amazing, I'd love to see that alley. As for me, I recently captured a stunning sunset over the mountains in New Zealand. It was truly breathtaking. Speaking of which, I was thinking of planning a hike for our first date, would you be up for that? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Leo Rodriguez 's Message:  That sounds amazing, I'd love to see that alley. As for me, I recently captured a stunning sunset over the mountains in New Zealand. It was truly breathtaking. Speaking of which, I was thinking of planning a hike for our first date, would you be up for that? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I'm not sure if I'm up for a hike, I'd like to discuss the details and see if it's something I'd enjoy. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Wow, a sunset over the mountains sounds incredible. I'd love to see your photos sometime. As for the hike, I'm not sure... I'm more of a city girl, I don't know if I'm ready for a long hike. What kind of hike were you thinking of, and how long would it take? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm not sure if I'm up for a hike, I'd like to discuss the details and see if it's something I'd enjoy. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Wow, a sunset over the mountains sounds incredible. I'd love to see your photos sometime. As for the hike, I'm not sure... I'm more of a city girl, I don't know if I'm ready for a long hike. What kind of hike were you thinking of, and how long would it take? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Maya Flores 's Message:  Wow, a sunset over the mountains sounds incredible. I'd love to see your photos sometime. As for the hike, I'm not sure... I'm more of a city girl, I don't know if I'm ready for a long hike. What kind of hike were you thinking of, and how long would it take? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to address Maya's concerns and find a compromise that works for both of us. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I completely understand, I didn't mean to scare you off. I was thinking of a shorter, more leisurely hike, maybe a few hours max. But if you're not comfortable with that, we could always explore the city instead. I've heard there are some great rooftop bars with amazing views, or we could check out that street art alley you mentioned. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to address Maya's concerns and find a compromise that works for both of us. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I completely understand, I didn't mean to scare you off. I was thinking of a shorter, more leisurely hike, maybe a few hours max. But if you're not comfortable with that, we could always explore the city instead. I've heard there are some great rooftop bars with amazing views, or we could check out that street art alley you mentioned. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Leo Rodriguez 's Message:  I completely understand, I didn't mean to scare you off. I was thinking of a shorter, more leisurely hike, maybe a few hours max. But if you're not comfortable with that, we could always explore the city instead. I've heard there are some great rooftop bars with amazing views, or we could check out that street art alley you mentioned. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I appreciate Leo's flexibility and willingness to consider my preferences, and I'd like to discuss the location further. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds much more manageable, thank you for understanding. I think the rooftop bar idea sounds great, I love a good view. But I'm also curious about the street art alley, it's a really unique spot. Would you be up for a compromise, maybe we could grab a drink at a rooftop bar and then check out the alley afterwards? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I appreciate Leo's flexibility and willingness to consider my preferences, and I'd like to discuss the location further. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds much more manageable, thank you for understanding. I think the rooftop bar idea sounds great, I love a good view. But I'm also curious about the street art alley, it's a really unique spot. Would you be up for a compromise, maybe we could grab a drink at a rooftop bar and then check out the alley afterwards? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Maya Flores 's Message:  That sounds much more manageable, thank you for understanding. I think the rooftop bar idea sounds great, I love a good view. But I'm also curious about the street art alley, it's a really unique spot. Would you be up for a compromise, maybe we could grab a drink at a rooftop bar and then check out the alley afterwards? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to agree on a plan that Maya is comfortable with and that combines our interests. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I love that idea, it sounds like the perfect combination of relaxation and exploration. Grabbing a drink at a rooftop bar and then checking out the street art alley afterwards sounds like a great plan to me. Now, what about the timing? Would you prefer to meet during the day, or maybe in the evening when the city lights are on? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to agree on a plan that Maya is comfortable with and that combines our interests. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I love that idea, it sounds like the perfect combination of relaxation and exploration. Grabbing a drink at a rooftop bar and then checking out the street art alley afterwards sounds like a great plan to me. Now, what about the timing? Would you prefer to meet during the day, or maybe in the evening when the city lights are on? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Leo Rodriguez 's Message:  I love that idea, it sounds like the perfect combination of relaxation and exploration. Grabbing a drink at a rooftop bar and then checking out the street art alley afterwards sounds like a great plan to me. Now, what about the timing? Would you prefer to meet during the day, or maybe in the evening when the city lights are on? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I'm glad we have a plan for the action, now I'd like to discuss the timing to see what works best for both of us. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I think the evening would be perfect, the city lights would add an extra layer of magic to the street art alley. Plus, it would be a great way to unwind after a long day. How about we plan for around 6 or 7 pm? Would that work for you? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm glad we have a plan for the action, now I'd like to discuss the timing to see what works best for both of us. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I think the evening would be perfect, the city lights would add an extra layer of magic to the street art alley. Plus, it would be a great way to unwind after a long day. How about we plan for around 6 or 7 pm? Would that work for you? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Maya Flores 's Message:  I think the evening would be perfect, the city lights would add an extra layer of magic to the street art alley. Plus, it would be a great way to unwind after a long day. How about we plan for around 6 or 7 pm? Would that work for you? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to agree on a time that works for both of us and finalize the details. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 6 or 7 pm sounds perfect, I'm a big fan of the evening light, and it'll be great for capturing some photos of the alley. How about we plan to meet at 6:30 pm, that way we can grab a drink at the rooftop bar and then head to the alley when the lights are really coming alive? Now, where would you like to meet, at the rooftop bar or somewhere else? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to agree on a time that works for both of us and finalize the details. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 6 or 7 pm sounds perfect, I'm a big fan of the evening light, and it'll be great for capturing some photos of the alley. How about we plan to meet at 6:30 pm, that way we can grab a drink at the rooftop bar and then head to the alley when the lights are really coming alive? Now, where would you like to meet, at the rooftop bar or somewhere else? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Leo Rodriguez 's Message:  6 or 7 pm sounds perfect, I'm a big fan of the evening light, and it'll be great for capturing some photos of the alley. How about we plan to meet at 6:30 pm, that way we can grab a drink at the rooftop bar and then head to the alley when the lights are really coming alive? Now, where would you like to meet, at the rooftop bar or somewhere else? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] We've agreed on the action and time, now I'd like to finalize the location details. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds like a great plan, 6:30 pm it is. As for meeting up, I think it would be easiest to meet at the rooftop bar, that way we can start with drinks and then head to the alley from there. How about we meet at the rooftop bar at the Azure Hotel, I've heard great things about their view? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] We've agreed on the action and time, now I'd like to finalize the location details. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds like a great plan, 6:30 pm it is. As for meeting up, I think it would be easiest to meet at the rooftop bar, that way we can start with drinks and then head to the alley from there. How about we meet at the rooftop bar at the Azure Hotel, I've heard great things about their view? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Maya Flores 's Message:  That sounds like a great plan, 6:30 pm it is. As for meeting up, I think it would be easiest to meet at the rooftop bar, that way we can start with drinks and then head to the alley from there. How about we meet at the rooftop bar at the Azure Hotel, I've heard great things about their view? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to finalize the location and confirm the plans. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] The Azure Hotel sounds perfect, I've heard great things about their rooftop bar too. I'll make sure to meet you there at 6:30 pm. So, to confirm, we've got a plan: 6:30 pm at the Azure Hotel rooftop bar, followed by a visit to the street art alley. I'm really looking forward to it, Maya. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to finalize the location and confirm the plans. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] The Azure Hotel sounds perfect, I've heard great things about their rooftop bar too. I'll make sure to meet you there at 6:30 pm. So, to confirm, we've got a plan: 6:30 pm at the Azure Hotel rooftop bar, followed by a visit to the street art alley. I'm really looking forward to it, Maya. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on location successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Leo Rodriguez 's Message:  The Azure Hotel sounds perfect, I've heard great things about their rooftop bar too. I'll make sure to meet you there at 6:30 pm. So, to confirm, we've got a plan: 6:30 pm at the Azure Hotel rooftop bar, followed by a visit to the street art alley. I'm really looking forward to it, Maya. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] We've agreed on the time, location, and action, now I'd like to confirm the overall agreement. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad we've got a plan, Leo. Just to confirm, we've agreed on 6:30 pm as the time, the Azure Hotel rooftop bar as the location, and grabbing a drink followed by a visit to the street art alley as the action. I'm really looking forward to it too, see you then! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] We've agreed on the time, location, and action, now I'd like to confirm the overall agreement. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad we've got a plan, Leo. Just to confirm, we've agreed on 6:30 pm as the time, the Azure Hotel rooftop bar as the location, and grabbing a drink followed by a visit to the street art alley as the action. I'm really looking forward to it too, see you then! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Maya Flores 's Message:  I'm glad we've got a plan, Leo. Just to confirm, we've agreed on 6:30 pm as the time, the Azure Hotel rooftop bar as the location, and grabbing a drink followed by a visit to the street art alley as the action. I'm really looking forward to it too, see you then! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to confirm that we have a mutual understanding of the plans and express my excitement for the date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] That's correct, we've got a great plan in place. I'm really excited to meet you in person, Maya, and I think we're going to have a fantastic time together. See you at 6:30 pm at the Azure Hotel rooftop bar! [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to confirm that we have a mutual understanding of the plans and express my excitement for the date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] That's correct, we've got a great plan in place. I'm really excited to meet you in person, Maya, and I think we're going to have a fantastic time together. See you at 6:30 pm at the Azure Hotel rooftop bar! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Leo Rodriguez 's Message:  That's correct, we've got a great plan in place. I'm really excited to meet you in person, Maya, and I think we're going to have a fantastic time together. See you at 6:30 pm at the Azure Hotel rooftop bar! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] We've confirmed all the details and I'm happy with the plan. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Me too, Leo! I'm looking forward to meeting you and exploring the city together. See you soon! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] We've confirmed all the details and I'm happy with the plan. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Me too, Leo! I'm looking forward to meeting you and exploring the city together. See you soon! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

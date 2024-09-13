@@ -1,0 +1,444 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Riley Taylor', 'GENDER': 'Non-binary', 'AGE': 38, 'APPEARANCE': 'Short silver hair, dark eyes, modern professional attire, glasses, calm and composed.', 'OCCUPATION': 'Architect', 'LIKES': 'Modern design, sustainability, jazz music.', 'DISLIKES': 'Wastefulness, misinformation, extreme heat.', 'HOBBIES': 'Sketching, visiting art museums, playing the saxophone.', 'SUMMARY': 'I am an architect with a passion for modern design and sustainability.'}\\ \tt \\ \tt This is the character of the other player: {'NAME': 'Hiro Suzuki', 'GENDER': 'Male', 'AGE': 21, 'APPEARANCE': 'Bright blue hair (dyed), energetic eyes, playful grin, wears trendy clothes.', 'OCCUPATION': 'Up-and-Coming Esports Player (Streamer)', 'LIKES': 'Gaming, sharing his passion with his viewers, pushing his limits.', 'DISLIKES': 'Losing, negativity, feeling stagnant.', 'HOBBIES': 'Exercising, attending gaming conventions, trying out new games.', 'SUMMARY': 'Esports player who likes to connect with his viewers.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm excited to meet someone new and share our interests. [end]\\ \tt [sentiment] Continue Conversation [end]\\ \tt [response] Hi Hiro, I'm Riley Taylor. I'm really intrigued by your passion for gaming and esports. I'd love to find a way to combine our interests for our first date. How about we start by discussing a time that works for both of us? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm excited to meet someone new and share our interests. [end]\\ \tt [sentiment] Continue Conversation [end]\\ \tt [response] Hi Hiro, I'm Riley Taylor. I'm really intrigued by your passion for gaming and esports. I'd love to find a way to combine our interests for our first date. How about we start by discussing a time that works for both of us? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Hiro Suzuki', 'GENDER': 'Male', 'AGE': 21, 'APPEARANCE': 'Bright blue hair (dyed), energetic eyes, playful grin, wears trendy clothes.', 'OCCUPATION': 'Up-and-Coming Esports Player (Streamer)', 'LIKES': 'Gaming, sharing his passion with his viewers, pushing his limits.', 'DISLIKES': 'Losing, negativity, feeling stagnant.', 'HOBBIES': 'Exercising, attending gaming conventions, trying out new games.', 'SUMMARY': 'Esports player who likes to connect with his viewers.'}\\ \tt \\ \tt This is the character of the other player: {'NAME': 'Riley Taylor', 'GENDER': 'Non-binary', 'AGE': 38, 'APPEARANCE': 'Short silver hair, dark eyes, modern professional attire, glasses, calm and composed.', 'OCCUPATION': 'Architect', 'LIKES': 'Modern design, sustainability, jazz music.', 'DISLIKES': 'Wastefulness, misinformation, extreme heat.', 'HOBBIES': 'Sketching, visiting art museums, playing the saxophone.', 'SUMMARY': 'I am an architect with a passion for modern design and sustainability.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi Hiro, I'm Riley Taylor. I'm really intrigued by your passion for gaming and esports. I'd love to find a way to combine our interests for our first date. How about we start by discussing a time that works for both of us? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Riley's suggestion to combine our interests for our first date aligns with my goal of connecting with people through my passion for gaming. I appreciate their initiative in starting the conversation about finding a suitable time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Riley, it's great to meet you! I'm excited to explore how we can blend our interests. I'm usually free on weekends, but I can also make time during the week after my streaming sessions. What time works best for you? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Riley's suggestion to combine our interests for our first date aligns with my goal of connecting with people through my passion for gaming. I appreciate their initiative in starting the conversation about finding a suitable time. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Riley, it's great to meet you! I'm excited to explore how we can blend our interests. I'm usually free on weekends, but I can also make time during the week after my streaming sessions. What time works best for you? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Hiro Suzuki 's Message:  Hi Riley, it's great to meet you! I'm excited to explore how we can blend our interests. I'm usually free on weekends, but I can also make time during the week after my streaming sessions. What time works best for you? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I appreciate Hiro's flexibility and willingness to make time for our date. [end]\\ \tt [sentiment] Agreement on Time [end]\\ \tt [response] That's great, Hiro! I'm also free on weekends, and I think a Saturday afternoon would be perfect for our first date. How does that sound to you? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I appreciate Hiro's flexibility and willingness to make time for our date. [end]\\ \tt [sentiment] Agreement on Time [end]\\ \tt [response] That's great, Hiro! I'm also free on weekends, and I think a Saturday afternoon would be perfect for our first date. How does that sound to you? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Riley Taylor 's Message:  That's great, Hiro! I'm also free on weekends, and I think a Saturday afternoon would be perfect for our first date. How does that sound to you? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] A Saturday afternoon date sounds like a good time for me, as I usually have more energy during the day and can fully enjoy the experience. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] A Saturday afternoon date sounds perfect to me, Riley! I'm looking forward to our first date. Now, let's discuss where we should go. Any ideas? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] A Saturday afternoon date sounds like a good time for me, as I usually have more energy during the day and can fully enjoy the experience. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] A Saturday afternoon date sounds perfect to me, Riley! I'm looking forward to our first date. Now, let's discuss where we should go. Any ideas? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on time successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Hiro Suzuki 's Message:  A Saturday afternoon date sounds perfect to me, Riley! I'm looking forward to our first date. Now, let's discuss where we should go. Any ideas? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm glad Hiro is on board with the time, and I'm excited to suggest a location that combines our interests. [end]\\ \tt [sentiment] Continue Conversation [end]\\ \tt [response] I'm glad you're looking forward to it, Hiro! I was thinking we could visit a modern art museum that has an exhibit on video game art. It would be a great way to combine our interests in modern design and gaming. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm glad Hiro is on board with the time, and I'm excited to suggest a location that combines our interests. [end]\\ \tt [sentiment] Continue Conversation [end]\\ \tt [response] I'm glad you're looking forward to it, Hiro! I was thinking we could visit a modern art museum that has an exhibit on video game art. It would be a great way to combine our interests in modern design and gaming. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Riley Taylor 's Message:  I'm glad you're looking forward to it, Hiro! I was thinking we could visit a modern art museum that has an exhibit on video game art. It would be a great way to combine our interests in modern design and gaming. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Visiting a modern art museum with a video game art exhibit is an excellent idea, as it allows us to explore both of our interests. I'm excited to see how gaming is represented in the world of art. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds like a fantastic idea, Riley! I'm really excited to see how gaming is represented in the world of art. Now, let's decide on what we'll do during our date. Any suggestions? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Visiting a modern art museum with a video game art exhibit is an excellent idea, as it allows us to explore both of our interests. I'm excited to see how gaming is represented in the world of art. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds like a fantastic idea, Riley! I'm really excited to see how gaming is represented in the world of art. Now, let's decide on what we'll do during our date. Any suggestions? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Hiro Suzuki 's Message:  That sounds like a fantastic idea, Riley! I'm really excited to see how gaming is represented in the world of art. Now, let's decide on what we'll do during our date. Any suggestions? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm thrilled that Hiro is excited about the location, and I have an idea for an activity that combines our interests. [end]\\ \tt [sentiment] Continue Conversation [end]\\ \tt [response] I'm glad you're excited about the museum, Hiro! For our activity, I thought we could try a sketching session inspired by the video game art. It would be a fun way to explore our creative sides and share our passions. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm thrilled that Hiro is excited about the location, and I have an idea for an activity that combines our interests. [end]\\ \tt [sentiment] Continue Conversation [end]\\ \tt [response] I'm glad you're excited about the museum, Hiro! For our activity, I thought we could try a sketching session inspired by the video game art. It would be a fun way to explore our creative sides and share our passions. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Riley Taylor 's Message:  I'm glad you're excited about the museum, Hiro! For our activity, I thought we could try a sketching session inspired by the video game art. It would be a fun way to explore our creative sides and share our passions. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] A sketching session inspired by the video game art is a unique and engaging idea. It will allow us to explore our creative sides while still being connected to the gaming world. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I love the idea of a sketching session, Riley! It's a great way to combine our interests and explore our creative sides. I'm really looking forward to our first date. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] A sketching session inspired by the video game art is a unique and engaging idea. It will allow us to explore our creative sides while still being connected to the gaming world. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I love the idea of a sketching session, Riley! It's a great way to combine our interests and explore our creative sides. I'm really looking forward to our first date. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Hiro Suzuki 's Message:  I love the idea of a sketching session, Riley! It's a great way to combine our interests and explore our creative sides. I'm really looking forward to our first date. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm happy that Hiro is enthusiastic about the activity, and I believe we've found a great overall agreement for our first date. [end]\\ \tt [sentiment] Overall Agreement [end]\\ \tt [response] I'm so glad you're excited about our sketching session, Hiro! I think we've found a perfect way to blend our interests and have a memorable first date. I'm really looking forward to it! [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm happy that Hiro is enthusiastic about the activity, and I believe we've found a great overall agreement for our first date. [end]\\ \tt [sentiment] Overall Agreement [end]\\ \tt [response] I'm so glad you're excited about our sketching session, Hiro! I think we've found a perfect way to blend our interests and have a memorable first date. I'm really looking forward to it! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Riley Taylor 's Message:  I'm so glad you're excited about our sketching session, Hiro! I think we've found a perfect way to blend our interests and have a memorable first date. I'm really looking forward to it! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Riley and I have successfully agreed on the time, location, and activity for our first date. I'm thrilled that we've found a way to combine our interests and create a memorable experience. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I couldn't agree more, Riley! I'm genuinely excited about our first date and can't wait to share this unique experience with you. Let's make it a day to remember! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Riley and I have successfully agreed on the time, location, and activity for our first date. I'm thrilled that we've found a way to combine our interests and create a memorable experience. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I couldn't agree more, Riley! I'm genuinely excited about our first date and can't wait to share this unique experience with you. Let's make it a day to remember! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

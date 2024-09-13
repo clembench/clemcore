@@ -1,0 +1,5 @@
+turn,Action agreement,Already agreed,Location agreement,Mismatch agreement,Out of retries,Parsed Request Count,Request Count,Success,Time agreement,Turn Friendzone,Turn Reprompts,Violated Request Count,Violated pattern,Violated token length
+0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+1,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+2,0,0,0,1,0,1,1,0,0,0,1,0,1,0
+3,0,0,0,0,1,0,1,0,0,0,0,1,1,0

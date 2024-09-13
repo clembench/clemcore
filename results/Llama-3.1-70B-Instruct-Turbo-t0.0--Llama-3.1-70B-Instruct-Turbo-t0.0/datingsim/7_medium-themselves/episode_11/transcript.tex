@@ -1,0 +1,456 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Dr. Olivia Khan', 'GENDER': 'Female', 'AGE': 42, 'APPEARANCE': 'Confident smile, sharp blue eyes, stylishly short black hair, professional attire with a touch of personality.', 'OCCUPATION': 'Cardiovascular Surgeon', 'LIKES': 'Helping people, pushing the boundaries of medicine, a good intellectual challenge.', 'DISLIKES': 'Arrogance, inefficiency, seeing people give up.', 'HOBBIES': 'Rock climbing (to manage stress), playing the cello, volunteering at a medical clinic for the underprivileged.', 'SUMMARY': 'I love my work as much as I love a good riddle.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Dr. Olivia Khan', 'GENDER': 'Female', 'AGE': 42, 'APPEARANCE': 'Confident smile, sharp blue eyes, stylishly short black hair, professional attire with a touch of personality.', 'OCCUPATION': 'Cardiovascular Surgeon', 'SUMMARY': 'I love my work as much as I love a good riddle.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to initiate the conversation by suggesting a casual and relaxed atmosphere for our first date, allowing us to get to know each other better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi there, I must say I'm intrigued by your profile, especially the part about loving a good riddle. I was thinking, how about we grab a cup of coffee and see where the conversation takes us? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to initiate the conversation by suggesting a casual and relaxed atmosphere for our first date, allowing us to get to know each other better. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi there, I must say I'm intrigued by your profile, especially the part about loving a good riddle. I was thinking, how about we grab a cup of coffee and see where the conversation takes us? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Dr. Olivia Khan', 'GENDER': 'Female', 'AGE': 42, 'APPEARANCE': 'Confident smile, sharp blue eyes, stylishly short black hair, professional attire with a touch of personality.', 'OCCUPATION': 'Cardiovascular Surgeon', 'LIKES': 'Helping people, pushing the boundaries of medicine, a good intellectual challenge.', 'DISLIKES': 'Arrogance, inefficiency, seeing people give up.', 'HOBBIES': 'Rock climbing (to manage stress), playing the cello, volunteering at a medical clinic for the underprivileged.', 'SUMMARY': 'I love my work as much as I love a good riddle.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Dr. Olivia Khan', 'GENDER': 'Female', 'AGE': 42, 'APPEARANCE': 'Confident smile, sharp blue eyes, stylishly short black hair, professional attire with a touch of personality.', 'OCCUPATION': 'Cardiovascular Surgeon', 'SUMMARY': 'I love my work as much as I love a good riddle.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi there, I must say I'm intrigued by your profile, especially the part about loving a good riddle. I was thinking, how about we grab a cup of coffee and see where the conversation takes us? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player initiated a conversation and proposed a casual activity, but didn't specify a time or location. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds lovely, but I'm a bit of a busy bee, so I'd love to pin down a time and place. How about we plan for this weekend? Do you have a favorite coffee shop in mind? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player initiated a conversation and proposed a casual activity, but didn't specify a time or location. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds lovely, but I'm a bit of a busy bee, so I'd love to pin down a time and place. How about we plan for this weekend? Do you have a favorite coffee shop in mind? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Dr. Olivia Khan 's Message:  That sounds lovely, but I'm a bit of a busy bee, so I'd love to pin down a time and place. How about we plan for this weekend? Do you have a favorite coffee shop in mind? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to accommodate her busy schedule and suggest a specific time and location to make the plan more concrete. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] This weekend sounds perfect. I was thinking of Saturday morning, around 10 am. There's a quaint little coffee shop near the park that I've been wanting to try out. Would you be available then, and would you like to meet at the coffee shop or take a stroll in the park afterwards? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to accommodate her busy schedule and suggest a specific time and location to make the plan more concrete. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] This weekend sounds perfect. I was thinking of Saturday morning, around 10 am. There's a quaint little coffee shop near the park that I've been wanting to try out. Would you be available then, and would you like to meet at the coffee shop or take a stroll in the park afterwards? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Dr. Olivia Khan 's Message:  This weekend sounds perfect. I was thinking of Saturday morning, around 10 am. There's a quaint little coffee shop near the park that I've been wanting to try out. Would you be available then, and would you like to meet at the coffee shop or take a stroll in the park afterwards? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player proposed a specific time and location, and also suggested an additional activity. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] Saturday at 10 am works great for me. I'd love to meet at the coffee shop first and then take a stroll in the park afterwards, the fresh air would be lovely. What's the name of the coffee shop, so I can make sure to find it? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player proposed a specific time and location, and also suggested an additional activity. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] Saturday at 10 am works great for me. I'd love to meet at the coffee shop first and then take a stroll in the park afterwards, the fresh air would be lovely. What's the name of the coffee shop, so I can make sure to find it? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Dr. Olivia Khan 's Message:  Saturday at 10 am works great for me. I'd love to meet at the coffee shop first and then take a stroll in the park afterwards, the fresh air would be lovely. What's the name of the coffee shop, so I can make sure to find it? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm glad we've agreed on the time and general plan, and now I want to finalize the location by providing the name of the coffee shop. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] The coffee shop is called "The Cozy Cup". It's a bit hidden, but the atmosphere is wonderful. I'll send you the exact address so you can find it easily. Now that we have the time and location settled, I'm excited to get to know you better. What do you think about making the stroll in the park a bit more interesting, maybe with a picnic or a visit to the park's botanical garden? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm glad we've agreed on the time and general plan, and now I want to finalize the location by providing the name of the coffee shop. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] The coffee shop is called "The Cozy Cup". It's a bit hidden, but the atmosphere is wonderful. I'll send you the exact address so you can find it easily. Now that we have the time and location settled, I'm excited to get to know you better. What do you think about making the stroll in the park a bit more interesting, maybe with a picnic or a visit to the park's botanical garden? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Dr. Olivia Khan 's Message:  The coffee shop is called "The Cozy Cup". It's a bit hidden, but the atmosphere is wonderful. I'll send you the exact address so you can find it easily. Now that we have the time and location settled, I'm excited to get to know you better. What do you think about making the stroll in the park a bit more interesting, maybe with a picnic or a visit to the park's botanical garden? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player provided the location details and proposed additional activities for the stroll in the park. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] I'd love to explore the botanical garden, it sounds like a great way to enjoy the outdoors and have some interesting conversation topics. A picnic could be a bit too much to carry, but we could always grab some pastries or sandwiches from "The Cozy Cup" to snack on while we walk. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player provided the location details and proposed additional activities for the stroll in the park. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] I'd love to explore the botanical garden, it sounds like a great way to enjoy the outdoors and have some interesting conversation topics. A picnic could be a bit too much to carry, but we could always grab some pastries or sandwiches from "The Cozy Cup" to snack on while we walk. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on location successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Dr. Olivia Khan 's Message:  I'd love to explore the botanical garden, it sounds like a great way to enjoy the outdoors and have some interesting conversation topics. A picnic could be a bit too much to carry, but we could always grab some pastries or sandwiches from "The Cozy Cup" to snack on while we walk. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I'm glad we've agreed on the activity, and now I want to finalize the details of the action by confirming the plan for food and drinks. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds like a perfect plan. Grabbing some pastries or sandwiches from "The Cozy Cup" will give us a chance to refuel and enjoy the beautiful surroundings. I'm really looking forward to our little adventure. Now that we have the time, location, and activity settled, I think we're all set for a lovely first date. Shall we consider this plan final? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I'm glad we've agreed on the activity, and now I want to finalize the details of the action by confirming the plan for food and drinks. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds like a perfect plan. Grabbing some pastries or sandwiches from "The Cozy Cup" will give us a chance to refuel and enjoy the beautiful surroundings. I'm really looking forward to our little adventure. Now that we have the time, location, and activity settled, I think we're all set for a lovely first date. Shall we consider this plan final? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Dr. Olivia Khan 's Message:  That sounds like a perfect plan. Grabbing some pastries or sandwiches from "The Cozy Cup" will give us a chance to refuel and enjoy the beautiful surroundings. I'm really looking forward to our little adventure. Now that we have the time, location, and activity settled, I think we're all set for a lovely first date. Shall we consider this plan final? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player confirmed the plan and suggested considering it final, implying that all agreements have been met. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I think we've got a great plan in place. I'm excited to meet you on Saturday at 10 am at "The Cozy Cup" and explore the botanical garden afterwards. I'm looking forward to our conversation and getting to know you better. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player confirmed the plan and suggested considering it final, implying that all agreements have been met. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I think we've got a great plan in place. I'm excited to meet you on Saturday at 10 am at "The Cozy Cup" and explore the botanical garden afterwards. I'm looking forward to our conversation and getting to know you better. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Dr. Olivia Khan 's Message:  I think we've got a great plan in place. I'm excited to meet you on Saturday at 10 am at "The Cozy Cup" and explore the botanical garden afterwards. I'm looking forward to our conversation and getting to know you better. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] We've agreed on all the details, and now I want to confirm the overall agreement and express my enthusiasm for the date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm thrilled that we've finalized the plans, and I'm really looking forward to meeting you on Saturday. I have a feeling that this is going to be a wonderful date, and I'm excited to see where our conversation takes us. See you at "The Cozy Cup" at 10 am! [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] We've agreed on all the details, and now I want to confirm the overall agreement and express my enthusiasm for the date. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm thrilled that we've finalized the plans, and I'm really looking forward to meeting you on Saturday. I have a feeling that this is going to be a wonderful date, and I'm excited to see where our conversation takes us. See you at "The Cozy Cup" at 10 am! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Dr. Olivia Khan 's Message:  I'm thrilled that we've finalized the plans, and I'm really looking forward to meeting you on Saturday. I have a feeling that this is going to be a wonderful date, and I'm excited to see where our conversation takes us. See you at "The Cozy Cup" at 10 am! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player expressed enthusiasm for the date and confirmed the plans, indicating that all agreements have been met. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm equally thrilled, and I'm looking forward to a lovely Saturday morning with great conversation and company. See you at "The Cozy Cup" at 10 am! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player expressed enthusiasm for the date and confirmed the plans, indicating that all agreements have been met. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm equally thrilled, and I'm looking forward to a lovely Saturday morning with great conversation and company. See you at "The Cozy Cup" at 10 am! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

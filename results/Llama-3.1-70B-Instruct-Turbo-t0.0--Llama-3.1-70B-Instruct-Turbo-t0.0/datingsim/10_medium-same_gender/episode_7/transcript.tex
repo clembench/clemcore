@@ -1,0 +1,336 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'LIKES': 'Street art, animals, spontaneous trips.', 'DISLIKES': 'Routine, pessimism, junk food.', 'HOBBIES': 'Urban exploration, skateboarding, wildlife photography.', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Ethan Moore', 'GENDER': 'Male', 'AGE': 42, 'APPEARANCE': 'Salt and pepper hair, warm smile, crinkled eyes when he laughs, wears well-fitting suits.', 'OCCUPATION': 'University Professor (Literature)', 'SUMMARY': 'Good books are twice as fun when you converse about them with a nice cup of tea. This pretty much describes me as a person.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by breaking the ice and getting to know Ethan a bit better, while also giving him an idea of what I'm looking for in a first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey Ethan, I have to say, your love for literature is really intriguing. I'm more of a visual person myself, but I appreciate a good conversation. For our first date, I was thinking of something a bit more adventurous. How about we grab some coffee and check out that new street art exhibit that just opened up downtown? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by breaking the ice and getting to know Ethan a bit better, while also giving him an idea of what I'm looking for in a first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hey Ethan, I have to say, your love for literature is really intriguing. I'm more of a visual person myself, but I appreciate a good conversation. For our first date, I was thinking of something a bit more adventurous. How about we grab some coffee and check out that new street art exhibit that just opened up downtown? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Ethan Moore', 'GENDER': 'Male', 'AGE': 42, 'APPEARANCE': 'Salt and pepper hair, warm smile, crinkled eyes when he laughs, wears well-fitting suits.', 'OCCUPATION': 'University Professor (Literature)', 'LIKES': 'Engaging discussions, classic literature, a good cup of tea.', 'DISLIKES': 'Superficiality, technology dependence, loud noises.', 'HOBBIES': 'Reading, attending plays and concerts, spending time in nature.', 'SUMMARY': 'Good books are twice as fun when you converse about them with a nice cup of tea. This pretty much describes me as a person.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Aiden Reyes', 'GENDER': 'Male', 'AGE': 26, 'APPEARANCE': 'Lean and fit, short black hair, green eyes, casual yet trendy clothing, tattoo sleeve on left arm.', 'OCCUPATION': 'Photographer', 'SUMMARY': 'I like spontanious actions that keep me and my mind active.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hey Ethan, I have to say, your love for literature is really intriguing. I'm more of a visual person myself, but I appreciate a good conversation. For our first date, I was thinking of something a bit more adventurous. How about we grab some coffee and check out that new street art exhibit that just opened up downtown? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] The other player proposed a location and an action, but not a specific time, and I'd like to discuss the time and also express my thoughts on the proposal. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Aiden, I appreciate your enthusiasm, and the street art exhibit sounds interesting. However, I'm not much of a morning person, so I'd prefer to meet in the afternoon. Would you be available around 2 pm? Also, I'm curious, what draws you to photography? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] The other player proposed a location and an action, but not a specific time, and I'd like to discuss the time and also express my thoughts on the proposal. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Aiden, I appreciate your enthusiasm, and the street art exhibit sounds interesting. However, I'm not much of a morning person, so I'd prefer to meet in the afternoon. Would you be available around 2 pm? Also, I'm curious, what draws you to photography? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  Aiden, I appreciate your enthusiasm, and the street art exhibit sounds interesting. However, I'm not much of a morning person, so I'd prefer to meet in the afternoon. Would you be available around 2 pm? Also, I'm curious, what draws you to photography? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Ethan seems open to the idea of the street art exhibit, but has a different time preference. I'll agree to the time and share a bit about my passion for photography to keep the conversation going. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 2 pm sounds perfect, I'm flexible with my schedule. As for photography, I love capturing the beauty in unexpected places and moments. There's something about freezing time and telling a story through a single frame that really speaks to me. What about you, what's your favorite book or author that's had a significant impact on you? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Ethan seems open to the idea of the street art exhibit, but has a different time preference. I'll agree to the time and share a bit about my passion for photography to keep the conversation going. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] 2 pm sounds perfect, I'm flexible with my schedule. As for photography, I love capturing the beauty in unexpected places and moments. There's something about freezing time and telling a story through a single frame that really speaks to me. What about you, what's your favorite book or author that's had a significant impact on you? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  2 pm sounds perfect, I'm flexible with my schedule. As for photography, I love capturing the beauty in unexpected places and moments. There's something about freezing time and telling a story through a single frame that really speaks to me. What about you, what's your favorite book or author that's had a significant impact on you? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Aiden agreed on the time, and I'd like to acknowledge that and continue the conversation to discuss the location and action in more detail. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad we settled on a time, Aiden. As for your question, I've always been fascinated by the works of F. Scott Fitzgerald. His writing has a way of transporting me to another era. Regarding the street art exhibit, I'm not sure if it's the best fit for me. Would you be open to a compromise, perhaps a visit to a local bookstore or a literary cafe instead? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Aiden agreed on the time, and I'd like to acknowledge that and continue the conversation to discuss the location and action in more detail. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm glad we settled on a time, Aiden. As for your question, I've always been fascinated by the works of F. Scott Fitzgerald. His writing has a way of transporting me to another era. Regarding the street art exhibit, I'm not sure if it's the best fit for me. Would you be open to a compromise, perhaps a visit to a local bookstore or a literary cafe instead? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on time successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  I'm glad we settled on a time, Aiden. As for your question, I've always been fascinated by the works of F. Scott Fitzgerald. His writing has a way of transporting me to another era. Regarding the street art exhibit, I'm not sure if it's the best fit for me. Would you be open to a compromise, perhaps a visit to a local bookstore or a literary cafe instead? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Ethan is hesitant about the street art exhibit, so I'll consider his alternative and propose a compromise that still incorporates my interests. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I can appreciate a good literary cafe, but I'd love to find a way to merge our interests. How about we visit the bookstore or cafe, and then take a short walk to a nearby alleyway that's known for its street art? That way, we can get a taste of both worlds. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Ethan is hesitant about the street art exhibit, so I'll consider his alternative and propose a compromise that still incorporates my interests. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I can appreciate a good literary cafe, but I'd love to find a way to merge our interests. How about we visit the bookstore or cafe, and then take a short walk to a nearby alleyway that's known for its street art? That way, we can get a taste of both worlds. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  I can appreciate a good literary cafe, but I'd love to find a way to merge our interests. How about we visit the bookstore or cafe, and then take a short walk to a nearby alleyway that's known for its street art? That way, we can get a taste of both worlds. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Aiden proposed a compromise that combines both of our interests, and I'd like to consider it and respond with my thoughts. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I like the sound of that, Aiden. Merging our interests could make for a unique and engaging experience. The alleyway street art could be a great conversation starter. However, I do have one concern - the noise level in the alleyway might be a bit much for me. Are you sure it's not too loud or crowded? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Aiden proposed a compromise that combines both of our interests, and I'd like to consider it and respond with my thoughts. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I like the sound of that, Aiden. Merging our interests could make for a unique and engaging experience. The alleyway street art could be a great conversation starter. However, I do have one concern - the noise level in the alleyway might be a bit much for me. Are you sure it's not too loud or crowded? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  I like the sound of that, Aiden. Merging our interests could make for a unique and engaging experience. The alleyway street art could be a great conversation starter. However, I do have one concern - the noise level in the alleyway might be a bit much for me. Are you sure it's not too loud or crowded? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Ethan is open to the compromise, but has a concern about the noise level. I'll address his concern and reassure him that the alleyway is a relatively quiet spot. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] I completely understand your concern, Ethan. The alleyway I'm thinking of is actually a bit of a hidden gem, and it's usually pretty quiet, especially in the afternoon. There are some great murals and graffiti, and it's a great spot for some interesting photos. I think you'll find it's a nice balance of art and tranquility. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Ethan is open to the compromise, but has a concern about the noise level. I'll address his concern and reassure him that the alleyway is a relatively quiet spot. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] I completely understand your concern, Ethan. The alleyway I'm thinking of is actually a bit of a hidden gem, and it's usually pretty quiet, especially in the afternoon. There are some great murals and graffiti, and it's a great spot for some interesting photos. I think you'll find it's a nice balance of art and tranquility. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Aiden Reyes 's Message:  I completely understand your concern, Ethan. The alleyway I'm thinking of is actually a bit of a hidden gem, and it's usually pretty quiet, especially in the afternoon. There are some great murals and graffiti, and it's a great spot for some interesting photos. I think you'll find it's a nice balance of art and tranquility. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Aiden addressed my concern and provided more information about the alleyway, and I'd like to acknowledge that and express my agreement on the location and action. [end]\\ \tt \\ \tt [sentiment] Agreement on Location, Agreement on Action [end]\\ \tt \\ \tt [response] I appreciate your reassurance, Aiden. The idea of a quiet alleyway with interesting art and photography opportunities sounds appealing. I think we have a good plan in place. Now that we've settled on a time, location, and activity, I'm looking forward to our date. Shall we consider the details finalized? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Aborted game because of invalid format: pattern 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

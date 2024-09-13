@@ -1,0 +1,432 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Casey Rivers', 'GENDER': 'Non-binary', 'AGE': 25, 'APPEARANCE': 'Long auburn hair, hazel eyes, casual chic attire, freckles, soft-spokenr.', 'OCCUPATION': 'Bookstore Owner', 'LIKES': 'Poetry, herbal tea, rainy days.', 'DISLIKES': 'Loud environments, fast fashion, injustice.', 'HOBBIES': 'Writing, gardening, knitting.', 'SUMMARY': 'Some might say I have grandma hobbies, others however appreciate the quality and time I invest to handmade them clothes.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Riley Jones', 'SUMMARY': 'Creating jewlry is a passion of mine! Maybe we can forge something together sometime.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in the other player's hobby. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Riley, I'm Casey. I came across your profile and was immediately drawn to your passion for creating jewelry. I've always been fascinated by handmade crafts, and I think it's wonderful that you've found something you're so passionate about. What kind of jewelry do you enjoy making the most? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in the other player's hobby. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Riley, I'm Casey. I came across your profile and was immediately drawn to your passion for creating jewelry. I've always been fascinated by handmade crafts, and I think it's wonderful that you've found something you're so passionate about. What kind of jewelry do you enjoy making the most? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Riley Jones', 'GENDER': 'Non-binary', 'AGE': 38, 'APPEARANCE': 'Buzz cut, warm hazel eyes, androgynous build with toned muscles, wears comfortable yet stylish clothing.', 'OCCUPATION': 'Blacksmith', 'LIKES': 'The rhythm of forging metal, creating functional art, working with their hands.', 'DISLIKES': 'Idleness, pretentiousness, following the rules just for the sake of it.', 'HOBBIES': 'Sculpting metal into art pieces, weightlifting, historical reenactment.', 'SUMMARY': 'Creating jewlry is a passion of mine! Maybe we can forge something together sometime.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Casey Rivers', 'SUMMARY': 'Some might say I have grandma hobbies, others however appreciate the quality and time I invest to handmade them clothes.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi Riley, I'm Casey. I came across your profile and was immediately drawn to your passion for creating jewelry. I've always been fascinated by handmade crafts, and I think it's wonderful that you've found something you're so passionate about. What kind of jewelry do you enjoy making the most? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Casey seems interested in my passion for creating jewelry, so I'll respond with a bit more information about my craft and see if we can find common ground. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Casey, thanks for reaching out. I love making all sorts of jewelry, but I have a soft spot for crafting intricate metal pendants. There's something about shaping and molding metal into a beautiful piece of art that really speaks to me. What about you, what kind of handmade crafts do you enjoy making? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Casey seems interested in my passion for creating jewelry, so I'll respond with a bit more information about my craft and see if we can find common ground. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Casey, thanks for reaching out. I love making all sorts of jewelry, but I have a soft spot for crafting intricate metal pendants. There's something about shaping and molding metal into a beautiful piece of art that really speaks to me. What about you, what kind of handmade crafts do you enjoy making? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Riley Jones 's Message:  Hi Casey, thanks for reaching out. I love making all sorts of jewelry, but I have a soft spot for crafting intricate metal pendants. There's something about shaping and molding metal into a beautiful piece of art that really speaks to me. What about you, what kind of handmade crafts do you enjoy making? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to respond to Riley's question and share my own hobby, while also trying to steer the conversation towards a potential date idea. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds amazing, Riley. I've always been fascinated by metalwork. As for me, I enjoy knitting and gardening. There's something therapeutic about creating something with my own hands. Speaking of which, I was thinking it would be lovely to meet up at a local botanical garden or a quaint tea shop. What do you think? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to respond to Riley's question and share my own hobby, while also trying to steer the conversation towards a potential date idea. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds amazing, Riley. I've always been fascinated by metalwork. As for me, I enjoy knitting and gardening. There's something therapeutic about creating something with my own hands. Speaking of which, I was thinking it would be lovely to meet up at a local botanical garden or a quaint tea shop. What do you think? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Casey Rivers 's Message:  That sounds amazing, Riley. I've always been fascinated by metalwork. As for me, I enjoy knitting and gardening. There's something therapeutic about creating something with my own hands. Speaking of which, I was thinking it would be lovely to meet up at a local botanical garden or a quaint tea shop. What do you think? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Casey has proposed a few potential locations for our date, but I'd like to suggest an alternative that might be more fitting for our shared interest in handmade crafts. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I love botanical gardens and tea shops, but I was thinking maybe we could meet at a local artisan market or a craft fair? It would be great to see other people's handmade work and maybe even get some inspiration for our own projects. Plus, it would be a nice way to combine our shared interest in crafts with our date. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Casey has proposed a few potential locations for our date, but I'd like to suggest an alternative that might be more fitting for our shared interest in handmade crafts. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I love botanical gardens and tea shops, but I was thinking maybe we could meet at a local artisan market or a craft fair? It would be great to see other people's handmade work and maybe even get some inspiration for our own projects. Plus, it would be a nice way to combine our shared interest in crafts with our date. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Riley Jones 's Message:  I love botanical gardens and tea shops, but I was thinking maybe we could meet at a local artisan market or a craft fair? It would be great to see other people's handmade work and maybe even get some inspiration for our own projects. Plus, it would be a nice way to combine our shared interest in crafts with our date. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to respond to Riley's suggestion and show enthusiasm for the idea, while also trying to settle on a specific time for the date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I adore that idea, Riley. An artisan market or craft fair sounds like the perfect setting for our date. As for the time, I was thinking maybe a weekend afternoon would be lovely? The markets are usually less crowded then, and we could take our time browsing the stalls. Would Saturday or Sunday work better for you? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to respond to Riley's suggestion and show enthusiasm for the idea, while also trying to settle on a specific time for the date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I adore that idea, Riley. An artisan market or craft fair sounds like the perfect setting for our date. As for the time, I was thinking maybe a weekend afternoon would be lovely? The markets are usually less crowded then, and we could take our time browsing the stalls. Would Saturday or Sunday work better for you? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Casey Rivers 's Message:  I adore that idea, Riley. An artisan market or craft fair sounds like the perfect setting for our date. As for the time, I was thinking maybe a weekend afternoon would be lovely? The markets are usually less crowded then, and we could take our time browsing the stalls. Would Saturday or Sunday work better for you? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Casey has proposed a specific time frame for our date, and I need to decide which day works better for me, while also considering the overall flow of the date. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I think Saturday afternoon sounds perfect, Casey. It'll give us a chance to relax and enjoy the market without feeling rushed. Plus, it'll be a great way to kick off the weekend. Now that we have a time and location, what did you have in mind for us to do at the market? Just browse, or was there something specific you'd like to do or try? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Casey has proposed a specific time frame for our date, and I need to decide which day works better for me, while also considering the overall flow of the date. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I think Saturday afternoon sounds perfect, Casey. It'll give us a chance to relax and enjoy the market without feeling rushed. Plus, it'll be a great way to kick off the weekend. Now that we have a time and location, what did you have in mind for us to do at the market? Just browse, or was there something specific you'd like to do or try? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Riley Jones 's Message:  I think Saturday afternoon sounds perfect, Casey. It'll give us a chance to relax and enjoy the market without feeling rushed. Plus, it'll be a great way to kick off the weekend. Now that we have a time and location, what did you have in mind for us to do at the market? Just browse, or was there something specific you'd like to do or try? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to respond to Riley's question and suggest a specific activity, while also trying to finalize the plan. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm glad you like the idea, Riley. As for what to do at the market, I was thinking it would be lovely to browse the stalls together, and maybe even take a workshop or class if there's one available. Many markets offer hands-on activities, like jewelry-making or pottery. That way, we can learn something new together and have a fun, interactive experience. Does that sound like a plan to you? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to respond to Riley's question and suggest a specific activity, while also trying to finalize the plan. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm glad you like the idea, Riley. As for what to do at the market, I was thinking it would be lovely to browse the stalls together, and maybe even take a workshop or class if there's one available. Many markets offer hands-on activities, like jewelry-making or pottery. That way, we can learn something new together and have a fun, interactive experience. Does that sound like a plan to you? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Casey Rivers 's Message:  I'm glad you like the idea, Riley. As for what to do at the market, I was thinking it would be lovely to browse the stalls together, and maybe even take a workshop or class if there's one available. Many markets offer hands-on activities, like jewelry-making or pottery. That way, we can learn something new together and have a fun, interactive experience. Does that sound like a plan to you? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Casey has proposed a specific activity for our date, which aligns with my interests, so I'm inclined to agree. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds like a fantastic plan, Casey. I'd love to take a workshop or class together. Jewelry-making or pottery would be great, but I'm also open to trying something new. It'll be a great way to bond over our shared love of handmade crafts. Now that we have a time, location, and activity, I think we're all set for a great date. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Casey has proposed a specific activity for our date, which aligns with my interests, so I'm inclined to agree. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds like a fantastic plan, Casey. I'd love to take a workshop or class together. Jewelry-making or pottery would be great, but I'm also open to trying something new. It'll be a great way to bond over our shared love of handmade crafts. Now that we have a time, location, and activity, I think we're all set for a great date. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Riley Jones 's Message:  That sounds like a fantastic plan, Casey. I'd love to take a workshop or class together. Jewelry-making or pottery would be great, but I'm also open to trying something new. It'll be a great way to bond over our shared love of handmade crafts. Now that we have a time, location, and activity, I think we're all set for a great date. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to respond to Riley's message and confirm that we have a complete plan, and then propose an overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I completely agree, Riley. I think we've planned a wonderful date that combines our shared interests and allows us to spend quality time together. I'm really looking forward to Saturday afternoon at the market, and I'm excited to see what the day brings. Shall we consider our plans finalized, then? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to respond to Riley's message and confirm that we have a complete plan, and then propose an overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I completely agree, Riley. I think we've planned a wonderful date that combines our shared interests and allows us to spend quality time together. I'm really looking forward to Saturday afternoon at the market, and I'm excited to see what the day brings. Shall we consider our plans finalized, then? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Casey Rivers 's Message:  I completely agree, Riley. I think we've planned a wonderful date that combines our shared interests and allows us to spend quality time together. I'm really looking forward to Saturday afternoon at the market, and I'm excited to see what the day brings. Shall we consider our plans finalized, then? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Casey has confirmed that we've planned a great date, and I'm happy with the arrangements, so I'm ready to finalize our plans. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Absolutely, Casey. I'm thrilled with our plans, and I'm really looking forward to Saturday afternoon. It's going to be great to meet you in person and share our passion for handmade crafts. I'll see you at the market! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Casey has confirmed that we've planned a great date, and I'm happy with the arrangements, so I'm ready to finalize our plans. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Absolutely, Casey. I'm thrilled with our plans, and I'm really looking forward to Saturday afternoon. It's going to be great to meet you in person and share our passion for handmade crafts. I'll see you at the market! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

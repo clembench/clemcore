@@ -1,0 +1,624 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Kai Nakamura', 'GENDER': 'Male', 'AGE': 28, 'APPEARANCE': 'Chiseled jawline, kind eyes, messy black hair, athletic build.', 'OCCUPATION': 'Bakery Owner', 'LIKES': 'Baking, early mornings, seeing people happy with his pastries.', 'DISLIKES': 'Burnt bread, negativity, rushing.', 'HOBBIES': 'Rock climbing, sketching, volunteering at a local animal shelter.', 'SUMMARY': 'I am a baker with a passion for creating delicious treats. I always find time to pursue my hobbies and give back to the community.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Ethan Moore', 'GENDER': 'Male', 'AGE': 42, 'APPEARANCE': 'Salt and pepper hair, warm smile, crinkled eyes when he laughs, wears well-fitting suits.', 'OCCUPATION': 'University Professor (Literature)', 'SUMMARY': 'Good books are twice as fun when you converse about them with a nice cup of tea. This pretty much describes me as a person.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in getting to know the other player. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Ethan, I'm Kai. I came across your profile and was drawn to your love for literature. As a baker, I appreciate the art of storytelling, even if it's just through the presentation of my pastries. What kind of books do you enjoy reading? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in getting to know the other player. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Ethan, I'm Kai. I came across your profile and was drawn to your love for literature. As a baker, I appreciate the art of storytelling, even if it's just through the presentation of my pastries. What kind of books do you enjoy reading? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 15 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Ethan Moore', 'GENDER': 'Male', 'AGE': 42, 'APPEARANCE': 'Salt and pepper hair, warm smile, crinkled eyes when he laughs, wears well-fitting suits.', 'OCCUPATION': 'University Professor (Literature)', 'LIKES': 'Engaging discussions, classic literature, a good cup of tea.', 'DISLIKES': 'Superficiality, technology dependence, loud noises.', 'HOBBIES': 'Reading, attending plays and concerts, spending time in nature.', 'SUMMARY': 'Good books are twice as fun when you converse about them with a nice cup of tea. This pretty much describes me as a person.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Kai Nakamura', 'GENDER': 'Male', 'AGE': 28, 'APPEARANCE': 'Chiseled jawline, kind eyes, messy black hair, athletic build.', 'OCCUPATION': 'Bakery Owner', 'SUMMARY': 'I am a baker with a passion for creating delicious treats. I always find time to pursue my hobbies and give back to the community.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi Ethan, I'm Kai. I came across your profile and was drawn to your love for literature. As a baker, I appreciate the art of storytelling, even if it's just through the presentation of my pastries. What kind of books do you enjoy reading? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] I want to start a conversation and get to know Kai better before suggesting a date idea. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Ah, nice to meet you, Kai. I'm a big fan of classic literature, especially the works of Dickens and Austen. There's something about the way they weave stories that I find captivating. I've always been fascinated by the way a good story can transport you to another time and place. What about you, do you have a favorite book or author that inspires your baking? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start a conversation and get to know Kai better before suggesting a date idea. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Ah, nice to meet you, Kai. I'm a big fan of classic literature, especially the works of Dickens and Austen. There's something about the way they weave stories that I find captivating. I've always been fascinated by the way a good story can transport you to another time and place. What about you, do you have a favorite book or author that inspires your baking? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  Ah, nice to meet you, Kai. I'm a big fan of classic literature, especially the works of Dickens and Austen. There's something about the way they weave stories that I find captivating. I've always been fascinated by the way a good story can transport you to another time and place. What about you, do you have a favorite book or author that inspires your baking? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to respond to Ethan's question and share a bit about my interests, while also trying to steer the conversation towards planning a date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That's really interesting, Ethan. I've always been a fan of Haruki Murakami's works, his surreal storytelling is quite inspiring. As for baking, I find that it's more about the experience and the people I share it with. Speaking of which, would you be up for meeting in person sometime? Maybe over a cup of coffee or tea? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to respond to Ethan's question and share a bit about my interests, while also trying to steer the conversation towards planning a date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That's really interesting, Ethan. I've always been a fan of Haruki Murakami's works, his surreal storytelling is quite inspiring. As for baking, I find that it's more about the experience and the people I share it with. Speaking of which, would you be up for meeting in person sometime? Maybe over a cup of coffee or tea? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Kai Nakamura 's Message:  That's really interesting, Ethan. I've always been a fan of Haruki Murakami's works, his surreal storytelling is quite inspiring. As for baking, I find that it's more about the experience and the people I share it with. Speaking of which, would you be up for meeting in person sometime? Maybe over a cup of coffee or tea? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Kai seems open to meeting in person, and I appreciate his interest in literature, so I'll start discussing the details of the date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'd love to meet in person, Kai. A cup of tea sounds perfect, actually. I'm a bit of a traditionalist when it comes to tea, so I know just the place. There's a quaint little tea house near the university that serves an excellent Earl Grey. Would you be free to meet there sometime during the week? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Kai seems open to meeting in person, and I appreciate his interest in literature, so I'll start discussing the details of the date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'd love to meet in person, Kai. A cup of tea sounds perfect, actually. I'm a bit of a traditionalist when it comes to tea, so I know just the place. There's a quaint little tea house near the university that serves an excellent Earl Grey. Would you be free to meet there sometime during the week? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  I'd love to meet in person, Kai. A cup of tea sounds perfect, actually. I'm a bit of a traditionalist when it comes to tea, so I know just the place. There's a quaint little tea house near the university that serves an excellent Earl Grey. Would you be free to meet there sometime during the week? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to respond to Ethan's suggestion and propose a specific day and time, while also considering my own schedule as a bakery owner. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] That sounds lovely, Ethan. I'm usually busy with the bakery in the mornings, but I'm free on Wednesday afternoons. Would 2 pm on Wednesday work for you? And I'm looking forward to trying their Earl Grey, I've heard great things about that tea house. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to respond to Ethan's suggestion and propose a specific day and time, while also considering my own schedule as a bakery owner. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] That sounds lovely, Ethan. I'm usually busy with the bakery in the mornings, but I'm free on Wednesday afternoons. Would 2 pm on Wednesday work for you? And I'm looking forward to trying their Earl Grey, I've heard great things about that tea house. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Kai Nakamura 's Message:  That sounds lovely, Ethan. I'm usually busy with the bakery in the mornings, but I'm free on Wednesday afternoons. Would 2 pm on Wednesday work for you? And I'm looking forward to trying their Earl Grey, I've heard great things about that tea house. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Kai has suggested a specific time and day, and it fits my schedule, so I'll agree on the time. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] Wednesday at 2 pm works perfectly for me, Kai. I'm glad you're looking forward to trying the Earl Grey - it's definitely a highlight of the tea house. Now, shall we discuss the location in more detail? I can give you the exact address and we can finalize the plans. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Kai has suggested a specific time and day, and it fits my schedule, so I'll agree on the time. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] Wednesday at 2 pm works perfectly for me, Kai. I'm glad you're looking forward to trying the Earl Grey - it's definitely a highlight of the tea house. Now, shall we discuss the location in more detail? I can give you the exact address and we can finalize the plans. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on time successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  Wednesday at 2 pm works perfectly for me, Kai. I'm glad you're looking forward to trying the Earl Grey - it's definitely a highlight of the tea house. Now, shall we discuss the location in more detail? I can give you the exact address and we can finalize the plans. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to confirm the location and finalize the plans, while also making sure I'm comfortable with the arrangement. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds great, Ethan. Please go ahead and share the address, I'd love to make sure I know exactly where to meet you. And just to confirm, we're meeting at the tea house near the university, correct? I'll make sure to put it in my calendar. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to confirm the location and finalize the plans, while also making sure I'm comfortable with the arrangement. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] That sounds great, Ethan. Please go ahead and share the address, I'd love to make sure I know exactly where to meet you. And just to confirm, we're meeting at the tea house near the university, correct? I'll make sure to put it in my calendar. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Kai Nakamura 's Message:  That sounds great, Ethan. Please go ahead and share the address, I'd love to make sure I know exactly where to meet you. And just to confirm, we're meeting at the tea house near the university, correct? I'll make sure to put it in my calendar. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Kai has confirmed the location and asked for the address, so I'll provide the details and agree on the location. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] Yes, that's correct, Kai. The tea house is called "Steeped in Tradition" and it's located at 145 University Avenue, just a short walk from the campus. I'll meet you there at 2 pm on Wednesday. Now that we have the time and location settled, what do you think we should do after our tea? Perhaps a stroll through the nearby park or a visit to the university's art gallery? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Kai has confirmed the location and asked for the address, so I'll provide the details and agree on the location. [end]\\ \tt \\ \tt [sentiment] Agreement on Location [end]\\ \tt \\ \tt [response] Yes, that's correct, Kai. The tea house is called "Steeped in Tradition" and it's located at 145 University Avenue, just a short walk from the campus. I'll meet you there at 2 pm on Wednesday. Now that we have the time and location settled, what do you think we should do after our tea? Perhaps a stroll through the nearby park or a visit to the university's art gallery? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on location successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  Yes, that's correct, Kai. The tea house is called "Steeped in Tradition" and it's located at 145 University Avenue, just a short walk from the campus. I'll meet you there at 2 pm on Wednesday. Now that we have the time and location settled, what do you think we should do after our tea? Perhaps a stroll through the nearby park or a visit to the university's art gallery? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to consider Ethan's suggestions and propose an alternative that aligns with my interests and hobbies. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I like the sound of a stroll through the park, Ethan. However, I was thinking it might be nice to combine it with something a bit more active. There's a rock climbing spot nearby that I've been wanting to try out. Would you be up for giving it a go with me after our tea? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to consider Ethan's suggestions and propose an alternative that aligns with my interests and hobbies. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I like the sound of a stroll through the park, Ethan. However, I was thinking it might be nice to combine it with something a bit more active. There's a rock climbing spot nearby that I've been wanting to try out. Would you be up for giving it a go with me after our tea? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no location agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Kai Nakamura 's Message:  I like the sound of a stroll through the park, Ethan. However, I was thinking it might be nice to combine it with something a bit more active. There's a rock climbing spot nearby that I've been wanting to try out. Would you be up for giving it a go with me after our tea? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Kai has suggested an activity that I'm not particularly fond of, but I'll consider it and respond with an alternative that fits my personality. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I appreciate your enthusiasm for rock climbing, Kai, but I'm not sure that's quite my cup of tea. I'm more of a leisurely stroll kind of person. How about we compromise and take a walk through the park, and then visit the university's botanical garden instead? I've heard it's lovely this time of year. [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Kai has suggested an activity that I'm not particularly fond of, but I'll consider it and respond with an alternative that fits my personality. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I appreciate your enthusiasm for rock climbing, Kai, but I'm not sure that's quite my cup of tea. I'm more of a leisurely stroll kind of person. How about we compromise and take a walk through the park, and then visit the university's botanical garden instead? I've heard it's lovely this time of year. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  I appreciate your enthusiasm for rock climbing, Kai, but I'm not sure that's quite my cup of tea. I'm more of a leisurely stroll kind of person. How about we compromise and take a walk through the park, and then visit the university's botanical garden instead? I've heard it's lovely this time of year. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to consider Ethan's compromise and find a mutually agreeable activity that we can both enjoy. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds like a great compromise, Ethan. I'd love to visit the botanical garden with you. The park and garden will give us plenty of opportunities to chat and get to know each other better. I think we have a lovely plan in place now. [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to consider Ethan's compromise and find a mutually agreeable activity that we can both enjoy. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] That sounds like a great compromise, Ethan. I'd love to visit the botanical garden with you. The park and garden will give us plenty of opportunities to chat and get to know each other better. I think we have a lovely plan in place now. [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Kai Nakamura 's Message:  That sounds like a great compromise, Ethan. I'd love to visit the botanical garden with you. The park and garden will give us plenty of opportunities to chat and get to know each other better. I think we have a lovely plan in place now. [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Kai has agreed to the alternative activity, and we have a plan in place, so I'll agree on the action and then propose an overall agreement. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm glad we could find a compromise that works for both of us, Kai. I'm really looking forward to our tea, walk, and visit to the botanical garden on Wednesday. Shall we consider our plans finalized, then? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Kai has agreed to the alternative activity, and we have a plan in place, so I'll agree on the action and then propose an overall agreement. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] I'm glad we could find a compromise that works for both of us, Kai. I'm really looking forward to our tea, walk, and visit to the botanical garden on Wednesday. Shall we consider our plans finalized, then? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 agreement on action successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Ethan Moore 's Message:  I'm glad we could find a compromise that works for both of us, Kai. I'm really looking forward to our tea, walk, and visit to the botanical garden on Wednesday. Shall we consider our plans finalized, then? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to confirm that we have a complete agreement on all aspects of the date and express my enthusiasm for meeting Ethan. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Absolutely, Ethan. I'm thrilled that we were able to plan a date that we're both excited about. I'm looking forward to meeting you on Wednesday at 2 pm at "Steeped in Tradition" and enjoying a lovely afternoon together. See you then! [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to confirm that we have a complete agreement on all aspects of the date and express my enthusiasm for meeting Ethan. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] Absolutely, Ethan. I'm thrilled that we were able to plan a date that we're both excited about. I'm looking forward to meeting you on Wednesday at 2 pm at "Steeped in Tradition" and enjoying a lovely afternoon together. See you then! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no action agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Kai Nakamura 's Message:  Absolutely, Ethan. I'm thrilled that we were able to plan a date that we're both excited about. I'm looking forward to meeting you on Wednesday at 2 pm at "Steeped in Tradition" and enjoying a lovely afternoon together. See you then! [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Kai has confirmed the plans and expressed enthusiasm for the date, so I'll agree to the overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm delighted that we've come to an agreement, Kai. I'm really looking forward to meeting you on Wednesday and sharing a lovely afternoon together. See you then! [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Kai has confirmed the plans and expressed enthusiasm for the date, so I'll agree to the overall agreement. [end]\\ \tt \\ \tt [sentiment] Overall Agreement [end]\\ \tt \\ \tt [response] I'm delighted that we've come to an agreement, Kai. I'm really looking forward to meeting you on Wednesday and sharing a lovely afternoon together. See you then! [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 game successful 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}
