@@ -1,0 +1,18 @@
+episode,turn,Action agreement,Already agreed,Location agreement,Mismatch agreement,Out of retries,Parsed Request Count,Request Count,Success,Time agreement,Turn Friendzone,Turn Reprompts,Violated Request Count,Violated pattern,Violated token length
+episode_0,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_1,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_10,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_11,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_12,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_2,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0
+episode_2,1,0,0,0,0,1,0,1,0,0,0,0,1,1,0
+episode_3,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_4,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0
+episode_4,1,0,0,0,0,1,0,1,0,0,0,0,1,1,0
+episode_5,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_6,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0
+episode_6,1,0,0,0,0,1,0,1,0,0,0,0,1,1,0
+episode_7,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_8,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0
+episode_9,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0
+episode_9,1,0,0,0,0,1,0,1,0,0,0,0,1,1,0

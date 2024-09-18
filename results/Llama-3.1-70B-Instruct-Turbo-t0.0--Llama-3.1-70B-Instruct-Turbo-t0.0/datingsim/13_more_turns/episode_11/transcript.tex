@@ -1,0 +1,288 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will start the conversation.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 20 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Sakura Nakamura', 'GENDER': 'Female', 'AGE': 32, 'APPEARANCE': 'Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.', 'OCCUPATION': 'Tea Ceremony Master', 'LIKES': 'Maintaining traditions, fostering inner peace, creating a beautiful and harmonious atmosphere.', 'DISLIKES': 'Disharmony, disrespect, rushing through life.', 'HOBBIES': 'Calligraphy, flower arranging (Ikebana), practicing mindfulness meditation.', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Casey Rivers', 'GENDER': 'Non-binary', 'AGE': 25, 'APPEARANCE': 'Long auburn hair, hazel eyes, casual chic attire, freckles, soft-spokenr.', 'OCCUPATION': 'Bookstore Owner', 'SUMMARY': 'Some might say I have grandma hobbies, others however appreciate the quality and time I invest to handmade them clothes.'}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Start the game with the reason, your sentiment and the opening phrase.\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in Casey's unique hobbies. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Casey, I'm Sakura. Your handmade clothes caught my attention - I appreciate the time and effort you put into creating something beautiful. What inspired you to start making clothes, and would you like to meet in a quiet, serene place to discuss more about our shared love for traditional crafts? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] I want to start the conversation by introducing myself and showing interest in Casey's unique hobbies. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Hi Casey, I'm Sakura. Your handmade clothes caught my attention - I appreciate the time and effort you put into creating something beautiful. What inspired you to start making clothes, and would you like to meet in a quiet, serene place to discuss more about our shared love for traditional crafts? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are about to play a game with another player. In this game, you and the other player are both on an dating app, looking for a partner. In this case, both you and the other player decided, that you fancy each other's profile. Your and the other player's GOAL is it, to come to an agreement on what to do on your first date. At the start of the game you will be given two character sheets. The first one is the one, that defines your personality. The second one includes the information you know of the other player based on the information in their Bio on the dating app. You will be approached by the other player.\\ \tt On each further turn you can react to what the other player tells you. For this you can either continue the conversation if you have not met an agreement yet or are not happy with the proposal, or end the game by agreeing to the proposal. \\ \tt \\ \tt There is a total of four agreements throughout the game: "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement". You and the other player need to find an agreement on each of them.\\ \tt You should only choose "Overall Agreement" after you and your date manage to settle an agreement for the other three ones (Time, Location, Action). \\ \tt You have 20 turns to finish the game and find all agreements. \\ \tt \\ \tt Your answer has to consist ONLY of the following information and follow the given template:\\ \tt \\ \tt [reason] Your reason for your decision. [end]\\ \tt \\ \tt [sentiment] Choose one of the following: "Continue Conversation", "Agreement on Time", "Agreement on Location", "Agreement on Action", "Overall Agreement" [end]\\ \tt \\ \tt [response] Your response to the other player. This can include your sentiment, opinion, alternative. [end]\\ \tt \\ \tt Your answer for [response] must NOT exceed 100 tokens.\\ \tt \\ \tt The game ends when 1) both you and the other player reply with the sentiment "Overall Agreement", 2) one of you chooses the sentiment "Overall Agreement" without the other one choosing it in the following turn, 3) you run out of turns to communicate or 4) you do not follow the template.\\ \tt \\ \tt This is your character: {'NAME': 'Casey Rivers', 'GENDER': 'Non-binary', 'AGE': 25, 'APPEARANCE': 'Long auburn hair, hazel eyes, casual chic attire, freckles, soft-spokenr.', 'OCCUPATION': 'Bookstore Owner', 'LIKES': 'Poetry, herbal tea, rainy days.', 'DISLIKES': 'Loud environments, fast fashion, injustice.', 'HOBBIES': 'Writing, gardening, knitting.', 'SUMMARY': 'Some might say I have grandma hobbies, others however appreciate the quality and time I invest to handmade them clothes.'}\\ \tt \\ \tt This is the character of the other player: ${'NAME': 'Sakura Nakamura', 'GENDER': 'Female', 'AGE': 32, 'APPEARANCE': 'Calm and gentle demeanor, kind eyes, long silky black hair, wears flowy dresses with traditional Japanese touches.', 'OCCUPATION': 'Tea Ceremony Master', 'SUMMARY': "Hi, I'm Sakura, a tea ceremony master who cherishes tranquility, mindfulness, and the beauty of tradition."}\\ \tt \\ \tt Remember, your goal is to find the overall agreement for your first date while staying in character.\\ \tt \\ \tt Continue the game with the reason, your sentiment and an answer phrase to the first message of the other player:\\ \tt \\ \tt Message:  Hi Casey, I'm Sakura. Your handmade clothes caught my attention - I appreciate the time and effort you put into creating something beautiful. What inspired you to start making clothes, and would you like to meet in a quiet, serene place to discuss more about our shared love for traditional crafts? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura seems to appreciate my handmade clothes and suggests a quiet, serene place, which aligns with my dislike of loud environments. I want to learn more about her and see if we can find a common ground for our first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Ah, thank you, Sakura. I'm glad you appreciate my handmade clothes. I started making them as a way to relax and express my creativity. I love the idea of meeting in a quiet, serene place - it sounds perfect. What kind of place did you have in mind, and what's your favorite type of traditional craft? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura seems to appreciate my handmade clothes and suggests a quiet, serene place, which aligns with my dislike of loud environments. I want to learn more about her and see if we can find a common ground for our first date. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] Ah, thank you, Sakura. I'm glad you appreciate my handmade clothes. I started making them as a way to relax and express my creativity. I love the idea of meeting in a quiet, serene place - it sounds perfect. What kind of place did you have in mind, and what's your favorite type of traditional craft? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Casey Rivers 's Message:  Ah, thank you, Sakura. I'm glad you appreciate my handmade clothes. I started making them as a way to relax and express my creativity. I love the idea of meeting in a quiet, serene place - it sounds perfect. What kind of place did you have in mind, and what's your favorite type of traditional craft? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Casey seems open to a serene setting, and I'd like to suggest a specific location that aligns with my interests and personality. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'm glad you like the idea, Casey. I was thinking of a traditional Japanese garden, perhaps one with a tea house. It would be a lovely setting to get to know each other. As for traditional crafts, I'm particularly fond of calligraphy and Ikebana - the art of flower arranging. Have you ever been to a traditional Japanese garden, or would you be interested in experiencing it for the first time? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Casey seems open to a serene setting, and I'd like to suggest a specific location that aligns with my interests and personality. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] I'm glad you like the idea, Casey. I was thinking of a traditional Japanese garden, perhaps one with a tea house. It would be a lovely setting to get to know each other. As for traditional crafts, I'm particularly fond of calligraphy and Ikebana - the art of flower arranging. Have you ever been to a traditional Japanese garden, or would you be interested in experiencing it for the first time? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  I'm glad you like the idea, Casey. I was thinking of a traditional Japanese garden, perhaps one with a tea house. It would be a lovely setting to get to know each other. As for traditional crafts, I'm particularly fond of calligraphy and Ikebana - the art of flower arranging. Have you ever been to a traditional Japanese garden, or would you be interested in experiencing it for the first time? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura suggests a traditional Japanese garden with a tea house, which seems like a peaceful and culturally rich setting. I'm interested in learning more about her interests and experiences. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds enchanting, Sakura. I've never been to a traditional Japanese garden, but I'm eager to experience it. I've always been fascinated by the art of flower arranging, and I think it's beautiful that you're fond of Ikebana. Would a morning or afternoon visit to the garden be more suitable for you, and would we be able to have a tea ceremony there? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura suggests a traditional Japanese garden with a tea house, which seems like a peaceful and culturally rich setting. I'm interested in learning more about her interests and experiences. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] That sounds enchanting, Sakura. I've never been to a traditional Japanese garden, but I'm eager to experience it. I've always been fascinated by the art of flower arranging, and I think it's beautiful that you're fond of Ikebana. Would a morning or afternoon visit to the garden be more suitable for you, and would we be able to have a tea ceremony there? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Casey Rivers 's Message:  That sounds enchanting, Sakura. I've never been to a traditional Japanese garden, but I'm eager to experience it. I've always been fascinated by the art of flower arranging, and I think it's beautiful that you're fond of Ikebana. Would a morning or afternoon visit to the garden be more suitable for you, and would we be able to have a tea ceremony there? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Casey is open to visiting a traditional Japanese garden and seems interested in the tea ceremony, which aligns with my occupation and interests. I'd like to suggest a specific time and confirm the possibility of a tea ceremony. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm so glad you're interested, Casey. I think a morning visit would be lovely, as the garden is usually less crowded and the atmosphere is more serene. As for the tea ceremony, I can actually arrange for a private ceremony at the garden's tea house, if you'd like. Would that be something you'd be interested in, and would you prefer a simple ceremony or a more traditional, formal one? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Casey is open to visiting a traditional Japanese garden and seems interested in the tea ceremony, which aligns with my occupation and interests. I'd like to suggest a specific time and confirm the possibility of a tea ceremony. [end]\\ \tt \\ \tt [sentiment] Agreement on Time [end]\\ \tt \\ \tt [response] I'm so glad you're interested, Casey. I think a morning visit would be lovely, as the garden is usually less crowded and the atmosphere is more serene. As for the tea ceremony, I can actually arrange for a private ceremony at the garden's tea house, if you'd like. Would that be something you'd be interested in, and would you prefer a simple ceremony or a more traditional, formal one? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Sakura Nakamura 's Message:  I'm so glad you're interested, Casey. I think a morning visit would be lovely, as the garden is usually less crowded and the atmosphere is more serene. As for the tea ceremony, I can actually arrange for a private ceremony at the garden's tea house, if you'd like. Would that be something you'd be interested in, and would you prefer a simple ceremony or a more traditional, formal one? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 [reason] Sakura offers a private tea ceremony, which seems like a unique and intimate experience. I want to make sure I'm comfortable with the level of formality. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] A private tea ceremony sounds wonderful, Sakura. I think I'd prefer a simple ceremony, as I'm not familiar with the traditional formalities. I'd love to learn more about the process, but I also want to make sure we have time to talk and get to know each other. Would a simple ceremony allow for some conversation, or would it be more focused on the traditional rituals? [end] 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 [reason] Sakura offers a private tea ceremony, which seems like a unique and intimate experience. I want to make sure I'm comfortable with the level of formality. [end]\\ \tt \\ \tt [sentiment] Continue Conversation [end]\\ \tt \\ \tt [response] A private tea ceremony sounds wonderful, Sakura. I think I'd prefer a simple ceremony, as I'm not familiar with the traditional formalities. I'd love to learn more about the process, but I also want to make sure we have time to talk and get to know each other. Would a simple ceremony allow for some conversation, or would it be more focused on the traditional rituals? [end] conforms to rules 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 no time agreement, mismatched sentiment 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 Casey Rivers 's Message:  A private tea ceremony sounds wonderful, Sakura. I think I'd prefer a simple ceremony, as I'm not familiar with the traditional formalities. I'd love to learn more about the process, but I also want to make sure we have time to talk and get to know each other. Would a simple ceremony allow for some conversation, or would it be more focused on the traditional rituals? [end]\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 [reason] Casey is interested in a simple ceremony and wants to balance the traditional aspects with conversation, which I can accommodate. I'd like to reassure Casey that a simple ceremony can be a great way to experience the tradition while still allowing for conversation. [end]\\ \tt \\ \tt [sentiment] Agreement on Action [end]\\ \tt \\ \tt [response] A simple ceremony is a perfect way to introduce you to the traditional Japanese tea ceremony, Casey. It will still follow the traditional steps, but I can adapt it to allow for some conversation and questions. We can take breaks between the steps to chat and get to know each other better. I think it will be a lovely way to share my passion with you while also having a chance to connect. Now that we have a time and activity, I was thinking of a specific garden - the one near the city's botanical garden. Would that location work for you? [end] 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 Aborted because of invalid format: token length 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

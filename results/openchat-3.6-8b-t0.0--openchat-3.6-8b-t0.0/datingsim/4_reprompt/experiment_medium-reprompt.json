@@ -1,0 +1,1 @@
+{"name": "medium-reprompt", "n_turns": 15, "max_retries": 2, "re_prompt_allowed": true, "timestamp": "2024-09-12T17:59:00.352522", "dialogue_partners": "openchat-3.6-8b-t0.0--openchat-3.6-8b-t0.0", "duration": "0:09:19.295344"}
