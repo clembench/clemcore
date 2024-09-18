@@ -1,28 +1,28 @@
 ,metric,value
-25792,Violated Request Count,1.0
-25793,Violated pattern,1.0
-25794,Violated token length,0.0
-25795,Parsed Request Count,0.0
-25796,Request Count,1.0
-25797,Request Success Ratio,0.0
-25798,Number of completed turns,0.0
-25799,Number of Agreements,0.0
-25800,Agreement Efficiency,0.0
-25801,Number of Mismatched Agreements,0.0
-25802,Number of Reprompts,0.0
-25803,Number of Redundancy,0.0
-25804,Friendzoned,0.0
-25805,Out of turns,0.0
-25806,Out of retries,0.0
-25807,Turn penalty,0.0
-25808,Agreement penalty,22.5
-25809,Inefficiency penalty,0.0
-25810,Error penalty,0.0
-25811,Location agreement,0.0
-25812,Action agreement,0.0
-25813,Time agreement,0.0
-25814,Aborted,1.0
-25815,Success,0.0
-25816,Lose,0.0
-25817,Main Score,
-34038,Played,0.0
+15340,Violated Request Count,1.0
+15341,Violated pattern,1.0
+15342,Violated token length,0.0
+15343,Parsed Request Count,0.0
+15344,Request Count,1.0
+15345,Request Success Ratio,0.0
+15346,Number of completed turns,0.0
+15347,Number of Agreements,0.0
+15348,Agreement Efficiency,0.0
+15349,Number of Mismatched Agreements,0.0
+15350,Number of Reprompts,0.0
+15351,Number of Redundancy,0.0
+15352,Friendzoned,0.0
+15353,Out of turns,0.0
+15354,Out of retries,0.0
+15355,Turn penalty,0.0
+15356,Agreement penalty,22.5
+15357,Inefficiency penalty,0.0
+15358,Error penalty,0.0
+15359,Location agreement,0.0
+15360,Action agreement,0.0
+15361,Time agreement,0.0
+15362,Aborted,1.0
+15363,Success,0.0
+15364,Lose,0.0
+15365,Main Score,
+19518,Played,0.0
