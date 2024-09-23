@@ -730,8 +730,7 @@
   },
   {
     "model_name": "openchat-3.6-8b",
-    "backend": "llamacpp",
-    "huggingface_id": "lmstudio-community/openchat-3.6-8b-20240522-GGUF",
-    "filename": "*Q4_K_M.gguf",
+    "model_id": "lmstudio-community/openchat-3.6-8b-20240522-GGUF/openchat-3.6-8b-20240522-Q4_K_M.gguf"
+    "backend": "openai_compatible",
   }
 ]
