@@ -727,5 +727,11 @@
     "model_name": "Mixtral-8x22B-Instruct-v0.1",
     "model_id": "⁠mistralai/Mixtral-8x22B-Instruct-v0.1",
     "backend": "openai_compatible"
+  },
+  {
+    "model_name": "openchat-3.6-8b",
+    "backend": "llamacpp",
+    "huggingface_id": "lmstudio-community/openchat-3.6-8b-20240522-GGUF",
+    "filename": "*Q4_K_M.gguf",
   }
 ]
