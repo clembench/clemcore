@@ -33,3 +33,14 @@ Please simply open a pull request. You can find more information on how to use t
 - [How to add a new model](docs/howto_add_models.md)
 - [How to add and run your own game](docs/howto_add_games.md)
 - [How to integrate with Slurk](docs/howto_slurk.md)
+
+
+## Running openchat3.6-8b
+
+In the model_registry.json file, openchat3.6-8b was added as an openai-compatible backend. While the model can't be run through the OpenAI API, you can use it via LMStudio by configuring the key.json as follows:
+"generic_openai_compatible": {
+    "api_key": "not-needed",
+    "base_url": "http://localhost:1234/v1"
+  }
+
+After that, enable developer mode in LMStudio to create a local server. 
