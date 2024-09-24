@@ -129,14 +129,17 @@ def build_transcript(interactions: Dict, experiment_config: Dict, game_instance:
                 transcript += f'<div speaker="{speaker}" class="msg {class_name}">\n'
                 transcript += f'  <p>{msg_raw}</p>\n'
                 for image_src in msg_content["image"]:
-                    if "IMAGE_ROOT" in os.environ:
-                        image_src = os.path.join(os.environ["IMAGE_ROOT"], image_src)
-                    else:
-                        image_src = os.path.join(project_root, image_src)
+                    if not image_src.startswith("http"):  # take the web url as it is
+                        if "IMAGE_ROOT" in os.environ:
+                            image_src = os.path.join(os.environ["IMAGE_ROOT"], image_src)
+                        else:
+                            image_src = os.path.join(project_root, image_src)
                     transcript += (f'  <a title="{image_src}">'
                                    f'<img style="width:100%" src="{image_src}" alt="{image_src}" />'
                                    f'</a>\n')
                 transcript += '</div>\n'
+            else:
+                transcript += HTML_TEMPLATE.format(speaker, class_name, msg_raw)
         else:
             transcript += HTML_TEMPLATE.format(speaker, class_name, msg_raw)
     transcript += HTML_FOOTER

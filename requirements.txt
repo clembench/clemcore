@@ -23,3 +23,6 @@ mistralai==0.0.12
 python-engineio==4.4.0
 python-socketio==5.7.2
 websocket-client
+# multimodal games
+imageio==2.34.1
+networkx==3.2.1
